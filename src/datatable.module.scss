@@ -1,0 +1,37 @@
+.dataTableBox {
+    
+    :global(.sc-dIouRR) {
+        display: none;
+    }
+    :global(.sc-gsnTZi) {
+        
+        :global(.sc-dkzDqf) { 
+            background-color: var(--Main2);
+            color:#fff;
+
+            :global(.sc-hKMtZM) {
+                padding: 0px 15px;
+                font-size: 15px;
+            }
+        }
+    }
+    :global(.sc-jSMfEi) {
+        padding: 0px 15px;
+        font-size: 15px;
+    }
+    
+
+    
+}
+
+
+/*=======================================================
+//////////////RESPONSIVE MEDIA QUERY START///////////////
+=======================================================*/
+@media (max-width: 767px) {
+
+    .dataTableBox {
+
+       
+    }
+}
