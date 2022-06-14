@@ -56,7 +56,7 @@ export default function Login() {
             </Form.Group>
             <div className={`${login.submitBtnRow}`}>
               <NavLink
-                to="/participant/account"
+                to="/sales/orders"
                 className={`${login.submitBtn}`}
               >
                 Sign In

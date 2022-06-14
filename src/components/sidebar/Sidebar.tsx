@@ -43,7 +43,7 @@ const Sidebar = (props:any) => {
             <Accordion.Body>
               <ul>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/sales/orders">
                     <div className={`${style.menuName}`}>Orders</div>
                   </NavLink>
                 </li>

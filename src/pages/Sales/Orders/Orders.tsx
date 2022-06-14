@@ -165,6 +165,15 @@ const data = [
     col5: "$224.00",
     col6: "",
   },
+  {
+    id: 11,
+    col1: "12020-04-14",
+    col2: "xxx2022",
+    col3: "Mall 1",
+    col4: "$224.00",
+    col5: "$224.00",
+    col6: "",
+  },
 ];
 
 export default function Orders() {
@@ -176,6 +185,16 @@ export default function Orders() {
       item.col2 && item.col2.toLowerCase().includes(filterText.toLowerCase())
   );
 
+  const paginationComponentOptions = {
+    rowsPerPageText: 'Showing',
+    rangeSeparatorText: 'out of',
+};
+
+
+const previewIcon = <button>preview</button>;
+const previewIconD = <button style={{display:'none'}}>preview</button>;
+const nextIconD = <button style={{display:'none'}}>Next</button>;
+const nextIcon = <button>Next</button>;
 
   return (
     <>
@@ -185,10 +204,10 @@ export default function Orders() {
         <Card>
           <Card.Title>
               <Row className={`align-items-center ${style.rowTitle}`}>
-                <Col className={`${style.rowTitleLeft}`} lg={6}>
+                <Col className={`col-6 ${style.rowTitleLeft}`} lg={6}>
                   <h5>Orders</h5>
                 </Col>
-                <Col className={`${style.rowTitleRight}`} lg={6}>
+                <Col className={`col-6 ${style.rowTitleRight}`} lg={6}>
                   <button className={`btn`}>Filter</button>
                 </Col>
               </Row>
@@ -203,6 +222,11 @@ export default function Orders() {
                     subHeaderAlign={Alignment.LEFT}
                     persistTableHead
                     pagination
+                    paginationIconNext={nextIcon}
+                    paginationIconPrevious={previewIcon}
+                    paginationIconFirstPage={nextIconD}
+    paginationIconLastPage={previewIconD}
+    paginationComponentOptions={paginationComponentOptions}
                     customStyles={customStyles}
                     //   expandableRows
                     //   expandableRowsComponent={ExpandedComponent}

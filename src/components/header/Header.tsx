@@ -6,6 +6,7 @@ import { FiMoreHorizontal } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import GlobalContext from "../../store/global-context";
+import logo from "../../images/logo.svg";
 
 import profile from "../../images/icon-profile.svg";
 import infoicon from "../../images/icon-info.svg";
@@ -23,8 +24,7 @@ const Header = (props:any) => {
                 </Col>
                 <Col className="col-6 text-center">
                     <NavLink className={`${style.navlogo}`} to="/">
-                        <img src="../images/logo.svg" className={`${style.logoIcon}`} alt="logo" />
-                        <img src="../images/logo-text.svg" className={`${style.logoText}`} alt="logo" />
+                         <img src={logo} className={`${style.logoIcon}`} alt="logo" />
                     </NavLink>
                 </Col>
                 <Col className={`col-3 ${style.moreMenu}`}>
@@ -35,13 +35,13 @@ const Header = (props:any) => {
             <Row className={`align-items-center ${style.headerRow}`}>
                 <Col md={12} lg={12} xl={12} className={`col-12 ${style.headerMobile} ${globalCtx.showMore ? style.show : ''}`}>
                     <Row className="align-items-center">
-                        <Col md={6} lg={5} xl={5} className={`col-7 ${style.headerSearch}`}>
+                        <Col md={8} lg={6} xl={5} className={`col-9 ${style.headerSearch}`}>
                             <InputGroup className="">
                                 <FormControl placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" />
                                 <button className={`${style.searchBtn}`}>Search</button>
                             </InputGroup>
                         </Col>
-                        <Col md={6} lg={7} xl={7} className={`col-5 ${style.headerRight}`}>
+                        <Col md={4} lg={6} xl={7} className={`col-3 ${style.headerRight}`}>
                             <ul>
                                 <li className={`${style.help}`}>
                                     <Dropdown>
