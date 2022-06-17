@@ -14,7 +14,9 @@ const Sidebar = (props:any) => {
   const [show, setShow] = useState(true);
   return (
     <>
-      <aside className={`${style.sidebarMain} ${globalCtx.showMenu ? style.show : ''}`}>
+    <aside className={`${style.sidebarBody} ${globalCtx.showMenu ? style.show : ''}`}>
+        <div className={`${style.hideBg}`} onClick={globalCtx.displayMenu}></div>
+      <div className={`${style.sidebarMain}`}>
         <div className={`${style.logoBox}`}>
           <NavLink className={`${style.navlogo}`} to="/">
             <img src={logo} className={`${style.logoIcon}`} alt="logo" />
@@ -48,13 +50,13 @@ const Sidebar = (props:any) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/sales/customers">
                     <div className={`${style.menuName}`}>Customers</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
-                    <div className={`${style.menuName}`}>Session</div>
+                  <NavLink to="/sales/sessions">
+                    <div className={`${style.menuName}`}>Sessions</div>
                   </NavLink>
                 </li>
               </ul>
@@ -81,12 +83,12 @@ const Sidebar = (props:any) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/promotion/coupons">
                     <div className={`${style.menuName}`}>Coupons</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/promotion/discount">
                     <div className={`${style.menuName}`}>Discount</div>
                   </NavLink>
                 </li>
@@ -316,7 +318,8 @@ const Sidebar = (props:any) => {
          
           </ul>
         </div>
-      </aside>
+      </div>
+    </aside>
     </>
   );
 };

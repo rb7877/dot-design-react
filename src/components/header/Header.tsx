@@ -20,15 +20,47 @@ const Header = (props:any) => {
         <header className={`${style.mainHeader}`}>
             <Row className={`${style.mobileHeader}`}>
                 <Col className="col-3">
-                    <GiHamburgerMenu onClick={globalCtx.displayMenu} />
+                    <GiHamburgerMenu className={`${style.hembugmenu}`} onClick={globalCtx.displayMenu} />
                 </Col>
                 <Col className="col-6 text-center">
-                    <NavLink className={`${style.navlogo}`} to="/">
-                         <img src={logo} className={`${style.logoIcon}`} alt="logo" />
-                    </NavLink>
+                    
                 </Col>
-                <Col className={`col-3 ${style.moreMenu}`}>
-                    <FiMoreHorizontal className={`${style.moreIcon}`} onClick={globalCtx.displayMore} />
+                <Col md={4} lg={6} xl={7} className={`col-3 ${style.headerRight}`}>
+                    <ul>
+                        <li className={`${style.help}`}>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="a" id="dropdown-basic">
+                                    <div className={`${style.menuTT}`}>
+                                        <img src={infoicon} className={`${style.helpImg}`} alt="logo" />
+                                    </div>
+                                </Dropdown.Toggle>
+
+                                {/* <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                </Dropdown.Menu> */}
+                            </Dropdown>
+                        </li>
+                        <li className={`${style.profileBox}`}>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="a" id="dropdown-basic">
+                                    <div className={`${style.menuTT}`}>
+                                        <img src={profile} className={`${style.profileImg}`} alt="logo" />
+                                    </div>
+                                </Dropdown.Toggle>
+
+                                {/* <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-1">Account</Dropdown.Item>
+                                </Dropdown.Menu> */}
+                            </Dropdown>
+
+                            {/* <NavLink variant="a" className={`dropdown-toggle`} id="dropdown-basic" to="/">
+                                <img src="images/profile.png" className={`${style.profileImg}`} alt="profile" />
+                                <div className={`${style.menuTT}`}>Me</div>
+                            </NavLink> */}
+                        </li>
+                    </ul>
                 </Col>
             </Row>
 

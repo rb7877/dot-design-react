@@ -8,10 +8,76 @@
     }
 }
 
+.totalPayment {
+    display:inline-block;
+    width:100%;
+
+    .simpleTable {
+       width:400px;
+       float: right;
+       margin-right: 20px !important;
+
+        td {
+           text-align: right;
+           border: none;
+        }
+        th {
+           border:none;
+        }
+    }
+
+}
+
+.simpleTable {
+
+    thead {
+
+        tr {
+            background-color: var(--Main2);
+            color:#fff;
+        }
+    }
+
+    th {
+        font-weight: 500;
+        padding: 15px 15px;
+        vertical-align: middle;
+    }
+
+    td {
+         padding: 15px 15px;
+         vertical-align: middle;
+    }
+    tbody {
+       border-top: none !important;
+       background: #fff;
+
+       .nameList {
+
+            h6 {
+                margin-bottom: 3px;
+            }
+            p {
+                margin: 0;
+                color: #909090;
+                font-size: 14px;
+            }
+       }
+    }
+}
+
+
 /*=======================================================
 //////////////RESPONSIVE MEDIA QUERY START///////////////
 =======================================================*/
 @media (max-width: 767px) {
 
-
+    .totalPayment {
+    
+        .simpleTable {
+           width:100%;
+           margin-right: 0px !important;
+        }
+    
+    }
 }

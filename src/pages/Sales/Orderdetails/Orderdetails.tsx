@@ -20,12 +20,12 @@ export default function OrderDetails() {
                   <Row className={`align-items-center ${style.rowTitle}`}>
                     <Col className={`${style.rowTitleLeft}`} lg={6}>
                       <h5>
-                        <NavLink to="/" className={`${style.back}`}>Back</NavLink>
+                        <NavLink to="/sales/orders/" className={`${style.back}`}>Back</NavLink>
                         Order #73</h5>
                     </Col>
                     <Col className={`${style.rowTitleRight}`} lg={6}>
-                      <button className={`btn`}>Send Inboice</button>
-                      <button className={`btn`}>Print</button>
+                      <button className={`btn ${style.width100}`}>Send Inboice</button>
+                      <button className={`btn ${style.width100}`}>Print</button>
                     </Col>
                   </Row>
               </Card.Title>
@@ -139,7 +139,7 @@ export default function OrderDetails() {
               <Card.Body>
                 
               <div className="table-responsive">
-                <table className={`table m-0 ${style.simpleTable}`}>
+                <table className={`table m-0 ${details.simpleTable}`}>
                   <thead>
                     <tr>
                       <th>No</th>
@@ -174,7 +174,7 @@ export default function OrderDetails() {
                     
                     <tr>
                       <td>3</td>
-                      <td className={`${style.nameList}`}>
+                      <td className={`${details.nameList}`}>
                         <h6>Classic Fries (1)</h6>
                         <p>Received: No | Done: No | Preparation Time: 30 Min</p>
                       </td>
@@ -186,9 +186,9 @@ export default function OrderDetails() {
                 </table>
               </div>
 
-                <div className={`bg-white table-responsive  ${style.totalPayment}`}>
+                <div className={`bg-white table-responsive  ${details.totalPayment}`}>
 
-                  <table className={`table m-0 ${style.simpleTable}`}>
+                  <table className={`table m-0 ${details.simpleTable}`}>
                     
                     <tbody className={`${details.table50}`}>
                       <tr>
@@ -222,7 +222,7 @@ export default function OrderDetails() {
             <Card>
               <Card.Body>
               <div className="table-responsive">
-                <table className={`table m-0 ${style.simpleTable}`}>
+                <table className={`table m-0 ${details.simpleTable}`}>
                   <thead>
                     <tr>
                       <th>Created Date</th>
