@@ -170,7 +170,9 @@
                     }
                 }
                 
+                
                 :global(.modal-footer) {
+                    display: block;
 
                     .leftft {
 
@@ -185,9 +187,15 @@
                         margin-top: 15px;
 
                         button {
-                            width:50%;
+                            width: 49%;
                             justify-content: center;
-                            margin:0px 5px;
+
+                            &.close {
+                               margin: 0px 5px 0px 0px;
+                            }
+                            &.apply {
+                               margin: 0px 0px 0px 5px;
+                            }
                         }
                     }
                 }

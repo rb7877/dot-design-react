@@ -78,7 +78,7 @@ const Sidebar = (props:any) => {
             <Accordion.Body>
               <ul>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/promotion/combos">
                     <div className={`${style.menuName}`}>Combos</div>
                   </NavLink>
                 </li>
@@ -93,7 +93,7 @@ const Sidebar = (props:any) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/promotion/timed-events">
                     <div className={`${style.menuName}`}>Timed Events</div>
                   </NavLink>
                 </li>
@@ -117,17 +117,17 @@ const Sidebar = (props:any) => {
             <Accordion.Body>
               <ul>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/reports/sales">
                     <div className={`${style.menuName}`}>Sales</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/reports/inventory">
                     <div className={`${style.menuName}`}>Inventoy</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/reports/miscellaneous">
                     <div className={`${style.menuName}`}>Miscellaneous</div>
                   </NavLink>
                 </li>

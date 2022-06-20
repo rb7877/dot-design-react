@@ -289,7 +289,7 @@ export default function Discount() {
                   Filter
                 </button>
                 <button
-                  className={`btn ${style.width100}`}
+                  className={`btn ${style.width50}`}
                   onClick={() => setAddCustomer(true)}
                 >
                   + Add Coupons
