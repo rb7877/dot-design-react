@@ -1,0 +1,183 @@
+.btnsRow {
+
+    :global(.btn) {
+        background-color: #AACBFE;
+        border-color:#AACBFE;
+        width: 100%;
+        color: #fff;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom:25px;
+        font-weight: 600;
+        font-size: 18px;
+
+        &:hover, &.active, &:focus {
+            background-color: var(--Main2);
+            border-color: var(--Main2);
+            box-shadow:none;
+        }
+    }
+}
+.pgTitle {
+    text-align: center;
+    padding-bottom: 30px;
+
+    .tt {
+        font-size: 24px;
+        margin: 0;
+        font-weight: 600;
+        padding: 0px 0px 10px 0px;
+    }
+    .line {
+        width: 100%;
+        height: 1px;
+        object-fit: cover;
+    }
+}
+
+.ctsPopup {
+
+    :global(.modal-dialog) {
+        
+        :global(.modal-content) {
+            border:none;
+            border-radius: 8px;
+            
+            :global(.modal-header) {
+                background-color:var(--Main2);
+                color:#fff;
+                padding: 15px 20px;
+
+                :global(.btn-close) {
+                    color: #fff;
+                    filter: invert(338%) sepia(0%) saturate(2467%) hue-rotate(130deg) brightness(95%) contrast(320%);
+                    opacity: 1;
+                }
+            }
+            :global(.modal-body) {
+                padding: 20px 20px;
+
+                .formBox {
+                    margin-bottom: 15px;
+
+                    :global(.form-label) {
+                        margin: 0;
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    :global(.form-control) {
+                        border: 1px solid #d7d7d7;
+                        border-radius: 8px;
+                        padding: 10px 12px;
+
+                        &:focus {
+                            box-shadow:none;
+                            border-color:var(--Main2);
+                        }
+                    }
+                    :global(.form-select) {
+                        border: 1px solid #d7d7d7;
+                        border-radius: 8px;
+                        padding: 10px 12px;
+
+                        &:focus {
+                            box-shadow:none;
+                            border-color:var(--Main2);
+                        }
+                    }
+                }
+            }
+            
+            :global(.modal-footer) {
+                padding: 25px 15px;
+                justify-content: center;
+
+                .leftft {
+
+                    button {
+                        color:var(--Main2);
+                        font-size:18px;
+                        font-weight:600;
+                    }
+                }
+                .rightft {
+                    text-align: right;
+
+                    :global(.btn) {
+                        padding: 10px 30px;
+                        margin-left: 15px;
+                        border-radius: 8px;
+                    }
+                    .close {
+                        background:#AACBFE;
+                        color:#fff;
+                    }
+                    .apply {
+                        background:var(--Main2);
+                        color:#fff;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+/*=======================================================
+//////////////RESPONSIVE MEDIA QUERY START///////////////
+=======================================================*/
+@media (max-width: 767px) {
+
+    .ctsPopup {
+
+        :global(.modal-dialog) {
+            
+            :global(.modal-content) {
+                
+                :global(.modal-body) {
+
+                    .formBox {
+
+                        :global(.form-label) {
+                            margin-bottom:10px;
+                        }
+                    }
+                }
+                
+                
+                :global(.modal-footer) {
+                    display: block;
+
+                    .leftft {
+
+                        button {
+                            color:var(--Main2);
+                            font-size:18px;
+                            font-weight:600;
+                        }
+                    }
+                    .rightft {
+                        display: flex;
+                        margin-top: 15px;
+                        flex-wrap: wrap;
+
+                        :global(.btn) {
+                            width: 100%;
+                            justify-content: center;
+
+                            &.close {
+                               margin:15px 0px 0px 0px;
+                               order: 1;
+                            }
+                            &.apply {
+                               margin: 0px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

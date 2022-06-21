@@ -252,23 +252,18 @@ const Sidebar = (props:any) => {
             </Accordion.Header>
             <Accordion.Body>
               <ul>
-              <li>
-                  <NavLink to="/settings/cashiers">
-                    <div className={`${style.menuName}`}>Cashiers</div>
-                  </NavLink>
-                </li>
                 <li>
-                  <NavLink to="/settings/roles">
+                  <NavLink to="/">
                     <div className={`${style.menuName}`}>Roles</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/settings/employes">
-                    <div className={`${style.menuName}`}>Employes</div>
+                  <NavLink to="/">
+                    <div className={`${style.menuName}`}>Employees</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/settings/cashier">
+                  <NavLink to="/">
                     <div className={`${style.menuName}`}>Cashier</div>
                   </NavLink>
                 </li>

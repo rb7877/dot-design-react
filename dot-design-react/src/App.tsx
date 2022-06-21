@@ -19,9 +19,6 @@ import OrderDetails from "./pages/Sales/Orderdetails/Orderdetails";
 import Orders from "./pages/Sales/Orders/Orders";
 import Sessions from "./pages/Sales/Sessions/Sessions";
 import SessionsDetails from "./pages/Sales/Sessionsdetails/Sessionsdetails";
-import Cashiers from "./pages/Settings/Cashiers/Cashiers";
-import Employes from "./pages/Settings/Employes/Employes";
-import Roles from "./pages/Settings/Roles/Roles";
 
 
 function App() {
@@ -91,15 +88,7 @@ function App() {
             <Route exact path="/reports/miscellaneous">
               <Miscellaneous />
             </Route>
-              <Route exact path="/settings/roles">
-              <Roles />
-            </Route>
-            <Route exact path="/settings/employes">
-              <Employes />
-            </Route>
-            <Route exact path="/settings/cashiers">
-              <Cashiers />
-            </Route>
+                    
                                        
           </Switch>
         </div>

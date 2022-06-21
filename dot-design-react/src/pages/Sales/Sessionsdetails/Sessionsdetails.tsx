@@ -1,7 +1,7 @@
 
 import React from "react";
 import style from "../../../style.module.scss";
-import details from "./Orderdetails.module.scss";
+import details from "./Sessionsdetails.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -9,10 +9,7 @@ import Footer from "../../../components/footer/Footer";
 import { Card, Row, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
-import ActionEdit from "../../../images/icon-edit.svg";
-import ActionDelete from "../../../images/icon-delete.svg";
-
-export default function OrderDetails() {
+export default function SessionsDetails() {
   return (
     <>
         <Header />
@@ -23,7 +20,7 @@ export default function OrderDetails() {
                   <Row className={`align-items-center ${style.rowTitle}`}>
                     <Col className={`${style.rowTitleLeft}`} lg={6}>
                       <h5>
-                        <NavLink to="/sales/orders/" className={`${style.back}`}>Back</NavLink>
+                        <NavLink to="/sales/sessions" className={`${style.back}`}>Back</NavLink>
                         Order #73</h5>
                     </Col>
                     <Col className={`${style.rowTitleRight}`} lg={6}>
@@ -155,8 +152,8 @@ export default function OrderDetails() {
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td className={`${details.nameList}`}>
-                        <h6>Classic Fries كلاسيك فرايز (1)</h6>
+                      <td className={`${style.nameList}`}>
+                        <h6>Classic Fries (1)</h6>
                         <p>Received: No | Done: No | Preparation Time: 30 Min</p>
                       </td>
                       <td>13.04347826087</td>
@@ -166,18 +163,19 @@ export default function OrderDetails() {
                     
                     <tr>
                       <td>2</td>
-                      <td className={`${details.nameList}`}>
-                        <h6>Classic Fries كلاسيك فرايز (1)</h6>
+                      <td className={`${style.nameList}`}>
+                        <h6>Classic Fries (1)</h6>
                         <p>Received: No | Done: No | Preparation Time: 30 Min</p>
                       </td>
                       <td>13.04347826087</td>
                       <td>1</td>
                       <td>13.04347826087</td>
                     </tr>
+                    
                     <tr>
                       <td>3</td>
                       <td className={`${details.nameList}`}>
-                        <h6>Classic Fries كلاسيك فرايز (1)</h6>
+                        <h6>Classic Fries (1)</h6>
                         <p>Received: No | Done: No | Preparation Time: 30 Min</p>
                       </td>
                       <td>13.04347826087</td>
@@ -222,13 +220,6 @@ export default function OrderDetails() {
 
             
             <Card>
-            <Card.Title>
-                  <Row className={`align-items-center mb-2 ${style.rowTitle}`}>
-                    <Col className={`${style.rowTitleLeft}`} lg={12}>
-                      <h5>Payment Details</h5>
-                    </Col>
-                  </Row>
-              </Card.Title>
               <Card.Body>
               <div className="table-responsive">
                 <table className={`table m-0 ${details.simpleTable}`}>
@@ -251,118 +242,6 @@ export default function OrderDetails() {
                       <td>Cash</td>
                       <td>45.00</td>
                       <td>Complete</td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-              </div>
-               
-              </Card.Body>
-            </Card>
-
-            
-            <Card className="mt-4">
-            <Card.Title>
-                  <Row className={`align-items-center mb-2 ${style.rowTitle}`}>
-                    <Col className={`${style.rowTitleLeft}`} lg={6}>
-                      <h5>Tag</h5>
-                    </Col>
-                    <Col className={`${style.rowTitleRight}`} lg={6}>
-                      <button className={`btn ${style.width100}`}>+ Add Tags</button>
-                    </Col>
-                  </Row>
-              </Card.Title>
-              <Card.Body>
-              <div className="table-responsive">
-                <table className={`table m-0 ${details.simpleTable}`}>
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Name</th>
-                      <th>Date</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Name 1</td>
-                      <td className={`${details.date}`}>
-                        <h6>2020-04-14</h6>
-                        <p>08:21:40 PM</p>
-                      </td>
-                      <td>
-                      <div className={`${details.action}`}>
-                        <img src={ActionEdit} className={`${details.actionIcon}`} alt="img" />
-                        <img src={ActionDelete} className={`${details.actionIcon}`} alt="img" />
-                      </div>
-                      </td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-              </div>
-               
-              </Card.Body>
-            </Card>
-
-            
-            <Card className="mt-4">
-            <Card.Title>
-                  <Row className={`align-items-center mb-2 ${style.rowTitle}`}>
-                    <Col className={`${style.rowTitleLeft}`} lg={12}>
-                      <h5>Taxes List</h5>
-                    </Col>
-                  </Row>
-              </Card.Title>
-              <Card.Body>
-              <div className="table-responsive">
-                <table className={`table m-0 ${details.simpleTable}`}>
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Name</th>
-                      <th>Amount</th>
-                      <th>Linked Branches</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Service</td>
-                      <td>15%</td>
-                      <td>Branches(0)</td>
-                      <td>
-                      <div className={`${details.action}`}>
-                        <img src={ActionEdit} className={`${details.actionIcon}`} alt="img" />
-                        <img src={ActionDelete} className={`${details.actionIcon}`} alt="img" />
-                      </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Service</td>
-                      <td>15%</td>
-                      <td>Branches(0)</td>
-                      <td>
-                      <div className={`${details.action}`}>
-                        <img src={ActionEdit} className={`${details.actionIcon}`} alt="img" />
-                        <img src={ActionDelete} className={`${details.actionIcon}`} alt="img" />
-                      </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Service</td>
-                      <td>15%</td>
-                      <td>Branches(0)</td>
-                      <td>
-                      <div className={`${details.action}`}>
-                        <img src={ActionEdit} className={`${details.actionIcon}`} alt="img" />
-                        <img src={ActionDelete} className={`${details.actionIcon}`} alt="img" />
-                      </div>
-                      </td>
                     </tr>
                     
                   </tbody>
