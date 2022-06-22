@@ -598,6 +598,7 @@ export default function Cashiers() {
                 </Form.Select>
               </Col>
             </Form.Group>
+            
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
