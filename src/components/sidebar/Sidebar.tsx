@@ -206,27 +206,22 @@ const Sidebar = (props:any) => {
             <Accordion.Body>
               <ul>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/inventory/items">
                     <div className={`${style.menuName}`}>Items</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/inventory/suppliers">
                     <div className={`${style.menuName}`}>Suppliers</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/inventory/purchase">
                     <div className={`${style.menuName}`}>Purchase Orders</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
-                    <div className={`${style.menuName}`}>Purchase Orders</div>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/">
+                  <NavLink to="/inventory/transfer">
                     <div className={`${style.menuName}`}>Transfers</div>
                   </NavLink>
                 </li>
@@ -253,11 +248,6 @@ const Sidebar = (props:any) => {
             <Accordion.Body>
               <ul>
               <li>
-                  <NavLink to="/settings/cashiers">
-                    <div className={`${style.menuName}`}>Cashiers</div>
-                  </NavLink>
-                </li>
-                <li>
                   <NavLink to="/settings/roles">
                     <div className={`${style.menuName}`}>Roles</div>
                   </NavLink>
@@ -268,42 +258,48 @@ const Sidebar = (props:any) => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/settings/cashier">
-                    <div className={`${style.menuName}`}>Cashier</div>
+                  <NavLink to="/settings/cashiers">
+                    <div className={`${style.menuName}`}>Cashiers</div>
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="/">
-                    <div className={`${style.menuName}`}>Cashier</div>
+              
+              <li>
+                  <NavLink to="/settings/taxes">
+                    <div className={`${style.menuName}`}>Taxes</div>
                   </NavLink>
                 </li>
+            
+               
+               
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/settings/floors">
                     <div className={`${style.menuName}`}>Floors</div>
                   </NavLink>
                 </li>
+              
+                
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/settings/payment">
                     <div className={`${style.menuName}`}>Payments Methods</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/settings/delivery">
                     <div className={`${style.menuName}`}>Delivery Zones</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/settings/tags">
                     <div className={`${style.menuName}`}>Tags</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/settings/branch">
                     <div className={`${style.menuName}`}>Branches</div>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">
+                  <NavLink to="/settings/devices">
                     <div className={`${style.menuName}`}>Devices</div>
                   </NavLink>
                 </li>

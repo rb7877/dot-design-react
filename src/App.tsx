@@ -21,8 +21,23 @@ import Sessions from "./pages/Sales/Sessions/Sessions";
 import SessionsDetails from "./pages/Sales/Sessionsdetails/Sessionsdetails";
 import Cashiers from "./pages/Settings/Cashiers/Cashiers";
 import Employes from "./pages/Settings/Employes/Employes";
+import FLoors from "./pages/Settings/Floors/Floors.module";
 import Roles from "./pages/Settings/Roles/Roles";
+import Taxes from "./pages/Settings/Taxes/Taxes";
+import Payment from "./pages/Settings/Payment/Payment"
+import Delivery from "./pages/Settings/Delivery/Delivery";
+import ItemsSidebar from "./pages/Inventory/Items/Items";
+import Suppliers from "./pages/Inventory/Suppliers/Suppliers";
+import Tags from "./pages/Settings/Tags/Tags";
+import Devices from "./pages/Settings/Devices/Devices";
+ import Branch from "./pages/Settings/branch/Branch";
+import Purchase from "./pages/Inventory/Purchaseorder/Purchase";
+import Puchaseorder from "./pages/Inventory/Purchaseorder/Purhaseorder";
+import Transfer from "./pages/Inventory/Transfer/Transfer";
+import Transferorder from "./pages/Inventory/Transfer/Transferorder";
 
+import { CreateBranch } from "./pages/Settings/branch/Createbranch";
+import Acounting from "./pages/Settings/branch/Acounting";
 
 function App() {
   return (
@@ -100,7 +115,62 @@ function App() {
             <Route exact path="/settings/cashiers">
               <Cashiers />
             </Route>
+            <Route exact path="/settings/taxes">
+              <Taxes/>
+            </Route>
+            <Route exact path="/settings/floors">
+              <FLoors/>
+            </Route>
+            <Route exact path="/settings/payment">
+             <Payment/>
+            </Route>
+            
+            <Route exact path="/settings/delivery">
+             <Delivery/>
+            </Route>
+
+            <Route exact path="/inventory/items">
+             <ItemsSidebar/>
+            </Route>
+
+            <Route exact path="/inventory/suppliers">
+             <Suppliers/>
+            </Route>
+            <Route exact path="/settings/tags">
+             <Tags/>
+            </Route>
+
+            <Route exact path="/settings/devices">
+             <Devices/>
+            </Route>
+            {/* <Route exact path="/settings/branch">
+             <Branch/>
+            </Route> */}
                                        
+
+            <Route exact path="/inventory/purchase">
+             <Purchase/>
+            </Route>
+            <Route exact path="/inventory/purchase/purchaseorder">
+             <Puchaseorder/>
+             </Route>
+             <Route exact path="/inventory/transfer">
+             <Transfer/>
+            </Route>
+
+            <Route exact path="/inventory/transfer/transferorder">
+             <Transferorder/>
+             </Route>
+
+             <Route exact path="/settings/branch">
+             <Branch/>
+            </Route>
+            <Route exact path="/settings/branch/add-branch">
+             <CreateBranch/>
+            </Route> 
+            <Route exact path="/settings/branch/acounting">
+             <Branch/>
+            </Route>      
           </Switch>
         </div>
       </Router>

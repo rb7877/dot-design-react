@@ -41,7 +41,7 @@ const handleButtonClick = () => {
 
 const data = [
   {
-    id: 1,
+     id: 1,
      col1:"1",
      col2: "Test1",
      col3: "68889805",
@@ -186,6 +186,7 @@ export default function Cashiers() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
+  const [editCustomerShow, setEditCustomer] = useState(false);
 
   const columns = [
     {
@@ -237,11 +238,11 @@ export default function Cashiers() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <NavLink to="/sales/sessions/sessions-details"><img
+          <img
             src={ActionEdit}
             className={`${cx.actionIcon}`}
-            alt="img"/>
-          </NavLink>
+            alt="img" onClick={() => setEditCustomer(true)}
+             />
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
@@ -594,11 +595,10 @@ export default function Cashiers() {
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
-                  <option>Yes</option>
+                  <option>All</option>
                 </Form.Select>
               </Col>
             </Form.Group>
-            
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -614,6 +614,219 @@ export default function Cashiers() {
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
                   Apply
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal>
+
+      <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={editCustomerShow}
+        onHide={() => setEditCustomer(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+      <Form>
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+          Edit Cashier
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form.Group
+            className={`row align-items-center ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Add New Cashier</Form.Label>
+            </Col>
+            <Col lg={8}>
+            <Form.Control type="text" placeholder="Cashier2" />
+            </Col>
+          </Form.Group>
+          <Form.Group
+            className={`row align-items-center ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Email</Form.Label>
+            </Col>
+            <Col lg={8}>
+              <Form.Control type="text" placeholder="Tester1@gmail.com" />
+            </Col>
+          </Form.Group>
+          <Form.Group
+            className={`row align-items-center ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Login Pin (4 Digit)</Form.Label>
+            </Col>
+            <Col lg={8}>
+              <Form.Control type="text" placeholder="1234" />
+            </Col>
+          </Form.Group>
+          
+           <Form.Group
+            className={`row align-items-center ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Confirm Login Pin</Form.Label>
+            </Col>
+            <Col lg={8}>
+              <Form.Control type="text" placeholder="1234" />
+            </Col>
+          </Form.Group>
+          <Form.Group
+            className={`row align-items-center ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Cashier Phone</Form.Label>
+            </Col>
+            <Col lg={8}>
+              <Form.Control type="text" placeholder="+55-423-556-332" />
+            </Col>
+          </Form.Group>
+          <Form.Group
+            className={`row align-items-center ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Choose Restaurant</Form.Label>
+            </Col>
+            <Col lg={8}>
+            <Form.Select aria-label="Source">
+                <option> Restaurant 1</option>
+              </Form.Select>
+            </Col>
+          </Form.Group>
+          <Form.Group
+            className={`row align-items-center ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Choose Branch</Form.Label>
+            </Col>
+            <Col lg={8}>
+            <Form.Select aria-label="Source">
+                <option>Branch 1</option>
+              </Form.Select>
+            </Col>
+          </Form.Group>
+      
+          <Form.Group
+            className={`row ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Description</Form.Label>
+            </Col>
+            <Col lg={8}>
+           
+            <Form.Control as="textarea" rows={3} />
+            
+            </Col>
+          </Form.Group>
+      
+
+          <Form.Group
+            className={`row align-items-center ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Image</Form.Label>
+            </Col>
+            <Col lg={3}>
+            
+            <button type="button" className={`btn ${cx.Choosebtn}`}>
+            asder.JPEG
+                </button>
+             
+            </Col>
+          </Form.Group>
+      
+          <Form.Group
+            className={`row align-items-center ${cx.formBox}`}
+            controlId="formName"
+          >
+            <Col lg={4}>
+              <Form.Label>Activate</Form.Label>
+            </Col>
+            <Col lg={8}>
+            <Form.Select aria-label="Source">
+                <option>Yes</option>
+              </Form.Select>
+            </Col>
+          </Form.Group>
+        </Modal.Body>
+        <Modal.Footer>
+          <Col lg={12}>
+            <Row className="align-items-center">
+              <Col lg={6} className={`${cx.leftft}`}>
+              <button type="button" className={`btn ${cx.apply}`}>
+                Clear
+                </button>
+              </Col>
+              <Col lg={6} className={`${cx.rightft}`}>
+                <button type="button" className={`btn ${cx.close}`}>
+                  Close
+                </button>
+                <button type="button" className={`btn ${cx.apply}`}>
+                Apply
+                </button>
+              </Col>
+            </Row>
+          </Col>
+        </Modal.Footer>
+      </Form>
+      </Modal>
+
+
+
+      <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">Filter</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Qwerty" />
+              </Col>
+            </Form.Group>
+           
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${cx.leftft}`}>
+                  <button type="button" className={`${style.bgremove}`}>
+                    Clear
+                  </button>
+                </Col>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Apply
                   </button>
                 </Col>
               </Row>

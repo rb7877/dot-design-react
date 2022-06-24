@@ -1,0 +1,243 @@
+.table50 {
+
+    td {
+        width:50%;
+    }
+    th {
+        width:50%;
+    }
+}
+
+.totalPayment {
+    display:inline-block;
+    width:100%;
+
+    .simpleTable {
+       width:400px;
+       float: right;
+       margin-right: 20px !important;
+
+        td {
+           text-align: right;
+           border: none;
+        }
+        th {
+           border:none;
+        }
+    }
+
+}
+
+.simpleTable {
+
+    thead {
+
+        tr {
+            background-color: var(--Main2);
+            color:#fff;
+        }
+    }
+
+    th {
+        font-weight: 500;
+        padding: 15px 15px;
+        vertical-align: middle;
+    }
+
+    td {
+         padding: 15px 15px;
+         vertical-align: middle;
+    }
+    tbody {
+       border-top: none !important;
+       background: #fff;
+
+       .nameList {
+
+            h6 {
+                margin-bottom: 3px;
+            }
+            p {
+                margin: 0;
+                color: #909090;
+                font-size: 14px;
+            }
+       }
+    }
+}
+
+.action {
+
+    .actionIcon {
+        margin-right:20px;
+        cursor: pointer;
+    }
+}
+.date {
+
+    h6 {
+        font-size:15px;
+        font-weight:500;
+        margin-bottom:0;
+    }
+    p {
+        font-size:14px;
+        color:#909090;
+        margin:0;
+    }
+}
+
+
+.ctsPopup {
+
+    :global(.modal-dialog) {
+        
+        :global(.modal-content) {
+            border:none;
+            border-radius: 8px;
+            
+            :global(.modal-header) {
+                background-color:var(--Main2);
+                color:#fff;
+                padding: 15px 20px;
+
+                :global(.btn-close) {
+                    color: #fff;
+                    filter: invert(338%) sepia(0%) saturate(2467%) hue-rotate(130deg) brightness(95%) contrast(320%);
+                    opacity: 1;
+                }
+            }
+            :global(.modal-body) {
+                padding: 20px 20px;
+
+                .formBox {
+                    margin-bottom: 15px;
+
+                    :global(.form-label) {
+                        margin: 0;
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    :global(.form-control) {
+                        border: 1px solid #d7d7d7;
+                        border-radius: 8px;
+                        padding: 10px 12px;
+
+                        &:focus {
+                            box-shadow:none;
+                            border-color:var(--Main2);
+                        }
+                    }
+                    :global(.form-select) {
+                        border: 1px solid #d7d7d7;
+                        border-radius: 8px;
+                        padding: 10px 12px;
+
+                        &:focus {
+                            box-shadow:none;
+                            border-color:var(--Main2);
+                        }
+                    }
+                }
+            }
+            
+            :global(.modal-footer) {
+                padding: 25px 15px;
+                justify-content: center;
+
+                .leftft {
+
+                    button {
+                        color:var(--Main2);
+                        font-size:18px;
+                        font-weight:600;
+                    }
+                }
+                .rightft {
+                    text-align: right;
+
+                    button {
+                        padding: 10px 30px;
+                        margin-left: 15px;
+                        border-radius: 8px;
+                    }
+                    .close {
+                        background:#AACBFE;
+                        color:#fff;
+                    }
+                    .apply {
+                        background:var(--Main2);
+                        color:#fff;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+/*=======================================================
+//////////////RESPONSIVE MEDIA QUERY START///////////////
+=======================================================*/
+@media (max-width: 767px) {
+
+    .totalPayment {
+    
+        .simpleTable {
+           width:100%;
+           margin-right: 0px !important;
+        }
+    
+    }
+
+    .ctsPopup {
+
+        :global(.modal-dialog) {
+            
+            :global(.modal-content) {
+                
+                :global(.modal-body) {
+
+                    .formBox {
+
+                        :global(.form-label) {
+                            margin-bottom:10px;
+                        }
+                    }
+                }
+                
+                
+                :global(.modal-footer) {
+                    display: block;
+
+                    .leftft {
+
+                        button {
+                            color:var(--Main2);
+                            font-size:18px;
+                            font-weight:600;
+                        }
+                    }
+                    .rightft {
+                        display: flex;
+                        margin-top: 15px;
+
+                        button {
+                            width: 49%;
+                            justify-content: center;
+
+                            &.close {
+                               margin: 0px 5px 0px 0px;
+                            }
+                            &.apply {
+                               margin: 0px 0px 0px 5px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
