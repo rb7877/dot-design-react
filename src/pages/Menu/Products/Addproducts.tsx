@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form,Tab,Tabs} from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 import { NavLink } from "react-router-dom";
@@ -42,104 +42,34 @@ const handleButtonClick = () => {
 const data = [
   {
     id: 1,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
+    col0:"1",
+    col1: "Test",
+    col2: "Cashier",
+     col3: "Cashier",
+    col4: "Cashier",
+    col5:"Cashier",
    },
    {
     id: 2,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 3,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 4,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 5,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 6,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 7,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 8,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 9,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
+    col0:"2",
+    col1: "Test",
+    col2: "Cashier",
+     col3: "Cashier",
+    col4: "Cashier",
+    col5:"Cashier",
    },
    {
-    id: 10,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-   {
-    id: 11,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-
+    id: 2,
+    col0:"3",
+    col1: "Test",
+    col2: "Cashier",
+     col3: "Cashier",
+    col4: "Cashier",
+    col5:"Cashier",
+   }
 ];
 
-export default function Products() {
+export default function Addproducts() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -153,31 +83,26 @@ export default function Products() {
   const [addCustomerShow, setAddCustomer] = useState(false);
 
   const columns = [
-    {
-      name: "Name",
-      selector: (row: any) => row.col1,
+    { name: "No",
+      selector: (row: any) => row.col0,
         sortable: true,
     },
   
   
     {
-      name: "SKU",
-      selector: (row: any) => row.col2,
+        name: "Name",
+      selector: (row: any) => row.col1,
       sortable: true,
     },
     
     {
-      name: "Category",
+      name: "Upgradable",
       selector: (row: any) => row.col3,
       sortable: true,
     },
+    
     {
-      name: "Size",
-      selector: (row: any) => row.col4,
-      sortable: true,
-    },
-    {
-      name: "Modifier",
+      name: "Option",
       selector: (row: any) => row.col5,
       sortable: true,
     },
@@ -268,7 +193,7 @@ export default function Products() {
               {props.paginationIconFirstPage}
             </Button> */}
 
-          <Button
+          {/* <Button
             className={`${table.previousBtn} ${table.actBtn}`}
             id="pagination-previous-page"
             aria-label="Previous Page"
@@ -286,9 +211,9 @@ export default function Products() {
             aria-disabled={disabledGreater}
             onClick={handleNext}
             disabled={disabledGreater}
-          >
-            {props.paginationIconNext}
-          </Button>
+          > */}
+            {/* {props.paginationIconNext}
+          </Button> */}
 
           {/* <Button
               id="pagination-last-page"
@@ -313,36 +238,15 @@ export default function Products() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Product List</h5>
-              </Col>
-              <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-              <button
-                  className={`btn ${style.width50}`}
-                  onClick={() => setLgShow(true)}
-                >
-                  Filter
-                </button>
-                <button
-                  className={`btn ${style.width50}`}
-                  onClick={() => setLgShow(true)}
-                >
-                  Import
-                </button>
-          
-                <NavLink to="/menu/products/addproducts">  
-                <button
-                  className={`btn ${style.width50}`}
-                  onClick={() => setAddCustomer(true)}
-                >
-                + Add Product
-                </button>
-                </NavLink>
-                
+              <h5><NavLink to="/menu/products" className={`${style.back}`}>Back</NavLink> Add Combos</h5>
               </Col>
             </Row>
           </Card.Title>
           <Card.Body>
-            <div className={`${table.dataTableBox}`}>
+          <div className={`${cx.tabsSection}`}>
+            <Tabs defaultActiveKey="UnitsOptions" id="uncontrolled-tab-example" className="mb-3">
+              <Tab eventKey="UnitsOptions" title="Units Options">
+              <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
                   columns={columns}
@@ -350,7 +254,6 @@ export default function Products() {
                   subHeader
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
-                  pagination
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -366,7 +269,92 @@ export default function Products() {
                 />{" "}
               </Box>
             </div>
+              </Tab>
+              <Tab eventKey="BasicInformation" title="Basic Information ">
+
+              <div className={`${table.dataTableBox}`}>
+              <Box sx={{ width: 1 }}>
+                <DataTable
+                  columns={columns}
+                  data={filteredItems}
+                  subHeader
+                  subHeaderAlign={Alignment.LEFT}
+                  persistTableHead
+                  paginationIconNext={nextIcon}
+                  paginationIconPrevious={previewIcon}
+                  paginationIconFirstPage={nextIconD}
+                  paginationIconLastPage={previewIconD}
+                  paginationComponentOptions={paginationComponentOptions}
+                  paginationComponent={pagcomp}
+                  customStyles={customStyles}
+                  paginationDefaultPage={currentPage}
+                  onChangeRowsPerPage={handlePerRowsChange}
+                  onChangePage={handlePageChange}
+                  //   expandableRows
+                  //   expandableRowsComponent={ExpandedComponent}
+                />{" "}
+              </Box>
+            </div>
+              </Tab>
+              <Tab eventKey="ComboItems" title="Combo Items ">
+
+              <div className={`${table.dataTableBox}`}>
+              <Box sx={{ width: 1 }}>
+                <DataTable
+                  columns={columns}
+                  data={filteredItems}
+                  subHeader
+                  subHeaderAlign={Alignment.LEFT}
+                  persistTableHead
+                  paginationIconNext={nextIcon}
+                  paginationIconPrevious={previewIcon}
+                  paginationIconFirstPage={nextIconD}
+                  paginationIconLastPage={previewIconD}
+                  paginationComponentOptions={paginationComponentOptions}
+                  paginationComponent={pagcomp}
+                  customStyles={customStyles}
+                  paginationDefaultPage={currentPage}
+                  onChangeRowsPerPage={handlePerRowsChange}
+                  onChangePage={handlePageChange}
+                  //   expandableRows
+                  //   expandableRowsComponent={ExpandedComponent}
+                />{" "}
+              </Box>
+            </div>
+              </Tab>
+              <Tab eventKey="PricesandSizes" title="Prices and Sizes">
+
+              <div className={`${table.dataTableBox}`}>
+              <Box sx={{ width: 1 }}>
+                <DataTable
+                  columns={columns}
+                  data={filteredItems}
+                  subHeader
+                  subHeaderAlign={Alignment.LEFT}
+                  persistTableHead
+                  paginationIconNext={nextIcon}
+                  paginationIconPrevious={previewIcon}
+                  paginationIconFirstPage={nextIconD}
+                  paginationIconLastPage={previewIconD}
+                  paginationComponentOptions={paginationComponentOptions}
+                  paginationComponent={pagcomp}
+                  customStyles={customStyles}
+                  paginationDefaultPage={currentPage}
+                  onChangeRowsPerPage={handlePerRowsChange}
+                  onChangePage={handlePageChange}
+                  //   expandableRows
+                  //   expandableRowsComponent={ExpandedComponent}
+                />{" "}
+              </Box>
+            </div>
+               </Tab>
+    
+           </Tabs>
+</div>
+           
+          
           </Card.Body>
+          
         </Card>
       </section>
       <Footer />

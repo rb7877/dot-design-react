@@ -20,7 +20,7 @@ export default function SessionsDetails() {
                   <Row className={`align-items-center ${style.rowTitle}`}>
                     <Col className={`${style.rowTitleLeft}`} lg={6}>
                       <h5>
-                        <NavLink to="/sales/sessions" className={`${style.back}`}>Back</NavLink>
+                        <NavLink to="/sales/sessions/sessionsorder" className={`${style.back}`}>Back</NavLink>
                         Order #73</h5>
                     </Col>
                     <Col className={`${style.rowTitleRight}`} lg={6}>

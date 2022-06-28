@@ -43,17 +43,48 @@ const Header = (props:any) => {
                             </Dropdown>
                         </li>
                         <li className={`${style.profileBox}`}>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="a" id="dropdown-basic">
-                                    <div className={`${style.menuTT}`}>
-                                        <img src={profile} className={`${style.profileImg}`} alt="logo" />
-                                    </div>
-                                </Dropdown.Toggle>
+                        <Dropdown>
+                                        <Dropdown.Toggle variant="a" id="dropdown-basic">
+                                            <div className={`${style.menuTT}`}>
+                                               <img src={profile} className={`${style.profileImg}`} alt="logo" />
+                                            </div>
+                                        </Dropdown.Toggle>
 
-                                {/* <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">Account</Dropdown.Item>
-                                </Dropdown.Menu> */}
-                            </Dropdown>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Item className={`${style.borderM}`} href="#">
+                                                <p>User ID : </p>
+                                                <h5>157106</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item className={`${style.borderM}`} href="#">
+                                                <p>User 1 </p>
+                                                <h5>usertester1@gmail.com</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item className={`${style.borderM}`} href="/">
+                                                <h5>Logout</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item className={`${style.pSpace}`} href="#">
+                                                <h5>00966-920028928</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>Support @Foodict.com</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>Live Chat</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>Knowledge Base</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>System update</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>Feature Suggestion</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>F5 Account : 157106</h5>
+                                            </Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
 
                             {/* <NavLink variant="a" className={`dropdown-toggle`} id="dropdown-basic" to="/">
                                 <img src="images/profile.png" className={`${style.profileImg}`} alt="profile" />
@@ -98,9 +129,40 @@ const Header = (props:any) => {
                                             </div>
                                         </Dropdown.Toggle>
 
-                                        {/* <Dropdown.Menu>
-                                            <Dropdown.Item href="#/action-1">Account</Dropdown.Item>
-                                        </Dropdown.Menu> */}
+                                        <Dropdown.Menu>
+                                            <Dropdown.Item className={`${style.borderM}`} href="#">
+                                                <p>User ID : </p>
+                                                <h5>157106</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item className={`${style.borderM}`} href="#">
+                                                <p>User 1 </p>
+                                                <h5>usertester1@gmail.com</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item className={`${style.borderM}`} href="/">
+                                                <h5>Logout</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item className={`${style.pSpace}`} href="#">
+                                                <h5>00966-920028928</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>Support @Foodict.com</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>Live Chat</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>Knowledge Base</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>System update</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>Feature Suggestion</h5>
+                                            </Dropdown.Item>
+                                            <Dropdown.Item href="#">
+                                                <h5>F5 Account : 157106</h5>
+                                            </Dropdown.Item>
+                                        </Dropdown.Menu>
                                     </Dropdown>
 
                                     {/* <NavLink variant="a" className={`dropdown-toggle`} id="dropdown-basic" to="/">

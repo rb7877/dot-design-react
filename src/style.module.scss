@@ -94,6 +94,41 @@ body {
                         }
                         
                     }
+                    :global(.dropdown-menu) {
+                       background-color:var(--Main2);
+                       border-color:var(--Main2);
+                       color:#fff;
+                       min-width: 250px;
+                       border-radius: 8px;
+                       margin-right: 2px !important;
+
+                       :global(.dropdown-item) {
+                           color:#fff;
+                           padding: 10px 15px;
+
+                           &.borderM {
+                                border-bottom: 1px solid #AACBFE;
+                                padding: 15px 15px;
+                           }
+                           &.pSpace {
+                               margin-top:10px;
+                           }
+
+                          p {
+                            margin-bottom: 5px;
+                            font-size: 14px;
+                          }
+                          h5 {
+                            margin: 0;
+                            font-size: 16px;
+                            font-weight:normal;
+                          }
+
+                          &:hover, &:focus {
+                              background:transparent;
+                          }
+                       }
+                    }
                 }
 
                 &.help {

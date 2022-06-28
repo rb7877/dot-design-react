@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form, Tabs, Tab } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 import { NavLink } from "react-router-dom";
@@ -182,7 +182,6 @@ export default function Transfer() {
       name: "Reference",
       selector: (row: any) => row.col1,
         sortable: true,
-        width: "80px",
     },
     {
       name: "Supplier",
@@ -354,6 +353,10 @@ export default function Transfer() {
             </Row>
           </Card.Title>
           <Card.Body>
+
+          <div className={`${cx.tabsSection}`}>
+          <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" className="mb-3">
+            <Tab eventKey="all" title="ALL">
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -378,6 +381,61 @@ export default function Transfer() {
                 />
               </Box>
             </div>
+            </Tab>
+            <Tab eventKey="sending" title="Sending">
+            <div className={`${table.dataTableBox}`}>
+              <Box sx={{ width: 1 }}>
+                <DataTable
+                  columns={columns}
+                  data={filteredItems}
+                  subHeader
+                  subHeaderAlign={Alignment.LEFT}
+                  persistTableHead
+                  pagination
+                  paginationIconNext={nextIcon}
+                  paginationIconPrevious={previewIcon}
+                  paginationIconFirstPage={nextIconD}
+                  paginationIconLastPage={previewIconD}
+                  paginationComponentOptions={paginationComponentOptions}
+                  paginationComponent={pagcomp}
+                  customStyles={customStyles}
+                  paginationDefaultPage={currentPage}
+                  onChangeRowsPerPage={handlePerRowsChange}
+                  onChangePage={handlePageChange}
+                  //   expandableRows
+                  //   expandableRowsComponent={ExpandedComponent}
+                />
+              </Box>
+            </div>
+            </Tab>
+            <Tab eventKey="receiving" title="Receiving">
+            <div className={`${table.dataTableBox}`}>
+              <Box sx={{ width: 1 }}>
+                <DataTable
+                  columns={columns}
+                  data={filteredItems}
+                  subHeader
+                  subHeaderAlign={Alignment.LEFT}
+                  persistTableHead
+                  pagination
+                  paginationIconNext={nextIcon}
+                  paginationIconPrevious={previewIcon}
+                  paginationIconFirstPage={nextIconD}
+                  paginationIconLastPage={previewIconD}
+                  paginationComponentOptions={paginationComponentOptions}
+                  paginationComponent={pagcomp}
+                  customStyles={customStyles}
+                  paginationDefaultPage={currentPage}
+                  onChangeRowsPerPage={handlePerRowsChange}
+                  onChangePage={handlePageChange}
+                  //   expandableRows
+                  //   expandableRowsComponent={ExpandedComponent}
+                />
+              </Box>
+            </div>
+            </Tab>
+          </Tabs>
+          </div>
           </Card.Body>
         </Card>
       </section>

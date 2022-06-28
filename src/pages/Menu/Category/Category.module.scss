@@ -135,6 +135,39 @@
                 }
             }
             
+
+
+            .formBox {
+                margin-bottom: 15px;
+            
+                :global(.form-label) {
+                    margin: 0;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                :global(.form-control) {
+                    border: 1px solid #d7d7d7;
+                    border-radius: 8px;
+                    padding: 10px 12px;
+            
+                    &:focus {
+                        box-shadow:none;
+                        border-color:var(--Main2);
+                    }
+                }
+                :global(.form-select) {
+                    border: 1px solid #d7d7d7;
+                    border-radius: 8px;
+                    padding: 10px 12px;
+            
+                    &:focus {
+                        box-shadow:none;
+                        border-color:var(--Main2);
+                    }
+                }
+            }
+            
+            
             :global(.modal-footer) {
                 padding: 25px 15px;
                 justify-content: center;
@@ -170,6 +203,7 @@
     }
 }
 
+
 .formBox {
     margin-bottom: 15px;
 
@@ -199,6 +233,7 @@
         }
     }
 }
+
 
 
 
@@ -238,11 +273,62 @@
     
 }
 
+.tabsSection {
+
+    :global(.nav-tabs) {
+        border: none;
+
+        :global(.nav-item) {
+            width: 25%;
+            text-align: center;
+
+            :global(.nav-link) {
+                width: 100%;
+                background: #CCE0FE;
+                border-radius: 0px;
+                color: #AAAAAA;
+                padding: 20px 20px;
+                border: none;
+
+                &:global(.active) {
+                    background-color: #AACBFE;
+                    color: #000;
+                }
+            }
+
+        }
+    }
+}
+
+
+
 /*=======================================================
 //////////////RESPONSIVE MEDIA QUERY START///////////////
 =======================================================*/
 @media (max-width: 767px) {
 
+    .tabsSection {
+
+        :global(.nav-tabs) {
+    
+            :global(.nav-item) {
+                margin-bottom: 5px;
+    
+                :global(.nav-link) {
+                    padding: 12px 20px;
+                    min-width: 100px;
+    
+                    &:global(.active) {
+                        background-color: var(--Main2);
+                        color: #fff;
+                    }
+                }
+    
+            }
+        }
+    }
+    
+       
    
     .ctsPopup {
 

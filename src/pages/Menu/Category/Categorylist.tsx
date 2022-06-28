@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Products.module.scss";
+import cx from "./Category.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -43,103 +43,26 @@ const data = [
   {
     id: 1,
     col1: "Maple Shrimp",
-    col2: "Pops",
+    col2: " Pops",
      col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
+     col4:"Sizes (1)",
+     col5:"Sizes (1)",
+    col6: "---",
    },
+ 
    {
     id: 2,
     col1: "Maple Shrimp",
-    col2: "Pops",
+    col2: " Pops",
      col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
+     col4:"Sizes (1)",
+     col5:"Sizes (1)",
+    col6: "---",
    },
-
-   {
-    id: 3,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 4,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 5,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 6,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 7,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 8,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
-   {
-    id: 9,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-   {
-    id: 10,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-   {
-    id: 11,
-    col1: "Maple Shrimp",
-    col2: "Pops",
-     col3: "Pops",
-    col4: "Sizes (1)",
-    col5:"Sizes (1)",
-   },
-
 
 ];
 
-export default function Products() {
+export default function Categorylist() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -158,14 +81,13 @@ export default function Products() {
       selector: (row: any) => row.col1,
         sortable: true,
     },
-  
+   
   
     {
       name: "SKU",
       selector: (row: any) => row.col2,
       sortable: true,
     },
-    
     {
       name: "Category",
       selector: (row: any) => row.col3,
@@ -181,18 +103,16 @@ export default function Products() {
       selector: (row: any) => row.col5,
       sortable: true,
     },
-    
     {
       name: "Action",
       selector: (row: any) => row.col6,
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <NavLink to=""><img
+          <img
             src={ActionEdit}
             className={`${cx.actionIcon}`}
             alt="img"/>
-          </NavLink>
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
@@ -313,31 +233,19 @@ export default function Products() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Product List</h5>
+                <h5>Product List #1</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-              <button
-                  className={`btn ${style.width50}`}
-                  onClick={() => setLgShow(true)}
-                >
-                  Filter
-                </button>
-                <button
-                  className={`btn ${style.width50}`}
-                  onClick={() => setLgShow(true)}
-                >
-                  Import
-                </button>
+              
+            
           
-                <NavLink to="/menu/products/addproducts">  
                 <button
                   className={`btn ${style.width50}`}
                   onClick={() => setAddCustomer(true)}
                 >
                 + Add Product
                 </button>
-                </NavLink>
-                
+          
               </Col>
             </Row>
           </Card.Title>
@@ -350,7 +258,7 @@ export default function Products() {
                   subHeader
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
-                  pagination
+                
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -368,6 +276,8 @@ export default function Products() {
             </div>
           </Card.Body>
         </Card>
+
+
       </section>
       <Footer />
 

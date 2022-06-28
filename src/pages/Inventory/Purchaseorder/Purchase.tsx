@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form, Tabs } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form, Tabs, Tab } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 import { NavLink } from "react-router-dom";
@@ -198,6 +198,11 @@ export default function Purchase() {
       name: "Status",
       selector: (row: any) => row.col4,
       sortable: true,
+      cell: () => (
+        <div className={`${cx.date}`}>
+          <h5 style={{ color:'#52C41A' }}>Approved</h5>
+        </div>
+      ),
     },
    
     
@@ -355,31 +360,118 @@ export default function Purchase() {
           </Card.Title>
           <Card.Body>
 
+          <div className={`${cx.tabsSection}`}>
+          <Tabs defaultActiveKey="all" id="uncontrolled-tab-example" className="mb-3">
+            <Tab eventKey="all" title="ALL">
+              <div className={`${table.dataTableBox}`}>
+                <Box sx={{ width: 1 }}>
+                  <DataTable
+                    columns={columns}
+                    data={filteredItems}
+                    subHeader
+                    subHeaderAlign={Alignment.LEFT}
+                    persistTableHead
+                    pagination
+                    paginationIconNext={nextIcon}
+                    paginationIconPrevious={previewIcon}
+                    paginationIconFirstPage={nextIconD}
+                    paginationIconLastPage={previewIconD}
+                    paginationComponentOptions={paginationComponentOptions}
+                    paginationComponent={pagcomp}
+                    customStyles={customStyles}
+                    paginationDefaultPage={currentPage}
+                    onChangeRowsPerPage={handlePerRowsChange}
+                    onChangePage={handlePageChange}
+                    //   expandableRows
+                    //   expandableRowsComponent={ExpandedComponent}
+                  />
+                </Box>
+              </div>
+            </Tab>
+            
+            <Tab eventKey="draft" title="Draft">
+              <div className={`${table.dataTableBox}`}>
+                <Box sx={{ width: 1 }}>
+                  <DataTable
+                    columns={columns}
+                    data={filteredItems}
+                    subHeader
+                    subHeaderAlign={Alignment.LEFT}
+                    persistTableHead
+                    pagination
+                    paginationIconNext={nextIcon}
+                    paginationIconPrevious={previewIcon}
+                    paginationIconFirstPage={nextIconD}
+                    paginationIconLastPage={previewIconD}
+                    paginationComponentOptions={paginationComponentOptions}
+                    paginationComponent={pagcomp}
+                    customStyles={customStyles}
+                    paginationDefaultPage={currentPage}
+                    onChangeRowsPerPage={handlePerRowsChange}
+                    onChangePage={handlePageChange}
+                    //   expandableRows
+                    //   expandableRowsComponent={ExpandedComponent}
+                  />
+                </Box>
+              </div>
+            </Tab>
+            
+            <Tab eventKey="pending" title="Pending">
+              <div className={`${table.dataTableBox}`}>
+                <Box sx={{ width: 1 }}>
+                  <DataTable
+                    columns={columns}
+                    data={filteredItems}
+                    subHeader
+                    subHeaderAlign={Alignment.LEFT}
+                    persistTableHead
+                    pagination
+                    paginationIconNext={nextIcon}
+                    paginationIconPrevious={previewIcon}
+                    paginationIconFirstPage={nextIconD}
+                    paginationIconLastPage={previewIconD}
+                    paginationComponentOptions={paginationComponentOptions}
+                    paginationComponent={pagcomp}
+                    customStyles={customStyles}
+                    paginationDefaultPage={currentPage}
+                    onChangeRowsPerPage={handlePerRowsChange}
+                    onChangePage={handlePageChange}
+                    //   expandableRows
+                    //   expandableRowsComponent={ExpandedComponent}
+                  />
+                </Box>
+              </div>
+            </Tab>
 
-            <div className={`${table.dataTableBox}`}>
-              <Box sx={{ width: 1 }}>
-                <DataTable
-                  columns={columns}
-                  data={filteredItems}
-                  subHeader
-                  subHeaderAlign={Alignment.LEFT}
-                  persistTableHead
-                  pagination
-                  paginationIconNext={nextIcon}
-                  paginationIconPrevious={previewIcon}
-                  paginationIconFirstPage={nextIconD}
-                  paginationIconLastPage={previewIconD}
-                  paginationComponentOptions={paginationComponentOptions}
-                  paginationComponent={pagcomp}
-                  customStyles={customStyles}
-                  paginationDefaultPage={currentPage}
-                  onChangeRowsPerPage={handlePerRowsChange}
-                  onChangePage={handlePageChange}
-                  //   expandableRows
-                  //   expandableRowsComponent={ExpandedComponent}
-                />
-              </Box>
-            </div>
+            
+            <Tab eventKey="closed" title="Closed">
+              <div className={`${table.dataTableBox}`}>
+                <Box sx={{ width: 1 }}>
+                  <DataTable
+                    columns={columns}
+                    data={filteredItems}
+                    subHeader
+                    subHeaderAlign={Alignment.LEFT}
+                    persistTableHead
+                    pagination
+                    paginationIconNext={nextIcon}
+                    paginationIconPrevious={previewIcon}
+                    paginationIconFirstPage={nextIconD}
+                    paginationIconLastPage={previewIconD}
+                    paginationComponentOptions={paginationComponentOptions}
+                    paginationComponent={pagcomp}
+                    customStyles={customStyles}
+                    paginationDefaultPage={currentPage}
+                    onChangeRowsPerPage={handlePerRowsChange}
+                    onChangePage={handlePageChange}
+                    //   expandableRows
+                    //   expandableRowsComponent={ExpandedComponent}
+                  />
+                </Box>
+              </div>
+            </Tab>
+          </Tabs>
+          </div>
           </Card.Body>
         </Card>
       </section>

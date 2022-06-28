@@ -401,7 +401,7 @@ export default function Customers() {
       >
         <Form>
           <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">Filter</Modal.Title>
+            <Modal.Title id="example-modal-sizes-title-lg">Filter result</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form.Group
@@ -420,6 +420,17 @@ export default function Customers() {
               controlId="formName"
             >
               <Col lg={4}>
+                <Form.Label>Phone Number</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="0565434" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
                 <Form.Label>Email</Form.Label>
               </Col>
               <Col lg={8}>
@@ -431,12 +442,27 @@ export default function Customers() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Phone Number</Form.Label>
+                <Form.Label>Tag</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="0565434" />
+                <Form.Control type="text" placeholder="All" />
               </Col>
             </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Has Email</Form.Label>
+              </Col>
+            
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>All </option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+           
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>

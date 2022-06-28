@@ -239,7 +239,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Purchase Order (PO-000001) Approved</h5>
+                <h5>Purchase Order (PO-000001) <span style={{ color:'#52C41A' }}>Approved</span></h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
              

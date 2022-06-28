@@ -40,12 +40,21 @@ import { CreateBranch } from "./pages/Settings/branch/Createbranch";
 import Acounting from "./pages/Settings/branch/Acounting";
 import Category from "./pages/Menu/Category/Category";
 
+
+
 import Products from "./pages/Menu/Products/Products";
 import Modifier from "./pages/Menu/Modifier/Modifier";
 import Display from "./pages/Menu/Display/Display";
 import Role from "./pages/Menu/Role/Role";
 
 import Branches from "./pages/Settings/Delivery/Branches";
+
+import Categorydetails from "./pages/Menu/Category/Categorydetails";
+import Categorylist from "./pages/Menu/Category/Categorylist";
+
+import Addproducts from "./pages/Menu/Products/Addproducts";
+
+import Sessionsorder from "./pages/Sales/Sessions/Sessionsorder";
 
 function App() {
   return (
@@ -203,6 +212,25 @@ function App() {
             <Route exact path="/settings/delivery/branches">
              <Branches/>
             </Route>
+
+            <Route exact path="/menu/category/categorydetails">
+             <Categorydetails/>
+            </Route>  
+
+            <Route exact path="/menu/category/categorylist">
+             <Categorylist/>
+            </Route>  
+
+
+            <Route exact path="/menu/products/addproducts">
+            <Addproducts/>
+            </Route> 
+
+
+            <Route exact path="/sales/sessions/sessionsorder">
+              <Sessionsorder />
+            </Route>
+
           </Switch>
         </div>
       </Router>

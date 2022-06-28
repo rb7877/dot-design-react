@@ -238,7 +238,7 @@ export default function Sessions() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <NavLink to="/sales/sessions/sessions-details"><img
+          <NavLink to="/sales/sessions/sessionsorder"><img
             src={ActionEdit}
             className={`${cx.actionIcon}`}
             alt="img"/>

@@ -161,10 +161,11 @@ export default function Category() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
+          <NavLink to="/menu/category/categorylist">
           <img
             src={ActionEdit}
             className={`${cx.actionIcon}`}
-            alt="img"/>
+            alt="img"/></NavLink>
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
@@ -301,13 +302,14 @@ export default function Category() {
                   Import
                 </button>
             
+            <NavLink to="/menu/category/categorydetails">
                 <button
                   className={`btn ${style.width50}`}
                   onClick={() => setAddCustomer(true)}
                 >
                  + Add Categories
                 </button>
-           
+            </NavLink>
               </Col>
             </Row>
           </Card.Title>
@@ -338,6 +340,8 @@ export default function Category() {
             </div>
           </Card.Body>
         </Card>
+
+
       </section>
       <Footer />
 

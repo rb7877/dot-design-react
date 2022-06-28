@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Coupons.module.scss";
+import cx from "./Sessions.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -42,128 +42,68 @@ const handleButtonClick = () => {
 const data = [
   {
     id: 1,
-    col1: "1",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
+    col2: "---",
+    col3: "582138",
+    col4: "Hayat Mall",
+    col5: "Dine",
+    col6: "",
     col7: "---",
     col8: "---",
   },
   {
     id: 2,
-    col1: "2",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
+    col2: "---",
+    col3: "582138",
+    col4: "Hayat Mall",
+    col5: "Dine",
+    col6: "",
     col7: "---",
     col8: "---",
   },
   {
     id: 3,
-    col1: "3",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
+    col2: "---",
+    col3: "582138",
+    col4: "Hayat Mall",
+    col5: "Dine",
+    col6: "",
     col7: "---",
     col8: "---",
   },
   {
     id: 4,
-    col1: "4",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
+    col2: "---",
+    col3: "582138",
+    col4: "Hayat Mall",
+    col5: "Dine",
+    col6: "",
     col7: "---",
     col8: "---",
   },
   {
     id: 5,
-    col1: "5",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
+    col2: "---",
+    col3: "582138",
+    col4: "Hayat Mall",
+    col5: "Dine",
+    col6: "",
     col7: "---",
     col8: "---",
   },
   {
     id: 6,
-    col1: "6",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
+    col2: "---",
+    col3: "582138",
+    col4: "Hayat Mall",
+    col5: "Dine",
+    col6: "",
     col7: "---",
     col8: "---",
   },
-  {
-    id: 7,
-    col1: "7",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
-    col7: "---",
-    col8: "---",
-  },
-  {
-    id: 8,
-    col1: "8",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
-    col7: "---",
-    col8: "---",
-  },
-  {
-    id: 9,
-    col1: "9",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
-    col7: "---",
-    col8: "---",
-  },
-  {
-    id: 10,
-    col1: "10",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
-    col7: "---",
-    col8: "---",
-  },
-  {
-    id: 11,
-    col1: "11",
-    col2: "Test",
-    col3: "50%",
-    col4: "---",
-    col5: "Sat,Sun,Mon",
-    col6: "1000",
-    col7: "---",
-    col8: "---",
-  },
+ 
 ];
 
-export default function Coupons() {
+export default function Sessionsorder() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -175,50 +115,14 @@ export default function Coupons() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
-  const [editCustomerShow, seteditCustomer] = useState(false);
-  const [deleteCustomerShow, setdeleteCustomer] = useState(false);
+  const [editCustomerShow, setEditCustomer] = useState(false);
+  const [importShow, setImport] = useState(false);
 
   const columns = [
+  
     {
-      name: "ID",
-      selector: (row: any) => row.col1,
-        sortable: true,
-        width: "80px",
-    },
-    {
-      name: "Name",
+      name: "Time",
       selector: (row: any) => row.col2,
-      sortable: true,
-    },
-    {
-      name: "Value",
-      selector: (row: any) => row.col3,
-      sortable: true,
-    },
-    {
-      name: "Valid Coupon",
-      selector: (row: any) => row.col4,
-      sortable: true,
-      cell: () => (
-        <div className={`${cx.date}`}>
-          <h5 className="mb-1" style={{ color:'#808080' }}>2020-04-14</h5>
-          <h5>2020-04-16</h5>
-        </div>
-      ),
-    },
-    {
-      name: "Days",
-      selector: (row: any) => row.col5,
-      sortable: true,
-    },
-    {
-      name: "No of Coupons",
-      selector: (row: any) => row.col6,
-      sortable: true,
-    },
-    {
-      name: "Date",
-      selector: (row: any) => row.col6,
       sortable: true,
       cell: () => (
         <div className={`${cx.date}`}>
@@ -228,20 +132,47 @@ export default function Coupons() {
       ),
     },
     {
+      name: "Reference",
+      selector: (row: any) => row.col3,
+      sortable: true,
+    },
+    {
+      name: "Branch",
+      selector: (row: any) => row.col4,
+      sortable: true,
+    },
+    {
+      name: "Type",
+      selector: (row: any) => row.col5,
+      sortable: true,
+    },
+    {
+      name: "Customers",
+      selector: (row: any) => row.col6,
+      sortable: true,
+    },
+    {
+      name: "Status",
+      selector: (row: any) => row.col6,
+      sortable: true,
+      cell: () => (
+        <div className={`${cx.date}`}>
+          <h5 className="text-warning">Yes</h5>
+        </div>
+      ),
+    },
+    {
       name: "Action",
       selector: (row: any) => row.col5,
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <img  onClick={() => seteditCustomer(true)}
+          <NavLink to="/sales/sessions/sessions-details"><img
             src={ActionEdit}
             className={`${cx.actionIcon}`}
             alt="img"/>
-        
-          <img  onClick={() =>  setdeleteCustomer(true)}
-          src={ActionDelete} 
-          className={`${cx.actionIcon}`}
-           alt="img" />
+          </NavLink>
+          <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
       width: "140px",
@@ -361,21 +292,10 @@ export default function Coupons() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Coupons</h5>
+              <h5><NavLink to="/sales/sessions" className={`${style.back}`}>Back</NavLink> Session Order List</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-              <button
-                  className={`btn ${style.width50}`}
-                  onClick={() => setLgShow(true)}
-                >
-                  Filter
-                </button>
-                <button
-                  className={`btn ${style.width100}`}
-                  onClick={() => setAddCustomer(true)}
-                >
-                  + Add Coupons
-                </button>
+                
               </Col>
             </Row>
           </Card.Title>
@@ -432,7 +352,28 @@ export default function Coupons() {
                 <Form.Control type="text" placeholder="Qwerty" />
               </Col>
             </Form.Group>
-           
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Email</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="email" placeholder="Qwerty@gmail.com" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Phone Number</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="0565434" />
+              </Col>
+            </Form.Group>
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -466,7 +407,7 @@ export default function Coupons() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Add Coupons
+              Create Customer
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -475,10 +416,32 @@ export default function Coupons() {
               controlId="formName"
             >
               <Col lg={4}>
+                <Form.Label>Dial Code</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Dial Code" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Phone</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter your fill" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
                 <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Qwerty" />
+                <Form.Control type="text" placeholder="Name" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -486,94 +449,25 @@ export default function Coupons() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Value</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Value" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Valid From</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Valid From" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Valid To</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Monday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Tuesday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Wednesday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Thrusday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Friday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Saturday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Sunday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Monday
-                    </label>
-                  </Col>
-                </Row>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>No. of Coupons</Form.Label>
+                <Form.Label>Tag</Form.Label>
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>Select tag</option>
+                  <option>All</option>
                 </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group className={`row ${cx.formBox}`} controlId="formName">
+              <Col lg={4}>
+                <Form.Label>Note</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control
+                  type="text"
+                  placeholder="Note"
+                  as="textarea"
+                  rows={3}
+                />
               </Col>
             </Form.Group>
           </Modal.Body>
@@ -598,17 +492,18 @@ export default function Coupons() {
           </Modal.Footer>
         </Form>
       </Modal>
+
       <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
         show={editCustomerShow}
-        onHide={() => seteditCustomer(false)}
+        onHide={() => setEditCustomer(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Edit Coupons
+              Create Customer
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -617,10 +512,32 @@ export default function Coupons() {
               controlId="formName"
             >
               <Col lg={4}>
+                <Form.Label>Dial Code</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Dial Code" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Phone</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter your fill" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
                 <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Qwerty" />
+                <Form.Control type="text" placeholder="Name" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -628,94 +545,25 @@ export default function Coupons() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Value</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Value" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Valid From</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Valid From" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Valid To</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Monday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Tuesday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Wednesday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Thrusday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Friday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Saturday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Sunday
-                    </label>
-                  </Col>
-                  <Col lg={4}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Monday
-                    </label>
-                  </Col>
-                </Row>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>No. of Coupons</Form.Label>
+                <Form.Label>Tag</Form.Label>
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>Select tag</option>
+                  <option>All</option>
                 </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group className={`row ${cx.formBox}`} controlId="formName">
+              <Col lg={4}>
+                <Form.Label>Note</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control
+                  type="text"
+                  placeholder="Note"
+                  as="textarea"
+                  rows={3}
+                />
               </Col>
             </Form.Group>
           </Modal.Body>
@@ -739,24 +587,25 @@ export default function Coupons() {
             </Col>
           </Modal.Footer>
         </Form>
-      </Modal>   
+      </Modal>
+
       <Modal
         className={`${cx.ctsPopup} ${cx.importBody}`}
-        show={deleteCustomerShow}
-        onHide={() => setdeleteCustomer(false)}
+        show={importShow}
+        onHide={() => setImport(false)}
         aria-labelledby="example-modal-sizes-title-md"
         centered
       >
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-md">
-              Delete Coupon
+              Import New Data
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Are you sure to delete this item</p>
+            <p>Download Sample Data</p>
             <button type="button" className={`btn ${cx.importBtn}`}>
-              Yes
+              Select File
             </button>
           </Modal.Body>
         </Form>
