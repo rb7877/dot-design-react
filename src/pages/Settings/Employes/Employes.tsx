@@ -165,6 +165,7 @@ export default function Employees() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
+  const [editCustomerShow, seteditCustomer] = useState(false);
 
   const columns = [
    
@@ -206,11 +207,11 @@ export default function Employees() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <NavLink to="/sales/sessions/sessions-details"><img
+          <img
+            onClick={() => seteditCustomer(true)} 
             src={ActionEdit}
             className={`${cx.actionIcon}`}
-            alt="img"/>
-          </NavLink>
+            alt="img"  />
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
@@ -551,14 +552,6 @@ export default function Employees() {
 
             </Form.Group>
             
-            {/* <Form.Group>
-            <Col className={`col-4 ${cx.head}`} lg={6}>
-                <h5>Roles</h5>
-                <button>Copy To</button>
-           </Col>
-         
-            </Form.Group>
-            */}
             <Col lg={12}>
               <Row className={`align-items-center m-0 ${cx.copyRow}`}>
                 <Col lg={6} className={`${cx.left}`} >
@@ -572,17 +565,234 @@ export default function Employees() {
             </Col>
 
             
-            {/* <Modal.Header className={`${cx.roles}`}>
-            <Modal.Title id="example-modal-sizes-title-lg" >
-            Roles
-            </Modal.Title>
-            <Col lg={2} className={`${cx.rightft}`}>
+
+          <Form.Group
+              className={`row align-items-center p-1 ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Company Role</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter your fill" />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Business Roles</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter your fill" />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> </Form.Label>
+              </Col>
+              <Col lg={8}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span> Can Access Current Business ?
+                    </label>
+                  </Col>
+            </Form.Group>
+          
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Branch Roles</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter your fill" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center  ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Branch</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter your fill" />
+              </Col>
+            </Form.Group>
+
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${cx.leftft}`}>
                  
-               <button type="button" className={`btn ${cx.copyTo}`}>
-                  Copy To
-                 </button>  
+                 <button type="button" className={`btn ${cx.clear}`}>
+                  Clear
+                 </button>
                 </Col>
-          </Modal.Header>  */}
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                 Apply
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal>
+
+
+
+      <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={editCustomerShow}
+        onHide={() => seteditCustomer(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+             Edit Employees
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Name" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Dial Code</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Dial Code" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Phone</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Phone" />
+              </Col>
+            </Form.Group>
+            
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Email</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Email" />
+              </Col>
+            </Form.Group>
+            
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Passwaord</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Password" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Choose Restaurant</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Select Restaurant</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Choose Branch</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Select Restaurant</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+           
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Choose Role</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Select role</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Language</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>En</option>
+                </Form.Select>
+              </Col>
+
+            </Form.Group>
+            
+            <Col lg={12}>
+              <Row className={`align-items-center m-0 ${cx.copyRow}`}>
+                <Col lg={6} className={`${cx.left}`} >
+                  <h5>Roles</h5>
+                </Col>
+                <Col lg={6} className={`text-end ${cx.right}`} >
+                  <button className={`${cx.copyto}`}>Copy To</button>
+                </Col>
+               
+              </Row>
+            </Col>
+
+            
 
           <Form.Group
               className={`row align-items-center p-1 ${cx.formBox}`}

@@ -1,97 +1,39 @@
+.btnsRow {
 
-:global(.card-title) {
+    :global(.btn) {
+        background-color: #AACBFE;
+        border-color:#AACBFE;
+        width: 100%;
+        color: #fff;
+        padding: 15px 10px;
+        border-radius: 8px;
+        margin-bottom:25px;
+        font-weight: 600;
+        font-size: 16px;
 
-    .backBtn {
-
-        :global(.btn) {
+        &:hover, &.active, &:focus {
             background-color: var(--Main2);
-            color: #fff;
-            border-radius: 8px;
-            min-width: 80px;
-            padding: 8px 10px;
+            border-color: var(--Main2);
+            box-shadow:none;
         }
     }
 }
+.pgTitle {
+    text-align: center;
+    padding-bottom: 30px;
 
-.date {
-
-    h5 {
-        font-size:15px;
-        font-weight:500;
-        margin-bottom:0;
+    .tt {
+        font-size: 24px;
+        margin: 0;
+        font-weight: 600;
+        padding: 0px 0px 10px 0px;
     }
-    p {
-        font-size:14px;
-        color:#909090;
-        margin:0;
-    }
-}
-.action {
-
-    .actionIcon {
-        margin-right:20px;
-        cursor: pointer;
+    .line {
+        width: 100%;
+        height: 1px;
+        object-fit: cover;
     }
 }
-
-
-.checkbox {
-	position: relative;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	padding-left: 25px;
-    color:#B3B3B3;
-    margin-bottom: 8px;
-  
-	&:hover input ~ .checkmark {
-	    background-color: #f3f1f1;
-		border: 1px solid #d8d8d8;
-	}
-  
-    input {
-		opacity: 0;
-		margin-right:10px;
-		position:absolute;
-	  
-	    &:checked ~ .checkmark {
-		  background-color: var(--Main2);
-		  border: 1px solid var(--Main2);
-		}
-		&:checked ~ .checkmark:after {
-		  display: block;
-		}
-	}
-	.checkmark {
-		position: absolute;
-		top: 3px;
-		left: 0;
-		height: 20px;
-		width: 20px;
-		background-color: #fff;
-		border-radius: 5px;
-        border: 1px solid #d8d8d8;
-
-	    &:after {
-			content: "";
-			position: absolute;
-			display: none;
-		    left: 6px;
-			top: 3px;
-			width: 5px;
-			height: 10px;
-			border: solid white;
-			border-width: 0 2px 2px 0;
-			-webkit-transform: rotate(45deg);
-		    -ms-transform: rotate(45deg);
-			transform: rotate(45deg);
-		}
-    }	
-}
-
-
 
 .ctsPopup {
 
@@ -144,7 +86,6 @@
                         }
                     }
                 }
-                
             }
             
             :global(.modal-footer) {
@@ -162,7 +103,7 @@
                 .rightft {
                     text-align: right;
 
-                    button {
+                    :global(.btn) {
                         padding: 10px 30px;
                         margin-left: 15px;
                         border-radius: 8px;
@@ -182,107 +123,12 @@
     }
 }
 
-.formBox {
-    margin-bottom: 15px;
-
-    :global(.form-label) {
-        margin: 0;
-        font-size: 18px;
-        font-weight: 500;
-    }
-    :global(.form-control) {
-        border: 1px solid #d7d7d7;
-        border-radius: 8px;
-        padding: 10px 12px;
-
-        &:focus {
-            box-shadow:none;
-            border-color:var(--Main2);
-        }
-    }
-    :global(.form-select) {
-        border: 1px solid #d7d7d7;
-        border-radius: 8px;
-        padding: 10px 12px;
-
-        &:focus {
-            box-shadow:none;
-            border-color:var(--Main2);
-        }
-    }
-}
-
-.importBody {
-
-    :global(.modal-header) {
-
-        :global(.modal-title) {
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-        :global(.btn-close) {
-            position: absolute;
-        }
-
-    }
-    
-    :global(.modal-body) {
-        text-align: center;
-
-        p {
-            color:#B3B3B3;
-            font-size:16px;
-            padding: 30px 0px;
-            text-align:center;
-        }
-
-        .importBtn {
-            padding: 10px 30px;
-            border-radius: 8px;
-            background: var(--Main2);
-            color: #fff;
-            width:100%;
-        }
-    }
-    
-}
-
-
-.cardBox {
-    background:#fff;
-    text-align: center;
-    padding: 20px 20px;
-    margin-bottom:25px;
-
-    img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50px;
-        object-fit: cover;
-    }
-    h3 {
-        font-size: 26px;
-        font-weight: 600;
-        margin: 15px 0px;
-    }
-    p {
-
-    }
-    .installBtn {
-        width:100%;
-        background-color: var(--Main2);
-        color:#fff;
-        border-radius: 8px;
-    }
-}
 
 /*=======================================================
 //////////////RESPONSIVE MEDIA QUERY START///////////////
 =======================================================*/
 @media (max-width: 767px) {
 
-   
     .ctsPopup {
 
         :global(.modal-dialog) {
@@ -314,16 +160,18 @@
                     .rightft {
                         display: flex;
                         margin-top: 15px;
+                        flex-wrap: wrap;
 
-                        button {
-                            width: 49%;
+                        :global(.btn) {
+                            width: 100%;
                             justify-content: center;
 
                             &.close {
-                               margin: 0px 5px 0px 0px;
+                               margin:15px 0px 0px 0px;
+                               order: 1;
                             }
                             &.apply {
-                               margin: 0px 0px 0px 5px;
+                               margin: 0px;
                             }
                         }
                     }
@@ -332,5 +180,4 @@
             }
         }
     }
-
 }

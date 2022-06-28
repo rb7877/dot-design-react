@@ -321,7 +321,7 @@ export default function Payment() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Payment Method Listt</h5>
+                <h5>Payment Method List</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
               

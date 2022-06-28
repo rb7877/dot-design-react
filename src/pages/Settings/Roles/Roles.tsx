@@ -168,11 +168,10 @@ export default function Roles() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <NavLink to="/sales/sessions/sessions-details"><img
+          <img
             src={ActionEdit}
             className={`${cx.actionIcon}`}
             alt="img"/>
-          </NavLink>
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),

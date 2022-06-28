@@ -38,6 +38,14 @@ import Transferorder from "./pages/Inventory/Transfer/Transferorder";
 
 import { CreateBranch } from "./pages/Settings/branch/Createbranch";
 import Acounting from "./pages/Settings/branch/Acounting";
+import Category from "./pages/Menu/Category/Category";
+
+import Products from "./pages/Menu/Products/Products";
+import Modifier from "./pages/Menu/Modifier/Modifier";
+import Display from "./pages/Menu/Display/Display";
+import Role from "./pages/Menu/Role/Role";
+
+import Branches from "./pages/Settings/Delivery/Branches";
 
 function App() {
   return (
@@ -169,8 +177,32 @@ function App() {
              <CreateBranch/>
             </Route> 
             <Route exact path="/settings/branch/acounting">
-             <Branch/>
-            </Route>      
+             <Acounting />
+            </Route>     
+
+            
+             <Route exact path="/menu/category">
+             <Category/>
+            </Route>  
+
+
+            <Route exact path="/menu/products">
+            <Products/>
+            </Route> 
+
+            <Route exact path="/menu/modifier">
+            <Modifier/>
+            </Route> 
+            
+            <Route exact path="/menu/display">
+            <Display/>
+            </Route> 
+            <Route exact path="/menu/role">
+            <Role/>
+            </Route>  
+            <Route exact path="/settings/delivery/branches">
+             <Branches/>
+            </Route>
           </Switch>
         </div>
       </Router>

@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Purchase.module.scss";
+import cx from "./Delivery.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form, Tabs } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 import { NavLink } from "react-router-dom";
@@ -42,129 +42,110 @@ const handleButtonClick = () => {
 const data = [
   {
     id: 1,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "1",
+    col2: "Hello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
    {
     id: 2,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "2",
+    col2: "Hello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
    {
     id: 3,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "3",
+    col2: "Hello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
    {
     id: 4,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "4",
+    col2: "ello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
    {
     id: 5,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "5",
+    col2: "Hello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
    {
     id: 6,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "6",
+    col2: "Hello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
    {
     id: 7,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "7",
+    col2: "Hello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
    {
     id: 8,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "8",
+    col2: "Hello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
    {
     id: 9,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "9",
+    col2: "Hello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
    {
     id: 10,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "10",
+    col2: "Hello",
+    col3: "---",
+    col4:"Lost Angles",
+    col5: "Developer Access",
+    col6:"9085657(0)",
+    col7:"Hayat Mall"
    },
-   {
-    id: 11,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
-   },
-   {
-    id: 12,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
-   },
-   
-  
+ 
+ 
+
 ];
 
-export default function Purchase() {
+export default function Delivery() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -179,31 +160,18 @@ export default function Purchase() {
 
   const columns = [
     {
-      name: "Reference",
+      name: "No",
       selector: (row: any) => row.col1,
         sortable: true,
         width: "80px",
     },
     {
-      name: "Supplier",
+      name: " Delivery Area ",
       selector: (row: any) => row.col2,
       sortable: true,
     },
     {
-      name: "Destination",
-      selector: (row: any) => row.col3,
-      sortable: true,
-    },
-    {
-      name: "Status",
-      selector: (row: any) => row.col4,
-      sortable: true,
-    },
-   
-    
-    
-    {
-      name: "Business Date",
+      name: "Sync",
       selector: (row: any) => row.col5,
       sortable: true,
       cell: () => (
@@ -213,18 +181,27 @@ export default function Purchase() {
         </div>
       ),
     },
-    
     {
-      name: "Created",
+      name: " City",
+      selector: (row: any) => row.col4,
+      sortable: true,
+    },
+    {
+      name: " The Work",
+      selector: (row: any) => row.col5,
+      sortable: true,
+    },
+    {
+      name: " Reference Number",
       selector: (row: any) => row.col6,
       sortable: true,
-      cell: () => (
-        <div className={`${cx.date}`}>
-          <h5>2020-04-14</h5>
-          <p>08:21:40 PM</p>
-        </div>
-      ),
     },
+    {
+      name: "Name",
+      selector: (row: any) => row.col7,
+      sortable: true,
+    },
+    
   ];
 
   const paginationComponentOptions = {
@@ -338,24 +315,16 @@ export default function Purchase() {
       <section className={`${style.pageWrapper}`}>
         <Card>
           <Card.Title>
-            <Row className={`align-items-center ${style.rowTitle}`}>
-              <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Purchase Order</h5>
-              </Col>
-              <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-
-                <button
-                  className={`btn ${style.width100}`}
-                  onClick={() => setAddCustomer(true)}
-                >
-              New Purchase Order
-                </button>
-              </Col>
-            </Row>
+          <Row className={`align-items-center ${style.rowTitle}`}>
+                    <Col className={`${style.rowTitleLeft}`} lg={6}>
+                      <h5>
+                        <NavLink to="/settings/delivery/" className={`${style.back}`}>Back</NavLink>
+                        Branches</h5>
+                    </Col>
+                   
+          </Row>
           </Card.Title>
           <Card.Body>
-
-
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -364,7 +333,7 @@ export default function Purchase() {
                   subHeader
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
-                  pagination
+                 
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -377,105 +346,13 @@ export default function Purchase() {
                   onChangePage={handlePageChange}
                   //   expandableRows
                   //   expandableRowsComponent={ExpandedComponent}
-                />
+                />{" "}
               </Box>
             </div>
           </Card.Body>
         </Card>
       </section>
       <Footer />
-
-     
-         
-
-      <Modal
-        className={`${cx.ctsPopup}`}
-        size="lg"
-        show={addCustomerShow}
-        onHide={() => setAddCustomer(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Form>
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">
-            Add Suppliers
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-           
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label> Select Suppliers</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Select Supplier" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Select Destinations</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Select Destinations" />
-              </Col>
-            </Form.Group>
-           
-
-            
-           
-           
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Notes</Form.Label>
-              </Col>
-              <Col lg={8}>
-              <Form.Control as="textarea" rows={3} />
-              </Col>
-            </Form.Group>
-           
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-             
-              
-            </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Col lg={12}>
-              <Row className="align-items-center">
-                <Col lg={6} className={`${cx.leftft}`}>
-                 
-                 <button type="button" className={`btn ${cx.clear}`}>
-                  Clear
-                 </button>
-                </Col>
-                <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
-                    Close
-                  </button>
-                  <NavLink to="/inventory/purchase/purchaseorder">
-                  <button type="button" className={`btn ${cx.apply}`}>
-                 Apply
-                  </button>
-                  </NavLink>
-                </Col>
-              </Row>
-            </Col>
-          </Modal.Footer>
-        </Form>
-      </Modal>
-
-
-    </>
+  </>
   );
 }

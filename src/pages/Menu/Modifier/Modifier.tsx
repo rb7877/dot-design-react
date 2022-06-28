@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Cashiers.module.scss";
+import cx from "./Modifier.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -42,139 +42,138 @@ const handleButtonClick = () => {
 const data = [
   {
      id: 1,
-     col1:"1",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
+     col1:"Landed Cost",
+     col2: "Options (0)",
+     col3: "Options (4)",
+     col4: "FS",
+     col5:"Products (2)",
+     col6:"---",
+     
    },
    {
     id: 2,
-     col1:"2",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 3,
-     col1:"3",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
-    id:4,
-     col1:"4",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
+    id: 4,
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 5,
-     col1:"5",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 6,
-     col1:"6",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 7,
-     col1:"7",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 8,
-     col1:"8",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 9,
-     col1:"9",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 10,
-     col1:"10",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 11,
-     col1:"11",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 12,
-     col1:"12",
-     col2: "Test1",
-     col3: "68889805",
-     col4: "Test1@gmail.com",
-     col5:"+911-894-912-1",
-     col6:"Deactive",
-     col7:"---",
-     col8:"---"
-   },
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
+    id: 13,
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+   
 ];
 
-export default function Cashiers() {
+export default function Modifier() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -189,57 +188,36 @@ export default function Cashiers() {
   const [editCustomerShow, setEditCustomer] = useState(false);
 
   const columns = [
-    {
-      name: "NO",
-      selector: (row: any) => row.col1,
-        sortable: true,
-        width: "80px",
-    },
+  
     {
       name: "Name",
+      selector: (row: any) => row.col1,
+      sortable: true,
+    },
+    {
+      name: "Minimum Options",
       selector: (row: any) => row.col2,
       sortable: true,
     },
     {
-      name: "Unique ID",
+      name: "Maximum Options",
       selector: (row: any) => row.col3,
       sortable: true,
     },
     {
-      name: "Email",
+      name: "Excluded Options",
       selector: (row: any) => row.col4,
       sortable: true,
     },
     {
-      name: "Phone",
+      name: "Linked Products",
       selector: (row: any) => row.col5,
       sortable: true,
-    },
-    {
-      name: "Type",
-      selector: (row: any) => row.col6,
-      sortable: true,
-      cell: () => (
-        <div className={`${cx.date}`}>
-          <h5 className="text-danger">Deactive</h5>
-        </div>
-      ),
-    },
-     {
-      name: "Date",
-      selector: (row: any) => row.col7,
-      sortable: true,
-      cell: () => (
-        <div className={`${cx.date}`}>
-          <h5>2020-04-14</h5>
-          <p>08:21:40 PM</p>
-        </div>
-      ),
     },
     
     {
       name: "Action",
-      selector: (row: any) => row.col5,
+      selector: (row: any) => row.col6,
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
@@ -368,7 +346,7 @@ export default function Cashiers() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Cashiers</h5>
+                <h5>Modifier</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
               <button
@@ -378,10 +356,15 @@ export default function Cashiers() {
                   Filter
                 </button>
                 <button
+                  className={`btn ${style.width50}`}
+                >
+                  Import
+                </button>
+                <button
                   className={`btn ${style.width100}`}
                   onClick={() => setAddCustomer(true)}
                 >
-                  + Add New
+                 + Add Modifier
                 </button>
               </Col>
             </Row>
@@ -436,7 +419,7 @@ export default function Cashiers() {
                 <Form.Label> Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Qwerty" />
+                <Form.Control type="text" placeholder="Enter Name" />
               </Col>
             </Form.Group>
            
@@ -445,16 +428,14 @@ export default function Cashiers() {
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
-                  <button type="button" className={`${style.bgremove}`}>
-                    Clear
-                  </button>
+                 
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
                   <button type="button" className={`btn ${cx.close}`}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
-                    Apply
+                    Done
                   </button>
                 </Col>
               </Row>
@@ -473,7 +454,7 @@ export default function Cashiers() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Add New Cashier
+            Add Modifiers
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -482,10 +463,10 @@ export default function Cashiers() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Add New Cashier</Form.Label>
+                <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
-              <Form.Control type="text" placeholder="Enter Cashier name" />
+              <Form.Control type="text" placeholder="Enter Name" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -493,10 +474,10 @@ export default function Cashiers() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Price</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Email" />
+                <Form.Control type="text" placeholder="Enter Price" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -504,10 +485,10 @@ export default function Cashiers() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Login Pin (4 Digit)</Form.Label>
+                <Form.Label>Minimum Option</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Login Pin (4 Digit)" />
+                <Form.Control type="text" placeholder="Enter Minimum Option" />
               </Col>
             </Form.Group>
             
@@ -516,10 +497,10 @@ export default function Cashiers() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Confirm Login Pin</Form.Label>
+                <Form.Label>Maximum Option</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Confrim Pin Code (4 Digit)" />
+                <Form.Control type="text" placeholder="Enter Maximum Option" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -527,98 +508,26 @@ export default function Cashiers() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Cashier Phone</Form.Label>
+                <Form.Label>Excluded Options</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Cashier Phone number" />
+                <Form.Control type="text" placeholder="Enter Excluded Options" />
               </Col>
             </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Choose Restaurant</Form.Label>
-              </Col>
-              <Col lg={8}>
-              <Form.Select aria-label="Source">
-                  <option>Choose Restaurant</option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Choose Branch</Form.Label>
-              </Col>
-              <Col lg={8}>
-              <Form.Select aria-label="Source">
-                  <option>Choose Restaurant</option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-        
-            <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Description</Form.Label>
-              </Col>
-              <Col lg={8}>
-             
-              <Form.Control as="textarea" rows={3} />
-              
-              </Col>
-            </Form.Group>
-        
-
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Image</Form.Label>
-              </Col>
-              <Col lg={3}>
-              
-              <button type="button" className={`btn ${cx.Choosebtn}`}>
-                  Choose File
-                  </button>
-               
-              </Col>
-            </Form.Group>
-        
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Activate</Form.Label>
-              </Col>
-              <Col lg={8}>
-              <Form.Select aria-label="Source">
-                  <option>All</option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
+           
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
-                <button type="button" className={`btn ${cx.apply}`}>
-                  Clear
-                  </button>
+               
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
                   <button type="button" className={`btn ${cx.close}`}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
-                  Apply
+                  Done
                   </button>
                 </Col>
               </Row>
@@ -635,174 +544,10 @@ export default function Cashiers() {
         aria-labelledby="example-modal-sizes-title-lg"
       >
       <Form>
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-          Edit Cashier
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form.Group
-            className={`row align-items-center ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Add New Cashier</Form.Label>
-            </Col>
-            <Col lg={8}>
-            <Form.Control type="text" placeholder="Cashier2" />
-            </Col>
-          </Form.Group>
-          <Form.Group
-            className={`row align-items-center ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Email</Form.Label>
-            </Col>
-            <Col lg={8}>
-              <Form.Control type="text" placeholder="Tester1@gmail.com" />
-            </Col>
-          </Form.Group>
-          <Form.Group
-            className={`row align-items-center ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Login Pin (4 Digit)</Form.Label>
-            </Col>
-            <Col lg={8}>
-              <Form.Control type="text" placeholder="1234" />
-            </Col>
-          </Form.Group>
-          
-           <Form.Group
-            className={`row align-items-center ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Confirm Login Pin</Form.Label>
-            </Col>
-            <Col lg={8}>
-              <Form.Control type="text" placeholder="1234" />
-            </Col>
-          </Form.Group>
-          <Form.Group
-            className={`row align-items-center ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Cashier Phone</Form.Label>
-            </Col>
-            <Col lg={8}>
-              <Form.Control type="text" placeholder="+55-423-556-332" />
-            </Col>
-          </Form.Group>
-          <Form.Group
-            className={`row align-items-center ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Choose Restaurant</Form.Label>
-            </Col>
-            <Col lg={8}>
-            <Form.Select aria-label="Source">
-                <option> Restaurant 1</option>
-              </Form.Select>
-            </Col>
-          </Form.Group>
-          <Form.Group
-            className={`row align-items-center ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Choose Branch</Form.Label>
-            </Col>
-            <Col lg={8}>
-            <Form.Select aria-label="Source">
-                <option>Branch 1</option>
-              </Form.Select>
-            </Col>
-          </Form.Group>
-      
-          <Form.Group
-            className={`row ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Description</Form.Label>
-            </Col>
-            <Col lg={8}>
-           
-            <Form.Control as="textarea" rows={3} />
-            
-            </Col>
-          </Form.Group>
-      
-
-          <Form.Group
-            className={`row align-items-center ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Image</Form.Label>
-            </Col>
-            <Col lg={3}>
-            
-            <button type="button" className={`btn ${cx.Choosebtn}`}>
-            asder.JPEG
-                </button>
-             
-            </Col>
-          </Form.Group>
-      
-          <Form.Group
-            className={`row align-items-center ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Activate</Form.Label>
-            </Col>
-            <Col lg={8}>
-            <Form.Select aria-label="Source">
-                <option>Yes</option>
-              </Form.Select>
-            </Col>
-          </Form.Group>
-        </Modal.Body>
-        <Modal.Footer>
-          <Col lg={12}>
-            <Row className="align-items-center">
-              <Col lg={6} className={`${cx.leftft}`}>
-              <button type="button" className={`btn ${cx.apply}`}>
-                Clear
-                </button>
-              </Col>
-              <Col lg={6} className={`${cx.rightft}`}>
-                <button type="button" className={`btn ${cx.close}`}>
-                  Close
-                </button>
-                <button type="button" className={`btn ${cx.apply}`}>
-                Apply
-                </button>
-              </Col>
-            </Row>
-          </Col>
-        </Modal.Footer>
-      </Form>
-      </Modal>
-
-
-
-      <Modal
-        className={`${cx.ctsPopup}`}
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Form>
           <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">Filter</Modal.Title>
+            <Modal.Title id="example-modal-sizes-title-lg">
+            Edit Modifiers
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form.Group
@@ -810,10 +555,55 @@ export default function Cashiers() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label> Name</Form.Label>
+                <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Qwerty" />
+              <Form.Control type="text" placeholder="Enter Name" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Price</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Price" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Minimum Option</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Minimum Option" />
+              </Col>
+            </Form.Group>
+            
+             <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Maximum Option</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Maximum Option" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Excluded Options</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Excluded Options" />
               </Col>
             </Form.Group>
            
@@ -822,16 +612,14 @@ export default function Cashiers() {
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
-                  <button type="button" className={`${style.bgremove}`}>
-                    Clear
-                  </button>
+               
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
                   <button type="button" className={`btn ${cx.close}`}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
-                    Apply
+                  Done
                   </button>
                 </Col>
               </Row>
@@ -839,6 +627,9 @@ export default function Cashiers() {
           </Modal.Footer>
         </Form>
       </Modal>
+
+
+
 
 
     </>

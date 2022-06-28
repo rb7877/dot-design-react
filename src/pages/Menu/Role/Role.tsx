@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Purchase.module.scss";
+import cx from "./Role.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form, Tabs } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 import { NavLink } from "react-router-dom";
@@ -42,129 +42,86 @@ const handleButtonClick = () => {
 const data = [
   {
     id: 1,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "1",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
    },
    {
     id: 2,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "2",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
    },
    {
     id: 3,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
-   },
+    col1: "3",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
+   }, 
+   
    {
     id: 4,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
-   },
+    col1: "4",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
+   },           
    {
-    id: 5,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    id: 6,
+    col1: "6",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
    },
    {
     id: 6,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "6",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
    },
    {
     id: 7,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "7",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
    },
    {
     id: 8,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "8",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
    },
    {
     id: 9,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "9",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
    },
    {
     id: 10,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "10",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
    },
    {
     id: 11,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
+    col1: "11",
+    col2: "Cashier 1 (0)",
+     col3: "compnay",
+    col4: "---",
    },
-   {
-    id: 12,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
-   },
-   
   
 ];
 
-export default function Purchase() {
+export default function Role() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -179,43 +136,18 @@ export default function Purchase() {
 
   const columns = [
     {
-      name: "Reference",
+      name: "ID",
       selector: (row: any) => row.col1,
         sortable: true,
         width: "80px",
     },
     {
-      name: "Supplier",
+      name: "Role Name",
       selector: (row: any) => row.col2,
       sortable: true,
     },
-    {
-      name: "Destination",
-      selector: (row: any) => row.col3,
-      sortable: true,
-    },
-    {
-      name: "Status",
-      selector: (row: any) => row.col4,
-      sortable: true,
-    },
-   
-    
-    
-    {
-      name: "Business Date",
-      selector: (row: any) => row.col5,
-      sortable: true,
-      cell: () => (
-        <div className={`${cx.date}`}>
-          <h5>2020-04-14</h5>
-          <p>08:21:40 PM</p>
-        </div>
-      ),
-    },
-    
-    {
-      name: "Created",
+     {
+      name: "Date",
       selector: (row: any) => row.col6,
       sortable: true,
       cell: () => (
@@ -224,6 +156,27 @@ export default function Purchase() {
           <p>08:21:40 PM</p>
         </div>
       ),
+    },
+    {
+      name: "Type",
+      selector: (row: any) => row.col3,
+      sortable: true,
+    },
+    {
+      name: "Action",
+      selector: (row: any) => row.col5,
+      sortable: true,
+      cell: () => (
+        <div className={`${cx.action}`}>
+       <img
+            src={ActionEdit}
+            className={`${cx.actionIcon}`}
+            alt="img"/>
+
+          <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
+        </div>
+      ),
+      width: "140px",
     },
   ];
 
@@ -340,22 +293,20 @@ export default function Purchase() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Purchase Order</h5>
+                <h5>Role List</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-
+             
                 <button
-                  className={`btn ${style.width100}`}
+                  className={`btn ${style.width50}`}
                   onClick={() => setAddCustomer(true)}
                 >
-              New Purchase Order
+                  + Add Role
                 </button>
               </Col>
             </Row>
           </Card.Title>
           <Card.Body>
-
-
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -377,7 +328,7 @@ export default function Purchase() {
                   onChangePage={handlePageChange}
                   //   expandableRows
                   //   expandableRowsComponent={ExpandedComponent}
-                />
+                />{" "}
               </Box>
             </div>
           </Card.Body>
@@ -385,8 +336,52 @@ export default function Purchase() {
       </section>
       <Footer />
 
-     
-         
+      <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">Filter</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Qwerty" />
+              </Col>
+            </Form.Group>
+           
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${cx.leftft}`}>
+                  <button type="button" className={`${style.bgremove}`}>
+                    Clear
+                  </button>
+                </Col>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Apply
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal>
 
       <Modal
         className={`${cx.ctsPopup}`}
@@ -398,20 +393,21 @@ export default function Purchase() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Add Suppliers
+            Add Role
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-           
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label> Select Suppliers</Form.Label>
+                <Form.Label>Role</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Select Supplier" />
+              <Form.Select aria-label="Source">
+                  <option>All</option>
+                </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group
@@ -419,29 +415,73 @@ export default function Purchase() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Select Destinations</Form.Label>
+                <Form.Label>Roll Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Select Destinations" />
+                <Form.Control type="text" placeholder="test1" />
               </Col>
             </Form.Group>
-           
-
-            
-           
-           
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Notes</Form.Label>
+                <Form.Label>Rol Name Localized</Form.Label>
               </Col>
               <Col lg={8}>
-              <Form.Control as="textarea" rows={3} />
+                <Form.Control type="text" placeholder="test1" />
               </Col>
             </Form.Group>
-           
+            <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Permissions</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Sales
+                    </label>
+                  </Col>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Promotions
+                    </label>
+                  </Col>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Customers
+                    </label>
+                  </Col>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Combos
+                    </label>
+                  </Col>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Orders
+                    </label>
+                  </Col>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Coupons
+                    </label>
+                  </Col>
+                  
+                 
+                </Row>
+              </Col>
+            </Form.Group>
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
@@ -455,19 +495,14 @@ export default function Purchase() {
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
                  
-                 <button type="button" className={`btn ${cx.clear}`}>
-                  Clear
-                 </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
                   <button type="button" className={`btn ${cx.close}`}>
                     Close
                   </button>
-                  <NavLink to="/inventory/purchase/purchaseorder">
                   <button type="button" className={`btn ${cx.apply}`}>
-                 Apply
+                  Generate Rerport
                   </button>
-                  </NavLink>
                 </Col>
               </Row>
             </Col>
