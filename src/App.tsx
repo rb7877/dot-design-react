@@ -50,6 +50,8 @@ import Sessionsorder from "./pages/Sales/Sessions/Sessionsorder";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Profile from "./pages/Dashboard/Profile";
 import Addcombos from "./pages/Promotion/Combos/Addcombos";
+import Customerdetails from "./pages/Sales/Customerdetails/Customerdetails";
+import Combosdetails from "./pages/Promotion/Combosdetails/Combosdetails";
 
 function App() {
   return (
@@ -73,6 +75,9 @@ function App() {
             <Route exact path="/sales/customers">
               <Customers />
             </Route>
+            <Route exact path="/sales/customers/customers-details">
+              <Customerdetails />
+            </Route>
             <Route exact path="/sales/sessions">
               <Sessions />
             </Route>
@@ -91,6 +96,11 @@ function App() {
             <Route exact path="/promotion/combos">
               <Combos />
             </Route>
+            <Route exact path="/promotion/combos/combos-details">
+              <Combosdetails />
+            </Route>
+
+
             <Route exact path="/reports/sale">
               <Sales />
             </Route>

@@ -8,7 +8,8 @@ import Footer from "../../../components/footer/Footer";
 import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
+
 
 import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
@@ -190,8 +191,8 @@ export default function Combos() {
     {
       name: "ID",
       selector: (row: any) => row.col1,
-        sortable: true,
-        width: "80px",
+      sortable: true,
+      width: "80px",
     },
     {
       name: "Name",
@@ -244,7 +245,7 @@ export default function Combos() {
           <img
             src={ActionEdit}
             className={`${cx.actionIcon}`}
-            alt="img"/>
+            alt="img" />
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
@@ -356,6 +357,12 @@ export default function Combos() {
     );
   };
 
+  const history = useHistory();
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push('/promotion/combos/combos-details', { params: 'Hello World' })
+
+  }
   return (
     <>
       <Header />
@@ -368,22 +375,47 @@ export default function Combos() {
                 <h5>Combos</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-              <button
+                <button
                   className={`btn ${style.width50}`}
                   onClick={() => setLgShow(true)}
                 >
                   Filter
                 </button>
                 <NavLink to="/Promotion/combos/addcombos">
-                <button
-                  className={`btn ${style.width50}`} >
-                  + Add Combos
-                </button>
+                  <button
+                    className={`btn ${style.width50}`} >
+                    + Add Combos
+                  </button>
                 </NavLink>
               </Col>
             </Row>
           </Card.Title>
           <Card.Body>
+            <Col className={`${style.filterMain}`}>
+              {/* Mobile Filter */}
+              <Form.Select className={`${style.filterMobile}`} aria-label="Default select example">
+                <option>All</option>
+                <option value="1">Has Orders</option>
+                <option value="2">Blocklisted</option>
+                <option value="3">Deleted</option>
+              </Form.Select>
+
+              {/* Desktop Filter */}
+              <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>All</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Active</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Inactive</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Deleted</button>
+                </Col>
+              </Row>
+            </Col>
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -393,6 +425,7 @@ export default function Combos() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -403,8 +436,8 @@ export default function Combos() {
                   paginationDefaultPage={currentPage}
                   onChangeRowsPerPage={handlePerRowsChange}
                   onChangePage={handlePageChange}
-                  //   expandableRows
-                  //   expandableRowsComponent={ExpandedComponent}
+                //   expandableRows
+                //   expandableRowsComponent={ExpandedComponent}
                 />{" "}
               </Box>
             </div>
@@ -486,7 +519,7 @@ export default function Combos() {
                 </Form.Select>
               </Col>
             </Form.Group>
-           
+
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>

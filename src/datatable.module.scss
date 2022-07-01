@@ -1,5 +1,13 @@
 .dataTableBox {
-    
+
+    :global(.sc-dmRaPn) {
+        border: 1px solid #BCBCBC;
+        border-top:none;
+    }
+    :global(.jMmClT:not(:last-of-type)) {
+        border-bottom-color: #BCBCBC;
+        cursor:pointer;
+    }
     :global(.sc-dIouRR) {
         display: none;
     }
@@ -11,13 +19,15 @@
 
             :global(.sc-hKMtZM) {
                 padding: 0px 15px;
-                font-size: 15px;
+                font-size: 18px;
             }
         }
     }
+
     :global(.sc-jSMfEi) {
         padding: 0px 15px;
-        font-size: 15px;
+        font-size: 16px;
+        font-weight: 500;
     }
     
     .paggingRow {

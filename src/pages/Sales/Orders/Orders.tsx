@@ -5,12 +5,13 @@ import order from "./Orders.module.scss";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form,  } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
-import action from "../../../images/1.svg";
+
+import ActionEdit from "../../../images/icon-edit.svg";
 
 import Box from "@mui/material/Box";
 
@@ -67,14 +68,14 @@ const columns = [
   },
   {
     name: "Action",
-    selector: (row: any) => row.col6,
+    selector: (row: any) => row.col5,
     sortable: true,
     cell: () => (
-      <div className={`${table.action}`}>
-        <NavLink to="/sales/orders/order-details"><img src={action} className={`${style.actionImg}`} alt="img" /></NavLink>
+      <div className={`ms-3 ${order.action}`}>
+        <NavLink to="/sales/orders/order-details"> <img src={ActionEdit} className={`${order.actionIcon}`} /></NavLink>
       </div>
     ),
-    width: "100px",
+    width: "140px",
   },
 ];
 
@@ -165,7 +166,7 @@ const data = [
     col1: "12020-04-14",
     col2: "xxx2022",
     col3: "Mall 1",
-    col4: "$224.00",
+    col4: "$224sss.00",
     col5: "$224.00",
     col6: "",
   },
@@ -241,16 +242,16 @@ export default function Orders() {
     const handleLast = () =>
       handlePageChange(getNumberOfPages(props.rowCount, props.rowsPerPage));
     return (
-      
-        <Row className={`align-items-center ${table.paggingRow}`}>
-          <Col md={6} lg={6} className={`col-12 ${table.rowTitleLeft}`}>
-            <h6>
-              {rowsPerPageText} {range}
-            </h6>
-          </Col>
 
-          <Col md={6} lg={6} className={`col-12 ${table.rowTitleRight}`}>
-            {/* <Button
+      <Row className={`align-items-center ${table.paggingRow}`}>
+        <Col md={6} lg={6} className={`col-12 ${table.rowTitleLeft}`}>
+          <h6>
+            {rowsPerPageText} {range}
+          </h6>
+        </Col>
+
+        <Col md={6} lg={6} className={`col-12 ${table.rowTitleRight}`}>
+          {/* <Button
               id="pagination-first-page"
               aria-label="First Page"
               aria-disabled={disabledLesser}
@@ -260,27 +261,27 @@ export default function Orders() {
               {props.paginationIconFirstPage}
             </Button> */}
 
-            <Button className={`${table.previousBtn} ${table.actBtn}`}
-              id="pagination-previous-page"
-              aria-label="Previous Page"
-              aria-disabled={disabledLesser}
-              onClick={handlePrevious}
-              disabled={disabledLesser}
-            >
-              {props.paginationIconPrevious}
-            </Button>
+          <Button className={`${table.previousBtn} ${table.actBtn}`}
+            id="pagination-previous-page"
+            aria-label="Previous Page"
+            aria-disabled={disabledLesser}
+            onClick={handlePrevious}
+            disabled={disabledLesser}
+          >
+            {props.paginationIconPrevious}
+          </Button>
 
-            <Button className={`${table.nextBtn} ${table.actBtn}`}
-              id="pagination-next-page"
-              aria-label="Next Page"
-              aria-disabled={disabledGreater}
-              onClick={handleNext}
-              disabled={disabledGreater}
-            >
-              {props.paginationIconNext}
-            </Button>
+          <Button className={`${table.nextBtn} ${table.actBtn}`}
+            id="pagination-next-page"
+            aria-label="Next Page"
+            aria-disabled={disabledGreater}
+            onClick={handleNext}
+            disabled={disabledGreater}
+          >
+            {props.paginationIconNext}
+          </Button>
 
-            {/* <Button
+          {/* <Button
               id="pagination-last-page"
               aria-label="Last Page"
               aria-disabled={disabledGreater}
@@ -289,11 +290,17 @@ export default function Orders() {
             >
               {props.paginationIconLastPage}
             </Button> */}
-          </Col>
-        </Row>
+        </Col>
+      </Row>
     );
   };
 
+  const history = useHistory();
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push('/sales/orders/order-details', { params: 'Hello World' })
+
+  }
   return (
     <>
       <Header />
@@ -307,10 +314,53 @@ export default function Orders() {
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
                 <button className={`btn ${style.width100}`} onClick={() => setLgShow(true)}>Filter</button>
+
+                <Dropdown>
+                  <Dropdown.Toggle id="dropdown-basic">
+                    Export
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Orders</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Order Items</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Order Payment</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Order Tags</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </Col>
             </Row>
           </Card.Title>
           <Card.Body>
+            <Col className={`${style.filterMain}`}>
+              {/* Mobile Filter */}
+              <Form.Select className={`${style.filterMobile}`} aria-label="Default select example">
+                <option>All</option>
+                <option value="1">Today</option>
+                <option value="2">Pending</option>
+                <option value="3">Active</option>
+                <option value="4">Done</option>
+              </Form.Select>
+
+              {/* Desktop Filter */}
+              <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>All</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Today</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Pending</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Active</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Done</button>
+                </Col>
+              </Row>
+            </Col>
+
+
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -321,6 +371,7 @@ export default function Orders() {
                   persistTableHead
                   pagination
                   paginationIconNext={nextIcon}
+                  onRowClicked={rowclickedFunction}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
                   paginationIconLastPage={previewIconD}
@@ -330,8 +381,8 @@ export default function Orders() {
                   paginationDefaultPage={currentPage}
                   onChangeRowsPerPage={handlePerRowsChange}
                   onChangePage={handlePageChange}
-                  //   expandableRows
-                  //   expandableRowsComponent={ExpandedComponent}
+                //   expandableRows
+                //   expandableRowsComponent={ExpandedComponent}
                 />{" "}
               </Box>
             </div>
@@ -346,14 +397,14 @@ export default function Orders() {
         onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
-        
+
         <Form>
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-          Filter
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              Filter
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
             <Form.Group className={`row align-items-center ${order.formBox}`} controlId="formName">
               <Col lg={4}><Form.Label>Reference</Form.Label></Col>
               <Col lg={8}><Form.Control type="text" placeholder="Qwerty" /></Col>
@@ -402,21 +453,21 @@ export default function Orders() {
                 </Form.Select>
               </Col>
             </Form.Group>
-        </Modal.Body>
-        <Modal.Footer>
-          <Col lg={12}>
-            <Row className="align-items-center">
-              <Col lg={6} className={`${order.leftft}`}>
-                <button type="button" className={`${style.bgremove}`}>Clear</button>
-              </Col>
-              <Col lg={6} className={`${order.rightft}`}>
-                <button type="button" className={`btn ${order.close}`}>Close</button>
-                <button type="button" className={`btn ${order.apply}`}>Apply</button>
-              </Col>
-            </Row>
-          </Col>
-        </Modal.Footer>
-        
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${order.leftft}`}>
+                  <button type="button" className={`${style.bgremove}`}>Clear</button>
+                </Col>
+                <Col lg={6} className={`${order.rightft}`}>
+                  <button type="button" className={`btn ${order.close}`}>Close</button>
+                  <button type="button" className={`btn ${order.apply}`}>Apply</button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+
         </Form>
       </Modal>
     </>

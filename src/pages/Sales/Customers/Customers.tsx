@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 
@@ -13,6 +13,7 @@ import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
 
 import Box from "@mui/material/Box";
+import { useHistory } from "react-router-dom";
 
 const customStyles = {
   rows: {
@@ -160,7 +161,7 @@ export default function Customers() {
       name: "S.N",
       selector: (row: any) => row.col1,
       sortable: true,
-      width: "80px",
+      width: "100px",
     },
     {
       name: "Date",
@@ -204,7 +205,7 @@ export default function Customers() {
           <h5 className="text-danger">No</h5>
         </div>
       ),
-      width: "120px",
+      width: "150px",
     },
     {
       name: "Action",
@@ -329,6 +330,13 @@ export default function Customers() {
     );
   };
 
+  const history = useHistory();
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push('/sales/customers/customers-details', { params: 'Hello World' })
+
+  }
+
   return (
     <>
       <Header />
@@ -340,21 +348,32 @@ export default function Customers() {
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
                 <h5>Customer List</h5>
               </Col>
-              <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
+              <Col className={`col-12 ${style.rowTitleRight}`} lg={6}><Dropdown>
                 <button
-                  className={`btn ${style.width50}`}
+                  className={`btn ${style.hideMobile} ${style.width50}`}
+                  onClick={() => setImport(true)}
+                >
+                  Import
+                </button>
+                <Dropdown.Toggle id="dropdown-basic"
+                  className={`${style.hideMobile}`}>
+                  Export
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Orders</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Order Items</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Order Payment</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Order Tags</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+                <button
+                  className={`btn ${style.width50} ${style.leftSpace}`}
                   onClick={() => setLgShow(true)}
                 >
                   Filter
                 </button>
                 <button
-                  className={`btn ${style.width50}`}
-                  onClick={() => setImport(true)}
-                >
-                  Import
-                </button>
-                <button
-                  className={`btn ${style.width100}`}
+                  className={`btn ${style.width50} ${style.rightSpace}`}
                   onClick={() => setAddCustomer(true)}
                 >
                   + Add Customer
@@ -363,6 +382,32 @@ export default function Customers() {
             </Row>
           </Card.Title>
           <Card.Body>
+
+            <Col className={`${style.filterMain}`}>
+              {/* Mobile Filter */}
+              <Form.Select className={`${style.filterMobile}`} aria-label="Default select example">
+                <option>All</option>
+                <option value="1">Has Orders</option>
+                <option value="2">Blocklisted</option>
+                <option value="3">Deleted</option>
+              </Form.Select>
+
+              {/* Desktop Filter */}
+              <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>All</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Has Orders</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Blocklisted</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Deleted</button>
+                </Col>
+              </Row>
+            </Col>
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -372,6 +417,7 @@ export default function Customers() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -382,8 +428,8 @@ export default function Customers() {
                   paginationDefaultPage={currentPage}
                   onChangeRowsPerPage={handlePerRowsChange}
                   onChangePage={handlePageChange}
-                  //   expandableRows
-                  //   expandableRowsComponent={ExpandedComponent}
+                //   expandableRows
+                //   expandableRowsComponent={ExpandedComponent}
                 />{" "}
               </Box>
             </div>
@@ -455,14 +501,14 @@ export default function Customers() {
               <Col lg={4}>
                 <Form.Label>Has Email</Form.Label>
               </Col>
-            
+
               <Col lg={8}>
-              <Form.Select aria-label="Source">
+                <Form.Select aria-label="Source">
                   <option>All </option>
                 </Form.Select>
               </Col>
             </Form.Group>
-           
+
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -592,7 +638,7 @@ export default function Customers() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Edit Customer
+              Edit Customer
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>

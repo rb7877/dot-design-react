@@ -1,0 +1,222 @@
+.table50 {
+
+    td {
+        width:50%;
+    }
+    th {
+        width:50%;
+    }
+}
+
+.totalPayment {
+    display:inline-block;
+    width:100%;
+
+    .simpleTable {
+       width:400px;
+       float: right;
+       margin-right: 20px !important;
+
+        td {
+           text-align: right;
+           border: none;
+        }
+        th {
+           border:none;
+        }
+    }
+
+}
+
+.simpleTable {
+
+    thead {
+
+        tr {
+            background-color: var(--Main2);
+            color:#fff;
+        }
+    }
+
+    th {
+        font-weight: 500;
+        padding: 15px 15px;
+        vertical-align: middle;
+    }
+
+    td {
+         padding: 15px 15px;
+         vertical-align: middle;
+    }
+    tbody {
+       border-top: none !important;
+       background: #fff;
+
+       .nameList {
+
+            h6 {
+                margin-bottom: 3px;
+            }
+            p {
+                margin: 0;
+                color: #909090;
+                font-size: 14px;
+            }
+       }
+    }
+}
+
+.action {
+
+    .actionIcon {
+        margin-right:20px;
+        cursor: pointer;
+    }
+}
+.date {
+
+    h6 {
+        font-size:15px;
+        font-weight:500;
+        margin-bottom:0;
+    }
+    p {
+        font-size:14px;
+        color:#909090;
+        margin:0;
+    }
+}
+
+.cardBox {
+    background:#5498FD;
+    padding: 15px 15px;
+    margin-bottom:15px;
+    border-radius: 8px;
+
+    h4 {
+        font-size:15px;
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+}
+
+.countCard {
+    background-color: #EEF5FF;
+    padding: 25px 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+
+    h6 {
+        font-size:18px;
+        margin-bottom:15px;
+    }
+    h3 {
+        font-size:32px;
+        margin:0;
+        font-weight:600;
+    }
+}
+
+.tagsList {
+    list-style:none;
+    margin:0;
+    padding:0;
+
+    li {
+        display: inline-block;
+        background: #fff;
+        padding: 10px 15px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #dbd7d7;
+        min-width: 100px;
+        text-align: center;
+    }
+}
+
+/*=======================================================
+//////////////RESPONSIVE MEDIA QUERY START///////////////
+=======================================================*/
+@media (max-width: 767px) {
+
+    .totalPayment {
+    
+        .simpleTable {
+           width:100%;
+           margin-right: 0px !important;
+        }
+    
+    }
+}
+:global(.modal-body) {
+    padding: 20px 20px;
+
+    .formBox {
+        margin-bottom: 15px;
+
+        :global(.form-label) {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        :global(.form-control) {
+            border: 1px solid #d7d7d7;
+            border-radius: 8px;
+            padding: 10px 12px;
+
+            &:focus {
+                box-shadow:none;
+                border-color:var(--Main2);
+            }
+        }
+        :global(.form-select) {
+            border: 1px solid #d7d7d7;
+            border-radius: 8px;
+            padding: 10px 12px;
+
+            &:focus {
+                box-shadow:none;
+                border-color:var(--Main2);
+            }
+        }
+    }
+}
+
+:global(.modal-footer) {
+    padding: 25px 15px;
+    justify-content: center;
+
+    .leftft {
+
+        button {
+            color:var(--Main2);
+            font-size:18px;
+            font-weight:600;
+        }
+    }
+    .rightft {
+        text-align: right;
+
+        button {
+            padding: 10px 30px;
+            margin-left: 15px;
+            border-radius: 8px;
+        }
+        .close {
+            background:#AACBFE;
+            color:#fff;
+        }
+        .apply {
+            background:var(--Main2);
+            color:#fff;
+        }
+    }
+}
+
+

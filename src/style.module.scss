@@ -10,8 +10,8 @@ body {
 }
 
 .mainHeader {
-    margin-left: 240px;
-    padding: 20px 25px;
+    margin-left: 250px;
+    padding: 20px 50px;
     background-color: #FBFBFB;
 
     .mobileHeader {
@@ -169,7 +169,7 @@ body {
 
 .sidebarMain {
     position: fixed;
-    width: 240px;
+    width: 250px;
     height: 100%;
     top: 0;
     z-index: 10;
@@ -394,7 +394,7 @@ body {
 }
 
 .mainFooter {
-    margin-left: 240px;
+    margin-left: 250px;
     padding: 20px 25px;
     background: #fff;
     text-align: center;
@@ -404,8 +404,8 @@ body {
     overflow: hidden;
 }
 .pageWrapper {
-    margin-left: 240px;
-    padding: 5px 25px 0px 25px;
+    margin-left: 250px;
+    padding: 20px 50px 0px 50px;
 
     :global(.card) {
         background-color: transparent;
@@ -438,6 +438,7 @@ body {
                     
                     :global(.btn) {
                         background-color: var(--Main2);
+                        border-color: var(--Main2);
                         color: #fff;
                         border-radius: 8px;
                         min-width: 80px;
@@ -447,6 +448,25 @@ body {
                         &:focus {
                             box-shadow: none;
                         }
+                    }
+                    :global(.dropdown) {
+                        display: inline-block;
+
+                        :global(.dropdown-menu) {
+                            padding: 0px 0px;
+                            border-radius: 8px;
+                            border-color: #d2cfcf;
+                    
+                            a {
+                                padding: 8px 10px;
+                                border-bottom: 1px solid #e4e4e4;
+                    
+                                &:last-child{
+                                    border:none;
+                                }
+                            }
+                        }
+
                     }
                 }
             }
@@ -626,8 +646,52 @@ body {
     padding:0;
 }
 
+.filterMain {
 
+    .filterMobile {
+        width: 100%;
+        background-color: #AACBFE;
+        border-radius: 0px;
+        color: #000;
+        padding: 20px 20px;
+        border: none;
+        display:none;
 
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .filterRowMain {
+        margin:0; 
+
+        .filterRowBox {
+            padding:0;
+
+            
+            :global(.active) {
+                background-color: #AACBFE !important;
+                color: #000 !important;
+            }
+
+            .filterB {
+                width: 100%;
+                background: #CCE0FE;
+                border-radius: 0px;
+                color: #AAAAAA;
+                padding: 20px 20px;
+                border: none;
+
+                &:focus {
+                    box-shadow: none;
+                }
+                &.active {
+                    background-color: #AACBFE !important;
+                    color: #000 !important;
+                }
+            }
+        }
+    }
+}
 /*=======================================================
 //////////////RESPONSIVE MEDIA QUERY START///////////////
 =======================================================*/
@@ -778,6 +842,13 @@ body {
                         .width50:nth-child(2) {
                             margin-left: 6px;
                         }
+                        .leftSpace {
+                            margin-right: 6px;
+                            margin-left:0px !important;
+                        }
+                        .rightSpace {
+                            margin-left: 6px;
+                        }
                     }
                 }
             }
@@ -790,6 +861,19 @@ body {
     .mainFooter {
         margin-left:0px;
         padding: 20px 15px;
+    }
+    .hideMobile {
+        display:none;
+    }
+
+    .filterMain {
+
+        .filterMobile {
+            display:block;
+        }
+        .filterRowMain {
+            display: none;
+        }
     }
    
 }
