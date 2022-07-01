@@ -30,31 +30,26 @@ import ItemsSidebar from "./pages/Inventory/Items/Items";
 import Suppliers from "./pages/Inventory/Suppliers/Suppliers";
 import Tags from "./pages/Settings/Tags/Tags";
 import Devices from "./pages/Settings/Devices/Devices";
- import Branch from "./pages/Settings/branch/Branch";
+import Branch from "./pages/Settings/branch/Branch";
 import Purchase from "./pages/Inventory/Purchaseorder/Purchase";
 import Puchaseorder from "./pages/Inventory/Purchaseorder/Purhaseorder";
 import Transfer from "./pages/Inventory/Transfer/Transfer";
 import Transferorder from "./pages/Inventory/Transfer/Transferorder";
-
 import { CreateBranch } from "./pages/Settings/branch/Createbranch";
 import Acounting from "./pages/Settings/branch/Acounting";
 import Category from "./pages/Menu/Category/Category";
-
-
-
 import Products from "./pages/Menu/Products/Products";
 import Modifier from "./pages/Menu/Modifier/Modifier";
 import Display from "./pages/Menu/Display/Display";
 import Role from "./pages/Menu/Role/Role";
-
 import Branches from "./pages/Settings/Delivery/Branches";
-
 import Categorydetails from "./pages/Menu/Category/Categorydetails";
 import Categorylist from "./pages/Menu/Category/Categorylist";
-
 import Addproducts from "./pages/Menu/Products/Addproducts";
-
 import Sessionsorder from "./pages/Sales/Sessions/Sessionsorder";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Profile from "./pages/Dashboard/Profile";
+import Addcombos from "./pages/Promotion/Combos/Addcombos";
 
 function App() {
   return (
@@ -74,7 +69,7 @@ function App() {
             <Route exact path="/sales/orders/order-details">
               <OrderDetails />
             </Route>
-                  
+
             <Route exact path="/sales/customers">
               <Customers />
             </Route>
@@ -96,7 +91,7 @@ function App() {
             <Route exact path="/promotion/combos">
               <Combos />
             </Route>
-            <Route exact path="/reports/sales">
+            <Route exact path="/reports/sale">
               <Sales />
             </Route>
             <Route exact path="/reports/category-sales-report">
@@ -123,7 +118,7 @@ function App() {
             <Route exact path="/reports/miscellaneous">
               <Miscellaneous />
             </Route>
-              <Route exact path="/settings/roles">
+            <Route exact path="/settings/roles">
               <Roles />
             </Route>
             <Route exact path="/settings/employes">
@@ -133,102 +128,113 @@ function App() {
               <Cashiers />
             </Route>
             <Route exact path="/settings/taxes">
-              <Taxes/>
+              <Taxes />
             </Route>
             <Route exact path="/settings/floors">
-              <FLoors/>
+              <FLoors />
             </Route>
             <Route exact path="/settings/payment">
-             <Payment/>
+              <Payment />
             </Route>
-            
+
             <Route exact path="/settings/delivery">
-             <Delivery/>
+              <Delivery />
             </Route>
 
             <Route exact path="/inventory/items">
-             <ItemsSidebar/>
+              <ItemsSidebar />
             </Route>
 
             <Route exact path="/inventory/suppliers">
-             <Suppliers/>
+              <Suppliers />
             </Route>
             <Route exact path="/settings/tags">
-             <Tags/>
+              <Tags />
             </Route>
 
             <Route exact path="/settings/devices">
-             <Devices/>
+              <Devices />
             </Route>
             {/* <Route exact path="/settings/branch">
              <Branch/>
             </Route> */}
-                                       
+
 
             <Route exact path="/inventory/purchase">
-             <Purchase/>
+              <Purchase />
             </Route>
             <Route exact path="/inventory/purchase/purchaseorder">
-             <Puchaseorder/>
-             </Route>
-             <Route exact path="/inventory/transfer">
-             <Transfer/>
+              <Puchaseorder />
+            </Route>
+            <Route exact path="/inventory/transfer">
+              <Transfer />
             </Route>
 
             <Route exact path="/inventory/transfer/transferorder">
-             <Transferorder/>
-             </Route>
+              <Transferorder />
+            </Route>
 
-             <Route exact path="/settings/branch">
-             <Branch/>
+            <Route exact path="/settings/branch">
+              <Branch />
             </Route>
             <Route exact path="/settings/branch/add-branch">
-             <CreateBranch/>
-            </Route> 
+              <CreateBranch />
+            </Route>
             <Route exact path="/settings/branch/acounting">
-             <Acounting />
-            </Route>     
+              <Acounting />
+            </Route>
 
-            
-             <Route exact path="/menu/category">
-             <Category/>
-            </Route>  
+
+            <Route exact path="/menu/category">
+              <Category />
+            </Route>
 
 
             <Route exact path="/menu/products">
-            <Products/>
-            </Route> 
+              <Products />
+            </Route>
 
             <Route exact path="/menu/modifier">
-            <Modifier/>
-            </Route> 
-            
+              <Modifier />
+            </Route>
+
             <Route exact path="/menu/display">
-            <Display/>
-            </Route> 
+              <Display />
+            </Route>
             <Route exact path="/menu/role">
-            <Role/>
-            </Route>  
+              <Role />
+            </Route>
             <Route exact path="/settings/delivery/branches">
-             <Branches/>
+              <Branches />
             </Route>
 
             <Route exact path="/menu/category/categorydetails">
-             <Categorydetails/>
-            </Route>  
+              <Categorydetails />
+            </Route>
 
             <Route exact path="/menu/category/categorylist">
-             <Categorylist/>
-            </Route>  
+              <Categorylist />
+            </Route>
 
 
             <Route exact path="/menu/products/addproducts">
-            <Addproducts/>
-            </Route> 
+              <Addproducts />
+            </Route>
 
 
             <Route exact path="/sales/sessions/sessionsorder">
               <Sessionsorder />
+            </Route>
+            <Route exact path="/dashboard">
+              <Dashboard />
+            </Route>
+
+            <Route exact path="/dashboard/profile">
+              <Profile />
+            </Route>
+
+            <Route exact path="/Promotion/combos/addcombos">
+              <Addcombos />
             </Route>
 
           </Switch>

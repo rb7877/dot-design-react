@@ -175,6 +175,8 @@ export default function TimedEvents() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
+  const [editCustomerShow, seteditCustomer] = useState(false);
+  const [deleteCustomerShow, setdeleteCustomer] = useState(false);
 
   const columns = [
     {
@@ -225,12 +227,16 @@ export default function TimedEvents() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <img
-            src={ActionEdit}
-            className={`${cx.actionIcon}`}
-            alt="img"/>
-          <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
-        </div>
+        <img  onClick={() => seteditCustomer(true)}
+          src={ActionEdit}
+          className={`${cx.actionIcon}`}
+          alt="img"/>
+      
+        <img  onClick={() =>  setdeleteCustomer(true)}
+        src={ActionDelete} 
+        className={`${cx.actionIcon}`}
+         alt="img" />
+      </div>
       ),
       width: "140px",
     },
@@ -483,6 +489,7 @@ export default function TimedEvents() {
         </Form>
       </Modal>
 
+    
       <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
@@ -493,7 +500,7 @@ export default function TimedEvents() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Add Event 
+            Add Event
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -502,10 +509,10 @@ export default function TimedEvents() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Name</Form.Label>
+                <Form.Label>English Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Qwerty" />
+                <Form.Control type="text" placeholder="Enter English Name" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -513,10 +520,21 @@ export default function TimedEvents() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Type</Form.Label>
+                <Form.Label>Arabic Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Type" />
+                <Form.Control type="text" placeholder="Enter Arabic Name" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Event Type</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Fixed Price" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -527,7 +545,21 @@ export default function TimedEvents() {
                 <Form.Label>Value</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Value" />
+                <Form.Control type="text" placeholder="Enter Value" />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Types of Requests</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>All</option>
+                </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group
@@ -535,10 +567,13 @@ export default function TimedEvents() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>From</Form.Label>
+                <Form.Label>From the date of</Form.Label>
               </Col>
-              <Col lg={8}>
-                <Form.Control type="date" placeholder="From" />
+              <Col lg={4}>
+              <Form.Control type="text" placeholder="Enter Data From" />
+              </Col>
+              <Col lg={4}>
+              <Form.Control type="text" placeholder="Enter Data To" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -546,12 +581,116 @@ export default function TimedEvents() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Till</Form.Label>
+                <Form.Label>From time</Form.Label>
               </Col>
-              <Col lg={8}>
-                <Form.Control type="date" placeholder="Till" />
+              <Col lg={4}>
+              <Form.Control type="text" placeholder="Choose Time From" />
+              </Col>
+              <Col lg={4}>
+              <Form.Control type="text" placeholder="Choose Time  To" />
               </Col>
             </Form.Group>
+            <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Days</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Monday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Tuesday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Wednesday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Thrusday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Friday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Saturday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Sunday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Monday
+                    </label>
+                  </Col>
+                </Row>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Category</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Select aria-label="Source">
+                  <option>Select Category</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Products</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Select aria-label="Source">
+                  <option>Select Products</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Branches</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Select aria-label="Source">
+                  <option>Select Branches</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -574,8 +713,251 @@ export default function TimedEvents() {
           </Modal.Footer>
         </Form>
       </Modal>
+      <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={editCustomerShow}
+        onHide={() => seteditCustomer(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+            Edit Event
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>English Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter English Name" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Arabic Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Arabic Name" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Event Type</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Fixed Price" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Value</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Enter Value" />
+              </Col>
+            </Form.Group>
 
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Types of Requests</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>All</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>From the date of</Form.Label>
+              </Col>
+              <Col lg={4}>
+              <Form.Control type="text" placeholder="Enter Data From" />
+              </Col>
+              <Col lg={4}>
+              <Form.Control type="text" placeholder="Enter Data To" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>From time</Form.Label>
+              </Col>
+              <Col lg={4}>
+              <Form.Control type="text" placeholder="Choose Time From" />
+              </Col>
+              <Col lg={4}>
+              <Form.Control type="text" placeholder="Choose Time  To" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Days</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Monday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Tuesday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Wednesday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Thrusday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Friday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Saturday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Sunday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Monday
+                    </label>
+                  </Col>
+                </Row>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Category</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Select aria-label="Source">
+                  <option>Select Category</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Products</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Select aria-label="Source">
+                  <option>Select Products</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
 
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Branches</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Select aria-label="Source">
+                  <option>Select Branches</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${cx.leftft}`}>
+                  <button type="button" className={`${style.bgremove}`}>
+                    Clear
+                  </button>
+                </Col>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Apply
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal>
+      
+      <Modal
+        className={`${cx.ctsPopup} ${cx.importBody}`}
+        show={deleteCustomerShow}
+        onHide={() => setdeleteCustomer(false)}
+        aria-labelledby="example-modal-sizes-title-md"
+        centered
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-md">
+              Delete Event
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>Are you sure to delete this item</p>
+            <button type="button" className={`btn ${cx.importBtn}`}>
+              Yes
+            </button>
+          </Modal.Body>
+        </Form>
+      </Modal>
     </>
   );
 }

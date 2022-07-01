@@ -4,15 +4,18 @@ import * as React from 'react';
 const GlobalContext = createContext({
     showMenu: false,
     showMore: false,
-    displayMenu: () => { },
+    displayMenu: (data: boolean) => { },
     displayMore: () => { },
 });
 
-export function GlobalContextProvider(props:any) {
+export function GlobalContextProvider(props: any) {
     const [showMenu, setshowMenu] = useState(false);
     const [showMore, setshowMore] = useState(false);
 
-    function itemDisplayMenuHandler() {
+    function itemDisplayMenuHandler(data: boolean) {
+        if (data) {
+            data = false;
+        }
         if (showMenu) {
             setshowMenu(false);
         } else {

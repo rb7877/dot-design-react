@@ -80,6 +80,30 @@
     }	
 }
 
+.categoryImage {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        width:6.44%;
+        background-color: #e0eaf8;
+        border: 1px solid #d7d7d7;
+        text-align: center;
+        margin: 1px;
+        padding: 10px 10px;
+
+        .categoryIcon{
+            height: 35px;
+        }
+    }
+
+    
+}
+
+
 
 
 .ctsPopup {
@@ -313,6 +337,7 @@
     
             :global(.nav-item) {
                 margin-bottom: 5px;
+                width: auto;
     
                 :global(.nav-link) {
                     padding: 12px 20px;
@@ -378,5 +403,15 @@
 
             }
         }
+    }
+
+    
+    .categoryImage {
+
+        li {
+            width: 24.25%;
+        }
+
+        
     }
 }

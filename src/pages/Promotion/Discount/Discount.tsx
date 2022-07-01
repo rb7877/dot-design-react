@@ -131,6 +131,8 @@ export default function Discount() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
+  const [editCustomerShow, seteditCustomer] = useState(false);
+  const [deleteCustomerShow, setdeleteCustomer] = useState(false);
 
   const columns = [
     {
@@ -155,11 +157,15 @@ export default function Discount() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <img
+          <img  onClick={() => seteditCustomer(true)}
             src={ActionEdit}
             className={`${cx.actionIcon}`}
             alt="img"/>
-          <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
+        
+          <img  onClick={() =>  setdeleteCustomer(true)}
+          src={ActionDelete} 
+          className={`${cx.actionIcon}`}
+           alt="img" />
         </div>
       ),
       width: "140px",
@@ -292,7 +298,7 @@ export default function Discount() {
                   className={`btn ${style.width50}`}
                   onClick={() => setAddCustomer(true)}
                 >
-                  + Add Coupons
+                  + Add Discount
                 </button>
               </Col>
             </Row>
@@ -417,10 +423,47 @@ export default function Discount() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Name</Form.Label>
+                <Form.Label>Type</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Qwerty" />
+              <Form.Select aria-label="Source">
+                  <option>Amount</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Taxable ?</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Yes</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name (English)</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Control type="text" placeholder="All" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name (Arabic)</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Control type="text" placeholder="All" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -431,9 +474,10 @@ export default function Discount() {
                 <Form.Label>Amount</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Amount" />
+              <Form.Control type="text" placeholder="SAR 82.00" />
               </Col>
             </Form.Group>
+
            
           </Modal.Body>
           <Modal.Footer>
@@ -457,8 +501,125 @@ export default function Discount() {
           </Modal.Footer>
         </Form>
       </Modal>
+      <Modal
+         className={`${cx.ctsPopup}`}
+         size="lg"
+         show={editCustomerShow}
+         onHide={() => seteditCustomer(false)}
+         aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+            Edit Discount
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Type</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Amount</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Taxable ?</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Yes</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name (English)</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Control type="text" placeholder="All" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name (Arabic)</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Control type="text" placeholder="All" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Amount</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Control type="text" placeholder="SAR 82.00" />
+              </Col>
+            </Form.Group>
 
-
+           
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${cx.leftft}`}>
+                  <button type="button" className={`${style.bgremove}`}>
+                    Clear
+                  </button>
+                </Col>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Apply
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal>
+    
+      <Modal
+        className={`${cx.ctsPopup} ${cx.importBody}`}
+        show={deleteCustomerShow}
+        onHide={() => setdeleteCustomer(false)}
+        aria-labelledby="example-modal-sizes-title-md"
+        centered
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-md">
+              Delete Discount
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>Are you sure to delete this item</p>
+            <button type="button" className={`btn ${cx.importBtn}`}>
+              Yes
+            </button>
+          </Modal.Body>
+        </Form>
+      </Modal>
     </>
   );
 }

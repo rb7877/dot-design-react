@@ -1,7 +1,37 @@
 {
   "files": {
-    "main.css": "/designer/dot/static/css/main.b3dad9bc.css",
-    "main.js": "/designer/dot/static/js/main.ec12f894.js",
+    "main.css": "/designer/dot/static/css/main.ce530c36.css",
+    "main.js": "/designer/dot/static/js/main.f42f893a.js",
+    "static/media/category-icon25.svg": "/designer/dot/static/media/category-icon25.8f163412e3cc1a3ec19f92094ac0bea6.svg",
+    "static/media/category-icon26.svg": "/designer/dot/static/media/category-icon26.8494e490023a3e1510f37e817f078ea5.svg",
+    "static/media/category-icon24.svg": "/designer/dot/static/media/category-icon24.0e502c8089f7f93b08265c18cb7e2a73.svg",
+    "static/media/category-icon7.svg": "/designer/dot/static/media/category-icon7.407c1bc8b256617729459378d1360d00.svg",
+    "static/media/category-icon14.svg": "/designer/dot/static/media/category-icon14.994ed4cbeebdafba8044af6167f7c3fe.svg",
+    "static/media/category-icon21.svg": "/designer/dot/static/media/category-icon21.aa5c935116729285b67663db782629bc.svg",
+    "static/media/category-icon10.svg": "/designer/dot/static/media/category-icon10.5b662d99741d12fd72510bd0e71e6dd6.svg",
+    "static/media/category-icon20.svg": "/designer/dot/static/media/category-icon20.d85dcdec7cda9611274af772022da611.svg",
+    "static/media/category-icon22.svg": "/designer/dot/static/media/category-icon22.9dbb8e3eb485cd6643c03bfd29f9f8b3.svg",
+    "static/media/category-icon16.svg": "/designer/dot/static/media/category-icon16.7c28b7c27291b5a302f475b70d6f6ae2.svg",
+    "static/media/category-icon12.svg": "/designer/dot/static/media/category-icon12.18698484b5f4addab27c891eab549229.svg",
+    "static/media/category-icon1.svg": "/designer/dot/static/media/category-icon1.18177a7e2c3ac68b3a360019589340a2.svg",
+    "static/media/category-icon23.svg": "/designer/dot/static/media/category-icon23.ecde08c046e9fdb6f8391410f3a7a3ce.svg",
+    "static/media/category-icon9.svg": "/designer/dot/static/media/category-icon9.adcf951b8807364ce554a85719f0d9e6.svg",
+    "static/media/category-icon28.svg": "/designer/dot/static/media/category-icon28.eec222d9f77d3631de0c29484a8db790.svg",
+    "static/media/category-icon27.svg": "/designer/dot/static/media/category-icon27.58817f63a2cc28e2ea13d1c565a56138.svg",
+    "static/media/category-icon18.svg": "/designer/dot/static/media/category-icon18.2802b78e119b176b13b248123315416d.svg",
+    "static/media/category-icon11.svg": "/designer/dot/static/media/category-icon11.96e53d44cb1f887a5018be0cff3f10ec.svg",
+    "static/media/category-icon3.svg": "/designer/dot/static/media/category-icon3.03964c8c813263517ad24ca90584843d.svg",
+    "static/media/category-icon6.svg": "/designer/dot/static/media/category-icon6.dcc93fab7704220336b1241b36410605.svg",
+    "static/media/category-icon13.svg": "/designer/dot/static/media/category-icon13.63b3c44f8daf2768bc965bdac3764f50.svg",
+    "static/media/category-icon19.svg": "/designer/dot/static/media/category-icon19.7fbe2451fceeae3b9a64980533b5bd9e.svg",
+    "static/media/category-icon29.svg": "/designer/dot/static/media/category-icon29.47599cc829f86c9644fcebae657b6b12.svg",
+    "static/media/category-icon2.svg": "/designer/dot/static/media/category-icon2.f51a80309409c7a5ad9fe62a4e3d7b28.svg",
+    "static/media/category-icon4.svg": "/designer/dot/static/media/category-icon4.1138e349c00c70595f1662bc3564a229.svg",
+    "static/media/category-icon17.svg": "/designer/dot/static/media/category-icon17.f0fd931c0021e05b53c8ae4c21c00ec5.svg",
+    "static/media/category-icon30.svg": "/designer/dot/static/media/category-icon30.722b4c68477f7df1bee347305d3a0440.svg",
+    "static/media/category-icon8.svg": "/designer/dot/static/media/category-icon8.3c639b78f6076bd17ecb2d73fdcc171f.svg",
+    "static/media/category-icon5.svg": "/designer/dot/static/media/category-icon5.1990f01a0675624c9a63c3f061485132.svg",
+    "static/media/category-icon15.svg": "/designer/dot/static/media/category-icon15.5027b1fb7394b0ac5b87ae0d4017b45e.svg",
     "static/media/1.svg": "/designer/dot/static/media/1.98a35ae4fee8ab96008aea17e627dac9.svg",
     "static/media/logo.svg": "/designer/dot/static/media/logo.a860d3c6517e1961f27900e544555a3e.svg",
     "static/media/icon-edit.svg": "/designer/dot/static/media/icon-edit.cefa86abb770a517e85fe10503c0b277.svg",
@@ -10,11 +40,11 @@
     "static/media/icon-profile.svg": "/designer/dot/static/media/icon-profile.5b5f18298b4ef221b2b0173c6a197010.svg",
     "static/media/icon-info.svg": "/designer/dot/static/media/icon-info.5b8a52a91db0923af13f03a6dae358a8.svg",
     "static/media/line.svg": "/designer/dot/static/media/line.98e745e471d3058e151e66d904e568b3.svg",
-    "main.b3dad9bc.css.map": "/designer/dot/static/css/main.b3dad9bc.css.map",
-    "main.ec12f894.js.map": "/designer/dot/static/js/main.ec12f894.js.map"
+    "main.ce530c36.css.map": "/designer/dot/static/css/main.ce530c36.css.map",
+    "main.f42f893a.js.map": "/designer/dot/static/js/main.f42f893a.js.map"
   },
   "entrypoints": [
-    "static/css/main.b3dad9bc.css",
-    "static/js/main.ec12f894.js"
+    "static/css/main.ce530c36.css",
+    "static/js/main.f42f893a.js"
   ]
 }

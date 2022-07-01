@@ -209,147 +209,186 @@ body {
             margin: 0;
             padding: 0px 15px;
 
-        
-
-
-            :global(.accordion) {
-
-                :global(.accordion-item) {
-                    background-color: transparent;
-                    border: none;
-                    margin-bottom: 10px;
-
-                    
-                    :global(.accordion-header) {
-
-                        
-                        :global(.accordion-button) {
-                            padding: 13px 13px;
-                            background-color: transparent;
-                            color:var(--Color);
-                            display: flex;
-                            align-items: center;
-                            transition: 0.5s;
-                            box-shadow: none;
-
-                            &:focus {
-                              box-shadow: none;
-                            }
-                            &::after {
-                                filter: invert(10%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
-                            }
-                            .menuIcon {
-                                width: 30px;
-                                position: relative;
-                                top: -1px;
-                                text-align: center;
-                                margin-right: 5px;
-        
-                                svg {
-                                    height: 24px;
-                                    width: 24px;
-                                    transition: 0.5s;
-                                }
-                            }
-                            &:hover , &:focus{
-                                background-color: var(--Main2);
-                                color:#fff;
-                                border-radius: 8px;
-                           
-                                &::after {
-                                    // background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg xmlns='http://www.w3.org/2000/svg' width='13.001' height='7.002' viewBox='0 0 13.001 7.002'%3e%3cpath id='icon-arrow-white' d='M1.646,4.646a.5.5,0,0,1,.708,0L8,10.293l5.646-5.647a.5.5,0,0,1,.708.708l-6,6a.5.5,0,0,1-.708,0l-6-6a.5.5,0,0,1,0-.708Z' transform='translate(-1.499 -4.499)' fill='%23fff' fill-rule='evenodd'/%3e%3c/svg%3e ");
-                                }
-
-                                .menuIcon {
-            
-                                    svg {
-                                        
-                                        path {
-                                            stroke: #fff;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-                    :global(.accordion-collapse) {
-
-                        :global(.accordion-body) {
-                        padding: 0px 0px;
-
-                        ul {
-                            list-style: none;
-                            margin: 0;
-                            padding-left: 47px;
-
-                            li {
-
-                                a {
-                                    color:var(--Color);
-
-                                    &:hover {
-                                        background-color: transparent;
-                                        color:var(--Color);
-                                    }
-                                    &.active , &:focus{
-                                        font-weight: bold;
-                                    }
-                                }
-                            }
-                        }
-                        }
-                    }
-
-
-                }
-            }
-
             li {
+                margin-bottom: 10px;
 
-                a {
+                .signleMenu {
                     display: flex;
                     align-items: center;
-                    color: #A4A6B3;
+                    color: var(--Color);
                     text-decoration: none;
-                    padding: 15px 0px;
+                    padding: 13px;
                     background-color: transparent;
                     transition: 0.5s;
-                    border-radius: 5px;
-
-                    .menuIcon {
-                        width: 55px;
-                        position: relative;
-                        top: -1px;
-                        text-align: center;
-
-                        svg {
-                            height: 16px;
-                            width: 16px;
-                        }
+                    border-radius: 8px;
+                    width: 100%;
+                    border: none;
+                    position:relative;
+                    
+                    &:focus {
+                        box-shadow: none;
                     }
 
-                    &:hover, &.active {
+                    &:global(.active) {
                         background-color: var(--Main2);
                         color:#fff;
-                        
+
                         .menuIcon {
                             
                             svg {
 
                                 path {
-                                    fill: #fff;
-                                    fill-opacity:1;
-                                    opacity: 1;
+                                    stroke: #fff;
                                 }
-                                g {
-                                    opacity: 1;
+                            }
+                        }
+                        &::after {
+                            filter: none;
+                        }
+                    }
+
+                    .menuIcon {
+                        margin-right: 5px;
+                        position: relative;
+                        text-align: center;
+                        top: -1px;
+                        width: 30px;
+
+                        svg {
+                            height: 24px;
+                            transition: .5s;
+                            width: 24px;
+                        }
+                    }
+                }
+
+                :global(.btn) {
+                    display: flex;
+                    align-items: center;
+                    color: var(--Color);
+                    text-decoration: none;
+                    padding: 13px;
+                    background-color: transparent;
+                    transition: 0.5s;
+                    border-radius: 8px;
+                    width: 100%;
+                    border: none;
+                    position:relative;
+                    
+                    &::after {
+                        filter: invert(10%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(-25%) contrast(10%);
+                        width: 18px;
+                        height: 18px;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        content: "";
+                        flex-shrink: 0;
+                        margin-left: auto;
+                        margin-top: 8px;
+                        transition: -webkit-transform .2s ease-in-out;
+                        transition: transform .2s ease-in-out;
+                        transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
+                        background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg xmlns='http://www.w3.org/2000/svg' width='13.001' height='7.002' viewBox='0 0 13.001 7.002'%3e%3cpath id='icon-arrow-white' d='M1.646,4.646a.5.5,0,0,1,.708,0L8,10.293l5.646-5.647a.5.5,0,0,1,.708.708l-6,6a.5.5,0,0,1-.708,0l-6-6a.5.5,0,0,1,0-.708Z' transform='translate(-1.499 -4.499)' fill='%23fff' fill-rule='evenodd'/%3e%3c/svg%3e ");
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+
+                    .menuIcon {
+                        margin-right: 5px;
+                        position: relative;
+                        text-align: center;
+                        top: -1px;
+                        width: 30px;
+
+                        svg {
+                            height: 24px;
+                            transition: .5s;
+                            width: 24px;
+                        }
+                    }
+                }
+
+                .first {
+                    display:none;
+                    transition:0.5s;
+
+                    li {
+
+                        a {
+                            align-items: center;
+                            background-color: transparent;
+                            border-radius: 5px;
+                            display: flex;
+                            padding: 12px 0;
+                            color: var(--Color);
+                            text-decoration: none;
+                            transition: .5s;
+                        }
+                    }
+                }
+
+                &:hover{
+
+                    :global(.btn), .signleMenu {
+                        background-color: var(--Main2);
+                        color:#fff;
+
+                        .menuIcon {
+                            
+                            svg {
+
+                                path {
+                                    stroke: #fff;
                                 }
+                            }
+                        }
+                        &::after {
+                            filter: none;
+                        }
+                    }
+                }
+                
+                &.active{
+
+                    :global(.btn) {
+                        background-color: var(--Main2);
+                        color:#fff;
+
+                        .menuIcon {
+                            
+                            svg {
+
+                                path {
+                                    stroke: #fff;
+                                }
+                            }
+                        }
+                        &::after {
+                            filter: none;
+                            transform: rotate(-180deg);
+                            margin-top: -8px;
+                        }
+                    }
+                    .first {
+                        display:block;
+                        list-style: none;
+                        margin: 0;
+                        padding-left: 47px;
+
+                        li {
+
+                            :global(.active) {
+                                font-weight: 600;
                             }
                         }
                     }
                 }
             }
+            
+
+            
         }
     }
 }
@@ -361,16 +400,23 @@ body {
     text-align: center;
     
 }
-
+.modal-open {
+    overflow: hidden;
+}
 .pageWrapper {
     margin-left: 240px;
-    padding: 20px 25px 0px 25px;
+    padding: 5px 25px 0px 25px;
 
     :global(.card) {
         background-color: transparent;
         border:none;
 
         :global(.card-title) {
+            position: sticky;
+            z-index: 99;
+            background: #fff;
+            top: 0;
+            padding-top: 20px;
             
             h5 {
                 font-size: 25px;
@@ -693,6 +739,9 @@ body {
             border:none;
     
             :global(.card-title) {
+                position: initial;
+                padding: 0;
+                z-index: 1;
             
                 h5 {
                     font-size: 22px;

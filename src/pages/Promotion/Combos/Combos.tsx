@@ -374,10 +374,12 @@ export default function Combos() {
                 >
                   Filter
                 </button>
+                <NavLink to="/Promotion/combos/addcombos">
                 <button
                   className={`btn ${style.width50}`} >
                   + Add Combos
                 </button>
+                </NavLink>
               </Col>
             </Row>
           </Card.Title>
