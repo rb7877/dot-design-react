@@ -38,7 +38,7 @@ export default function Customerdetails() {
           <Row>
             <Col md={6} lg={3}>
               <div className={`${details.countCard}`}>
-                <h6>Done Orders</h6>
+                <h6>Done cxs</h6>
                 <h3>250</h3>
               </div>
             </Col>
@@ -56,7 +56,7 @@ export default function Customerdetails() {
             </Col>
             <Col md={6} lg={3}>
               <div className={`${details.countCard}`}>
-                <h6>Last Order</h6>
+                <h6>Last cx</h6>
                 <h3>250</h3>
               </div>
             </Col>
@@ -249,118 +249,82 @@ export default function Customerdetails() {
         </Card>
       </section>
       <Footer />
-      <Modal
-        className={`${cx.ctsPopup}`}
+      <Modal className={`${cx.ctsPopup}`}
         size="lg"
         show={addCustomerShow}
         onHide={() => setAddCustomer(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
+        
         <Form>
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">
-              Add tag
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <h5>Tags</h5>
-              <Col lg={4}>
-                
-              </Col>
-              <Col lg={12}>
-                <Form.Control type="text" placeholder="Choose..." />
-              </Col>
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+          Add Tag
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <Form.Group className={`row align-items-center ${cx.formBox}`} controlId="formName">
+              <Col lg={4}><Form.Label>Tags</Form.Label></Col>
+              <Col lg={8}><Form.Control type="text" placeholder="Choose..." /></Col>
             </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Col lg={12}>
-              <Row className="align-items-center">
-                <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
-                    Close
-                  </button>
-                  <button type="button" className={`btn ${cx.apply}`}>
-                    Apply
-                  </button>
-                </Col>
-              </Row>
-            </Col>
-          </Modal.Footer>
+          
+        </Modal.Body>
+        <Modal.Footer>
+          <Col lg={12}>
+            <Row className="align-items-center">
+             
+              <Col lg={12} className={`${cx.rightft}`}>
+                <button type="button" className={`btn ${cx.close}`}>Close</button>
+                <button type="button" className={`btn ${cx.apply}`}>Apply</button>
+              </Col>
+            </Row>
+          </Col>
+        </Modal.Footer>
+        
         </Form>
       </Modal>
-      <Modal
-        className={`${cx.ctsPopup}`}
+      
+      <Modal className={`${cx.ctsPopup}`}
         size="lg"
         show={addAddressShow}
         onHide={() => setAddAddress(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
+        
         <Form>
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">
-              Create Address 
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <h5>Name</h5>
-              <Col lg={4}>
-                
-              </Col>
-              <Col lg={12}>
-                <Form.Control type="text"  />
-              </Col>
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-lg">
+          Create Address
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <Form.Group className={`row align-items-center ${cx.formBox}`} controlId="formName">
+              <Col lg={4}><Form.Label>Name</Form.Label></Col>
+              <Col lg={8}><Form.Control type="text" /></Col>
             </Form.Group>
-          </Modal.Body>
-          <Modal.Body>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <h5>Description</h5>
-              <Col lg={4}>
-                
-              </Col>
-              <Col lg={12}>
-              <Form.Control as="textarea" rows={3} />
-              </Col>
+
+            <Form.Group className={`row align-items-center ${cx.formBox}`} controlId="formName">
+              <Col lg={4}><Form.Label>Description</Form.Label></Col>
+              <Col lg={8}><Form.Control as="textarea"  rows={3} /></Col>
             </Form.Group>
-          </Modal.Body>
-          <Modal.Body>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <h5>Delivery Zone</h5>
-              <Col lg={4}>
-                
+          
+            <Form.Group className={`row align-items-center ${cx.formBox}`} controlId="formName">
+              <Col lg={4}><Form.Label>Delivery Zone</Form.Label></Col>
+              <Col lg={8}><Form.Control type="text" placeholder="Choose..." /></Col>
+            </Form.Group> 
+        </Modal.Body>
+        <Modal.Footer>
+          <Col lg={12}>
+            <Row className="align-items-center">
+             
+              <Col lg={12} className={`${cx.rightft}`}>
+                <button type="button" className={`btn ${cx.close}`}>Close</button>
+                <button type="button" className={`btn ${cx.apply}`}>Save</button>
               </Col>
-              <Col lg={12}>
-                <Form.Control type="text" placeholder="Choose..." />
-              </Col>
-            </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Col lg={12}>
-              <Row className="align-items-center">
-                <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
-                    Close
-                  </button>
-                  <button type="button" className={`btn ${cx.apply}`}>
-                    Save
-                  </button>
-                </Col>
-              </Row>
-            </Col>
-          </Modal.Footer>
+            </Row>
+          </Col>
+        </Modal.Footer>
+        
         </Form>
       </Modal>
       <Modal
