@@ -1,4 +1,6 @@
+
 import React, { useCallback, useState } from "react";
+import { useHistory } from "react-router-dom";
 import style from "../../../style.module.scss";
 import cx from "./Coupons.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -177,7 +179,13 @@ export default function Coupons() {
   const [addCustomerShow, setAddCustomer] = useState(false);
   const [editCustomerShow, seteditCustomer] = useState(false);
   const [deleteCustomerShow, setdeleteCustomer] = useState(false);
+  const history = useHistory();
 
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push('/promotion/coupons/add-coupons',{params:'Hello World'})
+  
+  }
   const columns = [
     {
       name: "ID",
@@ -379,6 +387,22 @@ export default function Coupons() {
               </Col>
             </Row>
           </Card.Title>
+          <Col className={`${style.filterMain}`}>
+          <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>All</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Active</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Inactive</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Deleted</button>
+                </Col>
+              </Row>
+              </Col>  
           <Card.Body>
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
@@ -389,6 +413,7 @@ export default function Coupons() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}

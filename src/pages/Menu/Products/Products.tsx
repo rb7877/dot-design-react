@@ -8,7 +8,8 @@ import Footer from "../../../components/footer/Footer";
 import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
-import { NavLink } from "react-router-dom";
+import { NavLink ,useHistory} from "react-router-dom";
+
 
 import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
@@ -139,6 +140,7 @@ const data = [
 
 ];
 
+
 export default function Products() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
@@ -151,6 +153,14 @@ export default function Products() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
+
+  const history = useHistory();
+
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push("/menu/products/productsdetails",{params:'Hello World'})
+  
+  }
 
   const columns = [
     {
@@ -338,10 +348,31 @@ export default function Products() {
                 </button>
                 </NavLink>
                 
+                
+                
+                
               </Col>
+              
             </Row>
+            
           </Card.Title>
           <Card.Body>
+          <Col className={`${style.filterMain}`}>
+          <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>All</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Active</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Inactive</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Deleted</button>
+                </Col>
+              </Row>
+              </Col>
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -351,6 +382,7 @@ export default function Products() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}

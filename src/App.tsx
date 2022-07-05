@@ -52,7 +52,11 @@ import Profile from "./pages/Dashboard/Profile";
 import Addcombos from "./pages/Promotion/Combos/Addcombos";
 import Customerdetails from "./pages/Sales/Customerdetails/Customerdetails";
 import Combosdetails from "./pages/Promotion/Combosdetails/Combosdetails";
-
+import Productsdetails from "./pages/Menu/Products/Productsdetails";
+import Modifieroption from "./pages/Menu/Modifieroption/Modifieroption";
+import Branchdetails from "./pages/Settings/branch/Branchdetails";
+import Addcoupons from "./pages/Promotion/Coupons/Addcoupons";
+import Reservations from "./pages/Settings/Reservations/Reservations";
 function App() {
   return (
     <>
@@ -87,6 +91,11 @@ function App() {
             <Route exact path="/promotion/coupons">
               <Coupons />
             </Route>
+            
+            <Route exact path="/promotion/coupons/add-coupons">
+              <Addcoupons/>
+            </Route>
+
             <Route exact path="/promotion/discount">
               <Discount />
             </Route>
@@ -165,6 +174,10 @@ function App() {
             <Route exact path="/settings/devices">
               <Devices />
             </Route>
+            
+            <Route exact path="/settings/reservations">
+              <Reservations />
+            </Route>
             {/* <Route exact path="/settings/branch">
              <Branch/>
             </Route> */}
@@ -187,6 +200,9 @@ function App() {
             <Route exact path="/settings/branch">
               <Branch />
             </Route>
+            <Route exact path="/menu/setting/branch/branchdetails">
+              <Branchdetails />
+            </Route>
             <Route exact path="/settings/branch/add-branch">
               <CreateBranch />
             </Route>
@@ -204,9 +220,17 @@ function App() {
               <Products />
             </Route>
 
+            <Route exact path="/menu/products/productsdetails">
+              <Productsdetails />
+            </Route>
             <Route exact path="/menu/modifier">
               <Modifier />
             </Route>
+
+            <Route exact path="/menu/modifieroption">
+              <Modifieroption />
+            </Route>
+
 
             <Route exact path="/menu/display">
               <Display />

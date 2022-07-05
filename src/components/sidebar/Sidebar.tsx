@@ -219,6 +219,11 @@ const Sidebar = (props: any) => {
                     </NavLink>
                   </li>
                   <li>
+                    <NavLink to="/menu/modifieroption">
+                      <div className={`${style.menuName}`}>Modifier Options</div>
+                    </NavLink>
+                  </li>
+                  <li>
                     <NavLink to="/menu/display">
                       <div className={`${style.menuName}`}>Display</div>
                     </NavLink>
@@ -336,6 +341,11 @@ const Sidebar = (props: any) => {
                   <li>
                     <NavLink to="/settings/devices">
                       <div className={`${style.menuName}`}>Devices</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/settings/reservations">
+                      <div className={`${style.menuName}`}>Reservations</div>
                     </NavLink>
                   </li>
                   <li>

@@ -8,7 +8,7 @@ import Footer from "../../../components/footer/Footer";
 import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
-import { NavLink } from "react-router-dom";
+import { NavLink ,useHistory} from "react-router-dom";
 
 import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
@@ -137,6 +137,13 @@ export default function Branch() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+  const history = useHistory();
+
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push("/menu/setting/branch/branchdetails",{params:'Hello World'})
+  
+  }
   
   const filteredItems = data.filter(
     (item) =>
@@ -334,8 +341,22 @@ export default function Branch() {
 
               </Col> 
             </Row>
+         
           </Card.Title>
           <Card.Body>
+            <Card.Title>
+            <Col className={`${style.filterMain}`}>
+                <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>All</button>
+                </Col>
+               
+                <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
+            
+                </Col> 
+              </Row>
+              </Col>
+            </Card.Title>
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -345,6 +366,7 @@ export default function Branch() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}

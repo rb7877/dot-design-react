@@ -206,6 +206,21 @@
     
 }
 
+.pinBox {
+
+    :global(.form-control) {
+        border-radius:8px !important;
+    }
+
+    .generateBtn {
+        background: var(--Main2);
+        min-width: 100px;
+        border-radius: 8px !important;
+        color: #fff;
+        margin-left: 10px !important;
+    }
+}
+
 /*=======================================================
 //////////////RESPONSIVE MEDIA QUERY START///////////////
 =======================================================*/
@@ -227,6 +242,7 @@
                         }
                     }
                 }
+                
                 
                 
                 :global(.modal-footer) {

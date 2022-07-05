@@ -156,6 +156,7 @@ export default function Payment() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
+  const [editCustomerShow, seteditCustomer] = useState(false);
 
   const columns = [
     {
@@ -196,10 +197,11 @@ export default function Payment() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <img
-            src={ActionEdit}
-            className={`${cx.actionIcon}`}
-            alt="img"/>
+         
+           <img  onClick={() => seteditCustomer(true)}
+           src={ActionEdit}
+           className={`${cx.actionIcon}`}
+           alt="img"/>
          
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
@@ -385,32 +387,37 @@ export default function Payment() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label> Name</Form.Label>
+                <Form.Label>Name  </Form.Label>
               </Col>
               <Col lg={8}>
                 <Form.Control type="text" placeholder="Enter Name" />
               </Col>
             </Form.Group>
+          
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+             <Col lg={4}>
+                <Form.Label>Type</Form.Label>
+              </Col>
+
+              <Col lg={8}>
+                <Form.Select aria-label="Source">
+                  <option>Cash </option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Code</Form.Label>
+                <Form.Label>Code </Form.Label>
               </Col>
               <Col lg={8}>
                 <Form.Control type="text" placeholder="Enter Code" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label> Type</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Name" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -451,7 +458,7 @@ export default function Payment() {
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
-                  Apply
+                  Save
                   </button>
                 </Col>
               </Row>
@@ -460,6 +467,106 @@ export default function Payment() {
         </Form>
       </Modal>
 
+
+  <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={editCustomerShow}
+        onHide={() => seteditCustomer(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+            Edit payment method
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            
+           
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Control type="text" placeholder="Cash" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Code </Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Control type="text" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Auto Open Cash Drawer
+                    </label>
+                  </Col>
+                
+              </Row>
+              </Col>
+          </Form.Group>
+           
+          <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Active
+                    </label>
+                  </Col>
+                
+              </Row>
+              </Col>
+          </Form.Group>
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${cx.leftft}`}>
+                  <button type="button" className={`${style.bgremove}`}>
+                  Delete Payment Method
+                  </button>
+                </Col>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Save
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal>
 
     </>
   );

@@ -1,61 +1,18 @@
-.simpleTable {
 
-    thead {
+:global(.card-title) {
 
-        tr {
+    .backBtn {
+
+        :global(.btn) {
             background-color: var(--Main2);
-            color:#fff;
+            color: #fff;
+            border-radius: 8px;
+            min-width: 80px;
+            padding: 8px 10px;
         }
     }
-
-    th {
-        font-weight: 500;
-        padding: 15px 15px;
-        vertical-align: middle;
-    }
-
-    td {
-         padding: 15px 15px;
-         vertical-align: middle;
-    }
-    tbody {
-       border-top: none !important;
-       background: #fff;
-
-       .nameList {
-
-            h6 {
-                margin-bottom: 3px;
-            }
-            p {
-                margin: 0;
-                color: #909090;
-                font-size: 14px;
-            }
-       }
-    }
 }
 
-.action {
-
-    .actionIcon {
-        margin-right:20px;
-        cursor: pointer;
-    }
-}
-.date {
-
-    h6 {
-        font-size:15px;
-        font-weight:500;
-        margin-bottom:0;
-    }
-    p {
-        font-size:14px;
-        color:#909090;
-        margin:0;
-    }
-}
 .date {
 
     h5 {
@@ -77,28 +34,7 @@
     }
 }
 
- .user{
-    span{
-        background-color: red;
-        border-radius: 0.25rem;
-    padding: 0.25rem 0.5rem;
-    font-weight: 600;
-    letter-spacing: .05em;
-    color:white
-    }
-}
 
-.buttonlist
-{
-    .spanbtn{
-        button{
-        background-color: white;
-        border-radius: 0.25rem;
-        padding: 0.25rem 0.5rem;
-        margin: 2px;
-        }
-    }
-}
 .checkbox {
 	position: relative;
 	cursor: pointer;
@@ -155,8 +91,6 @@
     }	
 }
 
-
-
 .ctsPopup {
 
     :global(.modal-dialog) {
@@ -206,8 +140,11 @@
                             box-shadow:none;
                             border-color:var(--Main2);
                         }
+
                     }
+                    
                 }
+                
             }
             
             :global(.modal-footer) {
@@ -275,8 +212,6 @@
     }
 }
 
-
-
 .importBody {
 
     :global(.modal-header) {
@@ -307,87 +242,49 @@
             border-radius: 8px;
             background: var(--Main2);
             color: #fff;
-            width:100%;
-        }
-        .importBtn {
-            padding: 10px 30px;
-            border-radius: 8px;
-            background: var(--Main2);
-            color: #fff;
-            width:30%;
+            width:40%;
             margin: 3px;
         }
+
+      
     }
+
     
 }
-.tabsSection {
 
-    :global(.nav-tabs) {
-        border: none;
 
-        :global(.nav-item) {
-            width: 25%;
-            text-align: center;
+.cardBox {
+    background:#fff;
+    text-align: center;
+    padding: 20px 20px;
+    margin-bottom:25px;
 
-            :global(.nav-link) {
-                width: 100%;
-                background: #CCE0FE;
-                border-radius: 0px;
-                color: #AAAAAA;
-                padding: 20px 20px;
-                border: none;
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        object-fit: cover;
+    }
+    h3 {
+        font-size: 26px;
+        font-weight: 600;
+        margin: 15px 0px;
+    }
+    p {
 
-                &:global(.active) {
-                    background-color: #AACBFE;
-                    color: #000;
-                }
-            }
-
-        }
+    }
+    .installBtn {
+        width:100%;
+        background-color: var(--Main2);
+        color:#fff;
+        border-radius: 8px;
     }
 }
-
-
-.pinBox {
-
-    :global(.form-control) {
-        border-radius:8px !important;
-    }
-
-    .generateBtn {
-        background: var(--Main2);
-        min-width: 100px;
-        border-radius: 8px !important;
-        color: #fff;
-        margin-left: 10px !important;
-    }
-}
-
 
 /*=======================================================
 //////////////RESPONSIVE MEDIA QUERY START///////////////
 =======================================================*/
 @media (max-width: 767px) {
-    .tabsSection {
-
-        :global(.nav-tabs) {
-    
-            :global(.nav-item) {
-                margin-bottom: 5px;
-    
-                :global(.nav-link) {
-                    padding: 12px 20px;
-                    min-width: 100px;
-    
-                    &:global(.active) {
-                        background-color: var(--Main2);
-                        color: #fff;
-                    }
-                }
-    
-            }
-        }
-    }
 
    
     .ctsPopup {
@@ -439,4 +336,5 @@
             }
         }
     }
+
 }

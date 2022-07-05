@@ -1,12 +1,11 @@
 import React, { useCallback, useState } from "react";
-import { useHistory } from "react-router-dom";
 import style from "../../../style.module.scss";
-import cx from "./Delivery.module.scss";
+import cx from "./Modifieroption.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form} from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form,InputGroup } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 import { NavLink } from "react-router-dom";
@@ -42,129 +41,48 @@ const handleButtonClick = () => {
 
 const data = [
   {
-    id: 1,
-    col1: "1",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
+     id: 1,
+     col1:"Modifier option 3",
+     col2: "sk-0005",
+     col3: "Modifier2",
+     col4: "SAR2",
+     col5:"-",
+     col6:"---",
+     
    },
    {
     id: 2,
-    col1: "2",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
+    col1:"Modifier option 3",
+    col2: "sk-0005",
+    col3: "Modifier2",
+    col4: "SAR2",
+    col5:"-",
+    col6:"---",
+    
+  },
+  {
+     id:3,
+     col1:"Modifier option 3",
+     col2: "sk-0005",
+     col3: "Modifier2",
+     col4: "SAR2",
+     col5:"-",
+     col6:"---",
+     
    },
    {
-    id: 3,
-    col1: "3",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
+     id: 4,
+     col1:"Modifier option 3",
+     col2: "sk-0005",
+     col3: "Modifier2",
+     col4: "SAR2",
+     col5:"-",
+     col6:"---",
+     
    },
-   {
-    id: 4,
-    col1: "4",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
-   },
-   {
-    id: 5,
-    col1: "5",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
-   },
-   {
-    id: 6,
-    col1: "6",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
-   },
-   {
-    id: 7,
-    col1: "7",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
-   },
-   {
-    id: 8,
-    col1: "8",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
-   },
-   {
-    id: 9,
-    col1: "9",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
-   },
-   {
-    id: 10,
-    col1: "10",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
-   },
-   {
-    id: 11,
-    col1: "11",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
-   },
-   {
-    id: 12,
-    col1: "12",
-    col2: "kaveri path",
-    col3: "Lost Angles",
-    col4:"23 26",
-    col5: "---",
-    col6:"Branches(0)",
-    col:"---"
-   },
-
 ];
 
-export default function Delivery() {
+export default function Modifier() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -176,64 +94,47 @@ export default function Delivery() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
-  const [editCustomerShow, seteditCustomer] = useState(false);
-  const history = useHistory();
-
-  const rowclickedFunction = () => {
-    // console.log("rowClickedFunction")
-    history.push('',{params:'Hello World'})
-  
-  }
+  const [editCustomerShow, setEditCustomer] = useState(false);
 
   const columns = [
+  
     {
-      name: "No",
+      name: "Name",
       selector: (row: any) => row.col1,
-        sortable: true,
-        width: "80px",
+      sortable: true,
     },
     {
-      name: " Name",
+      name: "SKU",
       selector: (row: any) => row.col2,
       sortable: true,
     },
     {
-      name: " City",
+      name: "Modifier",
       selector: (row: any) => row.col3,
       sortable: true,
     },
     {
-      name: " Coordinaes",
+      name: "Price",
       selector: (row: any) => row.col4,
       sortable: true,
     },
-     {
-      name: "Date",
+    {
+      name: "Tax Group",
       selector: (row: any) => row.col5,
       sortable: true,
-      cell: () => (
-        <div className={`${cx.date}`}>
-          <h5>2020-04-14</h5>
-          <p>08:21:40 PM</p>
-        </div>
-      ),
     },
-    {
-      name: " Linked Branches",
-      selector: (row: any) => row.col6,
-      sortable: true,
-    },
+    
     {
       name: "Action",
-      selector: (row: any) => row.col7,
+      selector: (row: any) => row.col6,
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-         <img
-             onClick={() => seteditCustomer(true)}
+          <img
             src={ActionEdit}
             className={`${cx.actionIcon}`}
-            alt="img"/>
+            alt="img" onClick={() => setEditCustomer(true)}
+             />
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
@@ -354,20 +255,16 @@ export default function Delivery() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Delivery Area List</h5>
+                <h5>Modifier Options</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-              <button
-                  className={`btn ${style.width50}`}
-                  onClick={() => setLgShow(true)}
-                >
-                  Filter
-                </button>
+              
+                
                 <button
                   className={`btn ${style.width100}`}
                   onClick={() => setAddCustomer(true)}
                 >
-                 + Add Area
+               Create Option
                 </button>
               </Col>
             </Row>
@@ -378,10 +275,16 @@ export default function Delivery() {
                   <button className={`btn active ${style.filterB}`}>All</button>
                 </Col>
                 <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Active</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Inactive</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
                   <button className={`btn ${style.filterB}`}>Deleted</button>
                 </Col>
               </Row>
-              </Col>  
+              </Col>
           <Card.Body>
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
@@ -392,7 +295,6 @@ export default function Delivery() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
-                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -413,88 +315,7 @@ export default function Delivery() {
       </section>
       <Footer />
 
-      <Modal
-        className={`${cx.ctsPopup}`}
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Form>
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">Filter</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label> Name</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label> Reference</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label> Deleted</Form.Label>
-              </Col>
-              <Col lg={8}>
-              <Form.Select aria-label="Source">
-                  <option></option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label> Updated After</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="" />
-              </Col>
-            </Form.Group>
-           
-          </Modal.Body>
-          <Modal.Footer>
-            <Col lg={12}>
-              <Row className="align-items-center">
-                <Col lg={6} className={`${cx.leftft}`}>
-                  <button type="button" className={`${style.bgremove}`}>
-                    Clear
-                  </button>
-                </Col>
-                <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
-                    Close
-                  </button>
-                  <button type="button" className={`btn ${cx.apply}`}>
-                    Apply
-                  </button>
-                </Col>
-              </Row>
-            </Col>
-          </Modal.Footer>
-        </Form>
-      </Modal>
-
+     
       <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
@@ -505,89 +326,11 @@ export default function Delivery() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Create a connection area
+             Create modifer option
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label> Name</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Area Name" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>City</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter City" />
-              </Col>
-            </Form.Group>
            
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-             
-              
-            </Form.Group>
-            <Form.Group
-            className={`row ${cx.formBox}`}
-            controlId="formName"
-          >
-            <Col lg={4}>
-              <Form.Label>Coordinates</Form.Label>
-            </Col>
-            <Col lg={8}>
-           
-            <Form.Control as="textarea" rows={3} />
-            
-            </Col>
-          </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Col lg={12}>
-              <Row className="align-items-center">
-                <Col lg={6} className={`${cx.leftft}`}>
-                 
-                </Col>
-                <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
-                    Close
-                  </button>
-                  <button type="button" className={`btn ${cx.apply}`}>
-                  Apply
-                  </button>
-                </Col>
-              </Row>
-            </Col>
-          </Modal.Footer>
-        </Form>
-      </Modal>
-
-      <Modal
-        className={`${cx.ctsPopup}`}
-        size="lg"
-        show={editCustomerShow}
-        onHide={() => seteditCustomer(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Form>
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">
-            Edit Coupons
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
@@ -604,7 +347,39 @@ export default function Delivery() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Reference</Form.Label>
+                <Form.Label>Modifier</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Choose..." />
+              </Col>
+            </Form.Group>
+          
+            <Row lg={12}>
+                      <Form.Group
+                        className={`row align-items-center ${cx.formBox}`}
+                        controlId="formName"
+                      >
+
+                        <Col lg={4}>
+                          <Form.Label>SKU</Form.Label>
+                        </Col>
+
+                        <Col lg={8}>
+                          <InputGroup className={`${cx.pinBox}`}>
+                            <Form.Control type="text" placeholder="" />
+                            <button className={`btn ${cx.generateBtn}`}>Generate</button>
+                          </InputGroup>
+                        </Col>
+
+                      </Form.Group>
+                    </Row>
+                    
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Price</Form.Label>
               </Col>
               <Col lg={8}>
                 <Form.Control type="text" placeholder="" />
@@ -615,22 +390,33 @@ export default function Delivery() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Coordinates</Form.Label>
+                <Form.Label>Tax Group</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" as="textarea" rows={3}/>
+              <Form.Control type="text" placeholder="Choose..." />
               </Col>
             </Form.Group>
+          
+           
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Casting Method</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Fixed Cost</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+           
           </Modal.Body>
           <Modal.Footer>
-          <Col lg={12}>
+            <Col lg={12}>
               <Row className="align-items-center">
-                <Col lg={6} className={`${cx.leftft}`}>
-                  <button type="button" className={`${style.bgremove}`}>
-                  Delete Delivery Zone
-                  </button>
-                </Col>
-                <Col lg={6} className={`${cx.rightft}`}>
+                <Col lg={12} className={`${cx.rightft}`}>
                   <button type="button" className={`btn ${cx.close}`}>
                     Close
                   </button>
@@ -642,7 +428,13 @@ export default function Delivery() {
             </Col>
           </Modal.Footer>
         </Form>
-      </Modal>  
+      </Modal> 
+
+     
+
+
+
+
 
     </>
   );

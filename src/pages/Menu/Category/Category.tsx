@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { useHistory } from "react-router-dom";
 import style from "../../../style.module.scss";
 import cx from "./Category.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -132,7 +133,14 @@ export default function Category() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
+  const [editCustomerShow, setEditCustomer] = useState(false);
+  const history = useHistory();
 
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push('/sales/customers/customers-details',{params:'Hello World'})
+  
+  } 
   const columns = [
     {
       name: "No",
@@ -161,11 +169,11 @@ export default function Category() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-          <NavLink to="/menu/category/categorylist">
-          <img
+           <img
             src={ActionEdit}
             className={`${cx.actionIcon}`}
-            alt="img"/></NavLink>
+            alt="img"
+            onClick={() => setEditCustomer(true)}/>
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
@@ -314,6 +322,17 @@ export default function Category() {
             </Row>
           </Card.Title>
           <Card.Body>
+          <Col className={`${style.filterMain}`}>
+          <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>All</button>
+                </Col>
+  
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Deleted</button>
+                </Col>
+              </Row>
+            </Col>
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -323,6 +342,7 @@ export default function Category() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -345,8 +365,66 @@ export default function Category() {
       </section>
       <Footer />
 
+    
+      <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={editCustomerShow}
+        onHide={() => setEditCustomer(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              Edit Category
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="DENKS" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Reference</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="" />
+              </Col>
+            </Form.Group>
 
-
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${cx.leftft}`}>
+                  <button type="button" className={`${style.bgremove}`}>
+                   Delete Category
+                  </button>
+                </Col>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Save
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal>
     </>
   );
 }

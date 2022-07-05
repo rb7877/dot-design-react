@@ -1,4 +1,61 @@
+.simpleTable {
 
+    thead {
+
+        tr {
+            background-color: var(--Main2);
+            color:#fff;
+        }
+    }
+
+    th {
+        font-weight: 500;
+        padding: 15px 15px;
+        vertical-align: middle;
+    }
+
+    td {
+         padding: 15px 15px;
+         vertical-align: middle;
+    }
+    tbody {
+       border-top: none !important;
+       background: #fff;
+
+       .nameList {
+
+            h6 {
+                margin-bottom: 3px;
+            }
+            p {
+                margin: 0;
+                color: #909090;
+                font-size: 14px;
+            }
+       }
+    }
+}
+
+.action {
+
+    .actionIcon {
+        margin-right:20px;
+        cursor: pointer;
+    }
+}
+.date {
+
+    h6 {
+        font-size:15px;
+        font-weight:500;
+        margin-bottom:0;
+    }
+    p {
+        font-size:14px;
+        color:#909090;
+        margin:0;
+    }
+}
 .date {
 
     h5 {

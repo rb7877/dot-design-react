@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form, InputGroup } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 import { NavLink } from "react-router-dom";
@@ -280,12 +280,34 @@ export default function Devices() {
                   className={`btn ${style.width100}`}
                   onClick={() => setAddCustomer(true)}
                 >
-                  + Add Devices
+                  + Create Devices
                 </button>
               </Col>
             </Row>
           </Card.Title>
           <Card.Body>
+          <Col className={`${style.filterMain}`}>
+          <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>All</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Cashier</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>KDS</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Notifier</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Display</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Sub Cashier</button>
+                </Col>
+              </Row>
+            </Col>
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
                 <DataTable
@@ -315,7 +337,93 @@ export default function Devices() {
       </section>
       <Footer />
 
-      
+      <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={addCustomerShow}
+        onHide={() => setAddCustomer(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              New Device
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Type</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option></option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="" />
+              </Col>
+            </Form.Group>
+           
+            <Row lg={12}>
+                      <Form.Group
+                        className={`row align-items-center ${cx.formBox}`}
+                        controlId="formName"
+                      >
+
+                        <Col lg={4}>
+                          <Form.Label>Reference</Form.Label>
+                        </Col>
+
+                        <Col lg={8}>
+                          <InputGroup className={`${cx.pinBox}`}>
+                            <Form.Control type="text" placeholder="" />
+                            <button className={`btn ${cx.generateBtn}`}>Generate</button>
+                          </InputGroup>
+                        </Col>
+
+                      </Form.Group>
+                    </Row>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Branch</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Control type="text" placeholder="Choose..." />
+              </Col>
+            </Form.Group>
+          
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={12} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Save
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal> 
 
 
     </>
