@@ -124,6 +124,9 @@ export const CreateBranch=()=> {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option> Select Opens from</option>
+                  <option>12</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
                 
               </Col>
@@ -139,6 +142,9 @@ export const CreateBranch=()=> {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Opens to</option>
+                  <option>12</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -201,6 +207,9 @@ export const CreateBranch=()=> {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Order Type </option>
+                  <option>12</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -216,6 +225,9 @@ export const CreateBranch=()=> {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Delivery areas</option>
+                  <option>12</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -233,6 +245,9 @@ export const CreateBranch=()=> {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Temporary events</option>
+                  <option>12</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -248,6 +263,9 @@ export const CreateBranch=()=> {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Taxes</option>
+                  <option>12</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
                 
               </Col>
@@ -263,6 +281,9 @@ export const CreateBranch=()=> {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Tags</option>
+                  <option>12</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
                
               </Col>
@@ -278,7 +299,11 @@ export const CreateBranch=()=> {
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
+
                   <option>Select Tags</option>
+                  <option>12</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
                
               </Col>
@@ -295,6 +320,9 @@ export const CreateBranch=()=> {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Tags</option>
+                  <option>12</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
                
               </Col>

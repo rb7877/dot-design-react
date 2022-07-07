@@ -145,6 +145,9 @@ export default function Reservations() {
     );
   };
 
+  const handleClose=()=>{
+    setLgShow(false)
+  }
   return (
     <>
       <Header />
@@ -225,7 +228,7 @@ export default function Reservations() {
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

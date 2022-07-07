@@ -336,6 +336,11 @@ export default function Purchase() {
     );
   };
 
+  const handleClose=()=>{
+    setAddCustomer(false)
+
+  }
+  
   return (
     <>
       <Header />
@@ -503,18 +508,36 @@ export default function Purchase() {
                 <Form.Label> Select Suppliers</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Select Supplier" />
+            
+              <Form.Select aria-label="Source">
+                  <option>khobar</option>
+                  <option>Abha</option>
+                  <option>Jeddah</option>
+                  <option>Al Ahsa</option>
+                  <option>khobar</option>
+
+                </Form.Select>
               </Col>
+            
             </Form.Group>
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Select Destinations</Form.Label>
+                <Form.Label>Select Destination</Form.Label>
               </Col>
+            
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Select Destinations" />
+              <Form.Select aria-label="Source">
+                  <option>khobar</option>
+                  <option>Abha</option>
+                  <option>Jeddah</option>
+                  <option>Al Ahsa</option>
+                  <option>khobar</option>
+
+                </Form.Select>
+              
               </Col>
             </Form.Group>
            
@@ -552,7 +575,7 @@ export default function Purchase() {
                  </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <NavLink to="/inventory/purchase/purchaseorder">

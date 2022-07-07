@@ -21,6 +21,8 @@
 }
 
 .checkboxRow {
+ 
+
 }
 .checkbox {
 	position: relative;
@@ -143,6 +145,7 @@
                         color:var(--Main2);
                         font-size:18px;
                         font-weight:600;
+                        
                     }
                 }
                 .rightft {
@@ -161,6 +164,7 @@
                         background:var(--Main2);
                         color:#fff;
                     }
+                  
                 }
             }
 
@@ -192,22 +196,72 @@
             padding: 30px 0px;
             text-align:center;
         }
+
         .importBtn {
             padding: 10px 30px;
             border-radius: 8px;
             background: var(--Main2);
             color: #fff;
-            width:40%;
-            margin: 6px;
+            width:100%;
         }
-
     }
     
 }
 
-.table50
-{
-    text-align: center;
+// .head
+// {
+ 
+// width: 100%;
+// height: 52px;
+// left: 24px;
+// top: 560px;
+// margin-bottom: 10px;
+// padding-bottom: 15px;
+// border-radius: 5px;
+
+// /* Primary/30 */
+
+// background: #CCE0FE;
+// border-radius: 8px;
+// }
+
+
+
+
+.copyRow {
+   background-color: #CCE0FE;
+
+    .left {
+
+        h5 {
+            color:var(--Main2);
+            font-style: bold;
+            font-weight: 500;
+            font-size: 22px;
+            margin: 0;
+            height: 65px;
+            padding-top: 15px;
+            border-radius: 8px;
+           
+        }
+    }
+    
+}
+.right{
+
+    padding-top: 5px;
+   
+}
+
+.copyto{
+    padding: 12px 40px;
+    justify-content: center;
+align-items: center;
+background: #FFFFFF;
+border-radius: 8px;
+color: #88B7FE;
+ border-color:white;
+
 }
 
 /*=======================================================
@@ -239,7 +293,7 @@
                     .leftft {
 
                         button {
-                            color:var(--Main2);
+                           
                             font-size:18px;
                             font-weight:600;
                         }
@@ -247,6 +301,7 @@
                     .rightft {
                         display: flex;
                         margin-top: 15px;
+                        
 
                         button {
                             width: 49%;
@@ -256,7 +311,7 @@
                                margin: 0px 5px 0px 0px;
                             }
                             &.apply {
-                               margin: 0px 0px 0px 5px;
+                                margin: 0px 0px 0px 5px;
                             }
                         }
                     }

@@ -186,6 +186,7 @@ export default function Combos() {
   );
 
   const [lgShow, setLgShow] = useState(false);
+  const handleClose = () =>setLgShow(false);
 
   const columns = [
     {
@@ -363,6 +364,8 @@ export default function Combos() {
     history.push('/promotion/combos/combos-details', { params: 'Hello World' })
 
   }
+
+ 
   return (
     <>
       <Header />
@@ -488,8 +491,10 @@ export default function Combos() {
                 <Form.Label>Category</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Select aria-label="Source">
+              <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test3</option>
+                  <option>testing</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -501,8 +506,10 @@ export default function Combos() {
                 <Form.Label>Tags</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Select aria-label="Source">
+              <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test3</option>
+                  <option>testing</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -514,8 +521,10 @@ export default function Combos() {
                 <Form.Label>Event</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Select aria-label="Source">
+              <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test3</option>
+                  <option>testing</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -530,7 +539,7 @@ export default function Combos() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

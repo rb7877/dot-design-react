@@ -8,7 +8,7 @@ import Footer from "../../../components/footer/Footer";
 import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
-import { NavLink } from "react-router-dom";
+import { NavLink,useHistory  } from "react-router-dom";
 
 import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
@@ -274,6 +274,12 @@ export default function Tags() {
     );
   };
 
+  const history = useHistory();
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push('/settings/tags/tagdetails',{params:'Hello World'})
+  
+  }
   return (
     <>
       <Header />
@@ -311,6 +317,7 @@ export default function Tags() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -401,6 +408,20 @@ export default function Tags() {
               </Col>
               <Col lg={8}>
                 <Form.Control type="text" placeholder="Enter Name" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Select Branch</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>abc</option>
+                  <option>dbe</option>
+                </Form.Select>
               </Col>
             </Form.Group>
           </Modal.Body>

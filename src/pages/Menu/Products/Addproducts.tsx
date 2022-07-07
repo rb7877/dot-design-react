@@ -238,7 +238,7 @@ export default function Addproducts() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-              <h5><NavLink to="/menu/products" className={`${style.back}`}>Back</NavLink> Add Combos</h5>
+              <h5><NavLink to="/menu/products" className={`${style.back}`}>Back</NavLink> Add Product</h5>
               </Col>
             </Row>
           </Card.Title>

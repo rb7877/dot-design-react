@@ -181,6 +181,11 @@ const data = [
   },
 ];
 
+
+
+   
+
+
 export default function Orders() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
@@ -301,6 +306,11 @@ export default function Orders() {
     history.push('/sales/orders/order-details', { params: 'Hello World' })
 
   }
+//for close button
+  const handleClose=()=>{
+    setLgShow(false);
+  }
+  
   return (
     <>
       <Header />
@@ -424,24 +434,39 @@ export default function Orders() {
             <Form.Group className={`row align-items-center ${order.formBox}`} controlId="formName">
               <Col lg={4}><Form.Label>Source</Form.Label></Col>
               <Col lg={8}>
-                <Form.Select aria-label="Source">
+              <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>Cashier</option>
+                  <option>Call Centre</option>
+                  <option>Api</option>
+                  <option>Waiter</option>
+
                 </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group className={`row align-items-center ${order.formBox}`} controlId="formName">
               <Col lg={4}><Form.Label>Status</Form.Label></Col>
               <Col lg={8}>
-                <Form.Select aria-label="Status">
+              <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>Pending</option>
+                  <option>Active</option>
+                  <option>Void</option>
+                  <option>Done</option>
+
                 </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group className={`row align-items-center ${order.formBox}`} controlId="formName">
               <Col lg={4}><Form.Label>Type</Form.Label></Col>
               <Col lg={8}>
-                <Form.Select aria-label="Type">
+              <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>Dine In</option>
+                  <option>Tackeaway</option>
+                  <option>Void</option>
+                  <option>Done</option>
+
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -450,6 +475,8 @@ export default function Orders() {
               <Col lg={8}>
                 <Form.Select aria-label="Has Discount">
                   <option>All</option>
+                  <option>Yes</option>
+                  <option>No</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -461,7 +488,7 @@ export default function Orders() {
                   <button type="button" className={`${style.bgremove}`}>Clear</button>
                 </Col>
                 <Col lg={6} className={`${order.rightft}`}>
-                  <button type="button" className={`btn ${order.close}`}>Close</button>
+                  <button type="button" className={`btn ${order.close}`} onClick={handleClose}>Close</button>
                   <button type="button" className={`btn ${order.apply}`}>Apply</button>
                 </Col>
               </Row>

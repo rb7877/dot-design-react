@@ -683,7 +683,10 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
-                <option>All</option>
+                <option>--Select Category--</option>
+                <option>SGST</option>
+                <option>GST</option>
+                <option>15%</option>
               </Form.Select>
               </Col>
             </Form.Group>

@@ -16,6 +16,7 @@ export default function Combosdetails() {
 
 
   const [lgShow, setLgShow] = useState(false);
+  const handleClose = () =>setLgShow(false);
 
   return (
     <>
@@ -151,7 +152,7 @@ export default function Combosdetails() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${details.rightft}`}>
-                  <button type="button" className={`btn ${details.close}`}>
+                  <button type="button" className={`btn ${details.close}`}onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${details.apply}`}>

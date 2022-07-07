@@ -431,6 +431,8 @@ export default function Branch() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -444,7 +446,9 @@ export default function Branch() {
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
-                  <option>All</option>
+              <option>All</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select></Col>
             </Form.Group>
 
@@ -457,7 +461,9 @@ export default function Branch() {
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
-                  <option>All</option>
+              <option>All</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -470,7 +476,9 @@ export default function Branch() {
                 <Form.Label> Tags</Form.Label>
               </Col>
               <Col lg={8}> <Form.Select aria-label="Source">
-                  <option>All</option>
+              <option>All</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>

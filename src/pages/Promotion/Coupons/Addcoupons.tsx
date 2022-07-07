@@ -13,6 +13,7 @@ import ActionDelete from "../../../images/icon-delete.svg";
 
 export default function Addcoupons() {
     const [editCustomerShow, seteditCustomer] = useState(false);
+    const handleClose = () =>seteditCustomer(false);
   return (
     <>
        
@@ -204,7 +205,7 @@ export default function Addcoupons() {
                 <Form.Label>Start Date</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="2022-07-01" />
+                <Form.Control type="date"  />
               </Col>
             </Form.Group>
             <Form.Group
@@ -215,7 +216,7 @@ export default function Addcoupons() {
                 <Form.Label>End Date</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="2022-07-31" />
+                <Form.Control type="date"  />
               </Col>
             </Form.Group>
             <Form.Group
@@ -227,7 +228,19 @@ export default function Addcoupons() {
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
-                  <option>00:00</option>
+              <option value="">-- Choose time to --</option>
+              <option value="00">12 AM</option>
+							<option value="01">01 AM</option>
+							<option value="02">02 AM</option>
+							<option value="03">03 AM</option>
+			        <option value="04">04 AM</option>
+							<option value="05">05 AM</option>
+							<option value="06">06 AM</option>
+							<option value="07">07 AM</option>
+							<option value="08">08 AM</option>
+							<option value="09">09 AM</option>
+							<option value="10">10 AM</option>
+							<option value="11">11 AM</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -240,7 +253,19 @@ export default function Addcoupons() {
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
-                  <option>00:00</option>
+              <option value="">-- Choose time to --</option>
+              <option value="00">12 AM</option>
+							<option value="01">01 AM</option>
+							<option value="02">02 AM</option>
+							<option value="03">03 AM</option>
+			        <option value="04">04 AM</option>
+							<option value="05">05 AM</option>
+							<option value="06">06 AM</option>
+							<option value="07">07 AM</option>
+							<option value="08">08 AM</option>
+							<option value="09">09 AM</option>
+							<option value="10">10 AM</option>
+							<option value="11">11 AM</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -249,7 +274,7 @@ export default function Addcoupons() {
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

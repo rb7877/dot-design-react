@@ -543,6 +543,8 @@ export default function Cashiers() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Choose Restaurant</option>
+                  <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -556,6 +558,8 @@ export default function Cashiers() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Choose Restaurant</option>
+                  <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -601,6 +605,8 @@ export default function Cashiers() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -707,6 +713,8 @@ export default function Cashiers() {
             <Col lg={8}>
             <Form.Select aria-label="Source">
                 <option> Restaurant 1</option>
+                <option>abc</option>
+                  <option>123</option>
               </Form.Select>
             </Col>
           </Form.Group>
@@ -720,6 +728,8 @@ export default function Cashiers() {
             <Col lg={8}>
             <Form.Select aria-label="Source">
                 <option>Branch 1</option>
+                <option>abc</option>
+                  <option>123</option>
               </Form.Select>
             </Col>
           </Form.Group>
@@ -765,6 +775,8 @@ export default function Cashiers() {
             <Col lg={8}>
             <Form.Select aria-label="Source">
                 <option>Yes</option>
+                <option>No</option>
+                 
               </Form.Select>
             </Col>
           </Form.Group>

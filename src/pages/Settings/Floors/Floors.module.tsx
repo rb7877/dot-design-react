@@ -418,6 +418,34 @@ export default function FLoors() {
                 <Form.Control type="text" placeholder="Enter Name" />
               </Col>
             </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Branch</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Choose Branch</option>
+                  <option>Hayat Mall</option>
+                  <option>Al Ahsa</option>
+                  <option>khobar</option>
+
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Table Number</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="number" placeholder="Enter Table Number" />
+              </Col>
+            </Form.Group>
             
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
@@ -473,6 +501,17 @@ export default function FLoors() {
               </Col>
               <Col lg={8}>
               <Form.Control type="text" placeholder="cake 1 " />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Seats</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Control type="number" />
               </Col>
             </Form.Group>
            

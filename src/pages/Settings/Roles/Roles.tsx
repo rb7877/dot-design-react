@@ -285,6 +285,17 @@ export default function Roles() {
     );
   };
 
+  const handleClose=()=>{
+    setAddCustomer(false)
+  }
+
+  const handleClose1=()=>{
+    seteditCustomer(false)
+  }
+
+  const handleClose2=()=>{
+    setLgShow(false)
+  }
   return (
     <>
       <Header />
@@ -376,7 +387,7 @@ export default function Roles() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -413,6 +424,9 @@ export default function Roles() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
+                  
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -503,11 +517,11 @@ export default function Roles() {
                  
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
-                  Generate Rerport
+                 Submit
                   </button>
                 </Col>
               </Row>
@@ -2112,7 +2126,7 @@ export default function Roles() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

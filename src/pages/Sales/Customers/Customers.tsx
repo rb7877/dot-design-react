@@ -337,6 +337,19 @@ export default function Customers() {
 
   }
 
+//for close button
+  const handleCLose=()=>{
+    setLgShow(false)
+  }
+
+
+  const handleClose1=()=>{
+    setAddCustomer(false)
+  }
+
+  const handleClose2=()=>{
+     setEditCustomer(false)
+  }
   return (
     <>
       <Header />
@@ -503,9 +516,13 @@ export default function Customers() {
               </Col>
 
               <Col lg={8}>
+             
                 <Form.Select aria-label="Source">
-                  <option>All </option>
+                  <option>All</option>
+                  <option>test3</option>
+                  <option>testing</option>
                 </Form.Select>
+               
               </Col>
             </Form.Group>
 
@@ -519,7 +536,7 @@ export default function Customers() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleCLose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -589,6 +606,8 @@ export default function Customers() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test3</option>
+                  <option>testing</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -605,6 +624,7 @@ export default function Customers() {
                 />
               </Col>
             </Form.Group>
+           
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -615,7 +635,7 @@ export default function Customers() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}  onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -683,8 +703,10 @@ export default function Customers() {
                 <Form.Label>Tag</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Select aria-label="Source">
+              <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test3</option>
+                  <option>testing</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -701,6 +723,17 @@ export default function Customers() {
                 />
               </Col>
             </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>House Account Limit</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="number" />
+              </Col>
+            </Form.Group>
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -711,7 +744,7 @@ export default function Customers() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

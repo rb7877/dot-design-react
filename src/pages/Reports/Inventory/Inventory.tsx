@@ -108,7 +108,7 @@ export default function Inventory() {
                 <Form.Label>Date</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="2022-05-17 - 2022-05-18" />
+                <Form.Control type="date"  />
               </Col>
             </Form.Group>
             <Form.Group
@@ -121,6 +121,8 @@ export default function Inventory() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>

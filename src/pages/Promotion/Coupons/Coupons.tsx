@@ -180,6 +180,9 @@ export default function Coupons() {
   const [editCustomerShow, seteditCustomer] = useState(false);
   const [deleteCustomerShow, setdeleteCustomer] = useState(false);
   const history = useHistory();
+  const handleClose1 = () =>setLgShow(false);
+  const handleClose2 = () =>setAddCustomer(false);
+  const handleClose3 = () =>seteditCustomer(false);
 
   const rowclickedFunction = () => {
     // console.log("rowClickedFunction")
@@ -468,7 +471,7 @@ export default function Coupons() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -596,8 +599,13 @@ export default function Coupons() {
                 <Form.Label>No. of Coupons</Form.Label>
               </Col>
               <Col lg={8}>
+               
                 <Form.Select aria-label="Source">
                   <option>Select tag</option>
+                  <option>1</option>
+                  <option>3</option>
+                  <option>4</option>
+               
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -611,7 +619,7 @@ export default function Coupons() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -740,6 +748,9 @@ export default function Coupons() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select tag</option>
+                  <option>1</option>
+                  <option>3</option>
+                  <option>4</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -753,7 +764,7 @@ export default function Coupons() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose3}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -772,7 +783,7 @@ export default function Coupons() {
         aria-labelledby="example-modal-sizes-title-md"
         centered
       >
-        <Form>
+       <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-md">
               Delete Coupon
@@ -780,6 +791,9 @@ export default function Coupons() {
           </Modal.Header>
           <Modal.Body>
             <p>Are you sure to delete this item</p>
+            <button type="button" className={`btn ${cx.importBtn}`}>
+              No
+            </button>
             <button type="button" className={`btn ${cx.importBtn}`}>
               Yes
             </button>

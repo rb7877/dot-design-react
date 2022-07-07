@@ -172,7 +172,7 @@ export default function Combositems() {
             <div className={`${cx.tabsSection}`}>
 	<Tabs defaultActiveKey="Basicinformation" id="uncontrolled-tab-example" className="mb-3">
 		<Tab eventKey="BasicInformation" title="Basic information">
-
+    
 		</Tab>
 		<Tab eventKey="ComboItems" title="Combo Items ">
     <div className={`${table.dataTableBox}`}>
@@ -201,7 +201,7 @@ export default function Combositems() {
 		</Tab>
     <Tab eventKey="UnitsOptions" title="UnitsOptions ">
 
-</Tab>
+   </Tab>
 <Tab eventKey="PriceandSizes" title="Price and Sizes ">
 
 </Tab>

@@ -178,6 +178,24 @@ export default function Modifier() {
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
+
+  const handleClose3=()=>{
+    setEditCustomer(false)
+  }
+
+  const handleClose2=()=>{
+    setAddCustomer(false);
+
+
+  }
+
+
+  const handleClose=()=>{
+    setLgShow(false)
+  }
+
+
+
   const filteredItems = data.filter(
     (item) =>
       item.col2 && item.col2.toLowerCase().includes(filterText.toLowerCase())
@@ -431,7 +449,7 @@ export default function Modifier() {
                  
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -523,7 +541,7 @@ export default function Modifier() {
                
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -615,7 +633,7 @@ export default function Modifier() {
                
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose3}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

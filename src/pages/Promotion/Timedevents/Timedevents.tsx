@@ -177,6 +177,10 @@ export default function TimedEvents() {
   const [addCustomerShow, setAddCustomer] = useState(false);
   const [editCustomerShow, seteditCustomer] = useState(false);
   const [deleteCustomerShow, setdeleteCustomer] = useState(false);
+  const handleClose1 = () =>setLgShow(false);
+  const handleClose2 = () => setAddCustomer(false);
+  const handleClose3 = () =>seteditCustomer(false);
+
 
   const columns = [
     {
@@ -436,6 +440,9 @@ export default function TimedEvents() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select Category</option>
+                  <option>test3</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -449,6 +456,9 @@ export default function TimedEvents() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select Products</option>
+                  <option>test 3</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -462,6 +472,9 @@ export default function TimedEvents() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select Branch</option>
+                  <option>test5</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -476,7 +489,7 @@ export default function TimedEvents() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -559,6 +572,9 @@ export default function TimedEvents() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>All</option>
+                   <option>test 4</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -570,12 +586,13 @@ export default function TimedEvents() {
                 <Form.Label>From the date of</Form.Label>
               </Col>
               <Col lg={4}>
-              <Form.Control type="text" placeholder="Enter Data From" />
+              <Form.Control type="date" placeholder="Enter Data From" />
               </Col>
               <Col lg={4}>
-              <Form.Control type="text" placeholder="Enter Data To" />
+              <Form.Control type="date" placeholder="Enter Data To" />
               </Col>
             </Form.Group>
+      
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
@@ -584,10 +601,64 @@ export default function TimedEvents() {
                 <Form.Label>From time</Form.Label>
               </Col>
               <Col lg={4}>
-              <Form.Control type="text" placeholder="Choose Time From" />
+              <Form.Select aria-label="Source">
+              <option value="">-- Choose time from --</option>
+              <option value="00">12 AM</option>
+							<option value="01">01 AM</option>
+							<option value="02">02 AM</option>
+							<option value="03">03 AM</option>
+			        <option value="04">04 AM</option>
+							<option value="05">05 AM</option>
+							<option value="06">06 AM</option>
+							<option value="07">07 AM</option>
+							<option value="08">08 AM</option>
+							<option value="09">09 AM</option>
+							<option value="10">10 AM</option>
+							<option value="11">11 AM</option>
+							<option value="12">12 PM</option>
+							<option value="13">01 PM</option>
+							<option value="14">02 PM</option>
+							<option value="15">03 PM</option>
+							<option value="16">04 PM</option>
+							<option value="17">05 PM</option>
+							<option value="18">06 PM</option>
+							<option value="19">07 PM</option>
+							<option value="20">08 PM</option>
+							<option value="21">09 PM</option>
+							<option value="22">10 PM</option>
+							<option value="23">11 PM</option>
+
+                </Form.Select>
               </Col>
               <Col lg={4}>
-              <Form.Control type="text" placeholder="Choose Time  To" />
+              <Form.Select aria-label="Source">
+              <option value="">-- Choose time to --</option>
+              <option value="00">12 AM</option>
+							<option value="01">01 AM</option>
+							<option value="02">02 AM</option>
+							<option value="03">03 AM</option>
+			        <option value="04">04 AM</option>
+							<option value="05">05 AM</option>
+							<option value="06">06 AM</option>
+							<option value="07">07 AM</option>
+							<option value="08">08 AM</option>
+							<option value="09">09 AM</option>
+							<option value="10">10 AM</option>
+							<option value="11">11 AM</option>
+							<option value="12">12 PM</option>
+							<option value="13">01 PM</option>
+							<option value="14">02 PM</option>
+							<option value="15">03 PM</option>
+							<option value="16">04 PM</option>
+							<option value="17">05 PM</option>
+							<option value="18">06 PM</option>
+							<option value="19">07 PM</option>
+							<option value="20">08 PM</option>
+							<option value="21">09 PM</option>
+							<option value="22">10 PM</option>
+							<option value="23">11 PM</option>
+
+                </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group
@@ -660,6 +731,9 @@ export default function TimedEvents() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select Category</option>
+                  <option>test4</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -673,6 +747,9 @@ export default function TimedEvents() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select Products</option>
+                  <option>test3</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -687,6 +764,9 @@ export default function TimedEvents() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select Branches</option>
+                  <option>test4</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -701,7 +781,7 @@ export default function TimedEvents() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -782,10 +862,14 @@ export default function TimedEvents() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test4</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
-            <Form.Group
+
+           <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
@@ -793,13 +877,15 @@ export default function TimedEvents() {
                 <Form.Label>From the date of</Form.Label>
               </Col>
               <Col lg={4}>
-              <Form.Control type="text" placeholder="Enter Data From" />
+              <Form.Control type="date" placeholder="Enter Data From" />
               </Col>
               <Col lg={4}>
-              <Form.Control type="text" placeholder="Enter Data To" />
+              <Form.Control type="date" placeholder="Enter Data To" />
               </Col>
             </Form.Group>
-            <Form.Group
+
+
+           <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
@@ -807,10 +893,64 @@ export default function TimedEvents() {
                 <Form.Label>From time</Form.Label>
               </Col>
               <Col lg={4}>
-              <Form.Control type="text" placeholder="Choose Time From" />
+              <Form.Select aria-label="Source">
+              <option value="">-- Choose time from --</option>
+              <option value="00">12 AM</option>
+							<option value="01">01 AM</option>
+							<option value="02">02 AM</option>
+							<option value="03">03 AM</option>
+			        <option value="04">04 AM</option>
+							<option value="05">05 AM</option>
+							<option value="06">06 AM</option>
+							<option value="07">07 AM</option>
+							<option value="08">08 AM</option>
+							<option value="09">09 AM</option>
+							<option value="10">10 AM</option>
+							<option value="11">11 AM</option>
+							<option value="12">12 PM</option>
+							<option value="13">01 PM</option>
+							<option value="14">02 PM</option>
+							<option value="15">03 PM</option>
+							<option value="16">04 PM</option>
+							<option value="17">05 PM</option>
+							<option value="18">06 PM</option>
+							<option value="19">07 PM</option>
+							<option value="20">08 PM</option>
+							<option value="21">09 PM</option>
+							<option value="22">10 PM</option>
+							<option value="23">11 PM</option>
+
+                </Form.Select>
               </Col>
               <Col lg={4}>
-              <Form.Control type="text" placeholder="Choose Time  To" />
+              <Form.Select aria-label="Source">
+              <option value="">-- Choose time to --</option>
+              <option value="00">12 AM</option>
+							<option value="01">01 AM</option>
+							<option value="02">02 AM</option>
+							<option value="03">03 AM</option>
+			        <option value="04">04 AM</option>
+							<option value="05">05 AM</option>
+							<option value="06">06 AM</option>
+							<option value="07">07 AM</option>
+							<option value="08">08 AM</option>
+							<option value="09">09 AM</option>
+							<option value="10">10 AM</option>
+							<option value="11">11 AM</option>
+							<option value="12">12 PM</option>
+							<option value="13">01 PM</option>
+							<option value="14">02 PM</option>
+							<option value="15">03 PM</option>
+							<option value="16">04 PM</option>
+							<option value="17">05 PM</option>
+							<option value="18">06 PM</option>
+							<option value="19">07 PM</option>
+							<option value="20">08 PM</option>
+							<option value="21">09 PM</option>
+							<option value="22">10 PM</option>
+							<option value="23">11 PM</option>
+
+                </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group
@@ -883,6 +1023,9 @@ export default function TimedEvents() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select Category</option>
+                  <option>test 4</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -896,6 +1039,9 @@ export default function TimedEvents() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select Products</option>
+                  <option>test4</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -910,6 +1056,9 @@ export default function TimedEvents() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Select Branches</option>
+                  <option>test3</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -924,7 +1073,7 @@ export default function TimedEvents() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose3}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -952,6 +1101,9 @@ export default function TimedEvents() {
           </Modal.Header>
           <Modal.Body>
             <p>Are you sure to delete this item</p>
+            <button type="button" className={`btn ${cx.importBtn}`}>
+              No
+            </button>
             <button type="button" className={`btn ${cx.importBtn}`}>
               Yes
             </button>

@@ -118,6 +118,7 @@ export default function Categorydetails() {
                 <Col lg={8}>
                   <Form.Select>
                     <option>-- Choose --</option>
+                    <option>LKHU</option>
                   </Form.Select>
                 </Col>
               </Form.Group>
@@ -131,6 +132,8 @@ export default function Categorydetails() {
                 <Col lg={8}>
                   <Form.Select>
                     <option>-- Choose --</option>
+                    <option>test 1</option>
+                    <option>test 2</option>
                   </Form.Select>
                 </Col>
               </Form.Group>
@@ -144,6 +147,9 @@ export default function Categorydetails() {
                 <Col lg={8}>
                   <Form.Select>
                     <option>All</option>
+                    <option>123</option>
+                    <option>avss</option>
+                    <option>djfj</option>
                   </Form.Select>
                 </Col>
               </Form.Group>
@@ -157,6 +163,7 @@ export default function Categorydetails() {
                 <Col lg={8}>
                   <Form.Select>
                     <option>Yes</option>
+                    <option>No</option>
                   </Form.Select>
                 </Col>
               </Form.Group>

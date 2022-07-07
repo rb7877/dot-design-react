@@ -456,7 +456,8 @@ export default function Delivery() {
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
-                  <option></option>
+                  <option>Yes</option>
+                  <option>No</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -529,7 +530,10 @@ export default function Delivery() {
                 <Form.Label>City</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter City" />
+              <Form.Select aria-label="Source">
+                  <option>saudi</option>
+                  <option>uae</option>
+                </Form.Select>
               </Col>
             </Form.Group>
            
@@ -607,7 +611,10 @@ export default function Delivery() {
                 <Form.Label>Reference</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="" />
+              <Form.Select aria-label="Source">
+                  <option>abc</option>
+                  <option>dbe</option>
+                </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group

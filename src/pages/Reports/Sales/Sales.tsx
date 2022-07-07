@@ -78,7 +78,7 @@ export default function Sales() {
                 <Form.Label>Date</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="2022-05-17 - 2022-05-18" />
+                <Form.Control type="date"  />
               </Col>
             </Form.Group>
             <Form.Group
@@ -91,6 +91,8 @@ export default function Sales() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -103,7 +105,11 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
+                
                   <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
+                
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -116,7 +122,11 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
+                
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -129,7 +139,11 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
+                
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -142,7 +156,11 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                  
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
+                
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -155,7 +173,11 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                  
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
+                
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -168,7 +190,11 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                  
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
+                
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -214,7 +240,7 @@ export default function Sales() {
                 <Form.Label>Date</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="2022-05-17 - 2022-05-18" />
+              <Form.Control type="date"  />
               </Col>
             </Form.Group>
             <Form.Group
@@ -226,7 +252,11 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
+            
                   <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
+                
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -239,7 +269,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -252,7 +284,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -265,7 +299,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -278,7 +314,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -291,7 +329,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -304,7 +344,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -350,7 +392,7 @@ export default function Sales() {
                 <Form.Label>Date</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="2022-05-17 - 2022-05-18" />
+                <Form.Control type="date"/>
               </Col>
             </Form.Group>
             <Form.Group
@@ -362,7 +404,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -375,7 +419,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -388,7 +434,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -401,7 +449,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -414,7 +464,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -427,7 +479,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -440,7 +494,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -485,7 +541,7 @@ export default function Sales() {
                 <Form.Label>Date</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="2022-05-17 - 2022-05-18" />
+                <Form.Control type="date"  />
               </Col>
             </Form.Group>
             <Form.Group
@@ -497,7 +553,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -510,7 +568,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -523,7 +583,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -536,7 +598,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -549,7 +613,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -562,7 +628,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -575,7 +643,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -621,7 +691,7 @@ export default function Sales() {
                 <Form.Label>Date</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="2022-05-17 - 2022-05-18" />
+                <Form.Control type="date"  />
               </Col>
             </Form.Group>
             <Form.Group
@@ -633,7 +703,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -646,7 +718,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -659,7 +733,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -672,7 +748,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -685,7 +763,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -698,7 +778,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -711,7 +793,9 @@ export default function Sales() {
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>All</option>
+                <option>All</option>
+                  <option>test1</option>
+                  <option>tes2</option>
                 </Form.Select>
               </Col>
             </Form.Group>

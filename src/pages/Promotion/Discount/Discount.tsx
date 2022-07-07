@@ -133,6 +133,10 @@ export default function Discount() {
   const [addCustomerShow, setAddCustomer] = useState(false);
   const [editCustomerShow, seteditCustomer] = useState(false);
   const [deleteCustomerShow, setdeleteCustomer] = useState(false);
+  const handleClose1 = () =>setLgShow(false);
+  const handleClose2 = () => setAddCustomer(false);
+  const handleClose3 = () =>seteditCustomer(false);
+
 
   const columns = [
     {
@@ -377,6 +381,9 @@ export default function Discount() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test3</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -391,7 +398,7 @@ export default function Discount() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -428,6 +435,8 @@ export default function Discount() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Amount</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -440,7 +449,10 @@ export default function Discount() {
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
+                
                   <option>Yes</option>
+                  <option>No</option>
+                 
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -489,7 +501,7 @@ export default function Discount() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -525,6 +537,8 @@ export default function Discount() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Amount</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -538,6 +552,8 @@ export default function Discount() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Yes</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -586,7 +602,7 @@ export default function Discount() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose3}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -614,6 +630,9 @@ export default function Discount() {
           </Modal.Header>
           <Modal.Body>
             <p>Are you sure to delete this item</p>
+            <button type="button" className={`btn ${cx.importBtn}`}>
+              No
+            </button>
             <button type="button" className={`btn ${cx.importBtn}`}>
               Yes
             </button>

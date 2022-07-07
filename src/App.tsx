@@ -57,6 +57,9 @@ import Modifieroption from "./pages/Menu/Modifieroption/Modifieroption";
 import Branchdetails from "./pages/Settings/branch/Branchdetails";
 import Addcoupons from "./pages/Promotion/Coupons/Addcoupons";
 import Reservations from "./pages/Settings/Reservations/Reservations";
+import Reasons from "./pages/Settings/Reasons/Reasons";
+import Tagdetails from "./pages/Settings/Tags/TagDetails";
+import Warehouses from "./pages/Settings/Warehouses/Warehouses";
 function App() {
   return (
     <>
@@ -170,6 +173,9 @@ function App() {
             <Route exact path="/settings/tags">
               <Tags />
             </Route>
+            <Route exact path="/settings/tags/tagdetails">
+              <Tagdetails />
+            </Route>
 
             <Route exact path="/settings/devices">
               <Devices />
@@ -178,9 +184,17 @@ function App() {
             <Route exact path="/settings/reservations">
               <Reservations />
             </Route>
+            <Route exact path="/settings/warehouses">
+              <Warehouses />
+            </Route>
             {/* <Route exact path="/settings/branch">
              <Branch/>
+             
             </Route> */}
+            
+            <Route exact path="/settings/reasons">
+              <Reasons />
+            </Route>
 
 
             <Route exact path="/inventory/purchase">

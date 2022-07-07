@@ -14,6 +14,7 @@ import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
 
 import Box from "@mui/material/Box";
+import { GiFamilyHouse } from "react-icons/gi";
 
 const customStyles = {
   rows: {
@@ -284,6 +285,16 @@ export default function Role() {
     );
   };
 
+
+  const handleClose=()=>{
+    setLgShow(false)
+  }
+
+
+  const handleClose1=()=>{
+    setAddCustomer(false)
+  }
+
   return (
     <>
       <Header />
@@ -296,7 +307,12 @@ export default function Role() {
                 <h5>Role List</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-             
+              <button
+                  className={`btn ${style.width50}`}
+                  onClick={() => setLgShow(true)}
+                >
+                  Filter
+                </button>
                 <button
                   className={`btn ${style.width50}`}
                   onClick={() => setAddCustomer(true)}
@@ -370,7 +386,7 @@ export default function Role() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -407,6 +423,8 @@ export default function Role() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test1</option>
+                  <option>test2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -497,7 +515,7 @@ export default function Role() {
                  
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

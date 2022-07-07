@@ -311,7 +311,7 @@ export default function CashiersReports() {
                   onChangePage={handlePageChange}
                   //   expandableRows
                   //   expandableRowsComponent={ExpandedComponent}
-                />{" "}
+                />
               </Box>
             </div>
           </Card.Body>

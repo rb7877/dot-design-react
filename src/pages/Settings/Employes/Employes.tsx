@@ -507,6 +507,8 @@ export default function Employees() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Restaurant</option>
+                  <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -520,6 +522,8 @@ export default function Employees() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Restaurant</option>
+                   <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -534,6 +538,8 @@ export default function Employees() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select role</option>
+                  <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -547,6 +553,8 @@ export default function Employees() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>En</option>
+                  <option>urdu</option>
+                  <option>abc</option>
                 </Form.Select>
               </Col>
 
@@ -735,6 +743,8 @@ export default function Employees() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Restaurant</option>
+                  <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -748,6 +758,8 @@ export default function Employees() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select Restaurant</option>
+                  <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -762,6 +774,8 @@ export default function Employees() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>Select role</option>
+                  <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -775,6 +789,8 @@ export default function Employees() {
               <Col lg={8}>
               <Form.Select aria-label="Source">
                   <option>En</option>
+                  <option>abc</option>
+                  <option>123</option>
                 </Form.Select>
               </Col>
 

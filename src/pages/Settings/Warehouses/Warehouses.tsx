@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Suppliers.module.scss";
+import cx from "./Warehouses.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -165,10 +165,14 @@ const data = [
   
 ];
 
-export default function Suppliers() {
+export default function Warehouses() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const handleClose=()=>{
+    setAddCustomer(false)
+  }
 
   const filteredItems = data.filter(
     (item) =>
@@ -345,10 +349,6 @@ export default function Suppliers() {
     );
   };
 
-
-   const handleClose=()=>{
-    setAddCustomer(false)
-   }
   return (
     <>
       <Header />
@@ -358,7 +358,7 @@ export default function Suppliers() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Suppliers</h5>
+                <h5>Warehouse List</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
               <button
@@ -371,7 +371,7 @@ export default function Suppliers() {
                   className={`btn ${style.width100}`}
                   onClick={() => setAddCustomer(true)}
                 >
-               + Add Suppliers
+                Add Warehouse 
                 </button>
               </Col>
             </Row>
@@ -419,7 +419,7 @@ export default function Suppliers() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Add Suppliers
+            Add Warehouse
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -429,10 +429,17 @@ export default function Suppliers() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label> Name</Form.Label>
+                <Form.Label> City</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Supplier Name" />
+              <Form.Select aria-label="Source">
+                  <option>khobar</option>
+                  <option>Abha</option>
+                  <option>Jeddah</option>
+                  <option>Al Ahsa</option>
+                  <option>khobar</option>
+
+                </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group
@@ -440,10 +447,10 @@ export default function Suppliers() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Code</Form.Label>
+                <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Code" />
+                <Form.Control type="text" placeholder="Enter Name..." />
               </Col>
             </Form.Group>
            
@@ -455,68 +462,19 @@ export default function Suppliers() {
              
               
             </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Contact Name</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Contact Name" />
-              </Col>
-            </Form.Group>
-           
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-             
-              
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Email</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Email" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Phone</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Phone Number" />
-              </Col>
-            </Form.Group>
-           
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-             
-              
-            </Form.Group>
+        
+         
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
                  
-                 <button type="button" className={`btn ${cx.clear}`}>
-                  Clear
-                 </button>
+                 
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
                   <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
-                    Close
+                    close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
                  Apply

@@ -525,6 +525,8 @@ export default function Sessions() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -621,6 +623,8 @@ export default function Sessions() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>All</option>
+                  <option>test 1</option>
+                  <option>test 2</option>
                 </Form.Select>
               </Col>
             </Form.Group>

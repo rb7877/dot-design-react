@@ -405,6 +405,8 @@ export default function Payment() {
               <Col lg={8}>
                 <Form.Select aria-label="Source">
                   <option>Cash </option>
+                  <option>Card </option>
+                  <option>upi </option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -493,6 +495,21 @@ export default function Payment() {
               </Col>
               <Col lg={8}>
               <Form.Control type="text" placeholder="Cash" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Type</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Cash </option>
+                  <option>Card </option>
+                  <option>upi </option>
+               </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group

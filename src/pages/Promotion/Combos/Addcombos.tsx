@@ -18,6 +18,8 @@ export default function Addcombos() {
 
   const [addCustomerShow, setAddCustomer] = useState(false);
   const [editCustomerShow, seteditCustomer] = useState(false);
+  const handleClose1 = () =>setAddCustomer(false);
+  const handleClose2 = () =>seteditCustomer(false);
 
   return (
     <>
@@ -105,6 +107,9 @@ export default function Addcombos() {
                     <Col lg={8}>
                       <Form.Select>
                         <option>-- Select Category --</option>
+                        <option>pizza</option>
+                        <option>icecream</option>
+                        <option>burger</option>
                       </Form.Select>
                     </Col>
                   </Form.Group>
@@ -116,7 +121,12 @@ export default function Addcombos() {
                       <Form.Label>Tags</Form.Label>
                     </Col>
                     <Col lg={8}>
-                      <Form.Control type="text" placeholder="Enter Tag" />
+                    <Form.Select>
+                        <option>-- Select Tag --</option>
+                        <option>test 1</option>
+                        <option>test 2</option>
+                        <option>test 3</option>
+                      </Form.Select>
                     </Col>
                   </Form.Group>
 
@@ -128,7 +138,12 @@ export default function Addcombos() {
                       <Form.Label>Timed Event</Form.Label>
                     </Col>
                     <Col lg={8}>
-                      <Form.Control type="text" placeholder="Enter Timed Event" />
+                    <Form.Select>
+                        <option>-- Select Event --</option>
+                        <option>test 1</option>
+                        <option>test 2</option>
+                        <option>test 3</option>
+                      </Form.Select>
                     </Col>
                   </Form.Group>
 
@@ -152,6 +167,22 @@ export default function Addcombos() {
                     </Col>
                     <Col lg={8}>
                       <Form.Control type="text" placeholder="Enter Barcode" />
+                    </Col>
+                  </Form.Group>
+                  <Form.Group
+                    className={`row align-items-center ${cx.formBox}`}
+                    controlId="formName"
+                  >
+                    <Col lg={4}>
+                      <Form.Label>Branch</Form.Label>
+                    </Col>
+                    <Col lg={8}>
+                    <Form.Select>
+                        <option>-- Select Branch --</option>
+                        <option>test 1</option>
+                        <option>test 2</option>
+                        <option>test 3</option>
+                      </Form.Select>
                     </Col>
                   </Form.Group>
 
@@ -290,7 +321,7 @@ export default function Addcombos() {
                             </button>
                           </Col>
                           <Col lg={6} className={`${cx.rightft}`}>
-                            <button type="button" className={`btn ${cx.close}`}>
+                            <button type="button" className={`btn ${cx.close}`}onClick={handleClose1}>
                               Close
                             </button>
                             <button type="button" className={`btn ${cx.apply}`}>
@@ -367,7 +398,7 @@ export default function Addcombos() {
                             </button>
                           </Col>
                           <Col lg={6} className={`${cx.rightft}`}>
-                            <button type="button" className={`btn ${cx.close}`}>
+                            <button type="button" className={`btn ${cx.close}`}onClick={handleClose2}>
                               Close
                             </button>
                             <button type="button" className={`btn ${cx.apply}`}>
@@ -538,7 +569,7 @@ export default function Addcombos() {
                             </button>
                           </Col>
                           <Col lg={6} className={`${cx.rightft}`}>
-                            <button type="button" className={`btn ${cx.close}`}>
+                            <button type="button" className={`btn ${cx.close}`}onClick={handleClose1}>
                               Close
                             </button>
                             <button type="button" className={`btn ${cx.apply}`}>

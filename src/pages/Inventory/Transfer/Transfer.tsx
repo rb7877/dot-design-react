@@ -40,127 +40,140 @@ const handleButtonClick = () => {
 };
 
 const data = [
-  {
+ 
+   {
     id: 1,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
    {
     id: 2,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
+  
    {
     id: 3,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
+  
    {
     id: 4,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
+  
    {
     id: 5,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
+  
    {
     id: 6,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
+  
    {
     id: 7,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
+  
+   {
+    id: 7,
+    col1: "PO-0000001",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
+    col5:"---",
+    
+   },
+  
    {
     id: 8,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
+  
    {
     id: 9,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
+  
    {
     id: 10,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
+   
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
     col5:"---",
-    col6:"---",
     
    },
+  
    {
     id: 11,
     col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
-   },
-   {
-    id: 12,
-    col1: "PO-0000001",
-    col2: "X",
-     col3: "Riyadh GT",
-    col4:"Approved",
-    col5:"---",
-    col6:"---",
-    
-   },
    
+     col2: "Riyadh GT",
+    col3:"Approved",
+    col4:"---",
+    col5:"---",
+    
+   },
+  
+
+  
   
 ];
 
@@ -183,11 +196,7 @@ export default function Transfer() {
       selector: (row: any) => row.col1,
         sortable: true,
     },
-    {
-      name: "Supplier",
-      selector: (row: any) => row.col2,
-      sortable: true,
-    },
+   
     {
       name: "Destination",
       selector: (row: any) => row.col3,
@@ -330,6 +339,9 @@ export default function Transfer() {
     );
   };
 
+  const handleClose=()=>{
+    setAddCustomer(false)
+  }
   return (
     <>
       <Header />
@@ -467,19 +479,36 @@ export default function Transfer() {
                 <Form.Label> Select Warehouse</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Select Warehouse" />
+             
+              <Form.Select aria-label="Source">
+                  <option>khobar</option>
+                  <option>Abha</option>
+                  <option>Jeddah</option>
+                  <option>Al Ahsa</option>
+                  <option>khobar</option>
+
+                </Form.Select>
               </Col>
+             
             </Form.Group>
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Select Destinations</Form.Label>
+                <Form.Label>Select Destination</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Select Destinations" />
-              </Col>
+             
+             <Form.Select aria-label="Source">
+                 <option>khobar</option>
+                 <option>Abha</option>
+                 <option>Jeddah</option>
+                 <option>Al Ahsa</option>
+                 <option>khobar</option>
+
+               </Form.Select>
+             </Col>
             </Form.Group>
            
 
@@ -498,7 +527,7 @@ export default function Transfer() {
                  </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <NavLink to="/inventory/transfer/transferorder">

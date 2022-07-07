@@ -258,6 +258,10 @@ export default function Devices() {
     );
   };
 
+
+  const handleClose=()=>{
+    setAddCustomer(false)
+  }
   return (
     <>
       <Header />
@@ -360,7 +364,9 @@ export default function Devices() {
               </Col>
               <Col lg={8}>
               <Form.Select aria-label="Source">
-                  <option></option>
+              <option>All</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -412,7 +418,7 @@ export default function Devices() {
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
