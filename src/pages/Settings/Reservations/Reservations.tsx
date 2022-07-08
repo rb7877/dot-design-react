@@ -219,7 +219,14 @@ export default function Reservations() {
                 <Form.Label>Branches</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Choose" />
+              <Form.Select aria-label="Source">
+                  <option>Choose..</option>
+                  <option>Pending</option>
+                  <option>Active</option>
+                  <option>Void</option>
+                  <option>Done</option>
+
+                </Form.Select>
               </Col>
               </Form.Group>
             

@@ -60,6 +60,12 @@ import Reservations from "./pages/Settings/Reservations/Reservations";
 import Reasons from "./pages/Settings/Reasons/Reasons";
 import Tagdetails from "./pages/Settings/Tags/TagDetails";
 import Warehouses from "./pages/Settings/Warehouses/Warehouses";
+import Kitchenflows from "./pages/Settings/KitchenFlows/Kitchenflows.module";
+import Kitchenflowsdetails from "./pages/Settings/KitchenFlows/Kitchenflowsdetails";
+import Charges from "./pages/Settings/Charges/Charges";
+import Giftcard from "./pages/Settings/Giftcard/Giftcard";
+import Giftcarddetails from "./pages/Settings/Giftcard/Giftcarddetails";
+import Timedetails from "./pages/Promotion/Timedevents/Timedetails";
 function App() {
   return (
     <>
@@ -94,7 +100,6 @@ function App() {
             <Route exact path="/promotion/coupons">
               <Coupons />
             </Route>
-            
             <Route exact path="/promotion/coupons/add-coupons">
               <Addcoupons/>
             </Route>
@@ -104,6 +109,9 @@ function App() {
             </Route>
             <Route exact path="/promotion/timed-events">
               <TimedEvents />
+            </Route>
+            <Route exact path="/promotion/timed-events/timedetails">
+              <Timedetails />
             </Route>
             <Route exact path="/promotion/combos">
               <Combos />
@@ -181,6 +189,8 @@ function App() {
               <Devices />
             </Route>
             
+           
+            
             <Route exact path="/settings/reservations">
               <Reservations />
             </Route>
@@ -225,6 +235,23 @@ function App() {
             </Route>
 
 
+            <Route exact path="/settings/kitchenflows">
+              <Kitchenflows/>
+            </Route>
+            <Route exact path="/settings/kitchenflows/kitchenflowsdetails">
+              <Kitchenflowsdetails/>
+            </Route>
+
+            <Route exact path="/settings/charges">
+              <Charges/>
+            </Route>
+
+            <Route exact path="/settings/giftcard">
+              <Giftcard/>
+            </Route>
+            <Route exact path="/settings/giftcard/giftcarddetails">
+              <Giftcarddetails/>
+            </Route>
             <Route exact path="/menu/category">
               <Category />
             </Route>

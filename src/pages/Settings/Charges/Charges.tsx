@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Payment.module.scss";
+import cx from "./Charges.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -41,113 +41,160 @@ const handleButtonClick = () => {
 
 const data = [
   {
-    id: 1,
-     col1:"1",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+     id: 1,
+     col1:"Landed Cost",
+     col2: "Options (0)",
+     col3: "Options (4)",
+     col4: "FS",
+     col5:"Products (2)",
+     col6:"---",
+     
    },
-   
    {
     id: 2,
-     col1:"2",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 3,
-     col1:"3",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 4,
-     col1:"4",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 5,
-     col1:"5",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 6,
-     col1:"6",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 7,
-     col1:"7",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 8,
-     col1:"8",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 9,
-     col1:"9",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 10,
-     col1:"10",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
-   {
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
     id: 11,
-     col1:"11",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
-   },
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
+    id: 12,
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
+  {
+    id: 13,
+    col1:"Landed Cost",
+    col2: "Options (0)",
+    col3: "Options (4)",
+    col4: "FS",
+    col5:"Products (2)",
+    col6:"---",
+    
+  },
    
-  
 ];
 
-export default function Payment() {
+export default function Charges() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+
+
+  const handleClose3=()=>{
+    setEditCustomer(false)
+  }
+
+  const handleClose2=()=>{
+    setAddCustomer(false);
+
+
+  }
+
+
+  const handleClose=()=>{
+    setLgShow(false)
+  }
+
+
 
   const filteredItems = data.filter(
     (item) =>
@@ -156,44 +203,24 @@ export default function Payment() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
-  const [editCustomerShow, seteditCustomer] = useState(false);
-
-  const handleClose=()=>{setAddCustomer(false)}
-
-  const handleClose1=()=>{seteditCustomer(false)}
+  const [editCustomerShow, setEditCustomer] = useState(false);
 
   const columns = [
-    {
-      name: "No",
-      selector: (row: any) => row.col1,
-        sortable: true,
-        width: "80px",
-    },
+  
     {
       name: "Name",
+      selector: (row: any) => row.col1,
+      sortable: true,
+    },
+    {
+      name: "Minimum Options",
       selector: (row: any) => row.col2,
       sortable: true,
     },
     {
-      name: "Code",
+      name: "Maximum Options",
       selector: (row: any) => row.col3,
       sortable: true,
-    },
-    {
-      name: "Type",
-      selector: (row: any) => row.col4,
-      sortable: true,
-    },
-     {
-      name: "Date",
-      selector: (row: any) => row.col5,
-      sortable: true,
-      cell: () => (
-        <div className={`${cx.date}`}>
-          <h5>2020-04-14</h5>
-          <p>08:21:40 PM</p>
-        </div>
-      ),
     },
     {
       name: "Action",
@@ -201,12 +228,11 @@ export default function Payment() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-         
-           <img  onClick={() => seteditCustomer(true)}
-           src={ActionEdit}
-           className={`${cx.actionIcon}`}
-           alt="img"/>
-         
+          <img
+            src={ActionEdit}
+            className={`${cx.actionIcon}`}
+            alt="img" onClick={() => setEditCustomer(true)}
+             />
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
@@ -327,15 +353,14 @@ export default function Payment() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Payment Method List</h5>
+                <h5>Charges</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-              
                 <button
                   className={`btn ${style.width100}`}
                   onClick={() => setAddCustomer(true)}
                 >
-                + Add Method
+                 Create Charge
                 </button>
               </Col>
             </Row>
@@ -370,7 +395,6 @@ export default function Payment() {
       </section>
       <Footer />
 
-    
       <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
@@ -381,20 +405,19 @@ export default function Payment() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Add Payment Method
+            Create Charge
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-           
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Name  </Form.Label>
+                <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Name" />
+              <Form.Control type="text" />
               </Col>
             </Form.Group>
             <Form.Group
@@ -408,33 +431,89 @@ export default function Payment() {
                 <Form.Control type="text"  />
               </Col>
             </Form.Group>
-          
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-             <Col lg={4}>
-                <Form.Label>Type</Form.Label>
-              </Col>
-
-              <Col lg={8}>
-                <Form.Select aria-label="Source">
-                  <option>Cash </option>
-                  <option>Card </option>
-                  <option>upi </option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Code </Form.Label>
+                <Form.Label>Type</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Code" />
+              <Form.Select aria-label="Source">
+                  <option>Amount</option>
+                  <option>Percentage</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Is Open Value</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Yes</option>
+                  <option>No</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            
+             <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Value (SAR) </Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="number" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Apply On Order Types</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Choose..</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Branches </Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option>Choose..</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Tax Group</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option>Choose..</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </Form.Select>
               </Col>
             </Form.Group>
             <Form.Group
@@ -442,36 +521,33 @@ export default function Payment() {
               controlId="formName"
             >
               <Col lg={4}>
-               
+                <Form.Label></Form.Label>
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
                       <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Auto Open Cash Drawer
+                      <span className={`${cx.checkmark}`}></span>  Auto Apply
                     </label>
                   </Col>
                  
-                  </Row>
+                  
+                 
+                </Row>
               </Col>
             </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-             
-              
-            </Form.Group>
+            
+           
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
-                 
+               
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -484,23 +560,20 @@ export default function Payment() {
         </Form>
       </Modal>
 
-
-  <Modal
+      <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
         show={editCustomerShow}
-        onHide={() => seteditCustomer(false)}
+        onHide={() => setEditCustomer(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Edit payment method
+            Edit Charge
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            
-           
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
@@ -509,89 +582,141 @@ export default function Payment() {
                 <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
-              <Form.Control type="text" placeholder="Cash" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-              <Form.Label>Name Localized</Form.Label>
-              </Col>
-              <Col lg={8}>
-              <Form.Select aria-label="Source">
-                  <option>Cash </option>
-                  <option>Card </option>
-                  <option>upi </option>
-               </Form.Select>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Code </Form.Label>
-              </Col>
-              <Col lg={8}>
               <Form.Control type="text" />
               </Col>
             </Form.Group>
             <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text"  />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Type</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Amount</option>
+                  <option>Percentage</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Is Open Value</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Yes</option>
+                  <option>No</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            
+             <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Value (SAR) </Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="number" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Apply On Order Types</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+                  <option>Choose..</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Branches </Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option>Choose..</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Tax Group</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option>Choose..</option>
+                  <option>Yes</option>
+                  <option>No</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+                <Form.Label></Form.Label>
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
                       <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Auto Open Cash Drawer
+                      <span className={`${cx.checkmark}`}></span>  Auto Apply
                     </label>
                   </Col>
-                
-              </Row>
+                 
+                  
+                 
+                </Row>
               </Col>
-          </Form.Group>
+            </Form.Group>
+            
            
-          <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                
-              </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={6}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Active
-                    </label>
-                  </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
-                  <button type="button" className={`${style.bgremove}`}>
-                  Delete Payment Method
-                  </button>
+               <button type="button" className={`${style.bgremove}`}>Delete Charge</button>
                 </Col>
-                <Col lg={6} className={`${cx.rightft}`} onClick={handleClose1}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose3}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
-                    Save
+                  Save
                   </button>
                 </Col>
               </Row>
@@ -599,6 +724,12 @@ export default function Payment() {
           </Modal.Footer>
         </Form>
       </Modal>
+
+      
+
+
+
+
 
     </>
   );

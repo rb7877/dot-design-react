@@ -80,6 +80,7 @@ export default function Taxes() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
+
   const [addTaxgroupShow, setTaxgroup] = useState(false);
 const[editTaxCustomer,setEditTaxCustomer]=useState(false);
   const[editGroupTaxCustomer,setEditGruopTaxCustomer]=useState(false)
@@ -228,6 +229,29 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
     );
   };
 
+
+  const handleClose=()=>{
+    setAddCustomer(false)
+  }
+
+
+  const handleClose1=()=>{
+    setLgShow(false)
+  }
+
+  
+  const handleClose2=()=>{
+    setTaxgroup(false)
+  }
+
+  const handleClose3=()=>{
+    setEditTaxCustomer(false)
+  }
+
+  const handleClose4=()=>{
+    setEditGruopTaxCustomer(false)
+  }
+  
   return (
     <>
   <Header />
@@ -486,7 +510,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
               <Col lg={6} className={`${cx.leftft}`}>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -503,11 +527,11 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
 
 {/* edit popup */}
 
-<Modal
+      <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
-        show={editTaxCustomer}
-        onHide={() => setEditTaxCustomer(false)}
+        show={lgShow}
+        onHide={() => setLgShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
         <Form>
@@ -549,7 +573,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
               <Col lg={6} className={`${cx.leftft}`}>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -563,7 +587,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
       </Modal>
 
 
-<Modal
+      <Modal  
         className={`${cx.ctsPopup}`}
         size="lg"
         show={editTaxCustomer}
@@ -609,7 +633,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
               <Col lg={6} className={`${cx.leftft}`}>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} >
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -705,7 +729,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
                 </Col>
                 
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -719,7 +743,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
       </Modal>
 
 
-<Modal
+      <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
         show={editTaxCustomer}
@@ -765,7 +789,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
               <Col lg={6} className={`${cx.leftft}`}>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose3}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -782,7 +806,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
 
     {/* edit Group text */}
 
-    <Modal
+       <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
         show={editGroupTaxCustomer}
@@ -853,7 +877,7 @@ const[editTaxCustomer,setEditTaxCustomer]=useState(false);
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose4}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

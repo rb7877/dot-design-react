@@ -3,6 +3,7 @@ import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
 import cx from "./Coupons.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
 import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
@@ -17,31 +18,25 @@ export default function Addcoupons() {
   return (
     <>
        
+      <Header />
         <Sidebar />
           <section className={`${style.pageWrapper}`}>
           <Card className="mb-4">
               <Card.Title>
-                  <Row className={`align-items-center ${style.rowTitle}`}>
-                    <Col className={`${style.rowTitleLeft}`} lg={6}>
-                        <NavLink to="/promotion/coupons" className={`${style.back}`}> Back </NavLink>
-                        <Col className={`${style.rowTitleRight}`} lg={2}>
-                        <h5>
-                     
-                      <Col className={`${style.rowTitleRight}`} lg={3}>
-                   <button className={`btn ${style.width100}`}>Active</button>
-                      
-                    </Col>
-                   
+              <Row className={`align-items-center ${style.rowTitle}`}>
+              <Col className={`${style.rowTitleLeft}`} lg={6}> 
+                <h5>
+                  <NavLink to="/Promotion/coupons/" className={`${style.back}`}>Back</NavLink>
+                  Coupons
+                 
                   </h5>
-                  
-                        </Col> 
-                    </Col>
-                    <Col className={`${style.rowTitleRight}`} lg={6}>
-                      <button className={`btn ${style.width100}`}>Deactivate Coupon</button>
+              </Col>
+              <Col className={`${style.rowTitleRight}`} lg={6}>
+              <button className={`btn ${style.width100}`}>Deactivate Coupon</button>
                       <button className={`btn ${style.width100}`} onClick={() => seteditCustomer(true)}>Edit Coupons
                       </button>
-                    </Col>
-                  </Row>
+              </Col>
+              </Row>
               </Card.Title>
               <Card.Body>
             <div className={`${style.bgBox}`}>
@@ -267,6 +262,66 @@ export default function Addcoupons() {
 							<option value="10">10 AM</option>
 							<option value="11">11 AM</option>
                 </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Applies On Days</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Monday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Tuesday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Wednesday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Thrusday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Friday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Saturday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Sunday
+                    </label>
+                  </Col>
+                  <Col lg={4}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Monday
+                    </label>
+                  </Col>
+                </Row>
               </Col>
             </Form.Group>
           </Modal.Body>

@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form, Tabs, Tab } from "react-bootstrap"
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 import { NavLink } from "react-router-dom";
@@ -179,15 +179,14 @@ export default function Coupons() {
   const [addCustomerShow, setAddCustomer] = useState(false);
   const [editCustomerShow, seteditCustomer] = useState(false);
   const [deleteCustomerShow, setdeleteCustomer] = useState(false);
-  const history = useHistory();
   const handleClose1 = () =>setLgShow(false);
   const handleClose2 = () =>setAddCustomer(false);
   const handleClose3 = () =>seteditCustomer(false);
-
+  const history = useHistory();
   const rowclickedFunction = () => {
     // console.log("rowClickedFunction")
-    history.push('/promotion/coupons/add-coupons',{params:'Hello World'})
-  
+    history.push('/promotion/coupons/add-coupons', { params: 'Hello World' })
+
   }
   const columns = [
     {
@@ -390,49 +389,126 @@ export default function Coupons() {
               </Col>
             </Row>
           </Card.Title>
-          <Col className={`${style.filterMain}`}>
-          <Row className={`${style.filterRowMain}`}>
-                <Col className={`${style.filterRowBox}`}>
-                  <button className={`btn active ${style.filterB}`}>All</button>
-                </Col>
-                <Col className={`${style.filterRowBox}`}>
-                  <button className={`btn ${style.filterB}`}>Active</button>
-                </Col>
-                <Col className={`${style.filterRowBox}`}>
-                  <button className={`btn ${style.filterB}`}>Inactive</button>
-                </Col>
-                <Col className={`${style.filterRowBox}`}>
-                  <button className={`btn ${style.filterB}`}>Deleted</button>
-                </Col>
-              </Row>
-              </Col>  
+      
           <Card.Body>
-            <div className={`${table.dataTableBox}`}>
-              <Box sx={{ width: 1 }}>
-                <DataTable
-                  columns={columns}
-                  data={filteredItems}
-                  subHeader
-                  subHeaderAlign={Alignment.LEFT}
-                  persistTableHead
-                  pagination
-                  onRowClicked={rowclickedFunction}
-                  paginationIconNext={nextIcon}
-                  paginationIconPrevious={previewIcon}
-                  paginationIconFirstPage={nextIconD}
-                  paginationIconLastPage={previewIconD}
-                  paginationComponentOptions={paginationComponentOptions}
-                  paginationComponent={pagcomp}
-                  customStyles={customStyles}
-                  paginationDefaultPage={currentPage}
-                  onChangeRowsPerPage={handlePerRowsChange}
-                  onChangePage={handlePageChange}
-                  //   expandableRows
-                  //   expandableRowsComponent={ExpandedComponent}
-                />{" "}
-              </Box>
-            </div>
-          </Card.Body>
+
+<div className={`${cx.tabsSection}`}>
+<Tabs defaultActiveKey="all" id="uncontrolled-tab-example" className="mb-3">
+  <Tab eventKey="all" title="ALL">
+    <div className={`${table.dataTableBox}`}>
+      <Box sx={{ width: 1 }}>
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          subHeader
+          subHeaderAlign={Alignment.LEFT}
+          persistTableHead
+          pagination
+          onRowClicked={rowclickedFunction}
+          paginationIconNext={nextIcon}
+          paginationIconPrevious={previewIcon}
+          paginationIconFirstPage={nextIconD}
+          paginationIconLastPage={previewIconD}
+          paginationComponentOptions={paginationComponentOptions}
+          paginationComponent={pagcomp}
+          customStyles={customStyles}
+          paginationDefaultPage={currentPage}
+          onChangeRowsPerPage={handlePerRowsChange}
+          onChangePage={handlePageChange}
+          //   expandableRows
+          //   expandableRowsComponent={ExpandedComponent}
+        />
+      </Box>
+    </div>
+  </Tab>
+  
+  <Tab eventKey="Active" title="Active">
+    <div className={`${table.dataTableBox}`}>
+      <Box sx={{ width: 1 }}>
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          subHeader
+          subHeaderAlign={Alignment.LEFT}
+          persistTableHead
+          pagination
+          onRowClicked={rowclickedFunction}
+          paginationIconNext={nextIcon}
+          paginationIconPrevious={previewIcon}
+          paginationIconFirstPage={nextIconD}
+          paginationIconLastPage={previewIconD}
+          paginationComponentOptions={paginationComponentOptions}
+          paginationComponent={pagcomp}
+          customStyles={customStyles}
+          paginationDefaultPage={currentPage}
+          onChangeRowsPerPage={handlePerRowsChange}
+          onChangePage={handlePageChange}
+          //   expandableRows
+          //   expandableRowsComponent={ExpandedComponent}
+        />
+      </Box>
+    </div>
+  </Tab>
+  
+  <Tab eventKey="Inactive" title="Inactive">
+    <div className={`${table.dataTableBox}`}>
+      <Box sx={{ width: 1 }}>
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          subHeader
+          subHeaderAlign={Alignment.LEFT}
+          persistTableHead
+          pagination
+          onRowClicked={rowclickedFunction}
+          paginationIconNext={nextIcon}
+          paginationIconPrevious={previewIcon}
+          paginationIconFirstPage={nextIconD}
+          paginationIconLastPage={previewIconD}
+          paginationComponentOptions={paginationComponentOptions}
+          paginationComponent={pagcomp}
+          customStyles={customStyles}
+          paginationDefaultPage={currentPage}
+          onChangeRowsPerPage={handlePerRowsChange}
+          onChangePage={handlePageChange}
+          //   expandableRows
+          //   expandableRowsComponent={ExpandedComponent}
+        />
+      </Box>
+    </div>
+  </Tab>
+
+  
+  <Tab eventKey="Deleted" title="Deleted">
+    <div className={`${table.dataTableBox}`}>
+      <Box sx={{ width: 1 }}>
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          subHeader
+          subHeaderAlign={Alignment.LEFT}
+          persistTableHead
+          pagination
+          onRowClicked={rowclickedFunction}
+          paginationIconNext={nextIcon}
+          paginationIconPrevious={previewIcon}
+          paginationIconFirstPage={nextIconD}
+          paginationIconLastPage={previewIconD}
+          paginationComponentOptions={paginationComponentOptions}
+          paginationComponent={pagcomp}
+          customStyles={customStyles}
+          paginationDefaultPage={currentPage}
+          onChangeRowsPerPage={handlePerRowsChange}
+          onChangePage={handlePageChange}
+          //   expandableRows
+          //   expandableRowsComponent={ExpandedComponent}
+        />
+      </Box>
+    </div>
+  </Tab>
+</Tabs>
+</div>
+</Card.Body>
         </Card>
       </section>
       <Footer />
@@ -457,10 +533,71 @@ export default function Coupons() {
                 <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="Qwerty" />
+                <Form.Control type="text" placeholder="" />
               </Col>
             </Form.Group>
-           
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Code</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Discount</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Choose..." />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Active</Form.Label>
+              </Col>
+              <Col lg={8}>
+                 <Form.Select aria-label="Source">
+              <option >Any</option>
+							<option >Yes</option>
+							<option >No</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Deleted</Form.Label>
+              </Col>
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option >Yes</option>
+							<option >No</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Updated After</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="" />
+              </Col>
+            </Form.Group>
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>

@@ -289,6 +289,19 @@ export default function FLoors() {
     );
   };
 
+
+  const handleClose=()=>{
+    setEditFloorCustomer(false)
+  }
+
+
+  const handleClose1=()=>{
+    setAddCustomer(false)
+  }
+
+  const handleClose2=()=>{
+    setLgShow(false)
+  }
   return (
     <>
       <Header />
@@ -347,6 +360,8 @@ export default function FLoors() {
       <Footer />
 
       <Modal
+
+
         className={`${cx.ctsPopup}`}
         size="lg"
         show={lgShow}
@@ -380,7 +395,7 @@ export default function FLoors() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -462,7 +477,7 @@ export default function FLoors() {
                  
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -482,7 +497,7 @@ export default function FLoors() {
         className={`${cx.ctsPopup}`}
         size="lg"
         show={editFloorCustomer}
-        onHide={() => setEditFloorCustomer(false)}
+        onHide={() =>  setEditFloorCustomer(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
         <Form>
@@ -525,7 +540,7 @@ export default function FLoors() {
               <Col lg={6} className={`${cx.leftft}`}>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

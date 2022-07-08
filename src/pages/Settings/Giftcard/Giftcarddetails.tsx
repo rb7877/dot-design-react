@@ -1,7 +1,7 @@
 
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Reasons.module.scss";
+import cx from "./Giftcard.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -12,11 +12,12 @@ import { NavLink } from "react-router-dom";
 import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
 
-export default function Reasons() {
+export default function Giftcarddetails() {
 
   const[addSectionShow,setAddSection]=useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
   const [lgShow, setLgShow] = useState(false);
+  const [editShow, setEditShow] = useState(false);
 
   const handleClose=()=>{
     setLgShow(false)
@@ -29,6 +30,10 @@ export default function Reasons() {
   const handleClose2=()=>{
     setAddSection(false)
   }
+
+  const handleClose3=()=>{
+    setEditShow(false)
+  }
   
   return (
     <>
@@ -39,10 +44,18 @@ export default function Reasons() {
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`${style.rowTitleLeft}`} lg={6}>
-                
-                  <NavLink to="/settings/reasons/" className={`${style.back}`}>Back</NavLink>
-                  <h5>Reasons</h5>
+              <h5>
+                  <NavLink to="/settings/kitchenflows/" className={`${style.back}`}>Back</NavLink>
+                  1</h5>
                   
+              </Col>
+              <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
+              <button
+                  className={`btn ${style.width50}`}
+                  onClick={() => setEditShow(true)}
+                >
+                  Edit flow
+                </button>
               </Col>
             </Row>
           </Card.Title>
@@ -51,11 +64,11 @@ export default function Reasons() {
                     <Col className={`${style.rowTitleLeft}`} lg={6}
                     
                     >
-                      <h5>Void And Return Reason</h5>
+                      <h5>Stations</h5>
                     </Col>
                     <Col className={`${style.rowTitleRight}`} lg={6}>
                       <button className={`btn ${style.width100}`}
-                         onClick={() => setAddSection(true)}>Create Reason</button>
+                         onClick={() => setAddSection(true)}>Add Station</button>
                     </Col>
                   </Row>
                   </Card.Title>
@@ -86,11 +99,11 @@ export default function Reasons() {
                     <Col className={`${style.rowTitleLeft}`} lg={6}
                     
                     >
-                      <h5>Quantity Adjustment Reason</h5>
+                      <h5>Branches</h5>
                     </Col>
                     <Col className={`${style.rowTitleRight}`} lg={6}>
                       <button className={`btn ${style.width100}`}
-                         onClick={() => setAddCustomer(true)}>Create Reason</button>
+                         onClick={() => setAddCustomer(true)}>Add Branches</button>
                     </Col>
                   </Row>
               </Card.Title>
@@ -117,11 +130,11 @@ export default function Reasons() {
                     <Col className={`${style.rowTitleLeft}`} lg={6}
                     
                     >
-                      <h5>Drawer Operation Reason</h5>
+                      <h5>Product</h5>
                     </Col>
                     <Col className={`${style.rowTitleRight}`} lg={6}>
                       <button className={`btn ${style.width100}`}
-                         onClick={() => setLgShow(true)}>Create Reason</button>
+                         onClick={() => setLgShow(true)}>Add Product</button>
                     </Col>
                   </Row>
               </Card.Title>
@@ -144,13 +157,13 @@ export default function Reasons() {
       <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
-        show={addSectionShow}
-        onHide={() => setAddSection(false)}
+        show={editShow}
+        onHide={() => setEditShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
       >
         <Form>
           <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">Create Void And Return Reason</Modal.Title>
+            <Modal.Title id="example-modal-sizes-title-lg">Edit Kitchen Flows</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form.Group
@@ -163,13 +176,46 @@ export default function Reasons() {
               <Col lg={8}>
                 <Form.Control type="text" />
               </Col>
-            </Form.Group>    
+            </Form.Group>         
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${cx.leftft}`}>
+                <button type="button" className={`${style.bgremove}`}>Delete Kitchen flow</button>
+                </Col>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose3}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Save
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal>
+
+      <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={addSectionShow}
+        onHide={() => setAddSection(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">Add Station</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Name Localized</Form.Label>
+                <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
                 <Form.Control type="text" />
@@ -206,7 +252,7 @@ export default function Reasons() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Create  Quantity Adjustment Reason
+            Add Branches
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -215,24 +261,17 @@ export default function Reasons() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Name</Form.Label>
+                <Form.Label>Branches</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="" />
+              <Form.Select aria-label="Source">
+                  <option>Any</option>
+                  <option>No</option>
+                  <option>Yes</option>
+                </Form.Select>
               </Col>
             </Form.Group>
 
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Name Localized</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" />
-              </Col>
-            </Form.Group>    
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -263,7 +302,7 @@ export default function Reasons() {
       >
         <Form>
           <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">Create Drawer Operation Reason</Modal.Title>
+            <Modal.Title id="example-modal-sizes-title-lg">Add Product</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form.Group
@@ -271,23 +310,16 @@ export default function Reasons() {
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Name</Form.Label>
+                <Form.Label>Product</Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Control type="text" placeholder="" />
+              <Form.Select aria-label="Source">
+                  <option>Any</option>
+                  <option>No</option>
+                  <option>Yes</option>
+                </Form.Select>
               </Col>
             </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Name Localized</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" />
-              </Col>
-            </Form.Group>    
 
           </Modal.Body>
           <Modal.Footer>

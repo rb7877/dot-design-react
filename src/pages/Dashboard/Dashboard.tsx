@@ -87,7 +87,22 @@ export default function Dashboard() {
               </Col>
             </Row>
           </Card.Title>
-
+          <Col className={`${style.filterMain}`}>
+          <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>General</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Branches</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Inventory</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Call Center</button>
+                </Col>
+              </Row>
+              </Col>  
           <Card.Body style={{ minHeight: "600px" }}>
             <Row>
               <Col md={6} lg={4} xl={3}>

@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Payment.module.scss";
+import cx from "./Kitchenflows.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -8,7 +8,7 @@ import Footer from "../../../components/footer/Footer";
 import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
-import { NavLink } from "react-router-dom";
+import { NavLink,useHistory } from "react-router-dom";
 
 import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
@@ -42,109 +42,104 @@ const handleButtonClick = () => {
 const data = [
   {
     id: 1,
-     col1:"1",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "1",
+    col2: "No",
+     
+    col3: "---",
    },
-   
    {
     id: 2,
-     col1:"2",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "2",
+    col2: "Yes",
+     
+    col3: "---",
    },
    {
     id: 3,
-     col1:"3",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "3",
+    col2: "No",
+     
+    col3: "---",
    },
    {
     id: 4,
-     col1:"4",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "4",
+    col2: "Yes",
+     
+    col3: "---",
    },
+ 
    {
     id: 5,
-     col1:"5",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "5",
+    col2: "No",
+     
+    col3: "---",
    },
+ 
    {
     id: 6,
-     col1:"6",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "6",
+    col2: "Yes",
+     
+    col3: "---",
    },
+ 
    {
     id: 7,
-     col1:"7",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "7",
+    col2: "No",
+     
+    col3: "---",
    },
    {
     id: 8,
-     col1:"8",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "8",
+    col2: "Yes",
+     
+    col3: "---",
    },
    {
     id: 9,
-     col1:"9",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "9",
+    col2: "No",
+     
+    col3: "---",
    },
    {
     id: 10,
-     col1:"10",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "10",
+    col2: "Yes",
+     
+    col3: "---",
    },
    {
     id: 11,
-     col1:"11",
-     col2: "Paypal",
-     col3: "02",
-     col4:"Foreign",
-     col5: "---",
-     cod6:"---",
+    col1: "11",
+    col2: "No",
+     
+    col3: "---",
    },
-   
+ 
+   {
+    id: 12,
+    col1: "12",
+    col2: "Yes",
+     
+    col3: "---",
+   },
+   {
+    id: 13,
+    col1: "13",
+    col2: "No",
+     
+    col3: "---",
+   },
+ 
   
 ];
 
-export default function Payment() {
+export default function Kitchenflows() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
@@ -156,56 +151,39 @@ export default function Payment() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
-  const [editCustomerShow, seteditCustomer] = useState(false);
 
-  const handleClose=()=>{setAddCustomer(false)}
+  const history = useHistory();
 
-  const handleClose1=()=>{seteditCustomer(false)}
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push("/settings/kitchenflows/kitchenflowsdetails",{params:'Hello World'})
+  
+  }
 
   const columns = [
     {
-      name: "No",
+      name: "Name",
       selector: (row: any) => row.col1,
         sortable: true,
-        width: "80px",
+        
     },
+
     {
-      name: "Name",
+      name: "Active",
       selector: (row: any) => row.col2,
-      sortable: true,
-    },
-    {
-      name: "Code",
-      selector: (row: any) => row.col3,
-      sortable: true,
-    },
-    {
-      name: "Type",
-      selector: (row: any) => row.col4,
-      sortable: true,
-    },
-     {
-      name: "Date",
-      selector: (row: any) => row.col5,
-      sortable: true,
-      cell: () => (
-        <div className={`${cx.date}`}>
-          <h5>2020-04-14</h5>
-          <p>08:21:40 PM</p>
-        </div>
-      ),
+        sortable: true,
+        
     },
     {
       name: "Action",
-      selector: (row: any) => row.col6,
+      selector: (row: any) => row.col5,
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-         
-           <img  onClick={() => seteditCustomer(true)}
-           src={ActionEdit}
-           className={`${cx.actionIcon}`}
-           alt="img"/>
+          <img 
+            src={ActionEdit}
+            className={`${cx.actionIcon}`}
+            alt="img"/>
          
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
@@ -318,28 +296,62 @@ export default function Payment() {
     );
   };
 
+
+ 
+
+
+  const handleClose1=()=>{
+    setAddCustomer(false)
+  }
+
+  const handleClose2=()=>{
+    setLgShow(false)
+  }
   return (
     <>
       <Header />
       <Sidebar />
       <section className={`${style.pageWrapper}`}>
+        
         <Card>
+          
           <Card.Title>
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`col-12 ${style.rowTitleLeft}`} lg={6}>
-                <h5>Payment Method List</h5>
+                <h5>Kitchen Flows</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-              
+              <button
+                  className={`btn ${style.width50}`}
+                  onClick={() => setLgShow(true)}
+                >
+                  Filter
+                </button>
                 <button
                   className={`btn ${style.width100}`}
                   onClick={() => setAddCustomer(true)}
                 >
-                + Add Method
+                 Create Kitchen Flow
                 </button>
               </Col>
             </Row>
           </Card.Title>
+          <Col className={`${style.filterMain}`}>
+          <Row className={`${style.filterRowMain}`}>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn active ${style.filterB}`}>All</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  <button className={`btn ${style.filterB}`}>Active</button>
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  
+                </Col>
+                <Col className={`${style.filterRowBox}`}>
+                  
+                </Col>
+              </Row>
+              </Col>
           <Card.Body>
             <div className={`${table.dataTableBox}`}>
               <Box sx={{ width: 1 }}>
@@ -350,6 +362,7 @@ export default function Payment() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -370,7 +383,72 @@ export default function Payment() {
       </section>
       <Footer />
 
-    
+      <Modal
+
+
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">Filter</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label> Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Qwerty" />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Active</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Select aria-label="Source">
+                  <option>Any</option>
+                  <option>No</option>
+                  <option>Yes</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+           
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+                <Col lg={6} className={`${cx.leftft}`}>
+                  <button type="button" className={`${style.bgremove}`}>
+                    Clear
+                  </button>
+                </Col>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose2}>
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Apply
+                  </button>
+                </Col>
+                
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal>
+
       <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
@@ -381,87 +459,28 @@ export default function Payment() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Add Payment Method
+            Create Kitchen Flow
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-           
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Name  </Form.Label>
+                <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
                 <Form.Control type="text" placeholder="Enter Name" />
               </Col>
             </Form.Group>
+            
+         
+            
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Name Localized</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text"  />
-              </Col>
-            </Form.Group>
-          
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-             <Col lg={4}>
-                <Form.Label>Type</Form.Label>
-              </Col>
-
-              <Col lg={8}>
-                <Form.Select aria-label="Source">
-                  <option>Cash </option>
-                  <option>Card </option>
-                  <option>upi </option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Code </Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Enter Code" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-               
-              </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={6}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Auto Open Cash Drawer
-                    </label>
-                  </Col>
-                 
-                  </Row>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-             
-              
+            >  
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
@@ -471,7 +490,7 @@ export default function Payment() {
                  
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -485,120 +504,7 @@ export default function Payment() {
       </Modal>
 
 
-  <Modal
-        className={`${cx.ctsPopup}`}
-        size="lg"
-        show={editCustomerShow}
-        onHide={() => seteditCustomer(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Form>
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">
-            Edit payment method
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            
-           
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Name</Form.Label>
-              </Col>
-              <Col lg={8}>
-              <Form.Control type="text" placeholder="Cash" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-              <Form.Label>Name Localized</Form.Label>
-              </Col>
-              <Col lg={8}>
-              <Form.Select aria-label="Source">
-                  <option>Cash </option>
-                  <option>Card </option>
-                  <option>upi </option>
-               </Form.Select>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Code </Form.Label>
-              </Col>
-              <Col lg={8}>
-              <Form.Control type="text" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                
-              </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={6}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Auto Open Cash Drawer
-                    </label>
-                  </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
-           
-          <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                
-              </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={6}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>  Active
-                    </label>
-                  </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Col lg={12}>
-              <Row className="align-items-center">
-                <Col lg={6} className={`${cx.leftft}`}>
-                  <button type="button" className={`${style.bgremove}`}>
-                  Delete Payment Method
-                  </button>
-                </Col>
-                <Col lg={6} className={`${cx.rightft}`} onClick={handleClose1}>
-                  <button type="button" className={`btn ${cx.close}`}>
-                    Close
-                  </button>
-                  <button type="button" className={`btn ${cx.apply}`}>
-                    Save
-                  </button>
-                </Col>
-              </Row>
-            </Col>
-          </Modal.Footer>
-        </Form>
-      </Modal>
+
 
     </>
   );

@@ -58,6 +58,8 @@ export default function Devices() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+ 
+
 
   const filteredItems = data.filter(
     (item) =>
@@ -66,7 +68,7 @@ export default function Devices() {
 
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
-  const [editCustomerShow, seteditCustomer] = useState(false);
+  
 
   
 
@@ -262,6 +264,10 @@ export default function Devices() {
   const handleClose=()=>{
     setAddCustomer(false)
   }
+
+  const handleClose1=()=>{
+    setLgShow(false)
+  }
   return (
     <>
       <Header />
@@ -408,8 +414,13 @@ export default function Devices() {
               <Col lg={4}>
                 <Form.Label>Branch</Form.Label>
               </Col>
+            
               <Col lg={8}>
-              <Form.Control type="text" placeholder="Choose..." />
+              <Form.Select aria-label="Source">
+              <option>Choose..</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
+                </Form.Select>
               </Col>
             </Form.Group>
           
@@ -432,6 +443,160 @@ export default function Devices() {
       </Modal> 
 
 
+     
+      <Modal
+        className={`${cx.ctsPopup}`}
+        size="lg"
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby="example-modal-sizes-title-lg"
+      >
+        <Form>
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+             Filter
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+           
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="" />
+              </Col>
+            </Form.Group>
+           
+
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Reference</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Code</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="" />
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Type</Form.Label>
+              </Col>
+            
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option>Any</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+          
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Branch</Form.Label>
+              </Col>
+            
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option>Any</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Tag</Form.Label>
+              </Col>
+            
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option>Any</option>
+                  <option>abc</option>
+                  <option>a123bc</option>
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>In Use</Form.Label>
+              </Col>
+            
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option>Any</option>
+              <option>Yes</option>
+              <option>No</option>
+                 
+                </Form.Select>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Online</Form.Label>
+              </Col>
+            
+              <Col lg={8}>
+              <Form.Select aria-label="Source">
+              <option>Any</option>
+              <option>Yes</option>
+              <option>No</option>
+                 
+                </Form.Select>
+              </Col>
+            </Form.Group>
+          </Modal.Body>
+          <Modal.Footer>
+            <Col lg={12}>
+              <Row className="align-items-center">
+              <Col lg={6} className={`${cx.leftft}`}>
+                  <button type="button" className={`${style.bgremove}`}>Clear</button>
+                </Col>
+                <Col lg={6} className={`${cx.rightft}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose1} >
+                    Close
+                  </button>
+                  <button type="button" className={`btn ${cx.apply}`}>
+                    Save
+                  </button>
+                </Col>
+              </Row>
+            </Col>
+          </Modal.Footer>
+        </Form>
+      </Modal> 
     </>
   );
 }

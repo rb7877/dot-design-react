@@ -177,6 +177,10 @@ export default function Delivery() {
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
   const [editCustomerShow, seteditCustomer] = useState(false);
+
+  const handleClose=()=>{setLgShow(false)}
+  const handleClose1=()=>{setAddCustomer(false)}
+  const handleClose2=()=>{seteditCustomer(false)}
   const history = useHistory();
 
   const rowclickedFunction = () => {
@@ -483,7 +487,7 @@ export default function Delivery() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -565,7 +569,7 @@ export default function Delivery() {
                  
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose1}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -638,7 +642,7 @@ export default function Delivery() {
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose2}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

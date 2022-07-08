@@ -23,7 +23,15 @@ export default function Tagdetails() {
   const[userShow,setUserShow]=useState(false);
   const[productShow,setProductShow]=useState(false);
   const[deviceShow,setDeviceShow]=useState(false);
-
+  const handleClose1 = () => setAddSection(false);
+  const handleClose2 = () => setAddCustomer(false); 
+  const handleClose3 = () => setLgShow(false); 
+  const handleClose4 = () => setOrderShow(false);
+  const handleClose5 = () => setSupplierShow(false); 
+  const handleClose6 = () => setUserShow(false);
+  const handleClose7 = () => setProductShow(false);
+  const handleClose8 = () => setDeviceShow(false); 
+ 
   return (
     <>
       <Header />
@@ -301,7 +309,18 @@ export default function Tagdetails() {
               <Col lg={8}>
                 <Form.Control type="text" />
               </Col>
-            </Form.Group>         
+            </Form.Group>  
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" />
+              </Col>
+            </Form.Group>           
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -310,7 +329,8 @@ export default function Tagdetails() {
                 
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose1}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -348,6 +368,17 @@ export default function Tagdetails() {
                 <Form.Control type="text" placeholder="" />
               </Col>
             </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" />
+              </Col>
+            </Form.Group>    
 
           </Modal.Body>
           <Modal.Footer>
@@ -357,7 +388,8 @@ export default function Tagdetails() {
                  
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose2}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -393,6 +425,17 @@ export default function Tagdetails() {
                 <Form.Control type="text" placeholder="" />
               </Col>
             </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" />
+              </Col>
+            </Form.Group>    
 
           </Modal.Body>
           <Modal.Footer>
@@ -400,7 +443,8 @@ export default function Tagdetails() {
               <Row className="align-items-center">
                
                 <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose3}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -436,6 +480,17 @@ export default function Tagdetails() {
                 <Form.Control type="text" placeholder="" />
               </Col>
             </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" />
+              </Col>
+            </Form.Group>    
 
           </Modal.Body>
           <Modal.Footer>
@@ -443,7 +498,8 @@ export default function Tagdetails() {
               <Row className="align-items-center">
                
                 <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose4}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -479,6 +535,17 @@ export default function Tagdetails() {
                 <Form.Control type="text" placeholder="" />
               </Col>
             </Form.Group>
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" />
+              </Col>
+            </Form.Group>    
 
           </Modal.Body>
           <Modal.Footer>
@@ -486,7 +553,8 @@ export default function Tagdetails() {
               <Row className="align-items-center">
                
                 <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose5}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -523,13 +591,27 @@ export default function Tagdetails() {
               </Col>
             </Form.Group>
 
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" />
+              </Col>
+            </Form.Group>    
+              
+
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
                
                 <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose6}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -565,14 +647,25 @@ export default function Tagdetails() {
                 <Form.Control type="text" placeholder="" />
               </Col>
             </Form.Group>
-
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" />
+              </Col>
+            </Form.Group>    
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
                
                 <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose7}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -609,13 +702,26 @@ export default function Tagdetails() {
               </Col>
             </Form.Group>
 
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" />
+              </Col>
+            </Form.Group>    
+
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
                
                 <Col lg={12} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose8}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

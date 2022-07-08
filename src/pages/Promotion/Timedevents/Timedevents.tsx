@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { useHistory } from "react-router-dom";
 import style from "../../../style.module.scss";
 import cx from "./Timedevents.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -180,7 +181,12 @@ export default function TimedEvents() {
   const handleClose1 = () =>setLgShow(false);
   const handleClose2 = () => setAddCustomer(false);
   const handleClose3 = () =>seteditCustomer(false);
+  const history = useHistory();
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push('/promotion/timed-events/timedetails', { params: 'Hello World' })
 
+  }
 
   const columns = [
     {
@@ -387,6 +393,7 @@ export default function TimedEvents() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}

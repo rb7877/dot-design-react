@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Footer from "../../../components/footer/Footer";
-import { Card, Button, Row, Col, Modal, Form } from "react-bootstrap";
+import { Card, Button, Row, Col, Modal, Form, Tabs, Tab } from "react-bootstrap"
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
 import { NavLink, useHistory } from "react-router-dom";
@@ -50,8 +50,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+  
   },
   {
     id: 2,
@@ -62,8 +61,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+   
   },
   {
     id: 3,
@@ -74,8 +72,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+   
   },
   {
     id: 4,
@@ -86,8 +83,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+  
   },
   {
     id: 5,
@@ -98,8 +94,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+   
   },
   {
     id: 6,
@@ -110,8 +105,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+    
   },
   {
     id: 7,
@@ -122,8 +116,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+
   },
   {
     id: 8,
@@ -134,8 +127,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+   
   },
   {
     id: 9,
@@ -146,8 +138,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+   
   },
   {
     id: 10,
@@ -158,8 +149,7 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+  
   },
   {
     id: 11,
@@ -170,8 +160,8 @@ const data = [
     col5: "qwerty1",
     col6: "Test1",
     col7: "12345",
-    col8: "12aa4bb1",
-    col9: "---",
+    
+   
   },
 ];
 
@@ -193,65 +183,46 @@ export default function Combos() {
       name: "ID",
       selector: (row: any) => row.col1,
       sortable: true,
-      width: "80px",
+      width: "100px",
     },
     {
       name: "Name",
       selector: (row: any) => row.col2,
-      sortable: true,
-      width: "120px",
+      sortable:true,
+      width: "160px",
     },
     {
       name: "Desc",
       selector: (row: any) => row.col3,
       sortable: true,
-      width: "150px",
+      width: "160px",
     },
     {
       name: "Category",
       selector: (row: any) => row.col4,
       sortable: true,
-      width: "150px",
+      width: "160px",
     },
     {
       name: "Tag",
       selector: (row: any) => row.col5,
       sortable: true,
-      width: "150px",
+      width: "160px",
     },
     {
       name: "Event",
       selector: (row: any) => row.col6,
       sortable: true,
-      width: "150px",
+      width: "160px",
     },
     {
       name: "I Code",
       selector: (row: any) => row.col7,
       sortable: true,
-      width: "150px",
+      width: "160px",
     },
-    {
-      name: "Barcode",
-      selector: (row: any) => row.col8,
-      sortable: true,
-      width: "150px",
-    },
-    {
-      name: "Action",
-      selector: (row: any) => row.col9,
-      sortable: true,
-      cell: () => (
-        <div className={`${cx.action}`}>
-          <img
-            src={ActionEdit}
-            className={`${cx.actionIcon}`}
-            alt="img" />
-          <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
-        </div>
-      ),
-      width: "140px",
-    },
+   
+   
   ];
 
   const paginationComponentOptions = {
@@ -393,58 +364,126 @@ export default function Combos() {
               </Col>
             </Row>
           </Card.Title>
+    
           <Card.Body>
-            <Col className={`${style.filterMain}`}>
-              {/* Mobile Filter */}
-              <Form.Select className={`${style.filterMobile}`} aria-label="Default select example">
-                <option>All</option>
-                <option value="1">Has Orders</option>
-                <option value="2">Blocklisted</option>
-                <option value="3">Deleted</option>
-              </Form.Select>
 
-              {/* Desktop Filter */}
-              <Row className={`${style.filterRowMain}`}>
-                <Col className={`${style.filterRowBox}`}>
-                  <button className={`btn active ${style.filterB}`}>All</button>
-                </Col>
-                <Col className={`${style.filterRowBox}`}>
-                  <button className={`btn ${style.filterB}`}>Active</button>
-                </Col>
-                <Col className={`${style.filterRowBox}`}>
-                  <button className={`btn ${style.filterB}`}>Inactive</button>
-                </Col>
-                <Col className={`${style.filterRowBox}`}>
-                  <button className={`btn ${style.filterB}`}>Deleted</button>
-                </Col>
-              </Row>
-            </Col>
-            <div className={`${table.dataTableBox}`}>
-              <Box sx={{ width: 1 }}>
-                <DataTable
-                  columns={columns}
-                  data={filteredItems}
-                  subHeader
-                  subHeaderAlign={Alignment.LEFT}
-                  persistTableHead
-                  pagination
-                  onRowClicked={rowclickedFunction}
-                  paginationIconNext={nextIcon}
-                  paginationIconPrevious={previewIcon}
-                  paginationIconFirstPage={nextIconD}
-                  paginationIconLastPage={previewIconD}
-                  paginationComponentOptions={paginationComponentOptions}
-                  paginationComponent={pagcomp}
-                  customStyles={customStyles}
-                  paginationDefaultPage={currentPage}
-                  onChangeRowsPerPage={handlePerRowsChange}
-                  onChangePage={handlePageChange}
-                //   expandableRows
-                //   expandableRowsComponent={ExpandedComponent}
-                />{" "}
-              </Box>
-            </div>
-          </Card.Body>
+<div className={`${cx.tabsSection}`}>
+<Tabs defaultActiveKey="all" id="uncontrolled-tab-example" className="mb-3">
+  <Tab eventKey="all" title="ALL">
+    <div className={`${table.dataTableBox}`}>
+      <Box sx={{ width: 1 }}>
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          subHeader
+          subHeaderAlign={Alignment.LEFT}
+          persistTableHead
+          pagination
+          onRowClicked={rowclickedFunction}
+          paginationIconNext={nextIcon}
+          paginationIconPrevious={previewIcon}
+          paginationIconFirstPage={nextIconD}
+          paginationIconLastPage={previewIconD}
+          paginationComponentOptions={paginationComponentOptions}
+          paginationComponent={pagcomp}
+          customStyles={customStyles}
+          paginationDefaultPage={currentPage}
+          onChangeRowsPerPage={handlePerRowsChange}
+          onChangePage={handlePageChange}
+          //   expandableRows
+          //   expandableRowsComponent={ExpandedComponent}
+        />
+      </Box>
+    </div>
+  </Tab>
+  
+  <Tab eventKey="Active" title="Active">
+    <div className={`${table.dataTableBox}`}>
+      <Box sx={{ width: 1 }}>
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          subHeader
+          subHeaderAlign={Alignment.LEFT}
+          persistTableHead
+          pagination
+          onRowClicked={rowclickedFunction}
+          paginationIconNext={nextIcon}
+          paginationIconPrevious={previewIcon}
+          paginationIconFirstPage={nextIconD}
+          paginationIconLastPage={previewIconD}
+          paginationComponentOptions={paginationComponentOptions}
+          paginationComponent={pagcomp}
+          customStyles={customStyles}
+          paginationDefaultPage={currentPage}
+          onChangeRowsPerPage={handlePerRowsChange}
+          onChangePage={handlePageChange}
+          //   expandableRows
+          //   expandableRowsComponent={ExpandedComponent}
+        />
+      </Box>
+    </div>
+  </Tab>
+  
+  <Tab eventKey="Inactive" title="Inactive">
+    <div className={`${table.dataTableBox}`}>
+      <Box sx={{ width: 1 }}>
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          subHeader
+          subHeaderAlign={Alignment.LEFT}
+          persistTableHead
+          pagination
+          onRowClicked={rowclickedFunction}
+          paginationIconNext={nextIcon}
+          paginationIconPrevious={previewIcon}
+          paginationIconFirstPage={nextIconD}
+          paginationIconLastPage={previewIconD}
+          paginationComponentOptions={paginationComponentOptions}
+          paginationComponent={pagcomp}
+          customStyles={customStyles}
+          paginationDefaultPage={currentPage}
+          onChangeRowsPerPage={handlePerRowsChange}
+          onChangePage={handlePageChange}
+          //   expandableRows
+          //   expandableRowsComponent={ExpandedComponent}
+        />
+      </Box>
+    </div>
+  </Tab>
+
+  
+  <Tab eventKey="Deleted" title="Deleted">
+    <div className={`${table.dataTableBox}`}>
+      <Box sx={{ width: 1 }}>
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          subHeader
+          subHeaderAlign={Alignment.LEFT}
+          persistTableHead
+          pagination
+          onRowClicked={rowclickedFunction}
+          paginationIconNext={nextIcon}
+          paginationIconPrevious={previewIcon}
+          paginationIconFirstPage={nextIconD}
+          paginationIconLastPage={previewIconD}
+          paginationComponentOptions={paginationComponentOptions}
+          paginationComponent={pagcomp}
+          customStyles={customStyles}
+          paginationDefaultPage={currentPage}
+          onChangeRowsPerPage={handlePerRowsChange}
+          onChangePage={handlePageChange}
+          //   expandableRows
+          //   expandableRowsComponent={ExpandedComponent}
+        />
+      </Box>
+    </div>
+  </Tab>
+</Tabs>
+</div>
+</Card.Body>
         </Card>
       </section>
       <Footer />

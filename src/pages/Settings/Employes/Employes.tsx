@@ -166,6 +166,10 @@ export default function Employees() {
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
   const [editCustomerShow, seteditCustomer] = useState(false);
+  const handleClose1 = () => setLgShow(false);
+  const handleClose2 = () => setAddCustomer(false); 
+  const handleClose3 = () => seteditCustomer(false);
+
 
   const columns = [
    
@@ -413,7 +417,8 @@ export default function Employees() {
                   </button>
                 </Col>
                 <Col lg={6}  className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose1}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -647,7 +652,8 @@ export default function Employees() {
                  </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose2}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -883,7 +889,8 @@ export default function Employees() {
                  </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose3}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>

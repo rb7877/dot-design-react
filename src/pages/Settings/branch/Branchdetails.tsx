@@ -15,14 +15,19 @@ import ActionDelete from "../../../images/icon-delete.svg";
 export default function Branchdetails() {
 
 
-  const [lgShow, setLgShow] = useState(false);
-  const [addCustomerShow, setAddCustomer] = useState(false);
+  const[lgShow, setLgShow] = useState(false);
+  const[addCustomerShow, setAddCustomer] = useState(false);
   const[addTagShow,setAddTag]=useState(false);
   const[addDeliveryShow,setAddDelivery]=useState(false);
- const[deleteOrderShow,setDeleteOrder]=useState(false);
-const[deleteTransactionShow,setDeleteTransaction]=useState(false);
+  const[deleteOrderShow,setDeleteOrder]=useState(false);
+  const[deleteTransactionShow,setDeleteTransaction]=useState(false);
   const[addSectionShow,setAddSection]=useState(false);
   const[deleteBranchShow,setDeleteBranch]=useState(false);
+  const handleClose1 = () => setLgShow(false);
+  const handleClose2 = () => setAddCustomer(false); 
+  const handleClose3 = () => setAddTag(false);
+  const handleClose4 = () => setAddDelivery(false);
+  const handleClose5 = () => setAddSection(false); 
   return (
     <>
       <Header />
@@ -688,7 +693,8 @@ const[deleteTransactionShow,setDeleteTransaction]=useState(false);
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose1}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -744,7 +750,8 @@ const[deleteTransactionShow,setDeleteTransaction]=useState(false);
                 
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose1}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -967,7 +974,8 @@ const[deleteTransactionShow,setDeleteTransaction]=useState(false);
                  
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose2}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -1015,7 +1023,8 @@ const[deleteTransactionShow,setDeleteTransaction]=useState(false);
                 
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose3}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -1060,7 +1069,8 @@ const[deleteTransactionShow,setDeleteTransaction]=useState(false);
                 
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose4}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
@@ -1119,7 +1129,8 @@ const[deleteTransactionShow,setDeleteTransaction]=useState(false);
                 
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`}>
+                  <button type="button" className={`btn ${cx.close}`}onClick={handleClose5}
+>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
