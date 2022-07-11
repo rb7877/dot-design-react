@@ -66,6 +66,10 @@ import Charges from "./pages/Settings/Charges/Charges";
 import Giftcard from "./pages/Settings/Giftcard/Giftcard";
 import Giftcarddetails from "./pages/Settings/Giftcard/Giftcarddetails";
 import Timedetails from "./pages/Promotion/Timedevents/Timedetails";
+import Devicesdetails from "./pages/Settings/Devices/Devicesdetails";
+import Generalsettings from "./pages/Settings/Generalsettings/Generalsettings";
+import MyReports from "./pages/Reports/MyReports/MyReports";
+import AddMyReports from "./pages/Reports/MyReports/AddMyReports";
 function App() {
   return (
     <>
@@ -101,7 +105,7 @@ function App() {
               <Coupons />
             </Route>
             <Route exact path="/promotion/coupons/add-coupons">
-              <Addcoupons/>
+              <Addcoupons />
             </Route>
 
             <Route exact path="/promotion/discount">
@@ -148,6 +152,14 @@ function App() {
             <Route exact path="/reports/miscellaneous">
               <Miscellaneous />
             </Route>
+
+            <Route exact path="/reports/myreports">
+              <MyReports />
+            </Route>
+            <Route exact path="/reports/myreports/addmyreports">
+              <AddMyReports />
+            </Route>
+
             <Route exact path="/settings/roles">
               <Roles />
             </Route>
@@ -171,6 +183,10 @@ function App() {
               <Delivery />
             </Route>
 
+            <Route exact path="/settings/Generalsettings">
+              <Generalsettings />
+            </Route>
+
             <Route exact path="/inventory/items">
               <ItemsSidebar />
             </Route>
@@ -188,9 +204,12 @@ function App() {
             <Route exact path="/settings/devices">
               <Devices />
             </Route>
-            
-           
-            
+
+            <Route exact path="/settings/devices/devicesdetails">
+              <Devicesdetails />
+            </Route>
+
+
             <Route exact path="/settings/reservations">
               <Reservations />
             </Route>
@@ -201,7 +220,7 @@ function App() {
              <Branch/>
              
             </Route> */}
-            
+
             <Route exact path="/settings/reasons">
               <Reasons />
             </Route>
@@ -236,21 +255,21 @@ function App() {
 
 
             <Route exact path="/settings/kitchenflows">
-              <Kitchenflows/>
+              <Kitchenflows />
             </Route>
             <Route exact path="/settings/kitchenflows/kitchenflowsdetails">
-              <Kitchenflowsdetails/>
+              <Kitchenflowsdetails />
             </Route>
 
             <Route exact path="/settings/charges">
-              <Charges/>
+              <Charges />
             </Route>
 
             <Route exact path="/settings/giftcard">
-              <Giftcard/>
+              <Giftcard />
             </Route>
             <Route exact path="/settings/giftcard/giftcarddetails">
-              <Giftcarddetails/>
+              <Giftcarddetails />
             </Route>
             <Route exact path="/menu/category">
               <Category />

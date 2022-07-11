@@ -143,6 +143,8 @@ const Sidebar = (props: any) => {
                       <div className={`${style.menuName}`}>Timed Events</div>
                     </NavLink>
                   </li>
+
+
                 </ul>
               </li>
 
@@ -181,7 +183,7 @@ const Sidebar = (props: any) => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/">
+                    <NavLink to="/reports/myreports">
                       <div className={`${style.menuName}`}>My Reports</div>
                     </NavLink>
                   </li>
@@ -373,6 +375,11 @@ const Sidebar = (props: any) => {
                   <li>
                     <NavLink to="/settings/giftcard">
                       <div className={`${style.menuName}`}>Gift Card</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/settings/Generalsettings">
+                      <div className={`${style.menuName}`}>General Settings</div>
                     </NavLink>
                   </li>
                   <li>

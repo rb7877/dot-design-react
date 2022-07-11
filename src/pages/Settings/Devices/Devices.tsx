@@ -8,7 +8,7 @@ import Footer from "../../../components/footer/Footer";
 import { Card, Button, Row, Col, Modal, Form, InputGroup } from "react-bootstrap";
 import table from "../../../datatable.module.scss";
 import DataTable, { Alignment } from "react-data-table-component";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
@@ -41,24 +41,28 @@ const handleButtonClick = () => {
 
 const data = [
   {
-    
+
     col: "Name1",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-   {
+  },
+  {
     col: "Name1",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-  
+  },
+
 ];
+
+
 
 export default function Devices() {
   const [filterText, setFilterText] = React.useState("");
   const [perPage, setPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
- 
+
+  
+
 
 
   const filteredItems = data.filter(
@@ -69,11 +73,18 @@ export default function Devices() {
   const [lgShow, setLgShow] = useState(false);
   const [addCustomerShow, setAddCustomer] = useState(false);
   
+  const history = useHistory();
 
+  const rowclickedFunction = () => {
+    // console.log("rowClickedFunction")
+    history.push("/settings/devices/devicesdetails",{params:'Hello World'})
   
+  }
+
+
 
   const columns = [
-     {
+    {
       name: "Sync",
       selector: (row: any) => row.col3,
       sortable: true,
@@ -91,7 +102,7 @@ export default function Devices() {
       cell: () => (
         <div className={`${cx.date}`}>
           <h5>kikihjg</h5>
-         </div>
+        </div>
       ),
     },
     {
@@ -101,7 +112,7 @@ export default function Devices() {
       cell: () => (
         <div className={`${cx.date}`}>
           <h5>42976013</h5>
-         </div>
+        </div>
       ),
     },
     {
@@ -111,7 +122,7 @@ export default function Devices() {
       cell: () => (
         <div className={`${cx.date}`}>
           <h5>Cashier</h5>
-         </div>
+        </div>
       ),
     },
     {
@@ -121,7 +132,7 @@ export default function Devices() {
       cell: () => (
         <div className={`${cx.date}`}>
           <h5>3</h5>
-         </div>
+        </div>
       ),
     },
     {
@@ -131,7 +142,7 @@ export default function Devices() {
       cell: () => (
         <div className={`${cx.date}`}>
           <h5>803</h5>
-         </div>
+        </div>
       ),
     },
     {
@@ -141,7 +152,7 @@ export default function Devices() {
       cell: () => (
         <div className={`${cx.date}`}>
           <h5>Windows Laptop</h5>
-         </div>
+        </div>
       ),
     },
     {
@@ -151,7 +162,7 @@ export default function Devices() {
       cell: () => (
         <div className={`${cx.date}`}>
           <h5>009</h5>
-         </div>
+        </div>
       ),
     },
   ];
@@ -261,11 +272,11 @@ export default function Devices() {
   };
 
 
-  const handleClose=()=>{
+  const handleClose = () => {
     setAddCustomer(false)
   }
 
-  const handleClose1=()=>{
+  const handleClose1 = () => {
     setLgShow(false)
   }
   return (
@@ -280,7 +291,7 @@ export default function Devices() {
                 <h5> Devices List</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-              <button
+                <button
                   className={`btn ${style.width50}`}
                   onClick={() => setLgShow(true)}
                 >
@@ -296,8 +307,8 @@ export default function Devices() {
             </Row>
           </Card.Title>
           <Card.Body>
-          <Col className={`${style.filterMain}`}>
-          <Row className={`${style.filterRowMain}`}>
+            <Col className={`${style.filterMain}`}>
+              <Row className={`${style.filterRowMain}`}>
                 <Col className={`${style.filterRowBox}`}>
                   <button className={`btn active ${style.filterB}`}>All</button>
                 </Col>
@@ -327,6 +338,7 @@ export default function Devices() {
                   subHeaderAlign={Alignment.LEFT}
                   persistTableHead
                   pagination
+                  onRowClicked={rowclickedFunction}
                   paginationIconNext={nextIcon}
                   paginationIconPrevious={previewIcon}
                   paginationIconFirstPage={nextIconD}
@@ -337,8 +349,8 @@ export default function Devices() {
                   paginationDefaultPage={currentPage}
                   onChangeRowsPerPage={handlePerRowsChange}
                   onChangePage={handlePageChange}
-                  //   expandableRows
-                  //   expandableRowsComponent={ExpandedComponent}
+                //   expandableRows
+                //   expandableRowsComponent={ExpandedComponent}
                 />{" "}
               </Box>
             </div>
@@ -369,8 +381,8 @@ export default function Devices() {
                 <Form.Label>Type</Form.Label>
               </Col>
               <Col lg={8}>
-              <Form.Select aria-label="Source">
-              <option>All</option>
+                <Form.Select aria-label="Source">
+                  <option>All</option>
                   <option>abc</option>
                   <option>a123bc</option>
                 </Form.Select>
@@ -387,26 +399,26 @@ export default function Devices() {
                 <Form.Control type="text" placeholder="" />
               </Col>
             </Form.Group>
-           
+
             <Row lg={12}>
-                      <Form.Group
-                        className={`row align-items-center ${cx.formBox}`}
-                        controlId="formName"
-                      >
+              <Form.Group
+                className={`row align-items-center ${cx.formBox}`}
+                controlId="formName"
+              >
 
-                        <Col lg={4}>
-                          <Form.Label>Reference</Form.Label>
-                        </Col>
+                <Col lg={4}>
+                  <Form.Label>Reference</Form.Label>
+                </Col>
 
-                        <Col lg={8}>
-                          <InputGroup className={`${cx.pinBox}`}>
-                            <Form.Control type="text" placeholder="" />
-                            <button className={`btn ${cx.generateBtn}`}>Generate</button>
-                          </InputGroup>
-                        </Col>
+                <Col lg={8}>
+                  <InputGroup className={`${cx.pinBox}`}>
+                    <Form.Control type="text" placeholder="" />
+                    <button className={`btn ${cx.generateBtn}`}>Generate</button>
+                  </InputGroup>
+                </Col>
 
-                      </Form.Group>
-                    </Row>
+              </Form.Group>
+            </Row>
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
@@ -414,16 +426,16 @@ export default function Devices() {
               <Col lg={4}>
                 <Form.Label>Branch</Form.Label>
               </Col>
-            
+
               <Col lg={8}>
-              <Form.Select aria-label="Source">
-              <option>Choose..</option>
+                <Form.Select aria-label="Source">
+                  <option>Choose..</option>
                   <option>abc</option>
                   <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>
-          
+
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -440,10 +452,10 @@ export default function Devices() {
             </Col>
           </Modal.Footer>
         </Form>
-      </Modal> 
+      </Modal>
 
 
-     
+
       <Modal
         className={`${cx.ctsPopup}`}
         size="lg"
@@ -454,11 +466,11 @@ export default function Devices() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-             Filter
+              Filter
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-           
+
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
@@ -470,7 +482,7 @@ export default function Devices() {
                 <Form.Control type="text" placeholder="" />
               </Col>
             </Form.Group>
-           
+
 
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
@@ -501,16 +513,16 @@ export default function Devices() {
               <Col lg={4}>
                 <Form.Label>Type</Form.Label>
               </Col>
-            
+
               <Col lg={8}>
-              <Form.Select aria-label="Source">
-              <option>Any</option>
+                <Form.Select aria-label="Source">
+                  <option>Any</option>
                   <option>abc</option>
                   <option>a123bc</option>
                 </Form.Select>
               </Col>
             </Form.Group>
-          
+
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
@@ -518,10 +530,10 @@ export default function Devices() {
               <Col lg={4}>
                 <Form.Label>Branch</Form.Label>
               </Col>
-            
+
               <Col lg={8}>
-              <Form.Select aria-label="Source">
-              <option>Any</option>
+                <Form.Select aria-label="Source">
+                  <option>Any</option>
                   <option>abc</option>
                   <option>a123bc</option>
                 </Form.Select>
@@ -534,10 +546,10 @@ export default function Devices() {
               <Col lg={4}>
                 <Form.Label>Tag</Form.Label>
               </Col>
-            
+
               <Col lg={8}>
-              <Form.Select aria-label="Source">
-              <option>Any</option>
+                <Form.Select aria-label="Source">
+                  <option>Any</option>
                   <option>abc</option>
                   <option>a123bc</option>
                 </Form.Select>
@@ -550,13 +562,13 @@ export default function Devices() {
               <Col lg={4}>
                 <Form.Label>In Use</Form.Label>
               </Col>
-            
+
               <Col lg={8}>
-              <Form.Select aria-label="Source">
-              <option>Any</option>
-              <option>Yes</option>
-              <option>No</option>
-                 
+                <Form.Select aria-label="Source">
+                  <option>Any</option>
+                  <option>Yes</option>
+                  <option>No</option>
+
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -567,13 +579,13 @@ export default function Devices() {
               <Col lg={4}>
                 <Form.Label>Online</Form.Label>
               </Col>
-            
+
               <Col lg={8}>
-              <Form.Select aria-label="Source">
-              <option>Any</option>
-              <option>Yes</option>
-              <option>No</option>
-                 
+                <Form.Select aria-label="Source">
+                  <option>Any</option>
+                  <option>Yes</option>
+                  <option>No</option>
+
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -581,7 +593,7 @@ export default function Devices() {
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
-              <Col lg={6} className={`${cx.leftft}`}>
+                <Col lg={6} className={`${cx.leftft}`}>
                   <button type="button" className={`${style.bgremove}`}>Clear</button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
@@ -596,7 +608,7 @@ export default function Devices() {
             </Col>
           </Modal.Footer>
         </Form>
-      </Modal> 
+      </Modal>
     </>
   );
 }

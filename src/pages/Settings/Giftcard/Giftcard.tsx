@@ -451,12 +451,12 @@ export default function Giftcard() {
                 <Form.Label>Deleted </Form.Label>
               </Col>
               <Col lg={8}>
-                <Form.Select aria-label="Source">
+               
+              </Col> <Form.Select aria-label="Source">
                   <option>Any</option>
                   <option>No</option>
                   <option>Yes</option>
                 </Form.Select>
-              </Col>
             </Form.Group>
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}

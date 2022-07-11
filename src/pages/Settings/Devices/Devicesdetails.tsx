@@ -1,7 +1,7 @@
 
 import React, { useCallback, useState } from "react";
 import style from "../../../style.module.scss";
-import cx from "./Giftcard.module.scss";
+import cx from "./Devices.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../../../components/header/Header";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -12,19 +12,21 @@ import { NavLink } from "react-router-dom";
 import ActionEdit from "../../../images/icon-edit.svg";
 import ActionDelete from "../../../images/icon-delete.svg";
 
-export default function Giftcarddetails() {
+export default function Devicesdetails() {
 
   const [addSectionShow, setAddSection] = useState(false);
-  const [addCustomerShow, setAddCustomer] = useState(false);
+  const [deactivateDeviceShow, setDeactivateDevice] = useState(false);
   const [lgShow, setLgShow] = useState(false);
   const [editShow, setEditShow] = useState(false);
+
+  
 
   const handleClose = () => {
     setLgShow(false)
   }
 
   const handleClose1 = () => {
-    setAddCustomer(false)
+    setDeactivateDevice(false)
   }
 
   const handleClose2 = () => {
@@ -45,8 +47,8 @@ export default function Giftcarddetails() {
             <Row className={`align-items-center ${style.rowTitle}`}>
               <Col className={`${style.rowTitleLeft}`} lg={6}>
                 <h5>
-                  <NavLink to="/settings/kitchenflows/" className={`${style.back}`}>Back</NavLink>
-                  Gift Card</h5>
+                  <NavLink to="/settings/devices" className={`${style.back}`}>Back</NavLink>
+                  test2</h5>
 
               </Col>
 
@@ -55,7 +57,7 @@ export default function Giftcarddetails() {
                   className={`btn ${style.width50}`}
                   onClick={() => setEditShow(true)}
                 >
-                  Edit Gift Card
+                  Edit Device 
                 </button>
               </Col>
             </Row>
@@ -68,21 +70,30 @@ export default function Giftcarddetails() {
                     <table className={`table ${cx.table50}`}>
                       <tbody>
                         <tr>
-                          <td>Name</td>
-                          <td>jkbkb</td>
+                          <td>Reference</td>
+                          <td>C11</td>
                         </tr>
                         <tr>
-                          <td>Category</td>
-                          <td>jkbkb</td>
+                          <td>Branch</td>
+                          <td>فرع الاحساء</td>
                         </tr>
 
                         <tr>
-                          <td>Barcode</td>
-                          <td>-</td>
+                          <td>App Version</td>
+                          <td>5.0.33 (284)</td>
                         </tr>
                         <tr>
-                          <td>Price</td>
-                          <td>SAR 1</td>
+                          <td>Menu Group</td>
+                          <td>—</td>
+                        </tr>
+
+                        <tr>
+                          <td>Last Sync</td>
+                          <td>June 08, 12:55pm</td>
+                        </tr>
+                        <tr>
+                          <td>Last Order</td>
+                          <td>—</td>
                         </tr>
 
                       </tbody>
@@ -94,17 +105,26 @@ export default function Giftcarddetails() {
                     <table className={`table ${cx.table50}`}>
                       <tbody>
                         <tr>
-                          <td>Name Localized</td>
-                          <td>hdcd</td>
+                          <td>Type</td>
+                          <td>Cashier</td>
                         </tr>
                         <tr>
-                          <td>SKU</td>
-                          <td>sk-0574</td>
+                          <td>Model</td>
+                          <td>iPad11,6</td>
                         </tr>
 
                         <tr>
-                          <td>Pricing Method</td>
-                          <td>fixed price</td>
+                          <td>System Version</td>
+                          <td>iOS 15.4.1</td>
+                        </tr>
+                        <tr>
+                          <td>Receives Online Orders</td>
+                          <td>No</td>
+                        </tr>
+
+                        <tr>
+                          <td>Last Online</td>
+                          <td>June 16, 11:11am</td>
                         </tr>
 
 
@@ -160,11 +180,11 @@ export default function Giftcarddetails() {
               <Col className={`${style.rowTitleLeft}`} lg={6}
 
               >
-                <h5>Inactive In Branches</h5>
+                <h5>Deactivate Device</h5>
               </Col>
               <Col className={`${style.rowTitleRight}`} lg={6}>
                 <button className={`btn ${style.width100}`}
-                  onClick={() => setAddCustomer(true)}>Select Branches</button>
+                  onClick={() => setDeactivateDevice(true)}>Deactivate Device</button>
               </Col>
             </Row>
           </Card.Title>
@@ -185,30 +205,7 @@ export default function Giftcarddetails() {
 
           </Card.Body>
         </Card>
-        <Card className="mt-4">
-          <Card.Title>
-            <Row className={`align-items-center mb-2 ${style.rowTitle}`}>
-              <Col className={`${style.rowTitleLeft}`} lg={6}
-
-              >
-                <h5>Groups</h5>
-              </Col>
-
-            </Row>
-          </Card.Title>
-          <Card.Body>
-            <div className="table-responsive">
-              <table className={`table m-0 ${cx.simpleTable}`}>
-                <tbody>
-                  <tr>
-                    <td>Cash Change</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-          </Card.Body>
-        </Card>
+      
       </section>
       <Footer />
 
@@ -221,7 +218,7 @@ export default function Giftcarddetails() {
       >
         <Form>
           <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">Edit Gift Card</Modal.Title>
+            <Modal.Title id="example-modal-sizes-title-lg">Edit Device</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form.Group
@@ -235,32 +232,8 @@ export default function Giftcarddetails() {
                 <Form.Control type="text" />
               </Col>
             </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Name Localized</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="jkbkb" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Category</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Select aria-label="Source">
-                  <option>abc</option>
-                  <option>123</option>
-                  <option>ok</option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
+           
+           
             <Row lg={12}>
               <Form.Group
                 className={`row align-items-center ${cx.formBox}`}
@@ -268,7 +241,7 @@ export default function Giftcarddetails() {
               >
 
                 <Col lg={4}>
-                  <Form.Label>SKU</Form.Label>
+                  <Form.Label>Reference</Form.Label>
                 </Col>
 
                 <Col lg={8}>
@@ -281,43 +254,42 @@ export default function Giftcarddetails() {
               </Form.Group>
             </Row>
 
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Barcode</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="jkbkb" />
-              </Col>
-            </Form.Group>
+           
 
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Pricing Method </Form.Label>
+                <Form.Label>Menu Group</Form.Label>
               </Col>
               <Col lg={8}>
                 <Form.Select aria-label="Source">
-                  <option>Fixed Price</option>
-                  <option>Open Price</option>
+                <option>Choose...</option>
+                  <option>Type1</option>
+                  <option>Type2</option>
 
                 </Form.Select>
               </Col>
             </Form.Group>
 
             <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
+              className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                <Form.Label>Price (SAR) </Form.Label>
+               
               </Col>
               <Col lg={8}>
-                <Form.Control type="number" />
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" /> 
+                      <span className={`${cx.checkmark}`}></span>  Receives Online Orders
+                    </label>
+                  </Col>
+                 
+                  </Row>
               </Col>
             </Form.Group>
           </Modal.Body>
@@ -325,7 +297,7 @@ export default function Giftcarddetails() {
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
-                  <button type="button" className={`${style.bgremove}`}>Delete Gift Card</button>
+                  
                 </Col>
 
                 <Col lg={6} className={`${cx.rightft}`}>
@@ -351,7 +323,7 @@ export default function Giftcarddetails() {
       >
         <Form>
           <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg"> Add Tag</Modal.Title>
+            <Modal.Title id="example-modal-sizes-title-lg">Add Tag</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form.Group
@@ -381,7 +353,7 @@ export default function Giftcarddetails() {
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
-                    Save
+                    Apply
                   </button>
                 </Col>
               </Row>
@@ -390,54 +362,28 @@ export default function Giftcarddetails() {
         </Form>
       </Modal>
 
-      <Modal
-        className={`${cx.ctsPopup}`}
-        size="lg"
-        show={addCustomerShow}
-        onHide={() => setAddCustomer(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
+     <Modal
+        className={`${cx.ctsPopup} ${cx.importBody}`}
+        show={deactivateDeviceShow}
+        onHide={() => setDeactivateDevice(false)}
+        aria-labelledby="example-modal-sizes-title-md"
+        centered
       >
-        <Form>
+       <Form>
           <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">
-              Select Branches
+            <Modal.Title id="example-modal-sizes-title-md">
+            Confirm
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Branches</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Select aria-label="Source">
-                  <option>Any</option>
-                  <option>No</option>
-                  <option>Yes</option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-
+            <p>Deactivating the device will stop it immediately! Are you sure you want to deactivate this device?</p>
+            <button type="button" className={`btn ${cx.importBtn}`} onClick={handleClose1}>
+              Cancel
+            </button>
+            <button type="button" className={`btn ${cx.importBtn}`}>
+              Yes
+            </button>
           </Modal.Body>
-          <Modal.Footer>
-            <Col lg={12}>
-              <Row className="align-items-center">
-                <Col lg={6} className={`${cx.leftft}`}>
-
-                </Col>
-                <Col lg={6} className={`${cx.rightft}`}>
-                  <button type="button" className={`btn ${cx.close}`} onClick={handleClose1}>
-                    Close
-                  </button>
-                  <button type="button" className={`btn ${cx.apply}`}>
-                    Save
-                  </button>
-                </Col>
-              </Row>
-            </Col>
-          </Modal.Footer>
         </Form>
       </Modal>
 

@@ -45,81 +45,81 @@ const data = [
     id: 1,
     col1: "1",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-   {
+  },
+  {
     id: 2,
     col1: "2",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-   {
+  },
+  {
     id: 3,
     col1: "3",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   }, 
-   
-   {
+  },
+
+  {
     id: 4,
     col1: "4",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },           
-   {
+  },
+  {
     id: 6,
     col1: "6",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-   {
+  },
+  {
     id: 6,
     col1: "6",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-   {
+  },
+  {
     id: 7,
     col1: "7",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-   {
+  },
+  {
     id: 8,
     col1: "8",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-   {
+  },
+  {
     id: 9,
     col1: "9",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-   {
+  },
+  {
     id: 10,
     col1: "10",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-   {
+  },
+  {
     id: 11,
     col1: "11",
     col2: "Restaurant",
-     col3: "compnay",
+    col3: "compnay",
     col4: "---",
-   },
-  
+  },
+
 ];
 
 export default function Roles() {
@@ -140,15 +140,15 @@ export default function Roles() {
     {
       name: "ID",
       selector: (row: any) => row.col1,
-        sortable: true,
-        width: "80px",
+      sortable: true,
+      width: "80px",
     },
     {
       name: "Role Name",
       selector: (row: any) => row.col2,
       sortable: true,
     },
-     {
+    {
       name: "Date",
       selector: (row: any) => row.col6,
       sortable: true,
@@ -170,10 +170,10 @@ export default function Roles() {
       sortable: true,
       cell: () => (
         <div className={`${cx.action}`}>
-         <img  onClick={() => seteditCustomer(true)}
-           src={ActionEdit}
-           className={`${cx.actionIcon}`}
-           alt="img"/>
+          <img onClick={() => seteditCustomer(true)}
+            src={ActionEdit}
+            className={`${cx.actionIcon}`}
+            alt="img" />
           <img src={ActionDelete} className={`${cx.actionIcon}`} alt="img" />
         </div>
       ),
@@ -285,15 +285,15 @@ export default function Roles() {
     );
   };
 
-  const handleClose=()=>{
+  const handleClose = () => {
     setAddCustomer(false)
   }
 
-  const handleClose1=()=>{
+  const handleClose1 = () => {
     seteditCustomer(false)
   }
 
-  const handleClose2=()=>{
+  const handleClose2 = () => {
     setLgShow(false)
   }
   return (
@@ -308,7 +308,7 @@ export default function Roles() {
                 <h5>Role List</h5>
               </Col>
               <Col className={`col-12 ${style.rowTitleRight}`} lg={6}>
-              <button
+                <button
                   className={`btn ${style.width50}`}
                   onClick={() => setLgShow(true)}
                 >
@@ -343,8 +343,8 @@ export default function Roles() {
                   paginationDefaultPage={currentPage}
                   onChangeRowsPerPage={handlePerRowsChange}
                   onChangePage={handlePageChange}
-                  //   expandableRows
-                  //   expandableRowsComponent={ExpandedComponent}
+                //   expandableRows
+                //   expandableRowsComponent={ExpandedComponent}
                 />{" "}
               </Box>
             </div>
@@ -376,7 +376,7 @@ export default function Roles() {
                 <Form.Control type="text" placeholder="Qwerty" />
               </Col>
             </Form.Group>
-           
+
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
@@ -410,7 +410,7 @@ export default function Roles() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Add Role
+              Add Role
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -422,11 +422,11 @@ export default function Roles() {
                 <Form.Label>Role</Form.Label>
               </Col>
               <Col lg={8}>
-              <Form.Select aria-label="Source">
+                <Form.Select aria-label="Source">
                   <option>All</option>
                   <option>test 1</option>
                   <option>test 2</option>
-                  
+
                 </Form.Select>
               </Col>
             </Form.Group>
@@ -463,42 +463,42 @@ export default function Roles() {
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>  Sales
                     </label>
                   </Col>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>  Promotions
                     </label>
                   </Col>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>  Customers
                     </label>
                   </Col>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>  Combos
                     </label>
                   </Col>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>  Orders
                     </label>
                   </Col>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>  Coupons
                     </label>
                   </Col>
-                  
-                 
+
+
                 </Row>
               </Col>
             </Form.Group>
@@ -506,22 +506,22 @@ export default function Roles() {
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
             >
-             
-              
+
+
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
-                 
+
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
                   <button type="button" className={`btn ${cx.close}`} onClick={handleClose}>
                     Close
                   </button>
                   <button type="button" className={`btn ${cx.apply}`}>
-                 Submit
+                    Submit
                   </button>
                 </Col>
               </Row>
@@ -541,12 +541,12 @@ export default function Roles() {
         <Form>
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-            Edit Role
+              Edit Role
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            
-           
+
+
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
@@ -555,11 +555,22 @@ export default function Roles() {
                 <Form.Label>Name</Form.Label>
               </Col>
               <Col lg={8}>
-              <Form.Control type="text" placeholder="Cash" />
+                <Form.Control type="text" placeholder="Cash" />
               </Col>
             </Form.Group>
-           
-            
+            <Form.Group
+              className={`row align-items-center ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+                <Form.Label>Name Localized</Form.Label>
+              </Col>
+              <Col lg={8}>
+                <Form.Control type="text" placeholder="Cash" />
+              </Col>
+            </Form.Group>
+
+
             <Form.Group
               className={`row align-items-center ${cx.formBox}`}
               controlId="formName"
@@ -568,10 +579,10 @@ export default function Roles() {
                 <Form.Label>Authorities</Form.Label>
               </Col>
               <Col lg={6}>
-              <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span> Toggle All
-                    </label>
+                <label className={`${cx.checkbox}`}>
+                  <input type="checkbox" />
+                  <span className={`${cx.checkmark}`}></span> Toggle All
+                </label>
               </Col>
             </Form.Group>
             <Form.Group
@@ -579,1550 +590,1550 @@ export default function Roles() {
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span> Order Authorities
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-         
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>  Read Orders
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-           
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage orders
 
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Orders Tags
 
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>  Customer Authorities
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span> Read Customers
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Read Customers Insights
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Customers
 
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Customers House Account
 
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Customers Loyalty
 
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Inventory Authorities
 
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Read Inventory Items
 
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Inventory Items
 
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Read Suppliers
 
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Suppliers
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Create Purchase Orders
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Submit Purchase Orders
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Approve Purchase Orders
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>View Approved Purchase Orders
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Create Transfer Orders
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Submit Transfer Orders
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Create Transfers
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Send & Receive Transfers
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Create Purchasing
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Submit Purchasing
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Create Production
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Submit Production
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Create Quantity Adjustment
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Submit Quantity Adjustment
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Create Cost Adjustment
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Submit Cost Adjustment
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Create Inventory Count
 
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Submit Inventory Count
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Read Order Transactions
 
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Create Inventory Spot Check
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          <Form.Group
+            </Form.Group>
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Submit Inventory Spot Check
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Menu Authorities
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Read Menu
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Menu
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Other Authorities
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Ingredients
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Costs
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Admin Authorities
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Branches
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Coupons
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Devices
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Discounts
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Gift Cards
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Promotions
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Settings
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Delivery Zones
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Timed Events
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-          
-          <Form.Group
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Manage Users
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
-          
-          <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                
-              </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={6}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>Manage Apps  
-                    </label>
-                  </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                
+                </Row>
               </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={6}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>Reports Authorities  
-                    </label>
-                  </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
+            </Form.Group>
 
-          <Form.Group
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
-              </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={6}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>View Cost Analysis Report  
-                    </label>
-                  </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
-          <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                
-              </Col>
-              <Col lg={8}>
-                <Row className={`${cx.checkboxRow}`}>
-                  <Col lg={6}>
-                    <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>View Inventory Control Report 
-                    </label>
-                  </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
-              className={`row ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>Manage Apps
+                    </label>
+                  </Col>
+
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>Reports Authorities
+                    </label>
+                  </Col>
+
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>View Cost Analysis Report
+                    </label>
+                  </Col>
+
+                </Row>
+              </Col>
+            </Form.Group>
+            <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>View Inventory Control Report
+                    </label>
+                  </Col>
+
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className={`row ${cx.formBox}`}
+              controlId="formName"
+            >
+              <Col lg={4}>
+
+              </Col>
+              <Col lg={8}>
+                <Row className={`${cx.checkboxRow}`}>
+                  <Col lg={6}>
+                    <label className={`${cx.checkbox}`}>
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>View Inventory Levels Report
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>Inventory Transactions Reports  
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>Inventory Transactions Reports
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>View Other Reports  
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>View Other Reports
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>View Sales Reports  
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>View Sales Reports
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>View Cost Adjustment History Report
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>View Foodics Pay Reports 
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>View Foodics Pay Reports
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>View Menu Cost Reports
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>View Inventory Items Cost Report 
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>View Inventory Items Cost Report
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Dashboard Authorities
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Access General Dashboard
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
-                      <span className={`${cx.checkmark}`}></span>Access Branches Dashboard 
+                      <input type="checkbox" />
+                      <span className={`${cx.checkmark}`}></span>Access Branches Dashboard
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Access Inventory Dashboard
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Access Call Center Dashboard
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Cashier App Authorities
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Access Cash Register
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Access Devices Management
 
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Access Reports
                     </label>
                   </Col>
-                
-              </Row>
-              </Col>
-          </Form.Group>
 
-          <Form.Group
+                </Row>
+              </Col>
+            </Form.Group>
+
+            <Form.Group
               className={`row ${cx.formBox}`}
               controlId="formName"
             >
               <Col lg={4}>
-                
+
               </Col>
               <Col lg={8}>
                 <Row className={`${cx.checkboxRow}`}>
                   <Col lg={6}>
                     <label className={`${cx.checkbox}`}>
-                      <input type="checkbox" /> 
+                      <input type="checkbox" />
                       <span className={`${cx.checkmark}`}></span>Act as Driver
 
                     </label>
                   </Col>
-                
-              </Row>
+
+                </Row>
               </Col>
-          </Form.Group>
-
-         
-
-          
+            </Form.Group>
 
 
 
-          
-          
+
+
+
+
+
+
           </Modal.Body>
           <Modal.Footer>
             <Col lg={12}>
               <Row className="align-items-center">
                 <Col lg={6} className={`${cx.leftft}`}>
                   <button type="button" className={`${style.bgremove}`}>
-                  Delete Role
+                    Delete Role
                   </button>
                 </Col>
                 <Col lg={6} className={`${cx.rightft}`}>
