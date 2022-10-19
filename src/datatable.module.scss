@@ -1,0 +1,173 @@
+:global(.MuiPaper-root) {
+    box-shadow: 0 0px 12px 1px #0000000f !important;
+    border-radius: 8px !important;
+    margin: 0px !important;
+
+    :global(.MuiTablePagination-root) {
+        display: flex;
+        justify-content: end;
+        padding: 10px 10px !important;
+    }
+    :global(.MuiToolbar-root) {
+        padding:0px 0px !important;
+        min-height: auto !important;
+    }
+    :global(.MuiTablePagination-toolbar) {
+        
+        :global(.MuiTablePagination-displayedRows) {
+            margin: 0;
+        }
+    }
+    table {
+
+        :global(.MuiCheckbox-root) {
+
+            svg {
+                color: #E5E5E5;
+                border-radius: 10px;
+                overflow: hidden;
+
+                path {
+                }
+            }
+
+        }
+
+        thead {
+
+            tr {
+    
+                th {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color:#4D4D4D;
+                }
+            }
+
+        }
+        tbody {
+
+            tr {
+
+                td {
+                    font-size: 14px;
+                    color:#4D4D4D;
+                }
+            }
+        }
+    }
+}
+
+
+
+.pagination {
+    padding: 15px 15px;
+    font-size: 14px;
+
+    p {
+        margin:0;
+    }
+}
+
+.dataTableBox {
+
+    .mainTitleRow {
+        padding: 18px 12px;
+        border-bottom: 1px solid #E5E5E5;
+        width: 100%;
+        align-items:center;
+        margin: 0;
+    
+        .filterList {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+    
+            li {
+    
+                :global(.btn) {
+                    color: #808080;
+                    font-size: 15px;
+                    padding: 2px 6px;
+                    min-width: 60px;
+                    border-radius: 50px;
+                    margin-right: 2px;
+    
+                    &:focus {
+                        box-shadow: none;
+                    }
+    
+                    &.active {
+                        background: var(--Main2);
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    
+        .rightActionIcons {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: end;
+    
+            li {
+    
+                :global(.btn) {
+                    color: #808080;
+                    font-size: 15px;
+                    padding:0px;
+                    border-radius: 50px;
+    
+                    &:focus {
+                        box-shadow: none;
+                    }
+    
+                    &.active {
+                        background: var(--Main2);
+                        color: #fff;
+                    }
+    
+                    .refreshIcon {
+                        height:35px;
+                    }
+                }
+    
+                :global(.dropdown) {
+    
+                    :global(.dropdown-toggle) {
+                        padding: 0px;
+                        border-radius: 50px;
+                        width: 30px;
+                        height: 30px;
+                        color: #fff;
+    
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*=======================================================
+//////////////RESPONSIVE MEDIA QUERY START///////////////
+=======================================================*/
+@media (max-width: 767px) {
+
+
+    
+       
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  
+}

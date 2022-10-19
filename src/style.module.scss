@@ -1,0 +1,198 @@
+@import "variables.module.scss"; 
+
+body {
+  background-color: var(--BodyBackground);
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #222;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter';
+  overflow-x: hidden;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: -0.5px;
+}
+
+
+.pageWrapper {
+  margin-left: 250px;
+
+  .pageTitle {
+    position: sticky;
+    z-index: 99;
+    background: #fff;
+    top: 0;
+    margin: 0;
+    padding: 35px 35px;
+
+    h5 {
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 0px;
+        color: #4D4D4D;
+
+        .back {
+            color: var(--Main2);
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+    }
+
+    .rowTitle {
+
+        .rowTitleRight {
+            text-align: right;
+
+            .selectDropdown {
+              display: inline-block;
+
+              :global(.multi-select) {
+
+                :global(.dropdown-container) {
+                    background-color: #fff;
+                    border-color: #B3B3B3;
+                    color: #B3B3B3;
+                    border-radius: 50px;
+
+                    :global(.dropdown-heading-value) {
+                      width: 100px;
+                      text-align: left;
+                      overflow: hidden;
+                      -o-text-overflow: ellipsis;
+                      text-overflow: ellipsis;
+                      display: -webkit-box;
+                      -webkit-line-clamp: 1;
+                      -webkit-box-orient: vertical;
+                      white-space: break-spaces;
+                      word-break: break-all;
+                      font-size: 14px;
+
+                      span {
+                        display: block;
+                      }
+                    }
+
+                    :global(.clear-selected-button) {
+                      display:none;
+                    }
+                }
+
+              }
+
+
+              :global(.css-1s2u09g-control), :global(.css-1pahdxg-control) {
+                border: 1px solid #B3B3B3;
+                padding: 0px 15px;
+                border-radius: 50px;
+
+                &:hover, &:focus {
+                  border: 1px solid #B3B3B3;
+                  box-shadow: none;
+                }
+
+                :global(.css-1okebmr-indicatorSeparator) {
+                  display: none;
+                }
+
+                :global(.css-tlfecz-indicatorContainer), :global(.css-1gtu0rj-indicatorContainer) {
+                  padding: 0px 0px;
+                }
+              }
+
+            }
+
+            :global(.btn) {
+                background-color: #fff;
+                border-color: #B3B3B3;
+                color: #B3B3B3;
+                border-radius: 50px;
+                min-width: 80px;
+                padding: 8px 15px;
+                margin-left: 10px;    
+                font-weight: normal;
+                font-size: 14px;
+
+                .icon {
+                    margin-right: 5px;
+                    margin-top: -1px;
+                }
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            :global(.dropdown) {
+                display: inline-block;
+
+                :global(.dropdown-menu) {
+                    padding: 0px 0px;
+                    border-radius: 8px;
+                    border-color: #d2cfcf;
+
+                    a {
+                        padding: 8px 10px;
+                        border-bottom: 1px solid #e4e4e4;
+
+                        &:last-child {
+                            border: none;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+  }
+
+  .pageWrapperInside {
+    background-color: var(--BodyBackground);
+    padding: 35px 35px;
+
+    :global(.card) {
+      background-color: transparent;
+      border: none;
+
+      :global(.card-body) {
+        padding:0px;
+        margin-bottom: 0px;
+        background: #FAFAFA;
+      }
+    }
+  }
+}
+
+
+
+/*=======================================================
+//////////////RESPONSIVE MEDIA QUERY START///////////////
+=======================================================*/
+
+
+@media (max-width: 767px) {
+
+}
+
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
+  }
+  @media only screen and (max-width: 5520px) and (min-width: 768px) {
+    
+  }
+
+  @media only screen and (min-width: 1200px) and (max-width: 1279px) {
+
+  }
+
+
+@media (min-width: 1200px) {
+
+
+}
+
+  /* =======================================================
+  //////////////RESPONSIVE MEDIA QUERY END///////////////
+  ======================================================= */
