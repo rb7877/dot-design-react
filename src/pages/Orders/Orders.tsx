@@ -12,9 +12,7 @@ import Select, {
   StylesConfig,
 } from 'react-select';
 import { MultiSelect } from "react-multi-select-component";
-import { alpha } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Table from "@mui/material/Table";
+import { alpha, Box, Table } from "@mui/material";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
@@ -35,6 +33,13 @@ import icon1 from "../../images/icon-branch.svg";
 import icon2 from "../../images/icon-calendar.svg";
 import icon3 from "../../images/icon-call.svg";
 import icon4 from "../../images/icon-export.svg";
+import iconRefresh from "../../images/icon-refresh.svg";
+import iconFilter from "../../images/icon-filter.svg";
+import Modals from "../../components/Modals/Modals";
+
+
+import { Branches, BusinessDate, Export } from "./OrderDropdowns";
+
 
 interface Data {
   reference: string;
@@ -48,6 +53,206 @@ interface Data {
 }
 
 const rows = [
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
+  {
+    reference: "14045",
+    number: "1092",
+    branch: "Mall 1",
+    customer: "-",
+    status: "Done",
+    source: "Cashier",
+    total: "50",
+    business: "2022-09-11",
+  },
   {
     reference: "14045",
     number: "1092",
@@ -348,39 +553,70 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
       ) : (
         <>
           <div className={`${table.mainTitleRow}`}>
-            <Row>
-              <Col lg={7}>
-                <ul className={`${table.filterList}`}>
-                  <li><button className={`btn ${table.filterBtn} ${table.active}`}>All</button> </li>
-                  <li><button className={`btn ${table.filterBtn}`}>Today</button> </li>
-                  <li><button className={`btn ${table.filterBtn}`}>Draft</button> </li>
-                  <li><button className={`btn ${table.filterBtn}`}>Pending</button> </li>
-                  <li><button className={`btn ${table.filterBtn}`}>Archive</button> </li>
-                  <li><button className={`btn ${table.filterBtn}`}>Ahead</button> </li>
-                  <li><button className={`btn ${table.filterBtn}`}>Call Center</button> </li>
-                  <li><button className={`btn ${table.filterBtn}`}>API</button> </li>
-                </ul>
-              </Col>
-              <Col lg={5}>
-                <ul className={`${table.rightActionIcons}`}>
-                  <li>
-                    <Dropdown>
-                      <Dropdown.Toggle id="dropdown-basic">
-                        <BsPlusLg />
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">Orders</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Order Items</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">
-                          Order Payment
-                        </Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Order Tags</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </li>
-                </ul>
-              </Col>
-            </Row>
+            <ul className={`${table.filterList}`}>
+              <li><button className={`btn ${table.filterBtn} ${table.active}`}>All</button> </li>
+              <li><button className={`btn ${table.filterBtn}`}>Today</button> </li>
+              <li><button className={`btn ${table.filterBtn}`}>Draft</button> </li>
+              <li><button className={`btn ${table.filterBtn}`}>Pending</button> </li>
+              <li><button className={`btn ${table.filterBtn}`}>Archive</button> </li>
+              <li><button className={`btn ${table.filterBtn}`}>Ahead</button> </li>
+              <li><button className={`btn ${table.filterBtn}`}>Call Center</button> </li>
+              <li><button className={`btn ${table.filterBtn}`}>API</button> </li>
+            </ul>
+            <ul className={`${table.rightActionIcons}`}>
+              <li>
+                <NavLink className={`${table.refreshBtn}`} to="#">
+                  <img src={iconRefresh} />
+                </NavLink>
+              </li>
+              <li>
+                <button className={`${table.filterBtn} btn`}>
+                  <img src={iconFilter} className={`${st.icon}`} />
+                  Filters
+                </button>
+              </li>
+              <li>
+                <Dropdown className={`${table.plusDropdown}`}>
+                  <Dropdown.Toggle id="dropdown-basic">
+                    <BsPlusLg />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <ul className={`${table.dropDownUl}`}>
+                      <li>
+                        <label className={`${table.checkbox}`}>
+                          <input type="checkbox" disabled />
+                          <span className={`${table.checkmark}`}></span> Reference
+                        </label>
+                      </li>
+                      <li>
+                        <label className={`${table.checkbox}`}>
+                          <input type="checkbox" checked />
+                          <span className={`${table.checkmark}`}></span> Number
+                        </label>
+                      </li>
+                      <li>
+                        <label className={`${table.checkbox}`}>
+                          <input type="checkbox" />
+                          <span className={`${table.checkmark}`}></span> Branch
+                        </label>
+                      </li>
+                      <li>
+                        <label className={`${table.checkbox}`}>
+                          <input type="checkbox" />
+                          <span className={`${table.checkmark}`}></span> Customer
+                        </label>
+                      </li>
+                      <li>
+                        <label className={`${table.checkbox}`}>
+                          <input type="checkbox" />
+                          <span className={`${table.checkmark}`}></span> Status
+                        </label>
+                      </li>
+                    </ul>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+            </ul>
           </div>
         </>
       )}
@@ -403,7 +639,7 @@ function EnhancedTable() {
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(20);
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
@@ -565,10 +801,21 @@ function EnhancedTable() {
 export default function Orders() {
   const [lgShow, setLgShow] = useState(false);
 
-  //for close button
+  // Modals
+
+  const [show, setShow] = useState(false);
+  const [modalName, setModalName] = useState('');
+  const handleShow = (modalname: string, status: boolean) => {
+    console.log(modalname, status, "handleShow")
+    setModalName(modalname)
+    setShow(status);
+  }
   const handleClose = () => {
-    setLgShow(false);
-  };
+    setModalName('')
+    setShow(false);
+  }
+
+
 
   const Control = ({ children, ...props }: ControlProps) => {
     // @ts-ignore
@@ -608,79 +855,20 @@ export default function Orders() {
     <>
       <section className={`${st.pageWrapper}`}>
         <div className={`${st.pageTitle}`}>
-          <Row className={`align-items-center ${st.rowTitle}`}>
-            <Col className={`col-12 ${st.rowTitleLeft}`} lg={3}>
-              <h5>Orders</h5>
-            </Col>
-            <Col className={`col-12 ${st.rowTitleRight}`} lg={9}>
+          <div className={`${st.rowTitleLeft}`}>
+            <h5>Orders</h5>
+          </div>
+          <div className={`${st.rowTitleRight}`}>
+            <Branches />
 
-              <div className={`${st.selectDropdown}`}>
-                <MultiSelect
-                  options={options}
-                  valueRenderer={customValueRenderer}
-                  value={selected}
-                  onChange={setSelected}
-                  labelledBy={"All Braches"}
-                  isCreatable={true}
-                  closeOnChangedValue={true}
-                />
-              </div>
-              {/* 
-              <div className={`${st.selectDropdown}`}>
-                <Select
-                  isSearchable={true}
-                  options={options}
-                  isMulti
-                  components={{ Control }} placeholder="All Braches"
-                />
-              </div> */}
+            <BusinessDate />
+            <Export />
 
-              <Dropdown>
-                <Dropdown.Toggle id="dropdown-basic">
-                  <img src={icon2} className={`${st.icon}`} />
-                  Business Date
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Orders</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Order Items</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">
-                    Order Payment
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Order Tags</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-
-              <Dropdown>
-                <Dropdown.Toggle id="dropdown-basic">
-                  <img src={icon3} className={`${st.icon}`} />
-                  Export
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Orders</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Order Items</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">
-                    Order Payment
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Order Tags</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-
-              <Dropdown>
-                <Dropdown.Toggle id="dropdown-basic">
-                  <img src={icon4} className={`${st.icon}`} />
-                  New Call Center Order
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Orders</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Order Items</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">
-                    Order Payment
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Order Tags</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
-          </Row>
+            <button className={`btn`} onClick={() => { handleShow('order call', true) }}>
+              <img src={icon4} className={`${st.icon}`} />
+              New Call Center Order
+            </button>
+          </div>
         </div>
 
 
@@ -698,154 +886,7 @@ export default function Orders() {
         </div>
       </section>
 
-      <Modal
-        className={`${cx.ctsPopup}`}
-        size="lg"
-        show={lgShow}
-        onHide={() => setLgShow(false)}
-        aria-labelledby="example-modal-sizes-title-lg"
-      >
-        <Form>
-          <Modal.Header closeButton>
-            <Modal.Title id="example-modal-sizes-title-lg">Filter</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Reference</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Qwerty" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Business Date</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="date" placeholder="DD/MM/YY" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Customer Phone</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Customer Phone" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Order Tag</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Control type="text" placeholder="Order Tag" />
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Source</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Select aria-label="Source">
-                  <option>All</option>
-                  <option>Cashier</option>
-                  <option>Call Centre</option>
-                  <option>Api</option>
-                  <option>Waiter</option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Status</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Select aria-label="Source">
-                  <option>All</option>
-                  <option>Pending</option>
-                  <option>Active</option>
-                  <option>Void</option>
-                  <option>Done</option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Type</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Select aria-label="Source">
-                  <option>All</option>
-                  <option>Dine In</option>
-                  <option>Tackeaway</option>
-                  <option>Void</option>
-                  <option>Done</option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              className={`row align-items-center ${cx.formBox}`}
-              controlId="formName"
-            >
-              <Col lg={4}>
-                <Form.Label>Has Discount</Form.Label>
-              </Col>
-              <Col lg={8}>
-                <Form.Select aria-label="Has Discount">
-                  <option>All</option>
-                  <option>Yes</option>
-                  <option>No</option>
-                </Form.Select>
-              </Col>
-            </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Col lg={12}>
-              <Row className="align-items-center">
-                <Col lg={6} className={`${cx.leftft}`}>
-                  <button type="button" className={`${st.bgremove}`}>
-                    Clear
-                  </button>
-                </Col>
-                <Col lg={6} className={`${cx.rightft}`}>
-                  <button
-                    type="button"
-                    className={`btn ${cx.close}`}
-                    onClick={handleClose}
-                  >
-                    Close
-                  </button>
-                  <button type="button" className={`btn ${cx.apply}`}>
-                    Apply
-                  </button>
-                </Col>
-              </Row>
-            </Col>
-          </Modal.Footer>
-        </Form>
-      </Modal>
+      <Modals show={show} handleClose={handleClose} modalName={modalName} />
     </>
   );
 }

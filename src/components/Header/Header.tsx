@@ -11,18 +11,40 @@ import logo from "../../images/logo.svg";
 
 import profile from "../../images/icon-profile.svg";
 import infoicon from "../../images/icon-info.svg";
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 import { Col, Row, InputGroup, FormControl, Dropdown } from "react-bootstrap"
 
 const Header = (props: any) => {
     const globalCtx = useContext(GlobalContext);
     let hideonScroll = globalCtx.showMenu;
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    // ----------------------- Active on Scroll Functionality -------------------------------- //
+    const [onscrollActive, setOnscrollActive] = useState(false)
+    useEffect(() => {
+        const onScroll = () => {
+            const scrollCheck: boolean = window.scrollY > 10;
+            setOnscrollActive(scrollCheck);
+        };
+
+        // setting the event handler from web API
+        document.addEventListener("scroll", onScroll);
+
+        // cleaning up from the web API
+        return () => {
+            document.removeEventListener("scroll", onScroll);
+        };
+    }, [])
+    // show ? disableBodyScroll(document.body) : enableBodyScroll(document.body);
 
     return (<>
         <header className={`${cx.mainHeader}`}>
             <Row className={`${cx.mobileHeader}`}>
                 <Col className="col-3">
-                    <GiHamburgerMenu className={`${cx.hembugmenu}`} onClick={() => { globalCtx.displayMenu(hideonScroll) }} />
+                    <GiHamburgerMenu className={`${cx.hembugmenu}`} onClick={() => { handleShow(); globalCtx.displayMenu(hideonScroll) }} />
                 </Col>
                 <Col className="col-6 text-center">
 
