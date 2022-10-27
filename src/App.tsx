@@ -5,21 +5,13 @@ import Navigation from './pages/Navigation/Navigation';
 import Orders from './pages/Orders/Orders';
 import Ordersdetails from './pages/Ordersdetails/Ordersdetails';
 
-
-
-type Routes = {
-  basename: string;
-  country: string;
-  children: React.ReactNode;
-};
-
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Navigation />}>
-        {/* <Route index element={<Login />} /> */}
-        <Route path='/' element={<Orders />} />
-        <Route path='/order-details' element={<Ordersdetails />} />
+        <Route index element={<Login />} />
+        <Route path='orders' element={<Orders />} />
+        <Route path='orders/:id' element={<Ordersdetails />} />
       </Route>
     </Routes>
   );

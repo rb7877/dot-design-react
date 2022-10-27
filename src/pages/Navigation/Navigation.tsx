@@ -9,20 +9,17 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 
 export default function Navigation() {
     let location = useLocation();
-    console.log(location, "useNavigate")
+    console.log(window.location.href, location, "useNavigate")
     return <Fragment>
-        <div className={`${cx.wrapper}`}>
-            {/* {
-                window.location.href.includes("/login") ?
+        <div className={`${location.pathname.length <= 1 ? cx.wrapperLogin : cx.wrapper}`}>
+            {
+                location.pathname.length <= 1 ?
                     <Fragment></Fragment> : <Header />
-            } */}
-            <Header />
-            <Sidebar />
+            }
+            {location.pathname.length <= 1 ? <Fragment></Fragment> : <Sidebar />}
+
             <Outlet />
-            <Footer />
-            {/* {window.location.href.includes("/login") ? <Fragment></Fragment> : <Footer />} */}
-            {/* if multiply components not showing footer than
-        {location.pathname === "/map-listing" || location.pathname === "/component name"  ? <Fragment></Fragment> : <Footer />}  */}
+            {location.pathname.length <= 1 ? <Fragment></Fragment> : <Footer />}
         </div>
     </Fragment>;
 }

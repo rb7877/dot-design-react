@@ -4,13 +4,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import cx from "./Orders.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Col, Modal, Form, Dropdown } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Select, {
   components,
   ControlProps,
   Props,
   StylesConfig,
-} from 'react-select';
+} from "react-select";
 import { MultiSelect } from "react-multi-select-component";
 import { alpha, Box, Table } from "@mui/material";
 import TableBody from "@mui/material/TableBody";
@@ -28,7 +28,7 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { visuallyHidden } from "@mui/utils";
-import { BsPlusLg } from 'react-icons/bs';
+import { BsPlusLg } from "react-icons/bs";
 import icon1 from "../../images/icon-branch.svg";
 import icon2 from "../../images/icon-calendar.svg";
 import icon3 from "../../images/icon-call.svg";
@@ -38,9 +38,7 @@ import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
 import Modals from "../../components/Modals/Modals";
 
-
 import { Branches, BusinessDate, Export } from "./OrderDropdowns";
-
 
 interface Data {
   reference: string;
@@ -65,7 +63,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14046",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -75,7 +73,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14047",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -85,7 +83,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14048",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -95,7 +93,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14049",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -105,7 +103,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14050",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -115,7 +113,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14051",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -125,7 +123,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14052",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -135,7 +133,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14053",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -145,7 +143,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14054",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -155,7 +153,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14055",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -165,7 +163,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14056",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -175,7 +173,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14057",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -185,7 +183,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14058",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -195,7 +193,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14059",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -205,7 +203,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14060",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -215,7 +213,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14061",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -225,7 +223,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14062",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -235,7 +233,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14063",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -245,7 +243,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14064",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -255,7 +253,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14065",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -265,7 +263,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14066",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -275,7 +273,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14067",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -285,7 +283,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14068",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -295,7 +293,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14069",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -305,7 +303,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14070",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -315,7 +313,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14071",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -325,7 +323,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14072",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -335,7 +333,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14073",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -345,7 +343,7 @@ const rows = [
     business: "2022-09-11",
   },
   {
-    reference: "14045",
+    reference: "14074",
     number: "1092",
     branch: "Mall 1",
     customer: "-",
@@ -372,9 +370,9 @@ function getComparator<Key extends keyof any>(
   order: Order,
   orderBy: Key
 ): (
-    a: { [key in Key]: number | string },
-    b: { [key in Key]: number | string }
-  ) => number {
+  a: { [key in Key]: number | string },
+  b: { [key in Key]: number | string }
+) => number {
   return order === "desc"
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
@@ -481,8 +479,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
       onRequestSort(event, property);
     };
 
-
-
   return (
     <TableHead>
       <TableRow>
@@ -531,18 +527,18 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
   const { numSelected } = props;
 
   const [show, setShow] = useState(false);
-  const [modalName, setModalName] = useState('');
+  const [modalName, setModalName] = useState("");
 
   const handleShow = (modalname: string, status: boolean) => {
-    console.log(modalname, status, "handleShow")
-    setModalName(modalname)
+    console.log(modalname, status, "handleShow");
+    setModalName(modalname);
     setShow(status);
-  }
+  };
 
   const handleClose = () => {
-    setModalName('')
+    setModalName("");
     setShow(false);
-  }
+  };
 
   return (
     <>
@@ -559,7 +555,6 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
           }),
         }}
       >
-
         {numSelected > 0 ? (
           <Typography
             sx={{ flex: "1 1 100%" }}
@@ -573,14 +568,34 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
           <>
             <div className={`${table.mainTitleRow}`}>
               <ul className={`${table.filterList}`}>
-                <li><button className={`btn ${table.filterBtn} ${table.active}`}>All</button> </li>
-                <li><button className={`btn ${table.filterBtn}`}>Today</button> </li>
-                <li><button className={`btn ${table.filterBtn}`}>Draft</button> </li>
-                <li><button className={`btn ${table.filterBtn}`}>Pending</button> </li>
-                <li><button className={`btn ${table.filterBtn}`}>Archive</button> </li>
-                <li><button className={`btn ${table.filterBtn}`}>Ahead</button> </li>
-                <li><button className={`btn ${table.filterBtn}`}>Call Center</button> </li>
-                <li><button className={`btn ${table.filterBtn}`}>API</button> </li>
+                <li>
+                  <button className={`btn ${table.filterBtn} ${table.active}`}>
+                    All
+                  </button>{" "}
+                </li>
+                <li>
+                  <button className={`btn ${table.filterBtn}`}>Today</button>{" "}
+                </li>
+                <li>
+                  <button className={`btn ${table.filterBtn}`}>Draft</button>{" "}
+                </li>
+                <li>
+                  <button className={`btn ${table.filterBtn}`}>Pending</button>{" "}
+                </li>
+                <li>
+                  <button className={`btn ${table.filterBtn}`}>Archive</button>{" "}
+                </li>
+                <li>
+                  <button className={`btn ${table.filterBtn}`}>Ahead</button>{" "}
+                </li>
+                <li>
+                  <button className={`btn ${table.filterBtn}`}>
+                    Call Center
+                  </button>{" "}
+                </li>
+                <li>
+                  <button className={`btn ${table.filterBtn}`}>API</button>{" "}
+                </li>
               </ul>
               <ul className={`${table.rightActionIcons}`}>
                 <li>
@@ -589,10 +604,13 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
                   </NavLink>
                 </li>
                 <li>
-                  <button className={`${table.filterBtn} btn`} onClick={() => {
-                    handleShow('order filter', true)
-                    console.log("check")
-                  }}>
+                  <button
+                    className={`${table.filterBtn} btn`}
+                    onClick={() => {
+                      handleShow("order filter", true);
+                      console.log("check");
+                    }}
+                  >
                     <img src={iconFilter} className={`${st.icon}`} />
                     Filters
                   </button>
@@ -605,33 +623,40 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
                     <Dropdown.Menu>
                       <ul className={`${table.dropDownUl}`}>
                         <li>
-                          <label className={`${table.checkbox} ${table.disabled}`}>
+                          <label
+                            className={`${table.checkbox} ${table.disabled}`}
+                          >
                             <input type="checkbox" disabled checked />
-                            <span className={`${table.checkmark}`}></span> Reference
+                            <span className={`${table.checkmark}`}></span>{" "}
+                            Reference
                           </label>
                         </li>
                         <li>
                           <label className={`${table.checkbox}`}>
                             <input type="checkbox" checked />
-                            <span className={`${table.checkmark}`}></span> Number
+                            <span className={`${table.checkmark}`}></span>{" "}
+                            Number
                           </label>
                         </li>
                         <li>
                           <label className={`${table.checkbox}`}>
                             <input type="checkbox" />
-                            <span className={`${table.checkmark}`}></span> Branch
+                            <span className={`${table.checkmark}`}></span>{" "}
+                            Branch
                           </label>
                         </li>
                         <li>
                           <label className={`${table.checkbox}`}>
                             <input type="checkbox" />
-                            <span className={`${table.checkmark}`}></span> Customer
+                            <span className={`${table.checkmark}`}></span>{" "}
+                            Customer
                           </label>
                         </li>
                         <li>
                           <label className={`${table.checkbox}`}>
                             <input type="checkbox" />
-                            <span className={`${table.checkmark}`}></span> Status
+                            <span className={`${table.checkmark}`}></span>{" "}
+                            Status
                           </label>
                         </li>
                       </ul>
@@ -658,13 +683,13 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
 };
 
 function EnhancedTable() {
+  const navigate = useNavigate();
   const [order, setOrder] = React.useState<Order>("asc");
   const [orderBy, setOrderBy] = React.useState<keyof Data>("branch");
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(20);
-
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
@@ -677,7 +702,7 @@ function EnhancedTable() {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.branch);
+      const newSelected = rows.map((n) => n.reference);
       setSelected(newSelected);
       return;
     }
@@ -708,9 +733,12 @@ function EnhancedTable() {
     setPage(newPage);
   };
   const TablePaginationActions = (event: any) => {
-    console.log(event, "TablePaginationActions")
-    return <>
-      <div className={`${table.pagination}`}></div></>
+    console.log(event, "TablePaginationActions");
+    return (
+      <>
+        <div className={`${table.pagination}`}></div>
+      </>
+    );
   };
 
   const handleChangeRowsPerPage = (
@@ -730,7 +758,13 @@ function EnhancedTable() {
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
-  function defaultLabelDisplayedRows({ from, to, count }: any) { return `${from}–${to} of ${count !== -1 ? count : `more than ${to}`}`; }
+  function defaultLabelDisplayedRows({ from, to, count }: any) {
+    return `${from}–${to} of ${count !== -1 ? count : `more than ${to}`}`;
+  }
+
+  function redirectToAnotherPage(id:string) {
+    navigate(`${id}`);
+  }
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
@@ -761,14 +795,17 @@ function EnhancedTable() {
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.reference)}
+                      onClick={()=>{redirectToAnotherPage(row.reference)}}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
                       key={row.reference}
                       selected={isItemSelected}
                     >
-                      <TableCell padding="checkbox">
+                      <TableCell
+                        padding="checkbox"
+                        onClick={(event) => handleClick(event, row.reference)}
+                      >
                         <Checkbox
                           color="primary"
                           checked={isItemSelected}
@@ -829,23 +866,21 @@ export default function Orders() {
   // Modals
 
   const [show, setShow] = useState(false);
-  const [modalName, setModalName] = useState('');
+  const [modalName, setModalName] = useState("");
   const handleShow = (modalname: string, status: boolean) => {
-    console.log(modalname, status, "handleShow")
-    setModalName(modalname)
+    console.log(modalname, status, "handleShow");
+    setModalName(modalname);
     setShow(status);
-  }
+  };
   const handleClose = () => {
-    setModalName('')
+    setModalName("");
     setShow(false);
-  }
-
-
+  };
 
   const Control = ({ children, ...props }: ControlProps) => {
     // @ts-ignore
     const { emoji, onEmojiClick } = props.selectProps;
-    const style = { cursor: 'pointer' };
+    const style = { cursor: "pointer" };
 
     return (
       <components.Control {...props}>
@@ -859,22 +894,29 @@ export default function Orders() {
 
   const options = [
     {
-      value: '1', label: 'Orders',
+      value: "1",
+      label: "Orders",
     },
     {
-      value: '2', label: 'Orders Items',
+      value: "2",
+      label: "Orders Items",
     },
     {
-      value: '3', label: 'Orders Payment',
+      value: "3",
+      label: "Orders Payment",
     },
     {
-      value: '4', label: 'Orders 1',
+      value: "4",
+      label: "Orders 1",
     },
-  ]
+  ];
   const [selected, setSelected] = useState([]);
   const customValueRenderer = (selected: any, options: any) => {
-    return <><img src={icon1} className={`${st.icon}`} />  All Branches</>
-
+    return (
+      <>
+        <img src={icon1} className={`${st.icon}`} /> All Branches
+      </>
+    );
   };
   return (
     <>
@@ -889,18 +931,21 @@ export default function Orders() {
             <BusinessDate />
             <Export />
 
-            <button className={`btn`} onClick={() => { handleShow('order call', true) }}>
+            <button
+              className={`btn`}
+              onClick={() => {
+                handleShow("order call", true);
+              }}
+            >
               <img src={icon5} className={`${st.icon}`} />
               New Call Center Order
             </button>
           </div>
         </div>
 
-
         <div className={`${st.pageWrapperInside}`}>
           <Card>
             <Card.Body>
-
               <div className={`${table.dataTableBox}`}>
                 <Box sx={{ width: 1 }}>
                   <EnhancedTable />
