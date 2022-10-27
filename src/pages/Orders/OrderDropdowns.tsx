@@ -4,6 +4,7 @@ import st from "../../style.module.scss";
 import icon1 from "../../images/icon-branch.svg";
 import icon2 from "../../images/icon-calendar.svg";
 import icon3 from "../../images/icon-call.svg";
+import icon4 from "../../images/icon-export.svg";
 import { Dropdown } from "react-bootstrap";
 import { Box, ChakraProvider, VStack, Button } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
@@ -49,15 +50,18 @@ export const Branches = () => {
     );
   };
 
+
+
   return (
     <div className={`${st.selectDropdown}`}>
       <MultiSelect
         options={options}
         defaultIsOpen={true}
         valueRenderer={customValueRenderer}
+
         value={selected}
         onChange={setSelected}
-        labelledBy={"All Braches"}
+        labelledBy={"All Branches"}
         isCreatable={true}
         closeOnChangedValue={true}
       />
@@ -205,7 +209,7 @@ export const Export = () => {
 
     <Dropdown>
       <Dropdown.Toggle id="dropdown-basic">
-        <img src={icon3} className={`${st.icon}`} />
+        <img src={icon4} className={`${st.icon}`} />
         Export
       </Dropdown.Toggle>
       <Dropdown.Menu>

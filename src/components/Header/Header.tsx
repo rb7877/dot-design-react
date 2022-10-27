@@ -122,7 +122,7 @@ const Header = (props: any) => {
             <Row className={`align-items-center ${cx.headerRow}`}>
                 <Col md={12} lg={12} xl={12} className={`col-12 ${cx.headerMobile} ${globalCtx.showMore ? cx.show : ''}`}>
                     <Row className="align-items-center">
-                        <Col md={8} lg={6} xl={5} className={`col-9 ${cx.headerSearch}`}>
+                        <Col md={7} lg={7} xl={7} className={`col-9 ${cx.headerSearch}`}>
                             <InputGroup className="">
                                 <FormControl placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" />
                                 <button className={`${cx.searchBtn}`}>
@@ -130,7 +130,7 @@ const Header = (props: any) => {
                                 </button>
                             </InputGroup>
                         </Col>
-                        <Col md={4} lg={6} xl={7} className={`col-3 ${cx.headerRight}`}>
+                        <Col md={5} lg={5} xl={5} className={`col-3 ${cx.headerRight}`}>
                             <ul>
                                 <li className={`${cx.help}`}>
                                     <Dropdown>

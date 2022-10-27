@@ -33,6 +33,7 @@ import icon1 from "../../images/icon-branch.svg";
 import icon2 from "../../images/icon-calendar.svg";
 import icon3 from "../../images/icon-call.svg";
 import icon4 from "../../images/icon-export.svg";
+import icon5 from "../../images/icon-call.svg";
 import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
 import Modals from "../../components/Modals/Modals";
@@ -480,6 +481,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
       onRequestSort(event, property);
     };
 
+
+
   return (
     <TableHead>
       <TableRow>
@@ -527,109 +530,130 @@ interface EnhancedTableToolbarProps {
 const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
   const { numSelected } = props;
 
+  const [show, setShow] = useState(false);
+  const [modalName, setModalName] = useState('');
+
+  const handleShow = (modalname: string, status: boolean) => {
+    console.log(modalname, status, "handleShow")
+    setModalName(modalname)
+    setShow(status);
+  }
+
+  const handleClose = () => {
+    setModalName('')
+    setShow(false);
+  }
+
   return (
-    <Toolbar
-      sx={{
-        pl: { sm: 2 },
-        pr: { xs: 1, sm: 1 },
-        ...(numSelected > 0 && {
-          bgcolor: (theme) =>
-            alpha(
-              theme.palette.primary.main,
-              theme.palette.action.activatedOpacity
-            ),
-        }),
-      }}
-    >
-      {numSelected > 0 ? (
-        <Typography
-          sx={{ flex: "1 1 100%" }}
-          color="inherit"
-          variant="subtitle1"
-          component="div"
-        >
-          {numSelected} selected
-        </Typography>
-      ) : (
-        <>
-          <div className={`${table.mainTitleRow}`}>
-            <ul className={`${table.filterList}`}>
-              <li><button className={`btn ${table.filterBtn} ${table.active}`}>All</button> </li>
-              <li><button className={`btn ${table.filterBtn}`}>Today</button> </li>
-              <li><button className={`btn ${table.filterBtn}`}>Draft</button> </li>
-              <li><button className={`btn ${table.filterBtn}`}>Pending</button> </li>
-              <li><button className={`btn ${table.filterBtn}`}>Archive</button> </li>
-              <li><button className={`btn ${table.filterBtn}`}>Ahead</button> </li>
-              <li><button className={`btn ${table.filterBtn}`}>Call Center</button> </li>
-              <li><button className={`btn ${table.filterBtn}`}>API</button> </li>
-            </ul>
-            <ul className={`${table.rightActionIcons}`}>
-              <li>
-                <NavLink className={`${table.refreshBtn}`} to="#">
-                  <img src={iconRefresh} />
-                </NavLink>
-              </li>
-              <li>
-                <button className={`${table.filterBtn} btn`}>
-                  <img src={iconFilter} className={`${st.icon}`} />
-                  Filters
-                </button>
-              </li>
-              <li>
-                <Dropdown className={`${table.plusDropdown}`}>
-                  <Dropdown.Toggle id="dropdown-basic">
-                    <BsPlusLg />
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <ul className={`${table.dropDownUl}`}>
-                      <li>
-                        <label className={`${table.checkbox}`}>
-                          <input type="checkbox" disabled />
-                          <span className={`${table.checkmark}`}></span> Reference
-                        </label>
-                      </li>
-                      <li>
-                        <label className={`${table.checkbox}`}>
-                          <input type="checkbox" checked />
-                          <span className={`${table.checkmark}`}></span> Number
-                        </label>
-                      </li>
-                      <li>
-                        <label className={`${table.checkbox}`}>
-                          <input type="checkbox" />
-                          <span className={`${table.checkmark}`}></span> Branch
-                        </label>
-                      </li>
-                      <li>
-                        <label className={`${table.checkbox}`}>
-                          <input type="checkbox" />
-                          <span className={`${table.checkmark}`}></span> Customer
-                        </label>
-                      </li>
-                      <li>
-                        <label className={`${table.checkbox}`}>
-                          <input type="checkbox" />
-                          <span className={`${table.checkmark}`}></span> Status
-                        </label>
-                      </li>
-                    </ul>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </li>
-            </ul>
-          </div>
-        </>
-      )}
-      {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton>
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <></>
-      )}
-    </Toolbar>
+    <>
+      <Toolbar
+        sx={{
+          pl: { sm: 2 },
+          pr: { xs: 1, sm: 1 },
+          ...(numSelected > 0 && {
+            bgcolor: (theme) =>
+              alpha(
+                theme.palette.primary.main,
+                theme.palette.action.activatedOpacity
+              ),
+          }),
+        }}
+      >
+
+        {numSelected > 0 ? (
+          <Typography
+            sx={{ flex: "1 1 100%" }}
+            color="inherit"
+            variant="subtitle1"
+            component="div"
+          >
+            {numSelected} selected
+          </Typography>
+        ) : (
+          <>
+            <div className={`${table.mainTitleRow}`}>
+              <ul className={`${table.filterList}`}>
+                <li><button className={`btn ${table.filterBtn} ${table.active}`}>All</button> </li>
+                <li><button className={`btn ${table.filterBtn}`}>Today</button> </li>
+                <li><button className={`btn ${table.filterBtn}`}>Draft</button> </li>
+                <li><button className={`btn ${table.filterBtn}`}>Pending</button> </li>
+                <li><button className={`btn ${table.filterBtn}`}>Archive</button> </li>
+                <li><button className={`btn ${table.filterBtn}`}>Ahead</button> </li>
+                <li><button className={`btn ${table.filterBtn}`}>Call Center</button> </li>
+                <li><button className={`btn ${table.filterBtn}`}>API</button> </li>
+              </ul>
+              <ul className={`${table.rightActionIcons}`}>
+                <li>
+                  <NavLink className={`${table.refreshBtn}`} to="#">
+                    <img src={iconRefresh} />
+                  </NavLink>
+                </li>
+                <li>
+                  <button className={`${table.filterBtn} btn`} onClick={() => {
+                    handleShow('order filter', true)
+                    console.log("check")
+                  }}>
+                    <img src={iconFilter} className={`${st.icon}`} />
+                    Filters
+                  </button>
+                </li>
+                <li>
+                  <Dropdown className={`${table.plusDropdown}`}>
+                    <Dropdown.Toggle id="dropdown-basic">
+                      <BsPlusLg />
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <ul className={`${table.dropDownUl}`}>
+                        <li>
+                          <label className={`${table.checkbox} ${table.disabled}`}>
+                            <input type="checkbox" disabled checked />
+                            <span className={`${table.checkmark}`}></span> Reference
+                          </label>
+                        </li>
+                        <li>
+                          <label className={`${table.checkbox}`}>
+                            <input type="checkbox" checked />
+                            <span className={`${table.checkmark}`}></span> Number
+                          </label>
+                        </li>
+                        <li>
+                          <label className={`${table.checkbox}`}>
+                            <input type="checkbox" />
+                            <span className={`${table.checkmark}`}></span> Branch
+                          </label>
+                        </li>
+                        <li>
+                          <label className={`${table.checkbox}`}>
+                            <input type="checkbox" />
+                            <span className={`${table.checkmark}`}></span> Customer
+                          </label>
+                        </li>
+                        <li>
+                          <label className={`${table.checkbox}`}>
+                            <input type="checkbox" />
+                            <span className={`${table.checkmark}`}></span> Status
+                          </label>
+                        </li>
+                      </ul>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </li>
+              </ul>
+            </div>
+          </>
+        )}
+        {numSelected > 0 ? (
+          <Tooltip title="Delete">
+            <IconButton>
+              <DeleteIcon />
+            </IconButton>
+          </Tooltip>
+        ) : (
+          <></>
+        )}
+      </Toolbar>
+      <Modals show={show} handleClose={handleClose} modalName={modalName} />
+    </>
   );
 };
 
@@ -640,6 +664,7 @@ function EnhancedTable() {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(20);
+
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
@@ -865,7 +890,7 @@ export default function Orders() {
             <Export />
 
             <button className={`btn`} onClick={() => { handleShow('order call', true) }}>
-              <img src={icon4} className={`${st.icon}`} />
+              <img src={icon5} className={`${st.icon}`} />
               New Call Center Order
             </button>
           </div>

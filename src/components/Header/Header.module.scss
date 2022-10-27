@@ -21,6 +21,10 @@
 
     .headerSearch {
 
+        :global(.input-group) {
+            width: 487px; 
+        }
+
         :global(.form-control) {
             border-radius: 50px !important;
             height: 44px;

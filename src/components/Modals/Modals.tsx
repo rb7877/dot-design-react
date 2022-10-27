@@ -151,6 +151,55 @@ const Modals = (props: any) => {
         </Modal>
       }
       {/* END Delivery Address */}
+
+
+
+      {/* START Order Filter */}
+      {props.modalName === 'order filter' &&
+        <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Filters</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Reference</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Reference</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Number</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Business Date</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+              Close
+            </Button>
+            <Button className={`${cx.btnSubmit}`}>
+              Apply
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Order Filter */}
     </>
   );
 };
