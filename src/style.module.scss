@@ -61,6 +61,7 @@ img {
 
         .selectDropdown {
           display: inline-block;
+              margin-left: 10px;
 
           :global(.multi-select) {
 
@@ -187,6 +188,11 @@ img {
             &:focus {
                 box-shadow: none;
             }
+            .iconClose {
+              margin-left: 10px;
+              margin-top: 1px;
+              cursor: pointer;
+            }
         }
 
         :global(.dropdown) {
@@ -239,7 +245,30 @@ img {
   }
 }
 
+:global(.tooltip)  {
 
+  :global(.tooltip-inner) {
+    background-color: #fff;
+    color:#808080;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 12px;
+    padding: 10px 10px;
+  }
+  :global(.tooltip-arrow) {
+     display: none;
+  }
+}
+.tooltips {
+  cursor: pointer;
+  position: relative;
+
+  svg {
+    color: #808080;
+    width: 18px;
+    height: 18px;
+  }
+}
 
 /*=======================================================
 //////////////RESPONSIVE MEDIA QUERY START///////////////

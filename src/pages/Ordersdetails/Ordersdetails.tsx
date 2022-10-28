@@ -6,11 +6,23 @@ import table from "../../datatable.module.scss";
 import { Card, Button, Row, Table, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import icon4 from "../../images/icon-printer.svg";
 
+import Modals from "../../components/Modals/Modals";
 
 
 
 export default function Ordersdetails() {
 
+  const [show, setShow] = useState(false);
+  const [modalName, setModalName] = useState("");
+  const handleShow = (modalname: string, status: boolean) => {
+    console.log(modalname, status, "handleShow");
+    setModalName(modalname);
+    setShow(status);
+  };
+  const handleClose = () => {
+    setModalName("");
+    setShow(false);
+  };
 
   return (
     <>
@@ -155,22 +167,18 @@ export default function Ordersdetails() {
                 <div className={`${cx.rowTitleRight}`}>
 
 
-                  <button className={`btn`} >
+                  <button className={`btn`} onClick={() => {
+                    handleShow("order add tags", true);
+                  }}>
                     + Add Tags
                   </button>
                 </div>
               </div>
               <div className={`${cx.contentBox}`}>
-                <Row>
-                  <Col lg={6} className={`${cx.formField}`}>
-                    <label>Sub Total</label>
-                    <p>SAR 43,48</p>
-                  </Col>
-                  <Col lg={6} className={`${cx.formField}`}>
-                    <label>Discount</label>
-                    <p>-</p>
-                  </Col>
-                </Row>
+                <ul className={`${cx.tagsList}`}>
+                  <li><span>Order 1</span></li>
+                  <li><span>Order 2</span></li>
+                </ul>
               </div>
 
 
@@ -270,6 +278,7 @@ export default function Ordersdetails() {
         </div>
       </section>
 
+      <Modals show={show} handleClose={handleClose} modalName={modalName} />
     </>
   );
 }

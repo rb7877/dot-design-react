@@ -88,7 +88,7 @@ const Sidebar = (props: any) => {
               </li>
 
               <li>
-                <NavLink className={`${cx.signleMenu}`} to="/todays-orders">
+                <NavLink className={`${cx.signleMenu}`} to="/today-orders">
                   <div className={`${cx.menuIcon}`}>
                     <img src={menuIcon3} className={`${cx.icon}`} />
                   </div>

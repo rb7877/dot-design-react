@@ -61,6 +61,25 @@
     padding: 25px 25px;
     margin-bottom: 30px;
     background: #fff;
+
+    .tagsList {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            span {
+                display: block;
+                border: 1px solid var(--Main2);
+                padding: 5px 15px;
+                border-radius: 8px;
+            }
+        }
+    }
 }
 
 

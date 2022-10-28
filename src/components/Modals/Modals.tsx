@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, Modal, Row, Col, Form } from 'react-bootstrap';
 import cx from './Modals.module.scss';
-import Select from 'react-select'
-
+import Select from 'react-select';
+import { FilterDropdown } from "../Dropdown/Dropdowns";
+import { tagoptions } from '../../constants/dropdownconstants'
 const Modals = (props: any) => {
   const options = [
     {
@@ -170,7 +171,7 @@ const Modals = (props: any) => {
               </Col>
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
-                  <Form.Label>Reference</Form.Label>
+                  <Form.Label>Reference After</Form.Label>
                   <Form.Control type="text" />
                 </Form.Group>
               </Col>
@@ -183,7 +184,7 @@ const Modals = (props: any) => {
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
                   <Form.Label>Business Date</Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control type="date" />
                 </Form.Group>
               </Col>
 
@@ -200,6 +201,83 @@ const Modals = (props: any) => {
         </Modal>
       }
       {/* END Order Filter */}
+
+
+      {/* START Order add tags Filter */}
+      {props.modalName === 'order add tags' &&
+        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Tags</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Tags</Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+              Close
+            </Button>
+            <Button className={`${cx.btnSubmit}`}>
+              Apply
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Order add tags Filter */}
+
+
+      {/* START Todays Order Filter */}
+      {props.modalName === 'today order filter' &&
+        <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Filters</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Reference</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Reference After</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Number</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Business Date</Form.Label>
+                  <Form.Control type="date" />
+                </Form.Group>
+              </Col>
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+              Close
+            </Button>
+            <Button className={`${cx.btnSubmit}`}>
+              Apply
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Todays Order Filter */}
     </>
   );
 };
