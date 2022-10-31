@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import st from "../../style.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cx from "./Orders.module.scss";
+import cx from "./Customer.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -30,328 +30,144 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { visuallyHidden } from "@mui/utils";
 import { BsPlusLg } from "react-icons/bs";
 import icon1 from "../../images/icon-branch.svg";
-import icon2 from "../../images/icon-calendar.svg";
-import icon3 from "../../images/icon-call.svg";
-import icon4 from "../../images/icon-export.svg";
 import icon5 from "../../images/icon-call.svg";
 import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
+import iconClose from "../../images/icon-close.svg";
 import Modals from "../../components/Modals/Modals";
 
-import { Branches, BusinessDate, Export, ActionDropdown } from "./OrderDropdowns";
+import { ActionDropdown, Export } from "./Dropdowns";
 
 interface Data {
-  reference: string;
-  number: string;
-  branch: string;
+  name: string;
+  phone: string;
+  email: string;
   customer: string;
-  status: string;
-  source: string;
-  total: string;
-  business: string;
+  totalorders: string;
+  lastorders: string;
 }
 
 const rows = [
   {
-    reference: "14045",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 1",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14046",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 2",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14047",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 3",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14048",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 4",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14049",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 5",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14050",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 6",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14051",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 7",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14052",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 8",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14053",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 9",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14054",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 10",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14055",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 11",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14056",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 12",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14057",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 13",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14058",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 14",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
   },
   {
-    reference: "14059",
-    number: "1092",
-    branch: "Mall 1",
+    name: "Hunger Station 15",
+    phone: "5652652620",
+    email: "-",
     customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14060",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14061",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14062",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14063",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14064",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14065",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14066",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14067",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14068",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14069",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14070",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14071",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14072",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14073",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
-  {
-    reference: "14074",
-    number: "1092",
-    branch: "Mall 1",
-    customer: "-",
-    status: "Done",
-    source: "Cashier",
-    total: "50",
-    business: "2022-09-11",
-  },
+    totalorders: "Total Orders",
+    lastorders: "Last Orders",
+  }
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -404,54 +220,38 @@ interface HeadCell {
 
 const headCells: readonly HeadCell[] = [
   {
-    id: "reference",
+    id: "name",
     numeric: false,
     disablePadding: true,
-    label: "Reference",
+    label: "Name",
   },
   {
-    id: "number",
+    id: "phone",
     numeric: true,
     disablePadding: false,
-    label: "Number",
+    label: "Phone",
   },
   {
-    id: "branch",
+    id: "email",
     numeric: true,
     disablePadding: false,
-    label: "Branch",
+    label: "Email",
   },
   {
-    id: "customer",
+    id: "totalorders",
     numeric: true,
     disablePadding: false,
-    label: "Customer",
+    label: "Total Orders",
   },
   {
-    id: "status",
+    id: "lastorders",
     numeric: true,
     disablePadding: false,
-    label: "Status",
-  },
-  {
-    id: "source",
-    numeric: true,
-    disablePadding: false,
-    label: "Source",
-  },
-  {
-    id: "total",
-    numeric: true,
-    disablePadding: false,
-    label: "Total",
-  },
-  {
-    id: "business",
-    numeric: true,
-    disablePadding: false,
-    label: "Business Date",
+    label: "Last Orders",
   },
 ];
+
+
 
 interface EnhancedTableProps {
   numSelected: number;
@@ -479,6 +279,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
       onRequestSort(event, property);
     };
 
+  console.log(numSelected, "numSelected")
+
   return (
     <TableHead>
       <TableRow>
@@ -494,27 +296,29 @@ function EnhancedTableHead(props: EnhancedTableProps) {
           />
         </TableCell>
 
-        {numSelected === 0 ? <>  {headCells.map((headCell) => (
-          <TableCell
-            key={headCell.id}
-            align={headCell.numeric ? "left" : "left"}
-            padding={headCell.disablePadding ? "none" : "normal"}
-            sortDirection={orderBy === headCell.id ? order : false}
-          >
-            <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : "asc"}
-              onClick={createSortHandler(headCell.id)}
+        {numSelected === 0 ? <>{
+          headCells.map((headCell: any) => (
+            <TableCell
+              key={headCell.id}
+              align={headCell.numeric ? "left" : "left"}
+              padding={headCell.disablePadding ? "none" : "normal"}
+              sortDirection={orderBy === headCell.id ? order : false}
             >
-              {headCell.label}
-              {orderBy === headCell.id ? (
-                <Box component="span" sx={visuallyHidden}>
-                  {order === "desc" ? "sorted descending" : "sorted ascending"}
-                </Box>
-              ) : null}
-            </TableSortLabel>
-          </TableCell>
-        ))}</>
+              <TableSortLabel
+                active={orderBy === headCell.id}
+                direction={orderBy === headCell.id ? order : "asc"}
+                onClick={createSortHandler(headCell.id)}
+              >
+                {headCell.label}
+                {orderBy === headCell.id ? (
+                  <Box component="span" sx={visuallyHidden}>
+                    {order === "desc" ? "sorted descending" : "sorted ascending"}
+                  </Box>
+                ) : null}
+              </TableSortLabel>
+            </TableCell>
+          ))
+        }</>
           : <>
             <div className={`${table.actionCheckbox}`}>
               <div className={`${table.selectedCount}`}>
@@ -525,6 +329,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
               </div>
             </div>
           </>}
+
       </TableRow>
     </TableHead>
   );
@@ -567,94 +372,28 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               </button>{" "}
             </li>
             <li>
-              <button className={`btn ${table.filterBtn}`}>Today</button>{" "}
+              <button className={`btn ${table.filterBtn}`}>Has Orders</button>{" "}
             </li>
             <li>
-              <button className={`btn ${table.filterBtn}`}>Draft</button>{" "}
+              <button className={`btn ${table.filterBtn}`}>Blacklisted</button>{" "}
             </li>
             <li>
-              <button className={`btn ${table.filterBtn}`}>Pending</button>{" "}
-            </li>
-            <li>
-              <button className={`btn ${table.filterBtn}`}>Archive</button>{" "}
-            </li>
-            <li>
-              <button className={`btn ${table.filterBtn}`}>Ahead</button>{" "}
-            </li>
-            <li>
-              <button className={`btn ${table.filterBtn}`}>
-                Call Center
-              </button>{" "}
-            </li>
-            <li>
-              <button className={`btn ${table.filterBtn}`}>API</button>{" "}
+              <button className={`btn ${table.filterBtn}`}>Deleted</button>{" "}
             </li>
           </ul>
           <ul className={`${table.rightActionIcons}`}>
             <li>
-              <NavLink className={`${table.refreshBtn}`} to="#">
-                <img src={iconRefresh} />
-              </NavLink>
-            </li>
-            <li>
               <button
                 className={`${table.filterBtn} btn`}
                 onClick={() => {
-                  handleShow("order filter", true);
+                  handleShow("customer filter", true);
                   console.log("check");
                 }}
               >
                 <img src={iconFilter} className={`${st.icon}`} />
                 Filters
+                <img src={iconClose} className={`${table.iconClose}`} />
               </button>
-            </li>
-            <li>
-              <Dropdown className={`${table.plusDropdown}`}>
-                <Dropdown.Toggle id="dropdown-basic">
-                  <BsPlusLg />
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <ul className={`${table.dropDownUl}`}>
-                    <li>
-                      <label
-                        className={`${table.checkbox} ${table.disabled}`}
-                      >
-                        <input type="checkbox" disabled checked />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Reference
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" checked />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Number
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Branch
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Customer
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Status
-                      </label>
-                    </li>
-                  </ul>
-                </Dropdown.Menu>
-              </Dropdown>
             </li>
           </ul>
         </div>
@@ -667,7 +406,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
 function EnhancedTable() {
   const navigate = useNavigate();
   const [order, setOrder] = React.useState<Order>("asc");
-  const [orderBy, setOrderBy] = React.useState<keyof Data>("branch");
+  const [orderBy, setOrderBy] = React.useState<keyof Data>("phone");
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -684,7 +423,7 @@ function EnhancedTable() {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.reference);
+      const newSelected = rows.map((n) => n.name);
       setSelected(newSelected);
       return;
     }
@@ -771,21 +510,22 @@ function EnhancedTable() {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.reference);
+                  const isItemSelected = isSelected(row.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.reference)}
+                      onClick={(event) => handleClick(event, row.name)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.reference}
+                      key={row.name}
                       selected={isItemSelected}
                     >
                       <TableCell
                         padding="checkbox"
+
                       >
                         <Checkbox
                           color="primary"
@@ -800,17 +540,14 @@ function EnhancedTable() {
                         id={labelId}
                         scope="row"
                         padding="none"
-                        onClick={() => { redirectToAnotherPage(row.reference) }}
+                        onClick={() => { redirectToAnotherPage(row.name) }}
                       >
-                        {row.reference}
+                        {row.name}
                       </TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.reference) }} align="left">{row.number}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.reference) }} align="left">{row.branch}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.reference) }} align="left">{row.customer}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.reference) }} align="left">{row.status}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.reference) }} align="left">{row.source}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.reference) }} align="left">{row.total}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.reference) }} align="left">{row.business}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.name) }} align="left">{row.phone}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.name) }} align="left">{row.email}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.name) }} align="left">{row.totalorders}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.name) }} align="left">{row.lastorders}</TableCell>
                     </TableRow>
                   );
                 })}
@@ -842,7 +579,7 @@ function EnhancedTable() {
   );
 }
 
-export default function Orders() {
+export default function Customer() {
   const [lgShow, setLgShow] = useState(false);
 
   // Modals
@@ -906,22 +643,17 @@ export default function Orders() {
         <div className={`${st.pageTitle}`}>
           <div className={`${st.pageTitleRow}`}>
             <div className={`${st.rowTitleLeft}`}>
-              <h5>Orders</h5>
+              <h5>Customers</h5>
             </div>
             <div className={`${st.rowTitleRight}`}>
-              <Branches />
-
-              <BusinessDate />
               <Export />
 
-              <button
-                className={`btn`}
+              <button className={`btn ${st.themeBtn}`}
                 onClick={() => {
-                  handleShow("order call", true);
+                  handleShow("add customer", true);
                 }}
               >
-                <img src={icon5} className={`${st.icon}`} />
-                New Call Center Order
+                Add Customer
               </button>
             </div>
           </div>

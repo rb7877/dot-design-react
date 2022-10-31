@@ -1,5 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Customer from './pages/Customer/Customer';
+import Customerdetails from './pages/Customerdetails/Customerdetails';
 import Login from './pages/Login/Login';
 import Navigation from './pages/Navigation/Navigation';
 import Orders from './pages/Orders/Orders';
@@ -14,6 +16,8 @@ const App = () => {
         <Route path='orders' element={<Orders />} />
         <Route path='orders/:id' element={<Ordersdetails />} />
         <Route path='today-orders' element={<Todayorders />} />
+        <Route path='customers' element={<Customer />} />
+        <Route path='customers-details' element={<Customerdetails />} />
       </Route>
     </Routes>
   );

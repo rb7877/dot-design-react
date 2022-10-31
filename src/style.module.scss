@@ -31,14 +31,31 @@ img {
 
 .pageWrapper {
   margin-left: 250px;
-
   .pageTitle {
     z-index: 99;
     background: #fff;
     margin: 0;
-    padding: 35px 35px;
-    display:flex;
-    justify-content: space-between;
+    padding: 35px 60px;
+
+    .back {
+        color: var(--Main2);
+        text-decoration: none;
+        margin-right: 20px;
+    }
+       
+    .backBtn {
+      text-decoration: none;
+      color: #808080;
+      display: inline-block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    
+    .pageTitleRow {
+      display:flex;
+      justify-content: space-between;
+      
+    }
 
     .rowTitleLeft {
 
@@ -47,12 +64,6 @@ img {
           font-weight: 300;
           margin-bottom: 0px;
           color: #4D4D4D;
-
-          .back {
-              color: var(--Main2);
-              text-decoration: none;
-              margin-right: 20px;
-          }
        }
     }
     
@@ -180,6 +191,12 @@ img {
             font-size: 14px;
             white-space: nowrap;
 
+            &.themeBtn {
+              background: var(--Main2);
+              border-color: var(--Main2);
+              color:#ffff;
+            }
+
             .icon {
                 margin-right: 5px;
                 margin-top: -1px;
@@ -229,7 +246,12 @@ img {
 
   .pageWrapperInside {
     background-color: var(--BodyBackground);
-    padding: 35px 35px;
+    padding: 60px 60px;
+
+    &.setWidth {
+      max-width: 70rem;
+      margin: 0 auto;
+    }
 
     :global(.card) {
       background-color: transparent;

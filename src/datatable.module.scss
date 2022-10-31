@@ -1,3 +1,60 @@
+.actionTableHead {
+    display: flex;
+    width: 100%;
+    position: static;
+    top: 0;
+}
+.actionCheckbox {
+    display: flex;
+    align-items: center;
+    padding: 11px 0px;
+
+    .selectedCount {
+        margin-right: 15px;
+    }
+    .actionDropdown {
+
+        :global(.dropdown) {
+
+            :global(.btn) {
+                background-color: #fff;
+                border-color: #B3B3B3;
+                color: #B3B3B3;
+                border-radius: 50px;
+                min-width: 80px;
+                padding: 8px 15px;
+                font-weight: normal;
+                font-size: 14px;
+                white-space: nowrap;
+            }
+            :global(.dropdown-menu) {
+                padding: 10px 15px;
+                border-radius: 10px;
+                border: none;
+                box-shadow: 0 1px 5px 2px #0000001f;
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+
+                        a {
+                            color: #4D4D4D;
+                            text-decoration: none;
+                            display: block;
+                            margin: 8px 0px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 .checkbox {
 	position: relative;
 	cursor: pointer;
@@ -120,6 +177,7 @@
                     font-size: 14px;
                     color:#4D4D4D;
                     font-family: 'Inter';
+                    cursor: pointer;
                 }
             }
         }
@@ -229,6 +287,11 @@
                     img {
                         margin-right: 5px;
                         margin-top: -1px;
+                    }
+                    .iconClose {
+                        margin-right: 0px;
+                        margin-left:10px;
+                        margin-top: 1px;
                     }
                 }
                 .plusDropdown {

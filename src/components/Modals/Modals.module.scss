@@ -1,5 +1,30 @@
 @import "../../variables.module.scss"; 
 
+:global(.tooltip)  {
+
+    :global(.tooltip-inner) {
+      background-color: #fff;
+      color:#808080;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      font-size: 12px;
+      padding: 10px 10px;
+    }
+    :global(.tooltip-arrow) {
+       display: none;
+    }
+  }
+  .tooltips {
+    cursor: pointer;
+    position: relative;
+  
+    svg {
+      color: #808080;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
 .formField {
     margin-bottom:20px;
 
@@ -8,6 +33,11 @@
         font-weight: 400;
         color: #4D4D4D;
         margin-bottom: 7px;
+
+        &.labelHide {
+            display: block;
+            opacity: 0;
+        }
     }
     :global(.form-control) {
         border-radius: 50px;

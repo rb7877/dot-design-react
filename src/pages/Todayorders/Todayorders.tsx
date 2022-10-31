@@ -82,32 +82,34 @@ export default function Todayorders() {
     <>
       <section className={`${st.pageWrapper}`}>
         <div className={`${st.pageTitle}`}>
-          <div className={`${st.rowTitleLeft}`}>
-            <h5>Today's Orders
+          <div className={`${st.pageTitleRow}`}>
+            <div className={`${st.rowTitleLeft}`}>
+              <h5>Today's Orders
 
-              {['bottom'].map((placement) => (
-                <OverlayTrigger key={placement} overlay={
-                  <Tooltip className={`${st.tooltipsBg}`} id={`tooltip-${placement}`}>
-                    This module is to help Call Center Agents track their daily orders
-                  </Tooltip>}>
-                  <span className={`${st.tooltips} ms-2`} style={{ top: '4px' }}><AiFillInfoCircle /></span>
-                </OverlayTrigger>
-              ))}
-            </h5>
-          </div>
-          <div className={`${st.rowTitleRight}`}>
-            <Branches />
-            <Agents />
-            <button
-              className={`btn`}
-              onClick={() => {
-                handleShow("today order filter", true);
-              }}
-            >
-              <img src={iconFilter} className={`${st.icon}`} />
-              Filter
-              <img src={iconClose} className={`${st.iconClose}`} />
-            </button>
+                {['bottom'].map((placement) => (
+                  <OverlayTrigger key={placement} overlay={
+                    <Tooltip className={`${st.tooltipsBg}`} id={`tooltip-${placement}`}>
+                      This module is to help Call Center Agents track their daily orders
+                    </Tooltip>}>
+                    <span className={`${st.tooltips} ms-2`} style={{ top: '4px' }}><AiFillInfoCircle /></span>
+                  </OverlayTrigger>
+                ))}
+              </h5>
+            </div>
+            <div className={`${st.rowTitleRight}`}>
+              <Branches />
+              <Agents />
+              <button
+                className={`btn`}
+                onClick={() => {
+                  handleShow("today order filter", true);
+                }}
+              >
+                <img src={iconFilter} className={`${st.icon}`} />
+                Filter
+                <img src={iconClose} className={`${st.iconClose}`} />
+              </button>
+            </div>
           </div>
         </div>
 

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { Button, Modal, Row, Col, Form } from 'react-bootstrap';
+import { Button, Modal, Row, Col, Form, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import cx from './Modals.module.scss';
 import Select from 'react-select';
 import { FilterDropdown } from "../Dropdown/Dropdowns";
-import { tagoptions } from '../../constants/dropdownconstants'
+import { tagoptions, customertagoptions } from '../../constants/dropdownconstants'
+import { AiFillInfoCircle, AiOutlineInfoCircle } from 'react-icons/ai';
+
+
+
 const Modals = (props: any) => {
   const options = [
     {
@@ -278,6 +282,135 @@ const Modals = (props: any) => {
         </Modal>
       }
       {/* END Todays Order Filter */}
+
+      {/* START Customer's Filter */}
+      {props.modalName === 'customer filter' &&
+        <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Filter</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Phone</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Tag</Form.Label>
+                  <FilterDropdown options={customertagoptions} />
+                </Form.Group>
+              </Col>
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+              Close
+            </Button>
+            <Button className={`${cx.btnSubmit}`}>
+              Apply
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Customer's Filter */}
+
+
+
+      {/* START add customer Filter */}
+      {props.modalName === 'add customer' &&
+        <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Customers</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Name
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The customerʼs Full Name.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={6} lg={6}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Phone
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The customerʼs unique phone number.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Select>
+                    <option>Saudi Arabia (+966)</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+              <Col md={6} lg={6}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label className={`${cx.labelHide}`}>
+                    .
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Email
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The customerʼs unique email address.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+              Close
+            </Button>
+            <Button className={`${cx.btnSubmit}`}>
+              Apply
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END add customer Filter */}
     </>
   );
 };

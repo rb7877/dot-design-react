@@ -5,7 +5,9 @@ import cx from "./Ordersdetails.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Table, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import icon4 from "../../images/icon-printer.svg";
+import { NavLink } from "react-router-dom";
 
+import { MdArrowBackIos } from 'react-icons/md';
 import Modals from "../../components/Modals/Modals";
 
 
@@ -28,21 +30,24 @@ export default function Ordersdetails() {
     <>
       <section className={`${st.pageWrapper}`}>
         <div className={`${st.pageTitle}`}>
-          <div className={`${st.rowTitleLeft}`}>
-            <h5>Order #73</h5>
-          </div>
-          <div className={`${st.rowTitleRight}`}>
-
-
-            <button className={`btn`} >
-              <img src={icon4} className={`${st.icon}`} />
-              Print
-            </button>
+          <NavLink to="/orders" className={`${st.backBtn}`}>
+            <MdArrowBackIos className={`${st.icon}`} /> Back
+          </NavLink>
+          <div className={`${st.pageTitleRow}`}>
+            <div className={`${st.rowTitleLeft}`}>
+              <h5>Order #73</h5>
+            </div>
+            <div className={`${st.rowTitleRight}`}>
+              <button className={`btn`} >
+                <img src={icon4} className={`${st.icon}`} />
+                Print
+              </button>
+            </div>
           </div>
         </div>
 
 
-        <div className={`${st.pageWrapperInside}`}>
+        <div className={`${st.pageWrapperInside} ${st.setWidth}`}>
           <Card>
             <Card.Body className={`${cx.cardBody}`}>
               <div className={`${cx.contentBox}`}>

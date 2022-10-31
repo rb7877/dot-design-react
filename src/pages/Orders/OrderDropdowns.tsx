@@ -223,3 +223,20 @@ export const Export = () => {
     </Dropdown>
   );
 };
+
+export const ActionDropdown = () => {
+  return (
+
+    <Dropdown>
+      <Dropdown.Toggle id="dropdown-basic">
+        Actions
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <ul>
+          <li><NavLink to="#">Add Tags</NavLink></li>
+          <li><NavLink to="#">Remove Tags</NavLink></li>
+        </ul>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+};
