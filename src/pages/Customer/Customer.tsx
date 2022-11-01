@@ -286,7 +286,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
-            color="primary"
             indeterminate={numSelected > 0 && numSelected < rowCount}
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
@@ -320,14 +319,20 @@ function EnhancedTableHead(props: EnhancedTableProps) {
           ))
         }</>
           : <>
-            <div className={`${table.actionCheckbox}`}>
-              <div className={`${table.selectedCount}`}>
-                {numSelected} Selected
+            <TableCell className="p-0" style={{ width: '220px' }}>
+              <div className={`${table.actionCheckbox}`}>
+                <div className={`${table.selectedCount}`}>
+                  {numSelected} Selected
+                </div>
+                <div className={`${table.actionDropdown}`}>
+                  <ActionDropdown />
+                </div>
               </div>
-              <div className={`${table.actionDropdown}`}>
-                <ActionDropdown />
-              </div>
-            </div>
+            </TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
           </>}
 
       </TableRow>

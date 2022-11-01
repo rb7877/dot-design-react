@@ -42,7 +42,9 @@ export default function Customerdetails() {
                 <img src={icon4} className={`${st.icon}`} />
                 Enable House Account
               </button>
-              <button className={`btn ${st.themeBtn}`}>
+              <button className={`btn ${st.themeBtn}`} onClick={() => {
+                handleShow("edit customer", true);
+              }}>
                 Edit Customer
               </button>
             </div>
@@ -53,6 +55,46 @@ export default function Customerdetails() {
         <div className={`${st.pageWrapperInside} ${st.setWidth}`}>
           <Card>
             <Card.Body className={`${cx.cardBody}`}>
+
+              <Row>
+                <Col md={4}>
+                  <div className={`${cx.contentBox} ${cx.countCardBox}`}>
+                    <p>Done Orders</p>
+                    <h3><NavLink to="#">0</NavLink></h3>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div className={`${cx.contentBox} ${cx.countCardBox}`}>
+                    <p>Total Spent (SAR)</p>
+                    <h3>2,706,000</h3>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div className={`${cx.contentBox} ${cx.countCardBox}`}>
+                    <p>Total Discounts (SAR)</p>
+                    <h3>0</h3>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div className={`${cx.contentBox} ${cx.countCardBox}`}>
+                    <p>Last Orders</p>
+                    <h3>September 18, 01:59pm</h3>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div className={`${cx.contentBox} ${cx.countCardBox}`}>
+                    <p>Favourite Product</p>
+                    <h3>LWF The Original</h3>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div className={`${cx.contentBox} ${cx.countCardBox}`}>
+                    <p>Favourite Branch</p>
+                    <h3>Mall 1</h3>
+                  </div>
+                </Col>
+              </Row>
+
               <div className={`${cx.contentBox}`}>
                 <Row>
                   <Col lg={6} className={`${cx.formField}`}>
@@ -91,7 +133,7 @@ export default function Customerdetails() {
 
 
                   <button className={`btn`} onClick={() => {
-                    handleShow("order add tags", true);
+                    handleShow("customer add tags", true);
                   }}>
                     + Add Tags
                   </button>
@@ -99,8 +141,8 @@ export default function Customerdetails() {
               </div>
               <div className={`${cx.contentBox}`}>
                 <ul className={`${cx.tagsList}`}>
-                  <li><span>Order 1</span></li>
-                  <li><span>Order 2</span></li>
+                  <li><span>Tag 1</span></li>
+                  <li><span>Tag 2</span></li>
                 </ul>
               </div>
 
@@ -114,7 +156,7 @@ export default function Customerdetails() {
 
 
                   <button className={`btn`} onClick={() => {
-                    handleShow("order add tags", true);
+                    handleShow("customer create address", true);
                   }}>
                     + Add Address
                   </button>

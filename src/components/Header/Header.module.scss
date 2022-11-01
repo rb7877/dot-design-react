@@ -3,8 +3,9 @@
 
 .mainHeader {
     margin-left: 250px;
-    padding: 20px 60px;
+    padding: 10px 60px;
     background-color: #fff;
+    border-bottom: 1px solid #eeeeee;
 
     .mobileHeader {
         display: none;
@@ -22,13 +23,13 @@
     .headerSearch {
 
         :global(.input-group) {
-            width: 487px; 
+            width: 300px;
         }
 
         :global(.form-control) {
             border-radius: 50px !important;
-            height: 44px;
-            line-height: 44px;
+            height: 40px;
+            line-height: 40px;
             padding: 0px 20px;
             border-color: #fff;
             border: 1px solid gainsboro;

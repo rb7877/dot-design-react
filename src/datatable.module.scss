@@ -7,10 +7,11 @@
 .actionCheckbox {
     display: flex;
     align-items: center;
-    padding: 11px 0px;
+    padding: 9px 0px;
 
     .selectedCount {
         margin-right: 15px;
+        font-weight: 600;
     }
     .actionDropdown {
 
@@ -46,6 +47,7 @@
                             display: block;
                             margin: 8px 0px;
                             font-size: 12px;
+                            font-weight: 400;
                         }
                     }
                 }
@@ -140,14 +142,12 @@
     table {
 
         :global(.MuiCheckbox-root) {
+            color: #E5E5E5;
+            border-radius: 10px;
+            overflow: hidden;
 
-            svg {
-                color: #E5E5E5;
-                border-radius: 10px;
-                overflow: hidden;
-
-                path {
-                }
+            &:global(.Mui-checked) {
+               color: var(--Main2);
             }
 
         }
@@ -173,7 +173,7 @@
 
             tr {
 
-                td {
+                td, th {
                     font-size: 14px;
                     color:#4D4D4D;
                     font-family: 'Inter';
@@ -241,6 +241,7 @@
             padding: 0;
             display: flex;
             justify-content: end;
+            align-items: center;
     
             li {
                 margin-left:15px;
@@ -301,8 +302,8 @@
                         :global(.dropdown-toggle) {
                             padding: 0px;
                             border-radius: 50px;
-                            width: 40px;
-                            height: 40px;
+                            width: 27.5px;
+                            height: 27.5px;
                             color: #fff;
                             display: flex;
                             align-items: center;

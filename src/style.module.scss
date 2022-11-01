@@ -28,6 +28,19 @@ img {
   }
 }
 
+:global(.dropdown-toggle) {
+  
+  &::after {
+    display: none;
+    background-image: url(images/arrow-down.svg);
+    border: none !important;
+    width: 14px;
+    height: 7px;
+    vertical-align: 1px !important;
+    margin-left: 10px !important;
+  }
+}
+
 
 .pageWrapper {
   margin-left: 250px;
@@ -35,7 +48,8 @@ img {
     z-index: 99;
     background: #fff;
     margin: 0;
-    padding: 35px 60px;
+    padding: 15px 60px;
+    border-bottom: 1px solid #eeeeee;
 
     .back {
         color: var(--Main2);

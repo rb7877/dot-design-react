@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Button, Modal, Row, Col, Form, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import cx from './Modals.module.scss';
 import Select from 'react-select';
-import { FilterDropdown } from "../Dropdown/Dropdowns";
-import { tagoptions, customertagoptions } from '../../constants/dropdownconstants'
+import { FilterDropdown, SingleFilterDropdown } from "../Dropdown/Dropdowns";
+import { tagoptions, customertagoptions, customertimezone } from '../../constants/dropdownconstants'
 import { AiFillInfoCircle, AiOutlineInfoCircle } from 'react-icons/ai';
 
 
@@ -411,6 +411,234 @@ const Modals = (props: any) => {
         </Modal>
       }
       {/* END add customer Filter */}
+
+
+      {/* START edit customer Filter */}
+      {props.modalName === 'edit customer' &&
+        <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Edit Customers</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Name
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The customerʼs Full Name.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" placeholder="Hunger Station" />
+                </Form.Group>
+              </Col>
+              <Col md={6} lg={6}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Phone
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The customerʼs unique phone number.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Select>
+                    <option>Saudi Arabia (+966)</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+              <Col md={6} lg={6}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label className={`${cx.labelHide}`}>
+                    .
+                  </Form.Label>
+                  <Form.Control type="text" placeholder="0113381056" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Email
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The customerʼs unique email address.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Birth Date
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The customerʼs birth date.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="date" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Gender
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The customerʼs birth date.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Select>
+                    <option>Male</option>
+                    <option>Female</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+              Close
+            </Button>
+            <Button className={`${cx.btnSubmit}`}>
+              Apply
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END edit customer Filter */}
+
+
+      {/* START Customer add tags Filter */}
+      {props.modalName === 'customer add tags' &&
+        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Tags</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Tags
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          To assign tags to this Customer.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+              Close
+            </Button>
+            <Button className={`${cx.btnSubmit}`}>
+              Apply
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Customer add tags Filter */}
+
+
+
+
+      {/* START Customer create address Filter */}
+      {props.modalName === 'customer create address' &&
+        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Create Address</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Name
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The name of the address.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Description
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          To describe the address.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control as="textarea" style={{ height: '150px' }} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Delivery Zone
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          To select the delivery zone.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <SingleFilterDropdown options={customertimezone} />
+                </Form.Group>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+              Close
+            </Button>
+            <Button className={`${cx.btnSubmit}`}>
+              Apply
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Customer create address Filter */}
     </>
   );
 };

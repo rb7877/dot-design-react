@@ -516,14 +516,23 @@ function EnhancedTableHead(props: EnhancedTableProps) {
           </TableCell>
         ))}</>
           : <>
-            <div className={`${table.actionCheckbox}`}>
-              <div className={`${table.selectedCount}`}>
-                {numSelected} Selected
+            <TableCell className="p-0" style={{ width: '220px' }}>
+              <div className={`${table.actionCheckbox}`}>
+                <div className={`${table.selectedCount}`}>
+                  {numSelected} Selected
+                </div>
+                <div className={`${table.actionDropdown}`}>
+                  <ActionDropdown />
+                </div>
               </div>
-              <div className={`${table.actionDropdown}`}>
-                <ActionDropdown />
-              </div>
-            </div>
+            </TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
           </>}
       </TableRow>
     </TableHead>

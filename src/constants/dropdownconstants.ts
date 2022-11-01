@@ -36,3 +36,16 @@ export const tagoptions = [
       label: "Customer 1",
     },
   ];
+
+  export const customertimezone = [
+    {
+      value: "1",
+      label: "Delivery zone",
+    },
+    {
+      value: "2",
+      label: "Delivery",
+    },
+  ];
+
+  

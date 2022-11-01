@@ -11,6 +11,15 @@
         border:1px solid #E5E5E5;
         text-align: left;
         background: #fff;
+
+        .dropdownIcon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #c2bcbc;
+        }
     }
 
     .dropdownOption {
@@ -63,4 +72,8 @@
     &:hover {
        border: 1px solid #be0707;
     }
+}
+
+.singleselectedOption {
+
 }
