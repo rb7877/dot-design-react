@@ -49,3 +49,15 @@ export const tagoptions = [
   ];
 
   
+  export const itemoption = [
+    {
+      value: "1",
+      label: "Food",
+    },
+    {
+      value: "2",
+      label: "Plate",
+    },
+  ];
+
+  

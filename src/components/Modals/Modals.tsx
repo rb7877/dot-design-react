@@ -3,8 +3,9 @@ import { Button, Modal, Row, Col, Form, Tooltip, OverlayTrigger } from 'react-bo
 import cx from './Modals.module.scss';
 import Select from 'react-select';
 import { FilterDropdown, SingleFilterDropdown } from "../Dropdown/Dropdowns";
-import { tagoptions, customertagoptions, customertimezone } from '../../constants/dropdownconstants'
+import { tagoptions, customertagoptions, customertimezone, itemoption } from '../../constants/dropdownconstants'
 import { AiFillInfoCircle, AiOutlineInfoCircle } from 'react-icons/ai';
+import { NavLink } from "react-router-dom";
 
 
 
@@ -98,12 +99,15 @@ const Modals = (props: any) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
           </Modal.Footer>
         </Modal>
       }
@@ -146,12 +150,15 @@ const Modals = (props: any) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button className={`${cx.btnClose}`} onClick={subhandleClose}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={subhandleClose}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
           </Modal.Footer>
         </Modal>
       }
@@ -160,7 +167,8 @@ const Modals = (props: any) => {
 
 
       {/* START Order Filter */}
-      {props.modalName === 'order filter' &&
+      {
+        props.modalName === 'order filter' &&
         <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Filters</Modal.Title>
@@ -195,12 +203,15 @@ const Modals = (props: any) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
           </Modal.Footer>
         </Modal>
       }
@@ -208,7 +219,8 @@ const Modals = (props: any) => {
 
 
       {/* START Order add tags Filter */}
-      {props.modalName === 'order add tags' &&
+      {
+        props.modalName === 'order add tags' &&
         <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Add Tags</Modal.Title>
@@ -237,7 +249,8 @@ const Modals = (props: any) => {
 
 
       {/* START Todays Order Filter */}
-      {props.modalName === 'today order filter' &&
+      {
+        props.modalName === 'today order filter' &&
         <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Filters</Modal.Title>
@@ -272,19 +285,23 @@ const Modals = (props: any) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
           </Modal.Footer>
         </Modal>
       }
       {/* END Todays Order Filter */}
 
       {/* START Customer's Filter */}
-      {props.modalName === 'customer filter' &&
+      {
+        props.modalName === 'customer filter' &&
         <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Filter</Modal.Title>
@@ -319,12 +336,15 @@ const Modals = (props: any) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
           </Modal.Footer>
         </Modal>
       }
@@ -333,7 +353,8 @@ const Modals = (props: any) => {
 
 
       {/* START add customer Filter */}
-      {props.modalName === 'add customer' &&
+      {
+        props.modalName === 'add customer' &&
         <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Add Customers</Modal.Title>
@@ -401,12 +422,15 @@ const Modals = (props: any) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
           </Modal.Footer>
         </Modal>
       }
@@ -414,7 +438,8 @@ const Modals = (props: any) => {
 
 
       {/* START edit customer Filter */}
-      {props.modalName === 'edit customer' &&
+      {
+        props.modalName === 'edit customer' &&
         <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Edit Customers</Modal.Title>
@@ -517,12 +542,15 @@ const Modals = (props: any) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
           </Modal.Footer>
         </Modal>
       }
@@ -530,7 +558,8 @@ const Modals = (props: any) => {
 
 
       {/* START Customer add tags Filter */}
-      {props.modalName === 'customer add tags' &&
+      {
+        props.modalName === 'customer add tags' &&
         <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Add Tags</Modal.Title>
@@ -556,12 +585,15 @@ const Modals = (props: any) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
           </Modal.Footer>
         </Modal>
       }
@@ -571,7 +603,8 @@ const Modals = (props: any) => {
 
 
       {/* START Customer create address Filter */}
-      {props.modalName === 'customer create address' &&
+      {
+        props.modalName === 'customer create address' &&
         <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Create Address</Modal.Title>
@@ -629,16 +662,316 @@ const Modals = (props: any) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
           </Modal.Footer>
         </Modal>
       }
       {/* END Customer create address Filter */}
+
+
+
+
+      {/* START create item Filter */}
+      {
+        props.modalName === 'create item' &&
+        <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Create Item</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Name
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The name of the address.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Name Localized
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Enter the localized name in a 2nd language of your choice.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={8} lg={8}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    SKU
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Stock keeping unit, a unique code for your item.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+
+              <Col md={4} lg={4}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label className={`${cx.labelHide}`}>
+                    .
+                  </Form.Label>
+                  <button type="button" className="form-control">Generate SKU</button>
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Category
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          You can add an item to a category, like vegetables.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <SingleFilterDropdown options={itemoption} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Storage Unit
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          How this item is stored, example: Box or KG.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Ingredient Unit
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          How this item is used in your products ingredients, example: GRAM or ML.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Storage To Ingredient
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          The conversion factor between storage unit and ingredient unit, example: 1000.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="number" />
+                </Form.Group>
+              </Col>
+
+
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Costing Method
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          If you donʼt have a fixed cost for this item it will be calculated from purchase transactions.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Select aria-label="Default select example">
+                    <option>Fixed</option>
+                    <option value="1">From Transition</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+
+
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Cost
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Fixed cost per storage unit.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="number" />
+                </Form.Group>
+              </Col>
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div><NavLink to="#" className={`${cx.rightOption}`}>Advanced Options</NavLink></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END create item Filter */}
+
+
+      {/* START Items Filter */}
+      {
+        props.modalName === 'item filter' &&
+        <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Filter</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>SKU</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Barcode</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Tag</Form.Label>
+                  <FilterDropdown options={customertagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Category</Form.Label>
+                  <FilterDropdown options={customertagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Supplier</Form.Label>
+                  <FilterDropdown options={customertagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Costing Method
+                  </Form.Label>
+                  <Form.Select aria-label="Default select example">
+                    <option>Fixed</option>
+                    <option value="1">From Transition</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Stock Product
+                  </Form.Label>
+                  <Form.Select aria-label="Default select example">
+                    <option>Yes</option>
+                    <option value="1">No</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Deleted
+                  </Form.Label>
+                  <Form.Select aria-label="Default select example">
+                    <option>Yes</option>
+                    <option value="1">No</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Updated After</Form.Label>
+                  <Form.Control type="date" />
+                </Form.Group>
+              </Col>
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Items Filter */}
+
     </>
   );
 };
