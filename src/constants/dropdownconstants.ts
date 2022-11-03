@@ -58,6 +58,17 @@ export const tagoptions = [
       value: "2",
       label: "Plate",
     },
+  ];  
+
+  export const ingredientsoptions = [
+    {
+      value: "1",
+      label: "Item 1",
+    },
+    {
+      value: "2",
+      label: "Item 2",
+    },
   ];
 
   

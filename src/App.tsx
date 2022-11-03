@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Customer from './pages/Customer/Customer';
 import Customerdetails from './pages/Customerdetails/Customerdetails';
 import Items from './pages/Items/Items';
+import Itemsdetails from './pages/Itemsdetails/Itemsdetails';
 import Login from './pages/Login/Login';
 import Navigation from './pages/Navigation/Navigation';
 import Orders from './pages/Orders/Orders';
@@ -20,6 +21,7 @@ const App = () => {
         <Route path='customers' element={<Customer />} />
         <Route path='customers/:id' element={<Customerdetails />} />
         <Route path='inventory/items' element={<Items />} />
+        <Route path='inventory/items/:id' element={<Itemsdetails />} />
       </Route>
     </Routes>
   );

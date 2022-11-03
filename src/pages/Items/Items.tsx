@@ -46,32 +46,32 @@ interface Data {
 
 const rows = [
   {
-    name: "Tomato",
+    name: "Tomato 1",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Pizza",
+    name: "Pizza 2",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Patty",
+    name: "Patty 3",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Lettuce",
+    name: "Lettuce 4",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Cucumber",
+    name: "Cucumber 5",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Chilli",
+    name: "Chilli 6",
     sku: "SK-099",
     category: "-",
   },
@@ -82,37 +82,37 @@ const rows = [
   },
 
   {
-    name: "Tomato 1",
+    name: "Tomato 7",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Pizza 1",
+    name: "Pizza 8",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Patty 1",
+    name: "Patty 9",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Lettuce",
+    name: "Lettuce 10",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Cucumber 1",
+    name: "Cucumber 11",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Chilli 1",
+    name: "Chilli 12",
     sku: "SK-099",
     category: "-",
   },
   {
-    name: "Mayonais 1e",
+    name: "Mayonais 13",
     sku: "SK-099",
     category: "-",
   },
@@ -265,8 +265,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
                 </div>
               </div>
             </TableCell>
-            <TableCell></TableCell>
-            <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
           </>}
