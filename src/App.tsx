@@ -8,6 +8,7 @@ import Login from './pages/Login/Login';
 import Navigation from './pages/Navigation/Navigation';
 import Orders from './pages/Orders/Orders';
 import Ordersdetails from './pages/Ordersdetails/Ordersdetails';
+import Purchaseorders from './pages/Purchaseorders/Purchaseorders';
 import Todayorders from './pages/Todayorders/Todayorders';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='customers/:id' element={<Customerdetails />} />
         <Route path='inventory/items' element={<Items />} />
         <Route path='inventory/items/:id' element={<Itemsdetails />} />
+        <Route path='inventory/purchase-orders' element={<Purchaseorders />} />
       </Route>
     </Routes>
   );
