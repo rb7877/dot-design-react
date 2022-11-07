@@ -1846,6 +1846,81 @@ const Modals = (props: any) => {
       }
       {/* END Customer's Filter */}
 
+      
+
+
+      {/* START Create Purchasing */}
+      {
+        props.modalName === 'create purchasing' &&
+        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Create Purchasing</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Invoice Number</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Items</Form.Label>
+                  <FilterDropdown options={customertagoptions} />
+                </Form.Group>
+              </Col>
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Create Purchasing */}
+
+      
+
+      {/* START purchasing delete */}
+      {
+        props.modalName === 'purchasing delete' &&
+        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Confirm</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>This PO is not fully received, are you sure you want to close it?</Form.Label>
+                </Form.Group>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`} style={{ backgroundColor:'#FA8072', borderColor:'#FA8072' }}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END purchasing delete */}
+
     </>
   );
 };

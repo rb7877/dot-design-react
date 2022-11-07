@@ -9,7 +9,9 @@ import Navigation from './pages/Navigation/Navigation';
 import Orders from './pages/Orders/Orders';
 import Ordersdetails from './pages/Ordersdetails/Ordersdetails';
 import Purchaseorders from './pages/Purchaseorders/Purchaseorders';
+import Purchaseordersdetails from './pages/Purchaseordersdetails/Purchaseordersdetails';
 import Todayorders from './pages/Todayorders/Todayorders';
+import Transferorders from './pages/Transferorders/Transferorders';
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
         <Route path='inventory/items' element={<Items />} />
         <Route path='inventory/items/:id' element={<Itemsdetails />} />
         <Route path='inventory/purchase-orders' element={<Purchaseorders />} />
+        <Route path='inventory/purchase-orders/:id' element={<Purchaseordersdetails />} />
+        <Route path='inventory/transfer-orders' element={<Transferorders />} />
       </Route>
     </Routes>
   );
