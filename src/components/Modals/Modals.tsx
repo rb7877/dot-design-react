@@ -1921,6 +1921,147 @@ const Modals = (props: any) => {
       }
       {/* END purchasing delete */}
 
+
+
+      {/* START New Transfer Order */}
+      {
+        props.modalName === 'new transfer orders' &&
+        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>New Transfer Order</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Warehouse
+                  {['top'].map((placement) => (
+                    <OverlayTrigger key={placement} overlay={
+                      <Tooltip id={`tooltip-${placement}`}>
+                        Select the warehouse where items will be sent from.
+                      </Tooltip>}>
+                      <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                    </OverlayTrigger>
+                  ))}
+                </Form.Label>
+                <SingleFilterDropdown options={ingredientsoptions} />
+              </Form.Group>
+            </Col>
+            
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Destination
+                  {['top'].map((placement) => (
+                    <OverlayTrigger key={placement} overlay={
+                      <Tooltip id={`tooltip-${placement}`}>
+                        Branch or Warehouse where items will be sent to.
+                      </Tooltip>}>
+                      <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                    </OverlayTrigger>
+                  ))}
+                </Form.Label>
+                <SingleFilterDropdown options={ingredientsoptions} />
+              </Form.Group>
+            </Col>
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END New Transfer Order */}
+
+      
+
+
+      {/* START Transfer Order Filter */}
+      {
+        props.modalName === 'transfer orders filter' &&
+        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Filter</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Reference
+                </Form.Label>
+                <Form.Control type="text" />
+              </Form.Group>
+            </Col>
+
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Date
+                </Form.Label>
+                <Form.Control type="date" />
+              </Form.Group>
+            </Col>
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Status
+                </Form.Label>
+                <Form.Select>
+                  <option value="1">Any</option>
+                  <option value="2">Draft</option>
+                  <option value="3">Pending</option>
+                  <option value="3">Closed</option>
+                </Form.Select>
+              </Form.Group>
+            </Col>
+            
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Supplier
+                </Form.Label>
+                <SingleFilterDropdown options={ingredientsoptions} />
+              </Form.Group>
+            </Col>
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Warehouse
+                </Form.Label>
+                <SingleFilterDropdown options={ingredientsoptions} />
+              </Form.Group>
+            </Col>
+
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Transfer Order Filter */}
+
     </>
   );
 };

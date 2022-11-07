@@ -14,14 +14,12 @@ export const Export = () => {
     <Dropdown>
       <Dropdown.Toggle id="dropdown-basic">
         <img src={icon4} className={`${st.icon}`} />
-        Import / Export
+        Export
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <ul>
-          <li><NavLink to="#">Orders</NavLink></li>
-          <li><NavLink to="#">Order Items</NavLink></li>
-          <li><NavLink to="#">Order Payment</NavLink></li>
-          <li><NavLink to="#">Order Tags</NavLink></li>
+          <li><NavLink to="#">Export Purchase Orders</NavLink></li>
+          <li><NavLink to="#">Export Purchase Orders Items</NavLink></li>
         </ul>
       </Dropdown.Menu>
     </Dropdown>

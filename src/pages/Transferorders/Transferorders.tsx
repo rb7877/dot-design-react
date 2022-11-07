@@ -39,135 +39,143 @@ import Modals from "../../components/Modals/Modals";
 import { ActionDropdown, Export } from "./Dropdowns";
 
 interface Data {
-  name: string;
-  phone: string;
-  email: string;
-  customer: string;
-  totalorders: string;
-  lastorders: string;
+  reference: string;
+  warehouse: string;
+  destination: string;
+  status: string;
+  businessdate: string;
+  created: string;
 }
 
 const rows = [
   {
-    name: "Hunger Station 1",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-0002",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 2",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-0003",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 3",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-0004",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 4",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-0005",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 5",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-0006",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 6",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-0007",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 7",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-0008",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 8",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-0009",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 9",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-00010",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 10",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-00011",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 11",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-00012",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 12",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-00013",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 13",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-00014",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 14",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
+    reference: "PO-00015",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
   },
   {
-    name: "Hunger Station 15",
-    phone: "5652652620",
-    email: "-",
-    customer: "-",
-    totalorders: "Total Orders",
-    lastorders: "Last Orders",
-  }
+    reference: "PO-00016",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
+  },
+  {
+    reference: "PO-00017",
+    warehouse: "x",
+    destination: "Riyadh",
+    status: "Approved",
+    businessdate: "2022-06-29",
+    created: "June 29, 01:14pm",
+  },
 ];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -220,34 +228,40 @@ interface HeadCell {
 
 const headCells: readonly HeadCell[] = [
   {
-    id: "name",
+    id: "reference",
     numeric: false,
     disablePadding: true,
-    label: "Name",
+    label: "Reference",
   },
   {
-    id: "phone",
+    id: "warehouse",
     numeric: true,
     disablePadding: false,
-    label: "Phone",
+    label: "Warehouse",
   },
   {
-    id: "email",
+    id: "destination",
     numeric: true,
     disablePadding: false,
-    label: "Email",
+    label: "Destination",
   },
   {
-    id: "totalorders",
+    id: "status",
     numeric: true,
     disablePadding: false,
-    label: "Total Orders",
+    label: "Status",
   },
   {
-    id: "lastorders",
+    id: "businessdate",
     numeric: true,
     disablePadding: false,
-    label: "Last Orders",
+    label: "Business Date",
+  },
+  {
+    id: "created",
+    numeric: true,
+    disablePadding: false,
+    label: "Created",
   },
 ];
 
@@ -284,23 +298,12 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
-          <Checkbox
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-            inputProps={{
-              "aria-label": "select all desserts",
-            }}
-          />
-        </TableCell>
 
         {numSelected === 0 ? <>{
           headCells.map((headCell: any) => (
             <TableCell
               key={headCell.id}
               align={headCell.numeric ? "left" : "left"}
-              padding={headCell.disablePadding ? "none" : "normal"}
               sortDirection={orderBy === headCell.id ? order : false}
             >
               <TableSortLabel
@@ -329,7 +332,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
                 </div>
               </div>
             </TableCell>
-            <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
@@ -391,7 +393,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               <button
                 className={`${table.filterBtn} btn`}
                 onClick={() => {
-                  handleShow("customer filter", true);
+                  handleShow("transfer orders filter", true);
                   console.log("check");
                 }}
               >
@@ -411,7 +413,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
 function EnhancedTable() {
   const navigate = useNavigate();
   const [order, setOrder] = React.useState<Order>("asc");
-  const [orderBy, setOrderBy] = React.useState<keyof Data>("phone");
+  const [orderBy, setOrderBy] = React.useState<keyof Data>("warehouse");
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -428,7 +430,7 @@ function EnhancedTable() {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.name);
+      const newSelected = rows.map((n) => n.reference);
       setSelected(newSelected);
       return;
     }
@@ -515,44 +517,32 @@ function EnhancedTable() {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row.reference);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
+                      onClick={(event) => handleClick(event, row.reference)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.reference}
                       selected={isItemSelected}
                     >
-                      <TableCell
-                        padding="checkbox"
-
-                      >
-                        <Checkbox
-                          color="primary"
-                          checked={isItemSelected}
-                          inputProps={{
-                            "aria-labelledby": labelId,
-                          }}
-                        />
-                      </TableCell>
                       <TableCell
                         component="th"
                         id={labelId}
                         scope="row"
-                        padding="none"
-                        onClick={() => { redirectToAnotherPage(row.name) }}
+                        onClick={() => { redirectToAnotherPage(row.reference) }}
                       >
-                        {row.name}
+                        {row.reference}
                       </TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.name) }} align="left">{row.phone}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.name) }} align="left">{row.email}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.name) }} align="left">{row.totalorders}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.name) }} align="left">{row.lastorders}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.warehouse) }} align="left">{row.warehouse}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.destination) }} align="left">{row.destination}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.status) }} align="left">{row.status}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.businessdate) }} align="left">{row.businessdate}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.created) }} align="left">{row.created}</TableCell>
                     </TableRow>
                   );
                 })}
@@ -655,7 +645,7 @@ export default function Transferorders() {
 
               <button className={`btn ${st.themeBtn}`}
                 onClick={() => {
-                  handleShow("add customer", true);
+                  handleShow("new transfer orders", true);
                 }}
               >
                 New Transfer Orders
