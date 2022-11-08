@@ -9,7 +9,7 @@ import icon5 from "../../images/icon-duplicate.svg";
 import { NavLink } from "react-router-dom";
 
 import { MdArrowBackIos } from 'react-icons/md';
-import Modals from "../../components/Modals/Modals";
+import Modals from "../../components/Modals/InventoryTransferM";
 
 
 
@@ -31,7 +31,7 @@ export default function Transferordersdetails() {
     <>
       <section className={`${st.pageWrapper}`}>
         <div className={`${st.pageTitle}`}>
-          <NavLink to="/inventory/purchase-orders" className={`${st.backBtn}`}>
+          <NavLink to="/inventory/transfer-orders" className={`${st.backBtn}`}>
             <MdArrowBackIos className={`${st.icon}`} /> Back
           </NavLink>
           <div className={`${st.pageTitleRow}`}>

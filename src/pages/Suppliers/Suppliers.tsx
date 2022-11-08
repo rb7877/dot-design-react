@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import st from "../../style.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cx from "./Transferorders.module.scss";
+import cx from "./Suppliers.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -34,147 +34,66 @@ import icon5 from "../../images/icon-call.svg";
 import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
 import iconClose from "../../images/icon-close.svg";
-import Modals from "../../components/Modals/InventoryTransferM";
+import Modals from "../../components/Modals/InventorySuppliersM";
 
 import { ActionDropdown, Export } from "./Dropdowns";
 
 interface Data {
-  reference: string;
-  warehouse: string;
-  destination: string;
-  status: string;
-  businessdate: string;
-  created: string;
+  name: string;
+  code: string;
+  contact: string;
 }
 
 const rows = [
   {
-    reference: "PO-0002",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
   {
-    reference: "PO-0003",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
   {
-    reference: "PO-0004",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
   {
-    reference: "PO-0005",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
   {
-    reference: "PO-0006",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
   {
-    reference: "PO-0007",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
   {
-    reference: "PO-0008",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
   {
-    reference: "PO-0009",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
   {
-    reference: "PO-00010",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
   {
-    reference: "PO-00011",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
-  },
-  {
-    reference: "PO-00012",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
-  },
-  {
-    reference: "PO-00013",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
-  },
-  {
-    reference: "PO-00014",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
-  },
-  {
-    reference: "PO-00015",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
-  },
-  {
-    reference: "PO-00016",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
-  },
-  {
-    reference: "PO-00017",
-    warehouse: "x",
-    destination: "Riyadh",
-    status: "Approved",
-    businessdate: "2022-06-29",
-    created: "June 29, 01:14pm",
+    name: "Hunger Station 1",
+    code: "SUP-002",
+    contact: "+9664529023",
   },
 ];
 
@@ -228,40 +147,22 @@ interface HeadCell {
 
 const headCells: readonly HeadCell[] = [
   {
-    id: "reference",
+    id: "name",
     numeric: false,
     disablePadding: true,
-    label: "Reference",
+    label: "Name",
   },
   {
-    id: "warehouse",
+    id: "code",
     numeric: true,
     disablePadding: false,
-    label: "Warehouse",
+    label: "Code",
   },
   {
-    id: "destination",
+    id: "contact",
     numeric: true,
     disablePadding: false,
-    label: "Destination",
-  },
-  {
-    id: "status",
-    numeric: true,
-    disablePadding: false,
-    label: "Status",
-  },
-  {
-    id: "businessdate",
-    numeric: true,
-    disablePadding: false,
-    label: "Business Date",
-  },
-  {
-    id: "created",
-    numeric: true,
-    disablePadding: false,
-    label: "Created",
+    label: "Contact",
   },
 ];
 
@@ -298,12 +199,23 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   return (
     <TableHead>
       <TableRow>
+        <TableCell padding="checkbox">
+          <Checkbox
+            indeterminate={numSelected > 0 && numSelected < rowCount}
+            checked={rowCount > 0 && numSelected === rowCount}
+            onChange={onSelectAllClick}
+            inputProps={{
+              "aria-label": "select all desserts",
+            }}
+          />
+        </TableCell>
 
         {numSelected === 0 ? <>{
           headCells.map((headCell: any) => (
             <TableCell
               key={headCell.id}
               align={headCell.numeric ? "left" : "left"}
+              padding={headCell.disablePadding ? "none" : "normal"}
               sortDirection={orderBy === headCell.id ? order : false}
             >
               <TableSortLabel
@@ -332,7 +244,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
                 </div>
               </div>
             </TableCell>
-            <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
           </>}
@@ -379,13 +290,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               </button>{" "}
             </li>
             <li>
-              <button className={`btn ${table.filterBtn}`}>Draft</button>{" "}
-            </li>
-            <li>
-              <button className={`btn ${table.filterBtn}`}>Pending</button>{" "}
-            </li>
-            <li>
-              <button className={`btn ${table.filterBtn}`}>Closed</button>{" "}
+              <button className={`btn ${table.filterBtn}`}>Deleted</button>{" "}
             </li>
           </ul>
           <ul className={`${table.rightActionIcons}`}>
@@ -393,7 +298,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               <button
                 className={`${table.filterBtn} btn`}
                 onClick={() => {
-                  handleShow("transfer orders filter", true);
+                  handleShow("suppliers filter", true);
                   console.log("check");
                 }}
               >
@@ -413,7 +318,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
 function EnhancedTable() {
   const navigate = useNavigate();
   const [order, setOrder] = React.useState<Order>("asc");
-  const [orderBy, setOrderBy] = React.useState<keyof Data>("warehouse");
+  const [orderBy, setOrderBy] = React.useState<keyof Data>("code");
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -430,7 +335,7 @@ function EnhancedTable() {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.reference);
+      const newSelected = rows.map((n) => n.name);
       setSelected(newSelected);
       return;
     }
@@ -517,32 +422,42 @@ function EnhancedTable() {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.reference);
+                  const isItemSelected = isSelected(row.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.reference)}
+                      onClick={(event) => handleClick(event, row.name)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.reference}
+                      key={row.name}
                       selected={isItemSelected}
                     >
+                      <TableCell
+                        padding="checkbox"
+
+                      >
+                        <Checkbox
+                          color="primary"
+                          checked={isItemSelected}
+                          inputProps={{
+                            "aria-labelledby": labelId,
+                          }}
+                        />
+                      </TableCell>
                       <TableCell
                         component="th"
                         id={labelId}
                         scope="row"
-                        onClick={() => { redirectToAnotherPage(row.reference) }}
+                        padding="none"
+                        onClick={() => { redirectToAnotherPage(row.name) }}
                       >
-                        {row.reference}
+                        {row.name}
                       </TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.warehouse) }} align="left">{row.warehouse}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.destination) }} align="left">{row.destination}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.status) }} align="left">{row.status}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.businessdate) }} align="left">{row.businessdate}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.created) }} align="left">{row.created}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.code) }} align="left">{row.code}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.contact) }} align="left">{row.contact}</TableCell>
                     </TableRow>
                   );
                 })}
@@ -574,7 +489,7 @@ function EnhancedTable() {
   );
 }
 
-export default function Transferorders() {
+export default function Suppliers() {
   const [lgShow, setLgShow] = useState(false);
 
   // Modals
@@ -638,17 +553,17 @@ export default function Transferorders() {
         <div className={`${st.pageTitle}`}>
           <div className={`${st.pageTitleRow}`}>
             <div className={`${st.rowTitleLeft}`}>
-              <h5>Transfer Orders</h5>
+              <h5>Suppliers</h5>
             </div>
             <div className={`${st.rowTitleRight}`}>
               <Export />
 
               <button className={`btn ${st.themeBtn}`}
                 onClick={() => {
-                  handleShow("new transfer orders", true);
+                  handleShow("add suppliers", true);
                 }}
               >
-                New Transfer Orders
+                Add Suppliers
               </button>
             </div>
           </div>

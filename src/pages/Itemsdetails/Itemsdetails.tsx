@@ -8,7 +8,7 @@ import icon4 from "../../images/icon-printer.svg";
 import { NavLink } from "react-router-dom";
 
 import { MdArrowBackIos, MdDeleteOutline } from 'react-icons/md';
-import Modals from "../../components/Modals/Modals";
+import Modals from "../../components/Modals/InventoryItemsM";
 
 
 

@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import st from "../../style.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cx from "./Transferorders.module.scss";
+import cx from "./Inventorycount.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -34,13 +34,12 @@ import icon5 from "../../images/icon-call.svg";
 import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
 import iconClose from "../../images/icon-close.svg";
-import Modals from "../../components/Modals/InventoryTransferM";
+import Modals from "../../components/Modals/InventoryCountM";
 
 import { ActionDropdown, Export } from "./Dropdowns";
 
 interface Data {
   reference: string;
-  warehouse: string;
   destination: string;
   status: string;
   businessdate: string;
@@ -50,7 +49,6 @@ interface Data {
 const rows = [
   {
     reference: "PO-0002",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -58,7 +56,6 @@ const rows = [
   },
   {
     reference: "PO-0003",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -66,7 +63,6 @@ const rows = [
   },
   {
     reference: "PO-0004",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -74,7 +70,6 @@ const rows = [
   },
   {
     reference: "PO-0005",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -82,7 +77,6 @@ const rows = [
   },
   {
     reference: "PO-0006",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -90,7 +84,6 @@ const rows = [
   },
   {
     reference: "PO-0007",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -98,7 +91,6 @@ const rows = [
   },
   {
     reference: "PO-0008",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -114,7 +106,6 @@ const rows = [
   },
   {
     reference: "PO-00010",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -122,7 +113,6 @@ const rows = [
   },
   {
     reference: "PO-00011",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -130,7 +120,6 @@ const rows = [
   },
   {
     reference: "PO-00012",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -146,7 +135,6 @@ const rows = [
   },
   {
     reference: "PO-00014",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -154,7 +142,6 @@ const rows = [
   },
   {
     reference: "PO-00015",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -162,7 +149,6 @@ const rows = [
   },
   {
     reference: "PO-00016",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -170,7 +156,6 @@ const rows = [
   },
   {
     reference: "PO-00017",
-    warehouse: "x",
     destination: "Riyadh",
     status: "Approved",
     businessdate: "2022-06-29",
@@ -232,12 +217,6 @@ const headCells: readonly HeadCell[] = [
     numeric: false,
     disablePadding: true,
     label: "Reference",
-  },
-  {
-    id: "warehouse",
-    numeric: true,
-    disablePadding: false,
-    label: "Warehouse",
   },
   {
     id: "destination",
@@ -382,9 +361,6 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               <button className={`btn ${table.filterBtn}`}>Draft</button>{" "}
             </li>
             <li>
-              <button className={`btn ${table.filterBtn}`}>Pending</button>{" "}
-            </li>
-            <li>
               <button className={`btn ${table.filterBtn}`}>Closed</button>{" "}
             </li>
           </ul>
@@ -393,7 +369,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               <button
                 className={`${table.filterBtn} btn`}
                 onClick={() => {
-                  handleShow("transfer orders filter", true);
+                  handleShow("inventory", true);
                   console.log("check");
                 }}
               >
@@ -413,7 +389,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
 function EnhancedTable() {
   const navigate = useNavigate();
   const [order, setOrder] = React.useState<Order>("asc");
-  const [orderBy, setOrderBy] = React.useState<keyof Data>("warehouse");
+  const [orderBy, setOrderBy] = React.useState<keyof Data>("destination");
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -538,8 +514,7 @@ function EnhancedTable() {
                       >
                         {row.reference}
                       </TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.warehouse) }} align="left">{row.warehouse}</TableCell>
-                      <TableCell onClick={() => { redirectToAnotherPage(row.destination) }} align="left">{row.destination}</TableCell>
+                     <TableCell onClick={() => { redirectToAnotherPage(row.destination) }} align="left">{row.destination}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.status) }} align="left">{row.status}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.businessdate) }} align="left">{row.businessdate}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.created) }} align="left">{row.created}</TableCell>
@@ -574,7 +549,7 @@ function EnhancedTable() {
   );
 }
 
-export default function Transferorders() {
+export default function Inventorycount() {
   const [lgShow, setLgShow] = useState(false);
 
   // Modals
@@ -638,17 +613,17 @@ export default function Transferorders() {
         <div className={`${st.pageTitle}`}>
           <div className={`${st.pageTitleRow}`}>
             <div className={`${st.rowTitleLeft}`}>
-              <h5>Transfer Orders</h5>
+              <h5>Inventory Count</h5>
             </div>
             <div className={`${st.rowTitleRight}`}>
               <Export />
 
               <button className={`btn ${st.themeBtn}`}
                 onClick={() => {
-                  handleShow("new transfer orders", true);
+                  handleShow("new inventory count", true);
                 }}
               >
-                New Transfer Orders
+                New Inventory Count
               </button>
             </div>
           </div>

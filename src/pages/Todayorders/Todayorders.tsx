@@ -13,7 +13,7 @@ import Select, {
 } from "react-select";
 import icon1 from "../../images/icon-branch.svg";
 import icon5 from "../../images/icon-call.svg";
-import Modals from "../../components/Modals/Modals";
+import Modals from "../../components/Modals/TodayorderModals";
 import iconFilter from "../../images/icon-filter.svg";
 import iconClose from "../../images/icon-close.svg";
 

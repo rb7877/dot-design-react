@@ -1,19 +1,18 @@
 import React, { useCallback, useState } from "react";
 import st from "../../style.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cx from "./Purchaseordersdetails.module.scss";
+import cx from "./Suppliersdetails.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Table, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import icon4 from "../../images/icon-printer.svg";
-import icon5 from "../../images/icon-close2.svg";
 import { NavLink } from "react-router-dom";
 
-import { MdArrowBackIos } from 'react-icons/md';
-import Modals from "../../components/Modals/InventoryPurchaseM";
+import { MdArrowBackIos, MdDeleteOutline } from 'react-icons/md';
+import Modals from "../../components/Modals/InventorySuppliersM";
 
 
 
-export default function Purchaseordersdetails() {
+export default function Suppliersdetails() {
 
   const [show, setShow] = useState(false);
   const [modalName, setModalName] = useState("");
@@ -31,28 +30,18 @@ export default function Purchaseordersdetails() {
     <>
       <section className={`${st.pageWrapper}`}>
         <div className={`${st.pageTitle}`}>
-          <NavLink to="/inventory/purchase-orders" className={`${st.backBtn}`}>
+          <NavLink to="/inventory/suppliers" className={`${st.backBtn}`}>
             <MdArrowBackIos className={`${st.icon}`} /> Back
           </NavLink>
           <div className={`${st.pageTitleRow}`}>
             <div className={`${st.rowTitleLeft}`}>
-              <h5>Purchase Order (PO-000022)</h5>
+              <h5>Tomato</h5>
             </div>
             <div className={`${st.rowTitleRight}`}>
-              <button className={`btn`} >
-                <img src={icon4} className={`${st.icon}`} />
-                Print
-              </button>
-              <button className={`btn`} onClick={() => {
-                handleShow("purchasing delete", true);
-              }}>
-                <img src={icon5} className={`${st.icon}`} />
-                Close
-              </button>
               <button className={`btn ${st.themeBtn}`} onClick={() => {
-                handleShow("create purchasing", true);
+                handleShow("edit suppliers", true);
               }}>
-                Create Purchasing
+                Edit Suppliers
               </button>
             </div>
           </div>
@@ -66,47 +55,68 @@ export default function Purchaseordersdetails() {
               <div className={`${cx.contentBox}`}>
                 <Row>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Supplier</label>
-                    <p>X</p>
+                    <label>Name</label>
+                    <p>Hamzah</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Destination</label>
-                    <p>Mall 1</p>
+                    <label>Contact Name</label>
+                    <p>Hamzah</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Business Date</label>
-                    <p>2022-06-29</p>
+                    <label>Phone</label>
+                    <p>+9664529023</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Creator</label>
-                    <p>Abdulwahab Dakheel</p>
+                    <label>Primary Email</label>
+                    <p>-</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Submitter</label>
-                    <p>Abdulwahab Dakheel</p>
+                    <label>Supplier Code</label>
+                    <p>-</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Approver</label>
-                    <p>Abdulwahab Dakheel</p>
-                  </Col>
-                  <Col lg={6} className={`${cx.formField}`}>
-                    <label>Created At</label>
-                    <p>June 29, 01:14pm</p>
-                  </Col>
-                  <Col lg={6} className={`${cx.formField}`}>
-                    <label>Delivery Date</label>
-                    <p>2022-06-29</p>
+                    <label>Additional Email</label>
+                    <p>-</p>
                   </Col>
                 </Row>
               </div>
 
 
+              <div className={`${cx.pageTitle}`}>
+                <div className={`${cx.rowTitleLeft}`}>
+                  <h5>Tags</h5>
+                </div>
+                <div className={`${cx.rowTitleRight}`}>
+
+
+                  <button className={`btn`} onClick={() => {
+                    handleShow("add tags", true);
+                  }}>
+                    + Add Tags
+                  </button>
+                </div>
+              </div>
+              <div className={`${cx.contentBox}`}>
+                <ul className={`${cx.tagsList}`}>
+                  <li><span>Tag 1</span></li>
+                  <li><span>Tag 2</span></li>
+                </ul>
+              </div>
 
 
 
               <div className={`${cx.pageTitle}`}>
                 <div className={`${cx.rowTitleLeft}`}>
-                  <h5>Items</h5>
+                  <h5>Inventory Items</h5>
+                </div>
+                <div className={`${cx.rowTitleRight}`}>
+
+
+                  <button className={`btn`} onClick={() => {
+                    handleShow("inventory items", true);
+                  }}>
+                    + Link Items
+                  </button>
                 </div>
               </div>
               <div className={`${cx.contentBox}`}>
@@ -116,26 +126,29 @@ export default function Purchaseordersdetails() {
                       <tr>
                         <th>Name</th>
                         <th>SKU</th>
-                        <th>Available Quantity</th>
-                        <th>Cost Per Unit</th>
-                        <th>Quantity</th>
-                        <th>Total Cost</th>
+                        <th>Item Supplier Code</th>
+                        <th>Order Unit</th>
+                        <th>Order Quantity</th>
+                        <th>Purchase Cost</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Pizza</td>
-                        <td>SK-0056</td>
-                        <td>111</td>
-                        <td>SAR 7</td>
-                        <td>111</td>
-                        <td>SAR 7</td>
+                        <td>Ice Cream</td>
+                        <td>SKU-087</td>
+                        <td>SUP-057</td>
+                        <td>50</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>
+                          <span className={`${table.deleteIcon}`}><MdDeleteOutline /></span>
+                        </td>
                       </tr>
                     </tbody>
                   </Table>
                 </div>
               </div>
-
 
 
             </Card.Body>

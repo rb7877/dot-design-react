@@ -2062,6 +2062,256 @@ const Modals = (props: any) => {
       }
       {/* END Transfer Order Filter */}
 
+      
+      {/* START add suppliers */}
+      {
+        props.modalName === 'add suppliers' &&
+        <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Suppliers</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                  Reference
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Supplier Company Name.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                  Supplier Code
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Unique code for this supplier. The code may only contain letters and numbers.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                  Contact Name
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Supplier contact name.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                  Phone
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Supplier phone number.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                  Primary Email
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Enter an email to send Purchase Orders from dot.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                  Additional Emails
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Emails will be added as a CC to the Purchase Orders email that will be sent by dot, separate multiple emails by a comma (,)
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END add suppliers */}
+
+      {/* START suppliers Filter */}
+      {
+        props.modalName === 'suppliers filter' &&
+        <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Filter</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Name 
+                </Form.Label>
+                <Form.Control type="text" />
+              </Form.Group>
+            </Col>
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Code  
+                </Form.Label>
+                <Form.Control type="number" />
+              </Form.Group>
+            </Col>
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Contact Name  
+                </Form.Label>
+                <Form.Control type="number" />
+              </Form.Group>
+            </Col>
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Email
+                </Form.Label>
+                <Form.Control type="email" />
+              </Form.Group>
+            </Col>
+            
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Deleted 
+                </Form.Label>
+                <Form.Select>
+                  <option value="1">Yes</option>
+                  <option value="2">No</option>
+                </Form.Select>
+              </Form.Group>
+            </Col>
+            
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Tag
+                </Form.Label>
+                <FilterDropdown options={ingredientsoptions} />
+              </Form.Group>
+            </Col>
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Updated After
+                </Form.Label>
+                <Form.Control type="date" />
+              </Form.Group>
+            </Col>
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END suppliers Filter */}
+
+      
+
+      {/* START Inventory Items */}
+      {
+        props.modalName === 'inventory items' &&
+        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Items</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+            <Col md={12} lg={12}>
+              <Form.Group className={`${cx.formField}`}>
+                <Form.Label>
+                Items
+                </Form.Label>
+                <FilterDropdown options={ingredientsoptions} />
+              </Form.Group>
+            </Col>
+
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END Inventory Items */}
+
+      
+
     </>
   );
 };

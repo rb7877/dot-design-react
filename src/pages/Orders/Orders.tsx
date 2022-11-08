@@ -36,7 +36,7 @@ import icon4 from "../../images/icon-export.svg";
 import icon5 from "../../images/icon-call.svg";
 import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
-import Modals from "../../components/Modals/Modals";
+import Modals from "../../components/Modals/OrderModal";
 
 import { Branches, BusinessDate, Export, ActionDropdown } from "./OrderDropdowns";
 

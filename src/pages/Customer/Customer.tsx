@@ -34,7 +34,7 @@ import icon5 from "../../images/icon-call.svg";
 import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
 import iconClose from "../../images/icon-close.svg";
-import Modals from "../../components/Modals/Modals";
+import Modals from "../../components/Modals/CustomerModals";
 
 import { ActionDropdown, Export } from "./Dropdowns";
 
