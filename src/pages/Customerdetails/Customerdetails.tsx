@@ -93,6 +93,18 @@ export default function Customerdetails() {
                     <h3>Mall 1</h3>
                   </div>
                 </Col>
+                <Col md={4}>
+                  <div className={`${cx.contentBox} ${cx.countCardBox}`}>
+                    <p>Loyalty Balance (Points)</p>
+                    <h3>0</h3>
+                  </div>
+                </Col>
+                <Col md={4}>
+                  <div className={`${cx.contentBox} ${cx.countCardBox}`}>
+                    <p>Total Earned (Points)</p>
+                    <h3>0</h3>
+                  </div>
+                </Col>
               </Row>
 
               <div className={`${cx.contentBox}`}>
@@ -153,8 +165,6 @@ export default function Customerdetails() {
                   <h5>Addresses</h5>
                 </div>
                 <div className={`${cx.rowTitleRight}`}>
-
-
                   <button className={`btn`} onClick={() => {
                     handleShow("customer create address", true);
                   }}>
@@ -186,6 +196,86 @@ export default function Customerdetails() {
               </div>
 
 
+              <div className={`${cx.pageTitle}`}>
+                <div className={`${cx.rowTitleLeft}`}>
+                  <h5>House Account Transactions</h5>
+                </div>
+                <div className={`${cx.rowTitleRight}`}>
+                  <button className={`btn`} onClick={() => {
+                    handleShow("add payment", true);
+                  }}>
+                   + Add Payment
+                  </button>
+                </div>
+              </div>
+              <div className={`${cx.contentBox}`}>
+                <div className={`table-responsive`}>
+                  <Table className={`${table.tableCt}`}>
+                    <thead>
+                      <tr>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Creator</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Debit</td>
+                        <td>SAR 400</td>
+                        <td>Abdulwahab Dakheel</td>
+                        <td>June 17, 12:29pm</td>
+                      </tr>
+                      <tr>
+                        <td>Debit</td>
+                        <td>SAR 400</td>
+                        <td>Abdulwahab Dakheel</td>
+                        <td>June 17, 12:29pm</td>
+                      </tr>
+                      <tr>
+                        <td>Debit</td>
+                        <td>SAR 400</td>
+                        <td>Abdulwahab Dakheel</td>
+                        <td>June 17, 12:29pm</td>
+                      </tr>
+                      <tr>
+                        <td>Debit</td>
+                        <td>SAR 400</td>
+                        <td>Abdulwahab Dakheel</td>
+                        <td>June 17, 12:29pm</td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </div>
+              </div>
+              
+              <div className={`${cx.pageTitle}`}>
+                <div className={`${cx.rowTitleLeft}`}>
+                  <h5>Loyalty Transactions</h5>
+                </div>
+                <div className={`${cx.rowTitleRight}`}>
+                </div>
+              </div>
+
+              <div className={`${cx.contentBox}`}>
+                <div className={`p-4 text-center ${table.noData}`}>
+                  When your customer redeems their earned rewards, you will see the transactions here.
+                </div>
+              </div>
+              
+              <div className={`${cx.pageTitle}`}>
+                <div className={`${cx.rowTitleLeft}`}>
+                  <h5>Loyalty Rewards</h5>
+                </div>
+                <div className={`${cx.rowTitleRight}`}>
+                </div>
+              </div>
+
+              <div className={`${cx.contentBox}`}>
+                <div className={`p-4 text-center ${table.noData}`}>
+                When your customer earns rewards, you will see the redeem codes here.
+                </div>
+              </div>
 
             </Card.Body>
           </Card>

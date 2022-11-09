@@ -114,7 +114,7 @@ const Modals = (props: any) => {
             <Col md={12} lg={12}>
               <Form.Group className={`${cx.formField}`}>
                 <Form.Label>
-                Date
+                Business Date
                 </Form.Label>
                 <Form.Control type="date" />
               </Form.Group>
@@ -134,23 +134,34 @@ const Modals = (props: any) => {
             </Col>
             
             <Col md={12} lg={12}>
-              <Form.Group className={`${cx.formField}`}>
-                <Form.Label>
-                Supplier
-                </Form.Label>
-                <SingleFilterDropdown options={ingredientsoptions} />
-              </Form.Group>
-            </Col>
-            <Col md={12} lg={12}>
-              <Form.Group className={`${cx.formField}`}>
-                <Form.Label>
-                Warehouse
-                </Form.Label>
-                <SingleFilterDropdown options={ingredientsoptions} />
-              </Form.Group>
-            </Col>
-
-
+                <Form.Group className={`${cx.formField}`}>
+                  {inventoryItems ? <Form.Label className="d-block">
+                  Branch
+                    <NavLink className={`${cx.rightLabel}`} to="#" onClick={() => { setinventoryItems(false) }}>Select Items?</NavLink>
+                  </Form.Label> : <Form.Label className="d-block">
+                    Items
+                    <NavLink className={`${cx.rightLabel}`} to="#" onClick={() => { setinventoryItems(true) }}>Select by tags?</NavLink>
+                  </Form.Label>
+                  }
+                  <FilterDropdown options={ingredientsoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label className="d-block">
+                  Creator
+                  </Form.Label>
+                  <FilterDropdown options={ingredientsoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                  Updated After 
+                  </Form.Label>
+                  <Form.Control type="date" />
+                </Form.Group>
+              </Col>
             </Row>
           </Modal.Body>
           <Modal.Footer>

@@ -433,6 +433,65 @@ const Modals = (props: any) => {
       {/* END Customer create address */}
 
 
+
+      {/* START add payment */}
+      {
+        props.modalName === 'add payment' &&
+        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Add Payment</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Row>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                  Amount (SAR)
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Add the amount paid by the customer.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="number" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                  Payment Method
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          Specifiy used payment method.
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <SingleFilterDropdown options={customertimezone} />
+                </Form.Group>
+              </Col>
+            </Row>
+          </Modal.Body>
+          <Modal.Footer>
+            <div></div>
+            <div>
+              <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
+                Close
+              </Button>
+              <Button className={`${cx.btnSubmit}`}>
+                Apply
+              </Button>
+            </div>
+          </Modal.Footer>
+        </Modal>
+      }
+      {/* END add payment */}
+
     </>
   );
 };

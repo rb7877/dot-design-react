@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import st from "../../style.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cx from "./Inventorycount.module.scss";
+import cx from "./Purchasing.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -34,13 +34,15 @@ import icon5 from "../../images/icon-call.svg";
 import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
 import iconClose from "../../images/icon-close.svg";
-import Modals from "../../components/Modals/InventoryCountM";
+import Modals from "../../components/Modals/InventoryPurchasingM";
 
 import { ActionDropdown, Export } from "./Dropdowns";
 
 interface Data {
   reference: string;
+  supplier: string;
   destination: string;
+  type: string;
   status: string;
   businessdate: string;
   created: string;
@@ -49,114 +51,144 @@ interface Data {
 const rows = [
   {
     reference: "PO-0002",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-0003",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-0004",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-0005",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-0006",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-0007",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-0008",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-0009",
-    warehouse: "x",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-00010",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-00011",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-00012",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-00013",
-    warehouse: "x",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-00014",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-00015",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-00016",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
   },
   {
     reference: "PO-00017",
+    supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -219,10 +251,22 @@ const headCells: readonly HeadCell[] = [
     label: "Reference",
   },
   {
+    id: "supplier",
+    numeric: true,
+    disablePadding: false,
+    label: "Supplier",
+  },
+  {
     id: "destination",
     numeric: true,
     disablePadding: false,
     label: "Destination",
+  },
+  {
+    id: "type",
+    numeric: true,
+    disablePadding: false,
+    label: "Type",
   },
   {
     id: "status",
@@ -314,6 +358,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             <TableCell></TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
+            <TableCell></TableCell>
           </>}
 
       </TableRow>
@@ -361,6 +406,9 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               <button className={`btn ${table.filterBtn}`}>Draft</button>{" "}
             </li>
             <li>
+              <button className={`btn ${table.filterBtn}`}>Pending</button>{" "}
+            </li>
+            <li>
               <button className={`btn ${table.filterBtn}`}>Closed</button>{" "}
             </li>
           </ul>
@@ -369,7 +417,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               <button
                 className={`${table.filterBtn} btn`}
                 onClick={() => {
-                  handleShow("inventory count filter", true);
+                  handleShow("purchase order filter", true);
                   console.log("check");
                 }}
               >
@@ -389,7 +437,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
 function EnhancedTable() {
   const navigate = useNavigate();
   const [order, setOrder] = React.useState<Order>("asc");
-  const [orderBy, setOrderBy] = React.useState<keyof Data>("destination");
+  const [orderBy, setOrderBy] = React.useState<keyof Data>("supplier");
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -514,7 +562,9 @@ function EnhancedTable() {
                       >
                         {row.reference}
                       </TableCell>
-                     <TableCell onClick={() => { redirectToAnotherPage(row.destination) }} align="left">{row.destination}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.supplier) }} align="left">{row.supplier}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.destination) }} align="left">{row.destination}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.type) }} align="left">{row.type}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.status) }} align="left">{row.status}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.businessdate) }} align="left">{row.businessdate}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.created) }} align="left">{row.created}</TableCell>
@@ -549,7 +599,7 @@ function EnhancedTable() {
   );
 }
 
-export default function Inventorycount() {
+export default function Purchasing() {
   const [lgShow, setLgShow] = useState(false);
 
   // Modals
@@ -613,17 +663,17 @@ export default function Inventorycount() {
         <div className={`${st.pageTitle}`}>
           <div className={`${st.pageTitleRow}`}>
             <div className={`${st.rowTitleLeft}`}>
-              <h5>Inventory Count</h5>
+              <h5>Purchasing Transactions</h5>
             </div>
             <div className={`${st.rowTitleRight}`}>
               <Export />
 
               <button className={`btn ${st.themeBtn}`}
                 onClick={() => {
-                  handleShow("new inventory count", true);
+                  handleShow("new purchase", true);
                 }}
               >
-                New Inventory Count
+                New Purchase
               </button>
             </div>
           </div>
