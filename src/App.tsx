@@ -19,6 +19,8 @@ import Suppliersdetails from './pages/Suppliersdetails/Suppliersdetails';
 import Todayorders from './pages/Todayorders/Todayorders';
 import Transferorders from './pages/Transferorders/Transferorders';
 import Transferordersdetails from './pages/Transferordersdetails/Transferordersdetails';
+import Transfers from './pages/Transfers/Transfers';
+import Transfersdetails from './pages/Transfersdetails/Transfersdetails';
 
 const App = () => {
   return (
@@ -42,6 +44,8 @@ const App = () => {
         <Route path='inventory/inventory-count/:id' element={<Inventorycountdetails />} />
         <Route path='inventory/purchasing' element={<Purchasing />} />
         <Route path='inventory/purchasing/:id' element={<Purchasingdetails />} />
+        <Route path='inventory/transfers' element={<Transfers />} />
+        <Route path='inventory/transfers/:id' element={<Transfersdetails />} />
       </Route>
     </Routes>
   );

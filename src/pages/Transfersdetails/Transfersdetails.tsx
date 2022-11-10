@@ -1,19 +1,20 @@
 import React, { useCallback, useState } from "react";
 import st from "../../style.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cx from "./Transferordersdetails.module.scss";
+import cx from "./Transfersdetails.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Table, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import icon4 from "../../images/icon-printer.svg";
-import icon5 from "../../images/icon-duplicate.svg";
 import { NavLink } from "react-router-dom";
+import icon5 from "../../images/icon-close2.svg";
+import icon6 from "../../images/icon-edit2.svg";
 
-import { MdArrowBackIos } from 'react-icons/md';
-import Modals from "../../components/Modals/InventoryTransferorderM";
+import { MdArrowBackIos, MdDeleteOutline } from 'react-icons/md';
+import Modals from "../../components/Modals/InventoryTransfersM";
 
 
 
-export default function Transferordersdetails() {
+export default function Transfersdetails() {
 
   const [show, setShow] = useState(false);
   const [modalName, setModalName] = useState("");
@@ -31,21 +32,35 @@ export default function Transferordersdetails() {
     <>
       <section className={`${st.pageWrapper}`}>
         <div className={`${st.pageTitle}`}>
-          <NavLink to="/inventory/transfer-orders" className={`${st.backBtn}`}>
+          <NavLink to="/inventory/transfers" className={`${st.backBtn}`}>
             <MdArrowBackIos className={`${st.icon}`} /> Back
           </NavLink>
           <div className={`${st.pageTitleRow}`}>
             <div className={`${st.rowTitleLeft}`}>
-              <h5>Transfer Order (TO-000010)</h5>
+              <h5>Transfer Receiving (TRR-0..)</h5>
             </div>
             <div className={`${st.rowTitleRight}`}>
-              <button className={`btn`} >
+            <button className={`btn`} >
                 <img src={icon4} className={`${st.icon}`} />
                 Print
               </button>
-              <button className={`btn`} >
+            <button className={`btn`} onClick={() => {
+                handleShow("reject", true);
+              }}>
                 <img src={icon5} className={`${st.icon}`} />
-                Duplicate
+                Reject
+              </button>
+              
+            <button className={`btn`} onClick={() => {
+                handleShow("edit item transfer", true);
+              }}>
+                <img src={icon6} className={`${st.icon}`} />
+                Edit
+              </button>
+              <button className={`btn ${st.themeBtn}`} onClick={() => {
+                handleShow("edit suppliers", true);
+              }}>
+                Receive Items
               </button>
             </div>
           </div>
@@ -59,7 +74,7 @@ export default function Transferordersdetails() {
               <div className={`${cx.contentBox}`}>
                 <Row>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Warehouse</label>
+                    <label>Name</label>
                     <p>Riyadh Warehouse W01 (W01)</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
@@ -68,38 +83,55 @@ export default function Transferordersdetails() {
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
                     <label>Business Date</label>
-                    <p>2022-06-29</p>
+                    <p>-</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
                     <label>Creator</label>
                     <p>Abdulwahab Dakheel</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Submitter</label>
+                    <label>Receiver</label>
                     <p>Abdulwahab Dakheel</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Approver</label>
-                    <p>Abdulwahab Dakheel</p>
+                    <label>Received At</label>
+                    <p>September 22, 05:57am</p>
+                  </Col>
+                  <Col lg={6} className={`${cx.formField}`}>
+                    <label>Transfer Sending Reference</label>
+                    <p>TRS-000025</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
                     <label>Created At</label>
-                    <p>June 29, 01:14pm</p>
+                    <p>September 08, 09:12am</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Delivery Date</label>
-                    <p>2022-06-29</p>
+                    <label>Total Cost</label>
+                    <p>SAR 2,000</p>
                   </Col>
                 </Row>
               </div>
 
-
-
-
-
               <div className={`${cx.pageTitle}`}>
                 <div className={`${cx.rowTitleLeft}`}>
                   <h5>Items</h5>
+                </div>
+                <div className={`${cx.rowTitleRight}`}>
+                  <button className={`btn`} onClick={() => {
+                    handleShow("quantities", true);
+                  }}>
+                   Edit Quantities
+                  </button>
+                  <button className={`btn`} onClick={() => {
+                    handleShow("add items", true);
+                  }}>
+                    Add Items
+                  </button>
+                  <button className={`btn`} onClick={() => {
+                    handleShow("import files", true);
+                  }}>
+                    Import Items
+                  </button>
                 </div>
               </div>
               <div className={`${cx.contentBox}`}>
@@ -110,27 +142,30 @@ export default function Transferordersdetails() {
                         <th>Name</th>
                         <th>SKU</th>
                         <th>Quantity</th>
-                        <th>Available Quantity</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td className="text-danger">Juice</td>
-                        <td className="text-danger">SK-0056</td>
-                        <td className="text-danger">1,000 kg</td>
-                        <td className="text-danger">0 kg</td>
+                        <td>Juice</td>
+                        <td>SKU-087</td>
+                        <td>1,000,000 ML</td>
+                        <td>
+                          <span className={`${table.deleteIcon}`}><MdDeleteOutline /></span>
+                        </td>
                       </tr>
                       <tr>
-                        <td className="text-danger">Pizza</td>
-                        <td className="text-danger">SK-0056</td>
-                        <td className="text-danger">1,000 kg</td>
-                        <td className="text-danger">0 kg</td>
+                        <td>Juice</td>
+                        <td>SKU-087</td>
+                        <td>1,000,000 ML</td>
+                        <td>
+                          <span className={`${table.deleteIcon}`}><MdDeleteOutline /></span>
+                        </td>
                       </tr>
                     </tbody>
                   </Table>
                 </div>
               </div>
-
 
 
             </Card.Body>

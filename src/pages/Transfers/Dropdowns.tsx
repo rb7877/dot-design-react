@@ -18,8 +18,8 @@ export const Export = () => {
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <ul>
-          <li><NavLink to="#">Export Purchase Orders</NavLink></li>
-          <li><NavLink to="#">Export Purchase Orders Items</NavLink></li>
+          <li><NavLink to="#">Export Inventory Transfer</NavLink></li>
+          <li><NavLink to="#">Export InventoryTransfer Items</NavLink></li>
         </ul>
       </Dropdown.Menu>
     </Dropdown>

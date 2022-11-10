@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import st from "../../style.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cx from "./Purchaseorders.module.scss";
+import cx from "./Transfers.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -34,7 +34,7 @@ import icon5 from "../../images/icon-call.svg";
 import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
 import iconClose from "../../images/icon-close.svg";
-import Modals from "../../components/Modals/InventoryPurchaseM";
+import Modals from "../../components/Modals/InventoryTransfersM";
 
 import { ActionDropdown, Export } from "./Dropdowns";
 
@@ -42,6 +42,7 @@ interface Data {
   reference: string;
   supplier: string;
   destination: string;
+  type: string;
   status: string;
   businessdate: string;
   created: string;
@@ -52,6 +53,7 @@ const rows = [
     reference: "PO-0002",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -60,6 +62,7 @@ const rows = [
     reference: "PO-0003",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -68,6 +71,7 @@ const rows = [
     reference: "PO-0004",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -76,6 +80,7 @@ const rows = [
     reference: "PO-0005",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -84,6 +89,7 @@ const rows = [
     reference: "PO-0006",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -92,6 +98,7 @@ const rows = [
     reference: "PO-0007",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -100,6 +107,7 @@ const rows = [
     reference: "PO-0008",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -108,6 +116,7 @@ const rows = [
     reference: "PO-0009",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -116,6 +125,7 @@ const rows = [
     reference: "PO-00010",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -124,6 +134,7 @@ const rows = [
     reference: "PO-00011",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -132,6 +143,7 @@ const rows = [
     reference: "PO-00012",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -140,6 +152,7 @@ const rows = [
     reference: "PO-00013",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -148,6 +161,7 @@ const rows = [
     reference: "PO-00014",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -156,6 +170,7 @@ const rows = [
     reference: "PO-00015",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -164,6 +179,7 @@ const rows = [
     reference: "PO-00016",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -172,6 +188,7 @@ const rows = [
     reference: "PO-00017",
     supplier: "x",
     destination: "Riyadh",
+    type: "Purchasing",
     status: "Approved",
     businessdate: "2022-06-29",
     created: "June 29, 01:14pm",
@@ -244,6 +261,12 @@ const headCells: readonly HeadCell[] = [
     numeric: true,
     disablePadding: false,
     label: "Destination",
+  },
+  {
+    id: "type",
+    numeric: true,
+    disablePadding: false,
+    label: "Type",
   },
   {
     id: "status",
@@ -379,13 +402,10 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               </button>{" "}
             </li>
             <li>
-              <button className={`btn ${table.filterBtn}`}>Draft</button>{" "}
+              <button className={`btn ${table.filterBtn}`}>Sending</button>{" "}
             </li>
             <li>
-              <button className={`btn ${table.filterBtn}`}>Pending</button>{" "}
-            </li>
-            <li>
-              <button className={`btn ${table.filterBtn}`}>Closed</button>{" "}
+              <button className={`btn ${table.filterBtn}`}>Receiving</button>{" "}
             </li>
           </ul>
           <ul className={`${table.rightActionIcons}`}>
@@ -393,7 +413,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               <button
                 className={`${table.filterBtn} btn`}
                 onClick={() => {
-                  handleShow("purchase order filter", true);
+                  handleShow("transfer filter", true);
                   console.log("check");
                 }}
               >
@@ -540,6 +560,7 @@ function EnhancedTable() {
                       </TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.supplier) }} align="left">{row.supplier}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.destination) }} align="left">{row.destination}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.type) }} align="left">{row.type}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.status) }} align="left">{row.status}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.businessdate) }} align="left">{row.businessdate}</TableCell>
                       <TableCell onClick={() => { redirectToAnotherPage(row.created) }} align="left">{row.created}</TableCell>
@@ -574,7 +595,7 @@ function EnhancedTable() {
   );
 }
 
-export default function Purchaseorders() {
+export default function Transfers() {
   const [lgShow, setLgShow] = useState(false);
 
   // Modals
@@ -638,17 +659,17 @@ export default function Purchaseorders() {
         <div className={`${st.pageTitle}`}>
           <div className={`${st.pageTitleRow}`}>
             <div className={`${st.rowTitleLeft}`}>
-              <h5>Purchase Orders</h5>
+              <h5>Inventory Transfer</h5>
             </div>
             <div className={`${st.rowTitleRight}`}>
               <Export />
 
               <button className={`btn ${st.themeBtn}`}
                 onClick={() => {
-                  handleShow("new purchase orders", true);
+                  handleShow("new transfer", true);
                 }}
               >
-                New Purchase Orders
+                New Transfer
               </button>
             </div>
           </div>
