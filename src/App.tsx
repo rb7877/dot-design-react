@@ -10,6 +10,8 @@ import Login from './pages/Login/Login';
 import Navigation from './pages/Navigation/Navigation';
 import Orders from './pages/Orders/Orders';
 import Ordersdetails from './pages/Ordersdetails/Ordersdetails';
+import Production from './pages/Production/Production';
+import Productiondetails from './pages/Productiondetails/Productiondetails';
 import Purchaseorders from './pages/Purchaseorders/Purchaseorders';
 import Purchaseordersdetails from './pages/Purchaseordersdetails/Purchaseordersdetails';
 import Purchasing from './pages/Purchasing/Purchasing';
@@ -46,6 +48,8 @@ const App = () => {
         <Route path='inventory/purchasing/:id' element={<Purchasingdetails />} />
         <Route path='inventory/transfers' element={<Transfers />} />
         <Route path='inventory/transfers/:id' element={<Transfersdetails />} />
+        <Route path='inventory/production' element={<Production />} />
+        <Route path='inventory/production/:id' element={<Productiondetails />} />
       </Route>
     </Routes>
   );

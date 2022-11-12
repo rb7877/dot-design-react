@@ -169,6 +169,11 @@ const Sidebar = (props: any) => {
                       <div className={`${cx.menuName}`}>Transfers</div>
                     </NavLink>
                   </li>
+                  <li>
+                    <NavLink to="/inventory/production">
+                      <div className={`${cx.menuName}`}>Production</div>
+                    </NavLink>
+                  </li>
                 </ul>
               </li>
 
