@@ -1,18 +1,20 @@
 import React, { useCallback, useState } from "react";
 import st from "../../style.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cx from "./Suppliersdetails.module.scss";
+import cx from "./Costadjustmentdetails.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Table, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import icon4 from "../../images/icon-printer.svg";
 import { NavLink } from "react-router-dom";
 
-import { MdArrowBackIos, MdDeleteOutline } from 'react-icons/md';
-import Modals from "../../components/Modals/InventorySuppliersM";
+import { MdArrowBackIos, MdDeleteOutline, MdOutlineDelete } from 'react-icons/md';
+import Modals from "../../components/Modals/InventoryCostadjustmentM";
+import { AiOutlinePrinter } from "react-icons/ai";
+import { FiEdit } from "react-icons/fi";
 
 
 
-export default function Suppliersdetails() {
+export default function Costadjustmentdetails() {
 
   const [show, setShow] = useState(false);
   const [modalName, setModalName] = useState("");
@@ -30,18 +32,38 @@ export default function Suppliersdetails() {
     <>
       <section className={`${st.pageWrapper}`}>
         <div className={`${st.pageTitle}`}>
-          <NavLink to="/inventory/more" className={`${st.backBtn}`}>
+          <NavLink to="/inventory/quantity-adjustment" className={`${st.backBtn}`}>
             <MdArrowBackIos className={`${st.icon}`} /> Back
           </NavLink>
           <div className={`${st.pageTitleRow}`}>
             <div className={`${st.rowTitleLeft}`}>
-              <h5>Tomato</h5>
+              <h5>Cost Adjustment</h5>
             </div>
-            <div className={`${st.rowTitleRight}`}>
-              <button className={`btn ${st.themeBtn}`} onClick={() => {
-                handleShow("edit suppliers", true);
+            <div className={`${st.rowTitleRight} ${cx.rowTitleIcons}`}>
+
+              <button className={`btn`} onClick={() => {
+                handleShow("item branches", true);
               }}>
-                Edit Suppliers
+                <AiOutlinePrinter/>
+                Print
+              </button>
+              <button className={`btn`} onClick={() => {
+                handleShow("new quantity delete", true);
+              }}>
+                <MdOutlineDelete/>
+                Delete
+              </button>
+              <button className={`btn`} onClick={() => {
+                handleShow("edit transaction", true);
+              }}>
+                <FiEdit/>
+                Edit
+              </button>
+
+              <button className={`btn ${st.themeBtn}`} onClick={() => {
+                handleShow("new quantity confirm", true);
+              }}>
+                Submit Adjustment
               </button>
             </div>
           </div>
@@ -55,28 +77,20 @@ export default function Suppliersdetails() {
               <div className={`${cx.contentBox}`}>
                 <Row>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Name</label>
-                    <p>Hamzah</p>
+                    <label>Branch</label>
+                    <p>Mall 1</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Contact Name</label>
-                    <p>Hamzah</p>
-                  </Col>
-                  <Col lg={6} className={`${cx.formField}`}>
-                    <label>Phone</label>
-                    <p>+9664529023</p>
-                  </Col>
-                  <Col lg={6} className={`${cx.formField}`}>
-                    <label>Primary Email</label>
+                    <label>Business Date</label>
                     <p>-</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Supplier Code</label>
-                    <p>-</p>
+                    <label>Creator</label>
+                    <p>Abdulwahab Dakheel</p>
                   </Col>
                   <Col lg={6} className={`${cx.formField}`}>
-                    <label>Additional Email</label>
-                    <p>-</p>
+                    <label>Created At</label>
+                    <p>September 08, 09:12am</p>
                   </Col>
                 </Row>
               </div>
@@ -84,38 +98,25 @@ export default function Suppliersdetails() {
 
               <div className={`${cx.pageTitle}`}>
                 <div className={`${cx.rowTitleLeft}`}>
-                  <h5>Tags</h5>
+                  <h5>Items</h5>
                 </div>
                 <div className={`${cx.rowTitleRight}`}>
 
 
                   <button className={`btn`} onClick={() => {
-                    handleShow("add tags", true);
+                    handleShow("item quantities", true);
                   }}>
-                    + Add Tags
+                    Edit Quantities
                   </button>
-                </div>
-              </div>
-              <div className={`${cx.contentBox}`}>
-                <ul className={`${cx.tagsList}`}>
-                  <li><span>Tag 1</span></li>
-                  <li><span>Tag 2</span></li>
-                </ul>
-              </div>
-
-
-
-              <div className={`${cx.pageTitle}`}>
-                <div className={`${cx.rowTitleLeft}`}>
-                  <h5>Inventory Items</h5>
-                </div>
-                <div className={`${cx.rowTitleRight}`}>
-
-
                   <button className={`btn`} onClick={() => {
-                    handleShow("inventory items", true);
+                    handleShow("quantity add items", true);
                   }}>
-                    + Link Items
+                    Add Items
+                  </button>
+                  <button className={`btn`} onClick={() => {
+                    handleShow("quantity import files", true);
+                  }}>
+                    Import Items
                   </button>
                 </div>
               </div>
@@ -126,21 +127,26 @@ export default function Suppliersdetails() {
                       <tr>
                         <th>Name</th>
                         <th>SKU</th>
-                        <th>Item Supplier Code</th>
-                        <th>Order Unit</th>
-                        <th>Order Quantity</th>
-                        <th>Purchase Cost</th>
-                        <th></th>
+                        <th>Storage Unit</th>
+                        <th>New Cost Per Unit</th> 
+                        <th></th> 
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Ice Cream</td>
-                        <td>SKU-087</td>
-                        <td>SUP-057</td>
-                        <td>50</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td>Juice</td>
+                        <td>SK-0058</td>
+                        <td>1,000,000 ML</td>
+                        <td>SAR 1</td>
+                        <td>
+                          <span className={`${table.deleteIcon}`}><MdDeleteOutline /></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Juice</td>
+                        <td>SK-0058</td>
+                        <td>1,000,000 ML</td>
+                        <td>SAR 1</td>
                         <td>
                           <span className={`${table.deleteIcon}`}><MdDeleteOutline /></span>
                         </td>
@@ -149,6 +155,7 @@ export default function Suppliersdetails() {
                   </Table>
                 </div>
               </div>
+
 
 
             </Card.Body>

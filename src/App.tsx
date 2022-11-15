@@ -1,21 +1,27 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Costadjustment from './pages/Costadjustment/Costadjustment';
+import Costadjustmentdetails from './pages/Costadjustmentdetails/Costadjustmentdetails';
 import Customer from './pages/Customer/Customer';
 import Customerdetails from './pages/Customerdetails/Customerdetails';
 import Inventorycount from './pages/Inventorycount/Inventorycount';
 import Inventorycountdetails from './pages/Inventorycountdetails/Inventorycountdetails';
+import Inventorymore from './pages/Inventorymore/Inventorymore';
 import Items from './pages/Items/Items';
 import Itemsdetails from './pages/Itemsdetails/Itemsdetails';
 import Login from './pages/Login/Login';
 import Navigation from './pages/Navigation/Navigation';
 import Orders from './pages/Orders/Orders';
 import Ordersdetails from './pages/Ordersdetails/Ordersdetails';
+import Ordertransaction from './pages/Ordertransaction/Ordertransaction';
 import Production from './pages/Production/Production';
 import Productiondetails from './pages/Productiondetails/Productiondetails';
 import Purchaseorders from './pages/Purchaseorders/Purchaseorders';
 import Purchaseordersdetails from './pages/Purchaseordersdetails/Purchaseordersdetails';
 import Purchasing from './pages/Purchasing/Purchasing';
 import Purchasingdetails from './pages/Purchasingdetails/Purchasingdetails';
+import Quantityadjustment from './pages/Quantityadjustment/Quantityadjustment';
+import Quantityadjustmentdetails from './pages/Quantityadjustmentdetails/Quantityadjustmentdetails';
 import Suppliers from './pages/Suppliers/Suppliers';
 import Suppliersdetails from './pages/Suppliersdetails/Suppliersdetails';
 import Todayorders from './pages/Todayorders/Todayorders';
@@ -50,6 +56,12 @@ const App = () => {
         <Route path='inventory/transfers/:id' element={<Transfersdetails />} />
         <Route path='inventory/production' element={<Production />} />
         <Route path='inventory/production/:id' element={<Productiondetails />} />
+        <Route path='inventory/more' element={<Inventorymore />} />
+        <Route path='inventory/quantity-adjustment' element={<Quantityadjustment />} />
+        <Route path='inventory/quantity-adjustment/:id' element={<Quantityadjustmentdetails />} />
+        <Route path='inventory/cost-adjustment' element={<Costadjustment />} />
+        <Route path='inventory/cost-adjustment/:id' element={<Costadjustmentdetails />} />
+        <Route path='inventory/order-transaction' element={<Ordertransaction />} />
       </Route>
     </Routes>
   );
