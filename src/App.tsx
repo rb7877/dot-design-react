@@ -4,6 +4,7 @@ import Costadjustment from './pages/Costadjustment/Costadjustment';
 import Costadjustmentdetails from './pages/Costadjustmentdetails/Costadjustmentdetails';
 import Customer from './pages/Customer/Customer';
 import Customerdetails from './pages/Customerdetails/Customerdetails';
+import Inventorycategories from './pages/Inventorycategories/Inventorycategories';
 import Inventorycount from './pages/Inventorycount/Inventorycount';
 import Inventorycountdetails from './pages/Inventorycountdetails/Inventorycountdetails';
 import Inventorymore from './pages/Inventorymore/Inventorymore';
@@ -14,6 +15,7 @@ import Navigation from './pages/Navigation/Navigation';
 import Orders from './pages/Orders/Orders';
 import Ordersdetails from './pages/Ordersdetails/Ordersdetails';
 import Ordertransaction from './pages/Ordertransaction/Ordertransaction';
+import Ordertransactiondetails from './pages/Ordertransactiondetails/Ordertransactiondetails';
 import Production from './pages/Production/Production';
 import Productiondetails from './pages/Productiondetails/Productiondetails';
 import Purchaseorders from './pages/Purchaseorders/Purchaseorders';
@@ -29,6 +31,8 @@ import Transferorders from './pages/Transferorders/Transferorders';
 import Transferordersdetails from './pages/Transferordersdetails/Transferordersdetails';
 import Transfers from './pages/Transfers/Transfers';
 import Transfersdetails from './pages/Transfersdetails/Transfersdetails';
+import Warehouses from './pages/Warehouses/Warehouses';
+import Warehousesdetails from './pages/Warehousesdetails/Warehousesdetails';
 
 const App = () => {
   return (
@@ -62,6 +66,10 @@ const App = () => {
         <Route path='inventory/cost-adjustment' element={<Costadjustment />} />
         <Route path='inventory/cost-adjustment/:id' element={<Costadjustmentdetails />} />
         <Route path='inventory/order-transaction' element={<Ordertransaction />} />
+        <Route path='inventory/order-transaction/:id' element={<Ordertransactiondetails />} />
+        <Route path='inventory/inventory-categories' element={<Inventorycategories />} />
+        <Route path='inventory/inventory-warehouses' element={<Warehouses />} />
+        <Route path='inventory/inventory-warehouses/:id' element={<Warehousesdetails />} />
       </Route>
     </Routes>
   );

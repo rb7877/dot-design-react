@@ -58,12 +58,12 @@ export default function Inventorymore() {
                     </NavLink>
                   </Col>
                   <Col lg={3}>
-                    <NavLink to="#" className={`${cx.moreOption}`}>
+                    <NavLink to="/inventory/inventory-categories" className={`${cx.moreOption}`}>
                     Inventory Categories
                     </NavLink>
                   </Col>
                   <Col lg={3}>
-                    <NavLink to="#" className={`${cx.moreOption}`}>
+                    <NavLink to="/inventory/inventory-warehouses" className={`${cx.moreOption}`}>
                     Warehouses
                     </NavLink>
                   </Col>
