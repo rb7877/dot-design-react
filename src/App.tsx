@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Costadjustment from './pages/Costadjustment/Costadjustment';
 import Costadjustmentdetails from './pages/Costadjustmentdetails/Costadjustmentdetails';
+import Countsheet from './pages/Countsheet/Countsheet';
+import Countsheetdetails from './pages/Countsheetdetails/Countsheetdetails';
 import Customer from './pages/Customer/Customer';
 import Customerdetails from './pages/Customerdetails/Customerdetails';
 import Inventorycategories from './pages/Inventorycategories/Inventorycategories';
@@ -24,6 +26,8 @@ import Purchasing from './pages/Purchasing/Purchasing';
 import Purchasingdetails from './pages/Purchasingdetails/Purchasingdetails';
 import Quantityadjustment from './pages/Quantityadjustment/Quantityadjustment';
 import Quantityadjustmentdetails from './pages/Quantityadjustmentdetails/Quantityadjustmentdetails';
+import Spotcheck from './pages/Spotcheck/Spotcheck';
+import Spotcheckdetails from './pages/Spotcheckdetails/Spotcheckdetails';
 import Suppliers from './pages/Suppliers/Suppliers';
 import Suppliersdetails from './pages/Suppliersdetails/Suppliersdetails';
 import Todayorders from './pages/Todayorders/Todayorders';
@@ -70,6 +74,10 @@ const App = () => {
         <Route path='inventory/inventory-categories' element={<Inventorycategories />} />
         <Route path='inventory/inventory-warehouses' element={<Warehouses />} />
         <Route path='inventory/inventory-warehouses/:id' element={<Warehousesdetails />} />
+        <Route path='inventory/inventory-spotcheck' element={<Spotcheck />} />
+        <Route path='inventory/inventory-spotcheck/:id' element={<Spotcheckdetails />} />
+        <Route path='inventory/inventory-countsheet' element={<Countsheet />} />
+        <Route path='inventory/inventory-countsheet/:id' element={<Countsheetdetails />} />
       </Route>
     </Routes>
   );

@@ -68,12 +68,12 @@ export default function Inventorymore() {
                     </NavLink>
                   </Col>
                   <Col lg={3}>
-                    <NavLink to="#" className={`${cx.moreOption}`}>
+                    <NavLink to="/inventory/inventory-spotcheck" className={`${cx.moreOption}`}>
                     Inventory Spot Check
                     </NavLink>
                   </Col>
                   <Col lg={3}>
-                    <NavLink to="#" className={`${cx.moreOption}`}>
+                    <NavLink to="/inventory/inventory-countsheet" className={`${cx.moreOption}`}>
                     Count Sheet
                     </NavLink>
                   </Col>
