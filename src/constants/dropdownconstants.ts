@@ -17,6 +17,23 @@ export const tagoptions = [
     },
   ];
 
+  export const filtertagoptions = [
+    {
+      value: "1",
+      label: "فرع الاحساء (B01)",
+    },
+  ];
+  export const filterordertags = [
+    {
+      value: "1",
+      label: "Oven",
+    },
+    {
+      value: "1",
+      label: "Pasta",
+    },
+  ];
+
   
   export const customertagoptions = [
     {

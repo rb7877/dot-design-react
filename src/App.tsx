@@ -26,6 +26,10 @@ import Purchasing from './pages/Purchasing/Purchasing';
 import Purchasingdetails from './pages/Purchasingdetails/Purchasingdetails';
 import Quantityadjustment from './pages/Quantityadjustment/Quantityadjustment';
 import Quantityadjustmentdetails from './pages/Quantityadjustmentdetails/Quantityadjustmentdetails';
+import Reportsanalysis from './pages/Reportsanalysis/Reportsanalysis';
+import Reportscostanalysis from './pages/Reportscostanalysis/Reportscostanalysis';
+import Reportsmenuengineering from './pages/Reportsmenuengineering/Reportsmenuengineering';
+import Reportssales from './pages/Reportssales/Reportssales';
 import Spotcheck from './pages/Spotcheck/Spotcheck';
 import Spotcheckdetails from './pages/Spotcheckdetails/Spotcheckdetails';
 import Suppliers from './pages/Suppliers/Suppliers';
@@ -78,6 +82,11 @@ const App = () => {
         <Route path='inventory/inventory-spotcheck/:id' element={<Spotcheckdetails />} />
         <Route path='inventory/inventory-countsheet' element={<Countsheet />} />
         <Route path='inventory/inventory-countsheet/:id' element={<Countsheetdetails />} />
+        
+        <Route path='reports/sales' element={<Reportssales />} />
+        <Route path='reports/analysis' element={<Reportsanalysis />} />
+        <Route path='reports/menu-engineering' element={<Reportsmenuengineering />} />
+        <Route path='reports/costanalysis' element={<Reportscostanalysis />} />
       </Route>
     </Routes>
   );
