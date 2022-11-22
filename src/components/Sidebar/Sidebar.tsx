@@ -221,8 +221,38 @@ const Sidebar = (props: any) => {
                 </Button>
                 <ul className={`${cx.first}`}>
                   <li>
+                    <NavLink to="/menu/categories">
+                      <div className={`${cx.menuName}`}>Categories</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/menu/products">
+                      <div className={`${cx.menuName}`}>Products</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/menu/combos">
+                      <div className={`${cx.menuName}`}>Combos</div>
+                    </NavLink>
+                  </li>
+                  <li>
                     <NavLink to="/menu/menu1">
-                      <div className={`${cx.menuName}`}>Menu 1</div>
+                      <div className={`${cx.menuName}`}>Gift Cards</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/menu/menu1">
+                      <div className={`${cx.menuName}`}>Modifiers</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/menu/menu1">
+                      <div className={`${cx.menuName}`}>Modifier Options</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/menu/menu1">
+                      <div className={`${cx.menuName}`}>Groups</div>
                     </NavLink>
                   </li>
                 </ul>

@@ -13,6 +13,11 @@ import Inventorymore from './pages/Inventorymore/Inventorymore';
 import Items from './pages/Items/Items';
 import Itemsdetails from './pages/Itemsdetails/Itemsdetails';
 import Login from './pages/Login/Login';
+import Menucategories from './pages/Menucategories/Menucategories';
+import Menucombos from './pages/Menucombos/Menucombos';
+import Menuproducts from './pages/Menuproducts/Menuproducts';
+import Menuproductsdetails from './pages/Menuproductsdetails/Menuproductsdetails';
+import Menusortcategories from './pages/Menusortcategories/Menusortcategories';
 import Navigation from './pages/Navigation/Navigation';
 import Orders from './pages/Orders/Orders';
 import Ordersdetails from './pages/Ordersdetails/Ordersdetails';
@@ -87,6 +92,13 @@ const App = () => {
         <Route path='reports/analysis' element={<Reportsanalysis />} />
         <Route path='reports/menu-engineering' element={<Reportsmenuengineering />} />
         <Route path='reports/costanalysis' element={<Reportscostanalysis />} />
+
+        <Route path='menu/categories' element={<Menucategories />} />
+        <Route path='menu/categories/sort-categories' element={<Menusortcategories />} />
+        <Route path='menu/products' element={<Menuproducts />} />
+        <Route path='menu/products/:id' element={<Menuproductsdetails />} />
+        <Route path='menu/combos' element={<Menucombos />} />
+        
       </Route>
     </Routes>
   );

@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import st from "../../style.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cx from "./Reportssales.module.scss";
+import cx from "./Menuproducts.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -24,68 +24,95 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
+import prImg from "../../images/edit-images.png";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { visuallyHidden } from "@mui/utils";
 import { BsPlusLg } from "react-icons/bs";
 import icon1 from "../../images/icon-branch.svg";
-import icon2 from "../../images/icon-calendar.svg";
-import icon3 from "../../images/icon-call.svg";
-import icon4 from "../../images/icon-export.svg";
 import icon5 from "../../images/icon-call.svg";
 import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
-import Modals from "../../components/Modals/ReportsSalesM";
+import iconClose from "../../images/icon-close.svg";
+import Modals from "../../components/Modals/MenuProductsM";
 
-import { Branches, BusinessDate, Export, ActionDropdown } from "./ReportssalesDropdowns";
+import icon4 from "../../images/icon-export.svg";
+import { ActionDropdown, Export } from "./Dropdowns";
 
 interface Data {
-  branch: string;
-  branchreference: string;
-  grosssales: string;
-  grossales2: string;
-  netsaleswithtax: string;
-  taxes: string;
-  discountamount: string;
+  name: string;
+  sku: string;
+  category: string;
+  price: string;
+  taxgroup: string;
+  active: string;
+  primage: string;
 }
 
 const rows = [
   {
-    branch: "Totals 1",
-    branchreference: "B01",
-    grosssales: "SAR 51,846.00",
-    grossales2: "100 %",
-    netsaleswithtax: "SAR 51,846.00",
-    taxes: "SAR 6,762.52",
-    discountamount: "SAR 0",
+    name: "ايسكريم ليمون - Lemon Ice Cream 1",
+    sku: "sk-0576",
+    category: "مشروبات",
+    price: "SAR 7",
+    taxgroup: "All taxes group",
+    active: "-",
+    primage:"-",
   },
   {
-    branch: "Totals 2",
-    branchreference: "B01",
-    grosssales: "SAR 51,846.00",
-    grossales2: "100 %",
-    netsaleswithtax: "SAR 51,846.00",
-    taxes: "SAR 6,762.52",
-    discountamount: "SAR 0",
+    name: "ايسكريم ليمون - Lemon Ice Cream 2",
+    sku: "sk-0576",
+    category: "مشروبات",
+    price: "SAR 7",
+    taxgroup: "All taxes group",
+    active: "-",
+    primage:"-",
   },
   {
-    branch: "Totals 3",
-    branchreference: "B01",
-    grosssales: "SAR 51,846.00",
-    grossales2: "100 %",
-    netsaleswithtax: "SAR 51,846.00",
-    taxes: "SAR 6,762.52",
-    discountamount: "SAR 0",
+    name: "ايسكريم ليمون - Lemon Ice Cream 3",
+    sku: "sk-0576",
+    category: "مشروبات",
+    price: "SAR 7",
+    taxgroup: "All taxes group",
+    active: "-",
+    primage:"-",
   },
   {
-    branch: "Totals 4",
-    branchreference: "B01",
-    grosssales: "SAR 51,846.00",
-    grossales2: "100 %",
-    netsaleswithtax: "SAR 51,846.00",
-    taxes: "SAR 6,762.52",
-    discountamount: "SAR 0",
+    name: "ايسكريم ليمون - Lemon Ice Cream 4",
+    sku: "sk-0576",
+    category: "مشروبات",
+    price: "SAR 7",
+    taxgroup: "All taxes group",
+    active: "-",
+    primage:"-",
+  },
+  {
+    name: "ايسكريم ليمون - Lemon Ice Cream 5",
+    sku: "sk-0576",
+    category: "مشروبات",
+    price: "SAR 7",
+    taxgroup: "All taxes group",
+    active: "-",
+    primage:"-",
+  },
+  {
+    name: "ايسكريم ليمون - Lemon Ice Cream 6",
+    sku: "sk-0576",
+    category: "مشروبات",
+    price: "SAR 7",
+    taxgroup: "All taxes group",
+    active: "-",
+    primage:"-",
+  },
+  {
+    name: "ايسكريم ليمون - Lemon Ice Cream 7",
+    sku: "sk-0576",
+    category: "مشروبات",
+    price: "SAR 7",
+    taxgroup: "All taxes group",
+    active: "-",
+    primage:"-",
   },
 ];
 
@@ -139,48 +166,50 @@ interface HeadCell {
 
 const headCells: readonly HeadCell[] = [
   {
-    id: "branch",
+    id: "primage",
+    numeric: true,
+    disablePadding: false,
+    label: "",
+  },
+  {
+    id: "name",
     numeric: false,
     disablePadding: true,
-    label: "Branch",
+    label: "Name",
   },
   {
-    id: "branchreference",
+    id: "sku",
     numeric: true,
     disablePadding: false,
-    label: "Branch Reference",
+    label: "SKU",
   },
   {
-    id: "grosssales",
+    id: "category",
     numeric: true,
     disablePadding: false,
-    label: "Gross Sales",
+    label: "Category",
   },
   {
-    id: "grossales2",
+    id: "price",
     numeric: true,
     disablePadding: false,
-    label: "(Gross Sales %)",
+    label: "Price",
   },
   {
-    id: "netsaleswithtax",
+    id: "taxgroup",
     numeric: true,
     disablePadding: false,
-    label: "Net Sales With Tax",
+    label: "Tax Group",
   },
   {
-    id: "taxes",
+    id: "active",
     numeric: true,
     disablePadding: false,
-    label: "Net Sales With Tax",
-  },
-  {
-    id: "discountamount",
-    numeric: true,
-    disablePadding: false,
-    label: "Discount Amount",
+    label: "Active",
   },
 ];
+
+
 
 interface EnhancedTableProps {
   numSelected: number;
@@ -208,32 +237,62 @@ function EnhancedTableHead(props: EnhancedTableProps) {
       onRequestSort(event, property);
     };
 
+  console.log(numSelected, "numSelected")
+
   return (
     <TableHead>
       <TableRow>
+        <TableCell padding="checkbox">
+          <Checkbox
+            indeterminate={numSelected > 0 && numSelected < rowCount}
+            checked={rowCount > 0 && numSelected === rowCount}
+            onChange={onSelectAllClick}
+            inputProps={{
+              "aria-label": "select all desserts",
+            }}
+          />
+        </TableCell>
 
-        {numSelected === 0 ? <>  {headCells.map((headCell) => (
-          <TableCell
-            key={headCell.id}
-            align={headCell.numeric ? "left" : "left"}
-            sortDirection={orderBy === headCell.id ? order : false}
-          >
-            <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : "asc"}
-              onClick={createSortHandler(headCell.id)}
+        {numSelected === 0 ? <>{
+          headCells.map((headCell: any) => (
+            <TableCell
+              key={headCell.id}
+              align={headCell.numeric ? "left" : "left"}
+              padding={headCell.disablePadding ? "none" : "normal"}
+              sortDirection={orderBy === headCell.id ? order : false}
             >
-              {headCell.label}
-              {orderBy === headCell.id ? (
-                <Box component="span" sx={visuallyHidden}>
-                  {order === "desc" ? "sorted descending" : "sorted ascending"}
-                </Box>
-              ) : null}
-            </TableSortLabel>
-          </TableCell>
-        ))}</>
+              <TableSortLabel
+                active={orderBy === headCell.id}
+                direction={orderBy === headCell.id ? order : "asc"}
+                onClick={createSortHandler(headCell.id)}
+              >
+                {headCell.label}
+                {orderBy === headCell.id ? (
+                  <Box component="span" sx={visuallyHidden}>
+                    {order === "desc" ? "sorted descending" : "sorted ascending"}
+                  </Box>
+                ) : null}
+              </TableSortLabel>
+            </TableCell>
+          ))
+        }</>
           : <>
+            <TableCell className="p-0" style={{ width: '220px' }}>
+              <div className={`${table.actionCheckbox}`}>
+                <div className={`${table.selectedCount}`}>
+                  {numSelected} Selected
+                </div>
+                <div className={`${table.actionDropdown}`}>
+                  <ActionDropdown />
+                </div>
+              </div>
+            </TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
           </>}
+
       </TableRow>
     </TableHead>
   );
@@ -268,102 +327,36 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
           pr: { xs: 1, sm: 1 },
         }}
       >
-        <div className={`${table.mainTitleRow} ${cx.topTable}`}>
+        <div className={`${table.mainTitleRow}`}>
+          <ul className={`${table.filterList}`}>
+            <li>
+              <button className={`btn ${table.filterBtn} ${table.active}`}>
+                All
+              </button>{" "}
+            </li>
+            <li>
+              <button className={`btn ${table.filterBtn}`}>Active</button>{" "}
+            </li>
+            <li>
+              <button className={`btn ${table.filterBtn}`}>Inactive</button>{" "}
+            </li>
+            <li>
+              <button className={`btn ${table.filterBtn}`}>Deleted</button>{" "}
+            </li>
+          </ul>
           <ul className={`${table.rightActionIcons}`}>
             <li>
               <button
                 className={`${table.filterBtn} btn`}
                 onClick={() => {
-                  handleShow("order filter", true);
+                  handleShow("product filter", true);
                   console.log("check");
                 }}
               >
                 <img src={iconFilter} className={`${st.icon}`} />
                 Filters
+                <img src={iconClose} className={`${table.iconClose}`} />
               </button>
-            </li>
-            <li>
-              <Dropdown className={`${table.plusDropdown}`}>
-                <Dropdown.Toggle id="dropdown-basic">
-                  <BsPlusLg />
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <ul className={`${table.dropDownUl} ${cx.dropScroll}`}>
-                  <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" checked />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Unselect All
-                      </label>
-                    </li>
-                    <li>
-                      <label
-                        className={`${table.checkbox} ${table.disabled}`}
-                      >
-                        <input type="checkbox" disabled checked />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Branch
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" checked />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Branch Reference
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Gross Sales
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        (Gross Sales %)
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Net Sales With Tax
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Taxes
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Discount Amount
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Gross Sales Without Tax
-                      </label>
-                    </li>
-                    <li>
-                      <label className={`${table.checkbox}`}>
-                        <input type="checkbox" />
-                        <span className={`${table.checkmark}`}></span>{" "}
-                        Net Sales
-                      </label>
-                    </li>
-                  </ul>
-                </Dropdown.Menu>
-              </Dropdown>
             </li>
           </ul>
         </div>
@@ -376,7 +369,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
 function EnhancedTable() {
   const navigate = useNavigate();
   const [order, setOrder] = React.useState<Order>("asc");
-  const [orderBy, setOrderBy] = React.useState<keyof Data>("branch");
+  const [orderBy, setOrderBy] = React.useState<keyof Data>("name");
   const [selected, setSelected] = React.useState<readonly string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -393,7 +386,7 @@ function EnhancedTable() {
 
   const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.branch);
+      const newSelected = rows.map((n) => n.name);
       setSelected(newSelected);
       return;
     }
@@ -480,32 +473,54 @@ function EnhancedTable() {
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.branch);
+                  const isItemSelected = isSelected(row.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.branch)}
+                      onClick={(event) => handleClick(event, row.name)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.branch}
+                      key={row.name}
                       selected={isItemSelected}
                     >
+                      <TableCell
+                        padding="checkbox"
+
+                      >
+                        <Checkbox
+                          color="primary"
+                          checked={isItemSelected}
+                          inputProps={{
+                            "aria-labelledby": labelId,
+                          }}
+                        />
+                      </TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.sku) }} align="left">
+                        <>
+                        <img className={`${st.prImage}`} src={prImg} />
+                        </>
+                      </TableCell>
                       <TableCell
                         component="th"
                         id={labelId}
                         scope="row"
+                        padding="none"
+                        onClick={() => { redirectToAnotherPage(row.name) }}
                       >
-                        {row.branch}
+                        {row.name}
                       </TableCell>
-                      <TableCell align="left">{row.branchreference}</TableCell>
-                      <TableCell align="left">{row.grosssales}</TableCell>
-                      <TableCell align="left">{row.grossales2}</TableCell>
-                      <TableCell align="left">{row.netsaleswithtax}</TableCell>
-                      <TableCell align="left">{row.taxes}</TableCell>
-                      <TableCell align="left">{row.discountamount}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.sku) }} align="left">{row.sku}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.category) }} align="left">{row.category}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.price) }} align="left">{row.price}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.taxgroup) }} align="left">{row.taxgroup}</TableCell>
+                      <TableCell onClick={() => { redirectToAnotherPage(row.active) }} align="left">
+                        <>
+                           <span className={`${st.statusBtn}`} style={{ backgroundColor:'#EB5757' }}></span>  
+                        </>    
+                      </TableCell>
                     </TableRow>
                   );
                 })}
@@ -537,7 +552,7 @@ function EnhancedTable() {
   );
 }
 
-export default function Reportssales() {
+export default function Menuproducts() {
   const [lgShow, setLgShow] = useState(false);
 
   // Modals
@@ -601,38 +616,33 @@ export default function Reportssales() {
         <div className={`${st.pageTitle}`}>
           <div className={`${st.pageTitleRow}`}>
             <div className={`${st.rowTitleLeft}`}>
-              {/* <h5>Sales by Branch</h5> */}
-              <div className={`${cx.salesBranch}`}>
-                <Dropdown>
-                  <Dropdown.Toggle>
-                      Sales by Branch
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu className={`${cx.salesDropdown}`}>
-                    <Dropdown.Item href="#/action-1">Application</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Branch</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Cashier</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">Category</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Combo</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Coupon</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Charge</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">Creator</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Customer</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Delivery Zone</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Driver</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
+              <h5>Products</h5>
             </div>
             <div className={`${st.rowTitleRight}`}>
-              <Export />
+            <Dropdown>
+              <Dropdown.Toggle id="dropdown-basic">
+                <img src={icon4} className={`${st.icon}`} />
+                Import / Export
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <ul>
+                  <li><NavLink to="#" onClick={() => {handleShow("import", true);}}>Import products</NavLink></li>
+                  <li><NavLink to="#" onClick={() => {handleShow("import product", true);}}>Import product ingredients</NavLink></li>
+                  <li><NavLink to="#" onClick={() => {handleShow("product modifiers", true);}}>Import product modifiers</NavLink></li>
+                  <li><NavLink to="#">Export products</NavLink></li>
+                  <li><NavLink to="#">Export products ingredients</NavLink></li>
+                  <li><NavLink to="#">Export products modifiers</NavLink></li>
+                </ul>
+              </Dropdown.Menu>
+            </Dropdown>
 
-              <Branches />
-
-              <BusinessDate />
-              
-
-              
+              <button className={`btn ${st.themeBtn}`}
+                onClick={() => {
+                  handleShow("create product", true);
+                }}
+              >
+                Create Product
+              </button>
             </div>
           </div>
         </div>

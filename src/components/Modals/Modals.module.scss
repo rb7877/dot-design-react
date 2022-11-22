@@ -176,6 +176,48 @@
     }
 }
 
+.rightRed{
+    color: #FDB7B6 !important;
+}
+
+.sortCategory{
+    border-radius: 15px;
+    padding: 20px 20px;
+    margin-bottom: 30px;
+    background: #fff;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--Color) !important;
+    transition: 0.1s;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.editCategory{
+    display: flex;
+    margin-bottom: 18px;
+    align-items: center;
+
+    ul{
+        display: flex;
+        list-style: none;
+        margin-bottom: 0px;
+        align-items: center;
+
+        li{
+            padding-right: 20px;
+            a{
+                text-decoration: none;
+                color: #4D4D4D;
+            }
+        }
+    }
+}
+
+
+
+
 
 
 @media (min-width: 576px) {

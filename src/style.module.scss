@@ -306,6 +306,21 @@ img {
   }
 }
 
+.prImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.statusBtn {
+  width: 18px;
+  height: 18px;
+  background-color: #BDBDBD;
+  display: block;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
 /*=======================================================
 //////////////RESPONSIVE MEDIA QUERY START///////////////
 =======================================================*/
