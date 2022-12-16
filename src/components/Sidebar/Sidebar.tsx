@@ -129,27 +129,27 @@ const Sidebar = (props: any) => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/reports/menu1">
+                    <NavLink to="/reports/payments">
                       <div className={`${cx.menuName}`}>Payments</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/reports/menu1">
+                    <NavLink to="/reports/inventory-levels">
                       <div className={`${cx.menuName}`}>Inventory Levels</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/reports/menu1">
+                    <NavLink to="/reports/inventory-control">
                       <div className={`${cx.menuName}`}>Inventory Control</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/reports/menu1">
+                    <NavLink to="/reports/inventory-History">
                       <div className={`${cx.menuName}`}>Inventory History</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/reports/menu1">
+                    <NavLink to="/reports/report-more">
                       <div className={`${cx.menuName}`}>More</div>
                     </NavLink>
                   </li>
@@ -236,22 +236,22 @@ const Sidebar = (props: any) => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/menu/menu1">
+                    <NavLink to="/menu/gift-cards">
                       <div className={`${cx.menuName}`}>Gift Cards</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/menu/menu1">
+                    <NavLink to="/menu/modifiers">
                       <div className={`${cx.menuName}`}>Modifiers</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/menu/menu1">
+                    <NavLink to="/menu/modifier-options">
                       <div className={`${cx.menuName}`}>Modifier Options</div>
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/menu/menu1">
+                    <NavLink to="/menu/groups">
                       <div className={`${cx.menuName}`}>Groups</div>
                     </NavLink>
                   </li>
@@ -267,8 +267,48 @@ const Sidebar = (props: any) => {
                 </Button>
                 <ul className={`${cx.first}`}>
                   <li>
-                    <NavLink to="/manage/menu1">
-                      <div className={`${cx.menuName}`}>Menu 1</div>
+                    <NavLink to="/manage/users">
+                      <div className={`${cx.menuName}`}>Users</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/manage/roles">
+                      <div className={`${cx.menuName}`}>Roles</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/manage/branches">
+                      <div className={`${cx.menuName}`}>Branches</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/manage/devices">
+                      <div className={`${cx.menuName}`}>Devices</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/manage/discounts">
+                      <div className={`${cx.menuName}`}>Discounts</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/manage/coupons">
+                      <div className={`${cx.menuName}`}>Coupons</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/manage/promotions">
+                      <div className={`${cx.menuName}`}>Promotions</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/manage/timed-events">
+                      <div className={`${cx.menuName}`}>Timed Events</div>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/manage/manage-more">
+                      <div className={`${cx.menuName}`}>More</div>
                     </NavLink>
                   </li>
                 </ul>

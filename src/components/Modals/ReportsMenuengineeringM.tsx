@@ -3,7 +3,7 @@ import { Button, Modal, Row, Col, Form, Tooltip, OverlayTrigger } from 'react-bo
 import cx from './Modals.module.scss';
 import Select from 'react-select';
 import { FilterDropdown, SingleFilterDropdown } from "../Dropdown/Dropdowns";
-import { tagoptions, filtertagoptions, filterordertags, customertagoptions, customertimezone, itemoption, ingredientsoptions } from '../../constants/dropdownconstants'
+import { tagoptions, filtertagoptions, filterordertags, reportsfilterordertags, reportsordertags  } from '../../constants/dropdownconstants'
 import IoIosInformationCircleOutline, { AiOutlineInfoCircle } from 'react-icons/ai';
 import { NavLink } from "react-router-dom";
 
@@ -83,7 +83,7 @@ const Modals = (props: any) => {
                   <Form.Label>
                   Categories
                   </Form.Label>
-                  <FilterDropdown options={filterordertags} />
+                  <FilterDropdown options={reportsfilterordertags} />
                 </Form.Group>
               </Col>
 
@@ -92,7 +92,7 @@ const Modals = (props: any) => {
                   <Form.Label>
                   Order Tags
                   </Form.Label>
-                  <FilterDropdown options={filterordertags} />
+                  <FilterDropdown options={reportsordertags} />
                 </Form.Group>
               </Col>
               

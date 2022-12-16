@@ -43,22 +43,22 @@ export default function Reportsanalysis() {
             <Card.Body className={`${cx.cardBody}`}>
                 <Row>
                   <Col lg={3}>
-                    <NavLink to="/reports/menu-engineering" className={`${cx.moreOption}`}>
+                    <NavLink to="/reports/analysis/menu-engineering" className={`${cx.moreOption}`}>
                     Menu Engineering
                     </NavLink>
                   </Col>
                   <Col lg={3}>
-                    <NavLink to="/reports/costanalysis" className={`${cx.moreOption}`}>
+                    <NavLink to="/reports/analysis/costanalysis" className={`${cx.moreOption}`}>
                     Inventory Cost Analysis
                     </NavLink>
                   </Col>
                   <Col lg={3}>
-                    <NavLink to="#" className={`${cx.moreOption}`}>
+                    <NavLink to="/reports/analysis/branches-trend" className={`${cx.moreOption}`}>
                     Branches Trend
                     </NavLink>
                   </Col>
                   <Col lg={3}>
-                    <NavLink to="#" className={`${cx.moreOption}`}>
+                    <NavLink to="/reports/analysis/speed-of-Service" className={`${cx.moreOption}`}>
                     Speed Of Service
                     </NavLink>
                   </Col>

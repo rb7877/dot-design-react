@@ -5,6 +5,7 @@ import cx from "./Menuproductsdetails.module.scss";
 import table from "../../datatable.module.scss";
 import { Card, Button, Row, Table, Col, Modal, Form, Dropdown } from "react-bootstrap";
 import icon4 from "../../images/icon-printer.svg";
+import cancel from "../../images/cancel.svg";
 import { NavLink } from "react-router-dom";
 
 import { MdArrowBackIos } from 'react-icons/md';
@@ -44,7 +45,7 @@ export default function Menuproductsdetails() {
             </div>
             <div className={`${st.rowTitleRight}`}>
               <button className={`btn`} >
-                <img src={icon4} className={`${st.icon}`} />
+                <img src={cancel} className={`${st.icon}`} />
                 Enable House Account
               </button>
               <button className={`btn ${st.themeBtn}`} onClick={() => {

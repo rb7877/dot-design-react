@@ -8,10 +8,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Select, {
   components,
   ControlProps,
-  Props,
-  StylesConfig,
 } from "react-select";
-import { MultiSelect } from "react-multi-select-component";
 import { alpha, Box, Table } from "@mui/material";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -21,20 +18,10 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import Checkbox from "@mui/material/Checkbox";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { visuallyHidden } from "@mui/utils";
 import { BsPlusLg } from "react-icons/bs";
 import icon1 from "../../images/icon-branch.svg";
-import icon2 from "../../images/icon-calendar.svg";
-import icon3 from "../../images/icon-call.svg";
-import icon4 from "../../images/icon-export.svg";
-import icon5 from "../../images/icon-call.svg";
-import iconRefresh from "../../images/icon-refresh.svg";
 import iconFilter from "../../images/icon-filter.svg";
 import Modals from "../../components/Modals/ReportsSalesM";
 

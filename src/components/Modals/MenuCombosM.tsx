@@ -182,9 +182,9 @@ const Modals = (props: any) => {
 
 
 
-      {/* START Product Filter */}
+      {/* START Combos Filter */}
       {
-        props.modalName === 'product filter' &&
+        props.modalName === 'combos filter' &&
         <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Filter</Modal.Title>
@@ -200,7 +200,7 @@ const Modals = (props: any) => {
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
                   <Form.Label>SKU</Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control type="text" placeholder="sk-0581" />
                 </Form.Group>
               </Col>
               <Col md={12} lg={12}>
@@ -223,7 +223,7 @@ const Modals = (props: any) => {
               </Col>
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
-                  <Form.Label>Modifiers</Form.Label>
+                  <Form.Label>Tag</Form.Label>
                   <FilterDropdown options={tagoptions} />
                 </Form.Group>
               </Col>
@@ -243,15 +243,15 @@ const Modals = (props: any) => {
           </Modal.Footer>
         </Modal>
       }
-      {/* END Product Filter */}
+      {/* END Combos Filter */}
 
 
-      {/* START Edit Product */}
+      {/* START Edit Combos */}
       {
-        props.modalName === 'edit product' &&
+        props.modalName === 'edit combos' &&
         <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Edit category</Modal.Title>
+            <Modal.Title>Edit Combo</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Row>
@@ -281,19 +281,30 @@ const Modals = (props: any) => {
                       </OverlayTrigger>
                     ))}
                   </Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control type="text" placeholder="Lemon Ice Cream" />
+                </Form.Group>
+              </Col>
+
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Name Localized
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" placeholder="ايسكريم ليمون" />
                 </Form.Group>
               </Col>
               
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
                   <Form.Label>Category</Form.Label>
-                  <FilterDropdown options={tagoptions} />
-                </Form.Group>
-              </Col>
-              <Col md={12} lg={12}>
-                <Form.Group className={`${cx.formField}`}>
-                  <Form.Label>Stock Product</Form.Label>
                   <FilterDropdown options={tagoptions} />
                 </Form.Group>
               </Col>
@@ -312,7 +323,7 @@ const Modals = (props: any) => {
                           </OverlayTrigger>
                         ))}
                       </Form.Label>
-                      <Form.Control type="text" />
+                      <Form.Control type="text" placeholder="sk-0581"/>
                     </Form.Group>
                   </Col>
 
@@ -321,193 +332,62 @@ const Modals = (props: any) => {
                       <Form.Label className={`${cx.labelHide}`}>
                         .
                       </Form.Label>
-                      <button type="button" className="form-control">Generate SKU</button>
+                      <button type="button" className="form-control">Generate</button>
                     </Form.Group>
                   </Col>
                   </Row>
               </Col>
+
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
-                  <Form.Label>Pricing Method</Form.Label>
-                  <FilterDropdown options={tagoptions} />
+                  <Form.Label>
+                    Barcode
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
                 </Form.Group>
               </Col>
-              
+
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
-                  <Form.Label>Price SAR</Form.Label>
-                  <FilterDropdown options={tagoptions} />
+                  <Form.Label>
+                    Description
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
                 </Form.Group>
               </Col>
 
             </Row>
           </Modal.Body>
           <Modal.Footer>
-          <div><NavLink to="#" className={`${cx.rightOption} ${cx.rightRed}`}>Delete Category</NavLink></div>
+          <div><NavLink to="#" className={`${cx.rightOption} ${cx.rightRed}`}>Delete Combo</NavLink></div>
             <div>
               <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
                 Close
               </Button>
               <Button className={`${cx.btnSubmit}`}>
-                Apply
+                Save
               </Button>
             </div>
           </Modal.Footer>
         </Modal>
       }
-      {/* END Edit Product*/}
-
-
-       {/* START Import */}
-       {
-        props.modalName === 'import' &&
-        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Import Products</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Row>
-              <Col md={12} lg={12}>
-                  <Form.Group className={`${cx.formField}`}>
-                    <p><input type="file" /></p>
-                  </Form.Group>
-              </Col>
-            </Row>
-          </Modal.Body>
-          <Modal.Footer>
-          <div><NavLink to="#" className={`${cx.rightOption}`}>Download Template</NavLink></div>
-          <div>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Submit
-            </Button>
-          </div>
-          </Modal.Footer>
-        </Modal>
-      }
-      {/* END Import */}
-
-       {/* START Import Product */}
-       {
-        props.modalName === 'import product' &&
-        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Import Product Ingredients</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Row>
-              <Col md={12} lg={12}>
-                  <Form.Group className={`${cx.formField}`}>
-                    <p><input type="file" /></p>
-                  </Form.Group>
-              </Col>
-            </Row>
-          </Modal.Body>
-          <Modal.Footer>
-          <div><NavLink to="#" className={`${cx.rightOption}`}>Download Template</NavLink></div>
-          <div>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Submit
-            </Button>
-          </div>
-          </Modal.Footer>
-        </Modal>
-      }
-      {/* END Import Product */}
-
-       {/* START Product Modifiers */}
-       {
-        props.modalName === 'product modifiers' &&
-        <Modal className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Import Product Modifiers</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Row>
-              <Col md={12} lg={12}>
-                  <Form.Group className={`${cx.formField}`}>
-                    <p><input type="file" /></p>
-                  </Form.Group>
-              </Col>
-            </Row>
-          </Modal.Body>
-          <Modal.Footer>
-          <div><NavLink to="#" className={`${cx.rightOption}`}>Download Template</NavLink></div>
-          <div>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Submit
-            </Button>
-          </div>
-          </Modal.Footer>
-        </Modal>
-      }
-      {/* END Product Modifiers */}
-
-
-
-       {/* START Sort Category Popup */}
-       {
-        props.modalName === 'sort category popup' &&
-        <Modal className={`${cx.ctsModal} ${cx.ctsModalSize}`} size="lg"show={props.show} onHide={props.handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>باربكيو</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Row>
-                <Col lg={3}>
-                    <NavLink to="#" className={`${cx.sortCategory}`}>
-                        sadf
-                    </NavLink>
-                </Col>
-                <Col lg={3}>
-                    <NavLink to="#" className={`${cx.sortCategory}`}>
-                    باربكيو كيت 20 دجاج - 1
-                    </NavLink>
-                </Col>
-                <Col lg={3}>
-                    <NavLink to="#" className={`${cx.sortCategory}`}>
-                    باربكيو كيت 20 لحم - 1
-                    </NavLink>
-                </Col>
-                <Col lg={3}>
-                    <NavLink to="#" className={`${cx.sortCategory}`}>
-                    باربكيو كيت 10 مكس - 1
-                    </NavLink>
-                </Col>
-                <Col lg={3}>
-                    <NavLink to="#" className={`${cx.sortCategory}`}>
-                    باربكيو كيت 10 دجاج - 1
-                    </NavLink>
-                </Col>
-                <Col lg={3}>
-                    <NavLink to="#" className={`${cx.sortCategory}`}>
-                    باربكيو كيت 10 لحم - 1
-                    </NavLink>
-                </Col>
-            </Row>
-          </Modal.Body>
-          <Modal.Footer>
-          <div></div>
-          <div>
-            <Button className={`${cx.btnClose}`} onClick={() => { props.handleClose(); setOrderType('') }}>
-              Close
-            </Button>
-            <Button className={`${cx.btnSubmit}`}>
-              Apply
-            </Button>
-          </div>
-          </Modal.Footer>
-        </Modal>
-      }
-      {/* END Sort Category Popup */}
+      {/* END Edit Combos*/}
 
 
          {/* START Customer add tags */}
@@ -557,7 +437,7 @@ const Modals = (props: any) => {
         props.modalName === 'create combo' &&
         <Modal scrollable className={`${cx.ctsModal}`} show={props.show} onHide={props.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Create product</Modal.Title>
+            <Modal.Title>Create Combo</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Row>
@@ -616,7 +496,7 @@ const Modals = (props: any) => {
                           </OverlayTrigger>
                         ))}
                       </Form.Label>
-                      <Form.Control type="text" />
+                      <Form.Control type="text" placeholder="sk-0581" />
                     </Form.Group>
                   </Col>
 
@@ -625,7 +505,7 @@ const Modals = (props: any) => {
                       <Form.Label className={`${cx.labelHide}`}>
                         .
                       </Form.Label>
-                      <button type="button" className="form-control">Generate SKU</button>
+                      <button type="button" className="form-control">Generate</button>
                     </Form.Group>
                   </Col>
                   </Row>

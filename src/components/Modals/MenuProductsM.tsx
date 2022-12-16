@@ -227,6 +227,48 @@ const Modals = (props: any) => {
                   <FilterDropdown options={tagoptions} />
                 </Form.Group>
               </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Tags</Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Tax Groups</Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Costing Method</Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Active</Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Stock Product</Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Deleted</Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Update After</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
 
             </Row>
           </Modal.Body>
@@ -332,13 +374,23 @@ const Modals = (props: any) => {
                   <FilterDropdown options={tagoptions} />
                 </Form.Group>
               </Col>
-              
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
-                  <Form.Label>Price SAR</Form.Label>
-                  <FilterDropdown options={tagoptions} />
+                  <Form.Label>
+                    Price SAR
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
                 </Form.Group>
               </Col>
+              
 
             </Row>
           </Modal.Body>
@@ -625,11 +677,54 @@ const Modals = (props: any) => {
                   <FilterDropdown options={tagoptions} />
                 </Form.Group>
               </Col>
-              
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
-                  <Form.Label>Price SAR</Form.Label>
+                  <Form.Label>
+                  Price SAR
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Tax Group</Form.Label>
                   <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Costing Method</Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>Selling Method</Form.Label>
+                  <FilterDropdown options={tagoptions} />
+                </Form.Group>
+              </Col>
+              <Col md={12} lg={12}>
+                <Form.Group className={`${cx.formField}`}>
+                  <Form.Label>
+                    Name Localized
+                    {['top'].map((placement) => (
+                      <OverlayTrigger key={placement} overlay={
+                        <Tooltip id={`tooltip-${placement}`}>
+                          
+                        </Tooltip>}>
+                        <span className={`${cx.tooltips} ms-2`} style={{ top: '1px' }}><AiOutlineInfoCircle /></span>
+                      </OverlayTrigger>
+                    ))}
+                  </Form.Label>
+                  <Form.Control type="text" />
                 </Form.Group>
               </Col>
 

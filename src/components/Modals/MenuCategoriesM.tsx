@@ -3,7 +3,7 @@ import { Button, Modal, Row, Col, Form, Tooltip, OverlayTrigger } from 'react-bo
 import cx from './Modals.module.scss';
 import Select from 'react-select';
 import { FilterDropdown, SingleFilterDropdown } from "../Dropdown/Dropdowns";
-import { tagoptions, customertagoptions, customertimezone, itemoption, ingredientsoptions } from '../../constants/dropdownconstants'
+import { tagoptions, customertagoptions, customertimezone, itemoption, ingredientsoptions ,filterordertags} from '../../constants/dropdownconstants'
 import { AiFillInfoCircle, AiOutlineInfoCircle } from 'react-icons/ai';
 import { NavLink } from "react-router-dom";
 import food from "../../images/edit-images.png";
@@ -76,7 +76,7 @@ const Modals = (props: any) => {
                       </OverlayTrigger>
                     ))}
                   </Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control type="text" placeholder="Enter category name" />
                 </Form.Group>
               </Col>
               <Col md={12} lg={12}>
@@ -92,7 +92,7 @@ const Modals = (props: any) => {
                       </OverlayTrigger>
                     ))}
                   </Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control type="text" placeholder="Enter the localized name"/>
                 </Form.Group>
               </Col>
               <Col md={12} lg={12}>
@@ -108,7 +108,7 @@ const Modals = (props: any) => {
                       </OverlayTrigger>
                     ))}
                   </Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control type="text" placeholder="Enter unique code for category" />
                 </Form.Group>
               </Col>
 
@@ -206,7 +206,7 @@ const Modals = (props: any) => {
               <Col md={12} lg={12}>
                 <Form.Group className={`${cx.formField}`}>
                   <Form.Label>Deleted</Form.Label>
-                  <FilterDropdown options={tagoptions} />
+                  <FilterDropdown options={filterordertags} />
                 </Form.Group>
               </Col>
               <Col md={12} lg={12}>
@@ -269,7 +269,7 @@ const Modals = (props: any) => {
                       </OverlayTrigger>
                     ))}
                   </Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control type="text" placeholder="Vegetable salad" />
                 </Form.Group>
               </Col>
               <Col md={12} lg={12}>
@@ -285,7 +285,7 @@ const Modals = (props: any) => {
                       </OverlayTrigger>
                     ))}
                   </Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control type="text" placeholder="مشروبات" />
                 </Form.Group>
               </Col>
               <Col md={12} lg={12}>

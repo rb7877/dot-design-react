@@ -335,7 +335,7 @@ const EnhancedTableToolbar = (props: EnhancedTableToolbarProps) => {
               <button
                 className={`${table.filterBtn} btn`}
                 onClick={() => {
-                  handleShow("product filter", true);
+                  handleShow("combos filter", true);
                   console.log("check");
                 }}
               >
